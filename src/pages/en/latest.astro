@@ -7,29 +7,34 @@ import type { Paper } from '../../types/paper';
 const lang = 'en';
 const typedPapers = papers as Paper[];
 
-// Only show latest day's papers (statically computed at build time)
+// Group papers by date, newest first, max 7 days
 const sorted = [...typedPapers].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
-const latestDate = sorted.length > 0 ? sorted[0].date : '';
-const latestPapers = sorted.filter((p) => p.date === latestDate);
-const remainingToday = sorted.length - latestPapers.length;
+const dateGroups: { date: string; papers: Paper[] }[] = [];
+const seenDates = new Set<string>();
+for (const p of sorted) {
+  if (!seenDates.has(p.date)) {
+    if (seenDates.size >= 7) break;
+    seenDates.add(p.date);
+    dateGroups.push({ date: p.date, papers: [p] });
+  } else {
+    dateGroups[dateGroups.length - 1].papers.push(p);
+  }
+}
 ---
 
 <BaseLayout lang={lang} title="Latest Papers - AI Paper Radar" currentPath="/en/latest">
-  <div class="pt-8">
-    <div class="max-w-6xl mx-auto px-4 mb-2">
-      <p class="text-xs text-text-secondary font-mono">
-        {latestDate} &middot; {latestPapers.length} paper{latestPapers.length !== 1 ? 's' : ''}
-      </p>
-    </div>
-    <LatestPapers papers={latestPapers} lang={lang} />
-    {remainingToday > 0 && (
-      <div class="max-w-6xl mx-auto px-4 mt-6 text-center">
-        <p class="text-sm text-text-secondary font-mono">
-          + {remainingToday} more paper{remainingToday !== 1 ? 's' : ''} from earlier dates
-        </p>
-      </div>
-    )}
+  <div class="pt-8 space-y-10">
+    {dateGroups.map((g) => (
+      <section>
+        <div class="max-w-6xl mx-auto px-4 mb-2">
+          <p class="text-xs text-text-secondary font-mono">
+            {g.date} &middot; {g.papers.length} paper{g.papers.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+        <LatestPapers papers={g.papers} lang={lang} />
+      </section>
+    ))}
   </div>
 </BaseLayout>
