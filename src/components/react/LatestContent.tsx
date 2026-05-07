@@ -7,16 +7,35 @@ const INITIAL_SHOW = 5;
 const SHOW_MORE = 10;
 
 interface Props {
-  papers: Paper[];
   lang: Lang;
 }
 
-export default function LatestContent({ papers, lang }: Props) {
+export default function LatestContent({ lang }: Props) {
+  const [papers, setPapers] = useState<Paper[] | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
   const [showCounts, setShowCounts] = useState<Record<string, number>>({});
 
+  useEffect(() => {
+    fetch(`/${lang}/search-index.json`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to load');
+        return res.json();
+      })
+      .then((data: Paper[]) => {
+        setPapers(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }, [lang]);
+
   // Extract unique categories
   const allCategories = useMemo(() => {
+    if (!papers) return [];
     const cats = new Set(papers.flatMap((p) => p.categories ?? []));
     return [...cats].sort();
   }, [papers]);
@@ -44,6 +63,8 @@ export default function LatestContent({ papers, lang }: Props) {
 
   // Filter + group by date, newest first, max 7 days
   const dateGroups = useMemo(() => {
+    if (!papers) return [];
+
     const filtered = hasFilters
       ? papers.filter((p) => {
           const paperCats = new Set(p.categories ?? []);
@@ -71,8 +92,47 @@ export default function LatestContent({ papers, lang }: Props) {
 
   const totalPapers = dateGroups.reduce((sum, g) => sum + g.papers.length, 0);
 
+  // Loading skeleton
+  if (loading) {
+    return (
+      <div className="pt-8 max-w-3xl mx-auto px-4">
+        <div className="mb-8">
+          <div className="h-8 w-48 bg-text-secondary/10 rounded animate-pulse mb-3" />
+          <div className="h-4 w-72 bg-text-secondary/10 rounded animate-pulse" />
+        </div>
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="mb-6">
+            <div className="h-4 w-32 bg-text-secondary/10 rounded animate-pulse mb-3" />
+            <div className="h-24 bg-text-secondary/10 rounded-lg animate-pulse" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="pt-8 max-w-3xl mx-auto px-4 text-center py-12">
+        <p className="text-sm text-accent-red font-mono">
+          {lang === 'zh' ? '加载失败，请刷新重试' : 'Failed to load. Please refresh.'}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="pt-8">
+      {/* Page header */}
+      <div className="max-w-3xl mx-auto px-4 mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-gradient-cyan-purple mb-2 leading-tight">
+          {t('latestTitle', lang)}
+        </h1>
+        <p className="text-sm text-text-secondary/70 font-mono">
+          {t('latestDesc', lang)}
+        </p>
+      </div>
+
       {/* Category filter chips */}
       {allCategories.length > 0 && (
         <div className="max-w-6xl mx-auto px-4 mb-6">

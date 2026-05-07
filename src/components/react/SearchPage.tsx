@@ -120,6 +120,16 @@ export default function SearchPage({ lang }: Props) {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+      {/* Page title */}
+      <div className="mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-gradient-cyan-purple mb-1 leading-tight">
+          {t('searchTitle', lang)}
+        </h1>
+        <p className="text-sm text-text-secondary/70 font-mono">
+          {t('searchHint', lang)}
+        </p>
+      </div>
+
       {/* Search Input */}
       <div className="relative mb-6">
         <input
@@ -262,7 +272,12 @@ export default function SearchPage({ lang }: Props) {
               )}
             </>
           ) : (query || hasFilters) ? (
-            <GlitchText text={t('noResults', lang)} />
+            <div className="text-center py-8">
+              <GlitchText text={t('noResults', lang)} />
+              <p className="mt-4 text-sm text-text-secondary/60 font-mono">
+                {t('searchNoResultsHint', lang)}
+              </p>
+            </div>
           ) : null}
         </>
       )}

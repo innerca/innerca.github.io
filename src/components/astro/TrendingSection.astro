@@ -19,6 +19,9 @@ const trending = getTrendingPapers(papers, 6);
       <h2 class="text-xl font-bold text-gradient-cyan-purple tracking-wide">
         🔥 {t('hot', lang)}
       </h2>
+      <p class="text-sm text-text-secondary/70 font-mono mt-1">
+        {t('hotDesc', lang)} &middot; Top {trending.length}
+      </p>
     </div>
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">

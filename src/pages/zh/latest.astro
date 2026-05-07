@@ -1,13 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LatestContent from '../../components/react/LatestContent';
-import papers from '../../data/papers.json';
-import type { Paper } from '../../types/paper';
 
 const lang = 'zh';
-const typedPapers = papers as Paper[];
 ---
 
 <BaseLayout lang={lang} title="最新论文 - AI 学术前沿雷达" currentPath="/zh/latest">
-  <LatestContent client:load papers={typedPapers} lang={lang} />
+  <LatestContent client:load lang={lang} />
 </BaseLayout>
