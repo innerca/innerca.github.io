@@ -38,7 +38,7 @@ const { categories, lang } = Astro.props;
       <!-- Papers row -->
       {cat.papers.length > 0 ? (
         <div
-          class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide
+          class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide justify-center
                  [&::-webkit-scrollbar]:hidden"
         >
           {cat.papers.map((p) => (
