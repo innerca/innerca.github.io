@@ -32,6 +32,7 @@ DATA_DIR = PROJECT_ROOT / "src" / "data"
 
 PAPERS_FILE = DATA_DIR / "papers.json"
 VENUE_TIERS_FILE = DATA_DIR / "venue_tiers.json"
+SIGNALS_DIR = DATA_DIR / "signals" / "citations"
 OUTPUT_FILE = DATA_DIR / "paper_heat_scores.json"
 META_FILE = DATA_DIR / "heat_score_meta.json"
 
@@ -139,9 +140,57 @@ def compute_field_stats(papers):
     return stats
 
 
+# ─── Cold Start Detection ──────────────────────────────────────────
+
+def detect_warmup_state():
+    """
+    Check how many days of citation snapshots exist.
+    Returns (warmup_days, mode) where mode is one of:
+      - "cold":   no snapshots (burst_bonus = 0)
+      - "warmup": 1-6 snapshots (weak burst only)
+      - "ready":  7+ snapshots (full burst enabled)
+    """
+    if not SIGNALS_DIR.exists():
+        return 0, "cold"
+
+    snapshots = sorted(SIGNALS_DIR.glob("*.json"))
+    n = len(snapshots)
+
+    if n == 0:
+        return 0, "cold"
+    elif n < 7:
+        return n, "warmup"
+    else:
+        return n, "ready"
+
+
+def load_citation_history():
+    """Load all citation snapshots and compute per-paper deltas."""
+    if not SIGNALS_DIR.exists():
+        return {}, 0
+
+    snapshots = sorted(SIGNALS_DIR.glob("*.json"))
+    if len(snapshots) < 2:
+        return {}, len(snapshots)
+
+    # Get the latest two snapshots for 7-day delta
+    # (7+ days apart would be ideal, but daily snapshots is good enough)
+    latest = json.loads(open(snapshots[-1]).read())
+    oldest_available = json.loads(open(snapshots[0]).read())
+
+    deltas = {}
+    for paper_id, current_count in latest.get("citations", {}).items():
+        old_count = oldest_available.get("citations", {}).get(paper_id, 0)
+        delta = max(0, current_count - old_count)
+        if delta > 0:
+            deltas[paper_id] = delta
+
+    return deltas, len(snapshots)
+
+
 # ─── Scoring ────────────────────────────────────────────────────────
 
-def score_paper(paper, field_stats, venue_tiers):
+def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta):
     """Compute all heat score components for a single paper."""
     days = days_since(paper.get("date", ""))
     bucket_label, fresh_score = get_age_bucket(days)
@@ -176,11 +225,23 @@ def score_paper(paper, field_stats, venue_tiers):
     # ── Base score ──
     base_score = 100 * (W_CITE * s_cite + W_CODE * s_code + W_BUZZ * s_buzz + W_VENUE * s_venue + W_FRESH * s_fresh)
 
-    # ── Burst bonus (no history yet) ──
+    # ── Burst bonus ──
     b_cite = 0.0
     b_buzz = 0.0
     b_code = 0.0
-    burst_bonus = 0.0
+
+    if warmup_mode == "ready":
+        # Full burst: citation delta + HF + code
+        paper_id_arxiv = paper.get("id", "")
+        delta = citation_deltas.get(paper_id_arxiv, 0)
+        b_cite = clamp(delta / field_p95_delta) if field_p95_delta > 0 else 0.0
+
+    elif warmup_mode == "warmup":
+        # Weak burst: only HF/code (no citation history yet)
+        pass  # b_cite stays 0, b_buzz/code handled below
+
+    # b_buzz and b_code are always 0 until HF/PwC are integrated
+    burst_bonus = min(BURST_CAP, BURST_W_CITE * b_cite + BURST_W_BUZZ * b_buzz + BURST_W_CODE * b_code)
 
     heat_score = base_score + burst_bonus
 
@@ -280,14 +341,24 @@ def main():
     window_papers = [p for p in papers if days_since(p.get("date", "")) <= WINDOW_DAYS]
     print(f"Papers in {WINDOW_DAYS}-day window: {len(window_papers)}")
 
+    # Detect warmup state
+    warmup_days, warmup_mode = detect_warmup_state()
+    citation_deltas, snapshots_count = load_citation_history()
+    mode_label = {"cold": "❄️ Cold start (burst=0)", "warmup": f"🌤️ Warmup day {warmup_days}/7", "ready": "🔥 Full burst enabled"}
+    print(f"Warmup: {mode_label.get(warmup_mode, warmup_mode)} ({snapshots_count} snapshots)")
+
     # Compute field stats
     field_stats = compute_field_stats(window_papers)
     print(f"Field + age-bucket groups: {len(field_stats)}")
 
+    # Compute field p95 delta for burst normalization
+    all_deltas = list(citation_deltas.values())
+    field_p95_delta = sorted(all_deltas)[max(0, int(len(all_deltas) * 0.95) - 1)] if len(all_deltas) > 0 else 0
+
     # Score each paper
     scored = []
     for p in window_papers:
-        result = score_paper(p, field_stats, venue_tiers)
+        result = score_paper(p, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta)
         if result:
             scored.append(result)
 
@@ -305,6 +376,7 @@ def main():
 
     print(f"\nResults:")
     print(f"  Fields: {fields}")
+    print(f"  Mode: {warmup_mode}")
     print(f"  With signals: {with_signals}")
     print(f"  Hot: {hot_count} | Rising: {rising_count}")
     print(f"  Heat score range: {min(s['heat_score'] for s in scored):.1f} ~ {max(s['heat_score'] for s in scored):.1f}")
@@ -313,15 +385,21 @@ def main():
         print("\n✓ Dry run — no files written")
         return
 
+    # Build missing signals info based on warmup state
+    missing = {}
+    if warmup_mode != "ready":
+        missing["b_cite"] = f"Citation history: {snapshots_count}/7 days needed for burst"
+    if True:  # Always missing until integrated
+        missing["s_code"] = "Papers with Code not yet integrated"
+        missing["s_buzz"] = "Hugging Face Daily Papers not yet integrated"
+
     # Save
     output = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "warmup_days": snapshots_count,
+        "warmup_mode": warmup_mode,
         "window_days": WINDOW_DAYS,
-        "missing_signals": {
-            "s_code": "Papers with Code not yet integrated",
-            "s_buzz": "Hugging Face Daily Papers not yet integrated",
-            "b_cite": "7-day citation history not yet available",
-        },
+        "missing_signals": missing,
         "papers": scored,
     }
     save_json(OUTPUT_FILE, output)
@@ -329,6 +407,8 @@ def main():
     meta = {
         "version": "half_year_heat_v1",
         "generated_at": output["generated_at"],
+        "warmup_days": snapshots_count,
+        "warmup_mode": warmup_mode,
         "window_days": WINDOW_DAYS,
         "counts": {
             "total_papers": len(papers),
