@@ -9,13 +9,13 @@ export default defineConfig({
     tailwind(),
   ],
   i18n: {
-    defaultLocale: 'zh',
+    defaultLocale: 'en',
     locales: ['zh', 'en'],
     routing: {
       prefixDefaultLocale: true,
     },
     fallback: {
-      en: 'zh',
+      zh: 'en',
     },
   },
 });

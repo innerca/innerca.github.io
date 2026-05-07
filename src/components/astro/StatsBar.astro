@@ -6,10 +6,10 @@ import CountUp from '../react/CountUp';
 export interface Props {
   lang: Lang;
   totalPapers: number;
-  newThisWeek: number;
+  newToday: number;
 }
 
-const { lang, totalPapers, newThisWeek } = Astro.props;
+const { lang, totalPapers, newToday } = Astro.props;
 ---
 
 <div class="flex justify-center gap-8 md:gap-16 mb-12">
@@ -21,7 +21,7 @@ const { lang, totalPapers, newThisWeek } = Astro.props;
   </div>
   <div class="panel-glass rounded-xl px-8 py-6 text-center min-w-[140px]">
     <div class="text-3xl md:text-4xl font-mono font-bold text-neon-purple">
-      <CountUp client:load value={newThisWeek} />
+      <CountUp client:load value={newToday} />
     </div>
     <div class="mt-1 text-sm text-text-secondary font-mono">{t('statsNew', lang)}</div>
   </div>

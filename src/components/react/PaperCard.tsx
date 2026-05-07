@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import type { Paper, Lang } from '../../types/paper';
+import { getPrimarySource } from '../../lib/source';
+import { relativeDate, isNew } from '../../lib/date';
+import SourceBadge from './SourceBadge';
 
 interface Props {
   paper: Paper;
@@ -11,6 +14,7 @@ export default function PaperCard({ paper, lang, index = 0 }: Props) {
   const title = paper.title[lang];
   const summary = paper.summary[lang];
   const href = `/${lang}/paper/${paper.id}`;
+  const isNewPaper = isNew(paper.addedDate || paper.date);
 
   return (
     <motion.a
@@ -53,7 +57,13 @@ export default function PaperCard({ paper, lang, index = 0 }: Props) {
 
       {/* Meta */}
       <div className="flex items-center gap-3 text-xs text-text-secondary font-mono">
-        <span>{paper.date}</span>
+        <span className="flex items-center gap-1">
+          <span>{relativeDate(paper.date, lang)}</span>
+          {isNewPaper && (
+            <span className="text-neon-cyan text-[10px] font-bold">NEW</span>
+          )}
+        </span>
+        <SourceBadge source={getPrimarySource(paper)} />
         <span>💬 {paper.citeCount}</span>
       </div>
     </motion.a>

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import type { Paper, Lang } from '../../types/paper';
-import { searchPapers } from '../../lib/search';
+import { searchPapers } from '../../lib/searchEngine';
 import { t } from '../../lib/i18n';
 import PaperCard from './PaperCard';
 import GlitchText from './GlitchText';

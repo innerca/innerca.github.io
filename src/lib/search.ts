@@ -1,3 +1,8 @@
+/**
+ * Fallback substring-matching search used when FlexSearch is unavailable.
+ *
+ * @see searchEngine.ts for the primary FlexSearch-based implementation.
+ */
 import type { Paper, Lang } from '../types/paper';
 
 export function searchPapers(papers: Paper[], query: string, lang: Lang): Paper[] {
@@ -15,21 +20,4 @@ export function searchPapers(papers: Paper[], query: string, lang: Lang): Paper[
       tags.includes(q)
     );
   });
-}
-
-export function highlightText(text: string, query: string): string {
-  if (!query.trim()) return escapeHtml(text);
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`(${escaped})`, 'gi');
-  return escapeHtml(text).replace(
-    regex,
-    '<mark class="bg-neon-cyan/20 text-neon-cyan rounded-sm px-0.5">$1</mark>',
-  );
-}
-
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
 }

@@ -7,3 +7,12 @@ export const performance = {
 } as const;
 
 export type Performance = typeof performance;
+
+export const trending = {
+  windowDays: 30,
+  topN: 5,
+  minCiteCount: 0,
+  enabled: true,
+} as const;
+
+export type Trending = typeof trending;

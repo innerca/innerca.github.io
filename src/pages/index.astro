@@ -1,5 +1,6 @@
 ---
-// Root route: detect browser language and redirect
+// Root route: server-side redirect to default locale (/en) handled by Astro i18n middleware.
+// Client-side fallback for static export / dev scenarios.
 ---
 
 <!DOCTYPE html>
@@ -12,9 +13,7 @@
 <body style="background:#0b0f19; color:#e0e0e0; display:flex; align-items:center; justify-content:center; min-height:100vh; font-family:monospace;">
   <p>Redirecting...</p>
   <script>
-    var lang = navigator.language || navigator.userLanguage;
-    var prefix = lang.startsWith('zh') ? '/zh' : '/en';
-    window.location.replace(prefix);
+    window.location.replace('/en');
   </script>
 </body>
 </html>

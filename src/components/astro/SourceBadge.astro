@@ -1,0 +1,22 @@
+---
+import type { SourceConfig } from '../../config/sources';
+
+export interface Props {
+  source: SourceConfig;
+  size?: 'sm' | 'md';
+}
+
+const { source, size = 'sm' } = Astro.props;
+const isSmall = size === 'sm';
+---
+
+<span
+  class="inline-flex items-center gap-1 font-mono font-medium"
+  style="color: {source.color}"
+  title={source.label.en}
+>
+  <span class={isSmall ? 'text-xs' : 'text-sm'}>{source.icon}</span>
+  <span class={isSmall ? 'text-[11px]' : 'text-xs'}>
+    {source.label.en}
+  </span>
+</span>

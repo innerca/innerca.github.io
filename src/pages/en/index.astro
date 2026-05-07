@@ -13,16 +13,16 @@ const trendingPapers = typedPapers.filter((p) => p.isTrending);
 const latestPapers = [...typedPapers].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
-const newThisWeek = typedPapers.filter((p) => {
-  const weekAgo = new Date();
-  weekAgo.setDate(weekAgo.getDate() - 7);
-  return new Date(p.date) >= weekAgo;
+const newToday = typedPapers.filter((p) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(p.date) >= today;
 }).length;
 ---
 
 <BaseLayout lang={lang} title="AI Paper Radar">
   <HeroSection lang={lang} />
-  <StatsBar lang={lang} totalPapers={typedPapers.length} newThisWeek={newThisWeek} />
+  <StatsBar lang={lang} totalPapers={typedPapers.length} newToday={newToday} />
   <TrendingPapers papers={trendingPapers} lang={lang} />
   <LatestPapers papers={latestPapers} lang={lang} />
 </BaseLayout>
