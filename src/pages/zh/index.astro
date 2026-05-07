@@ -2,15 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/astro/HeroSection.astro';
 import StatsBar from '../../components/astro/StatsBar.astro';
-import TrendingPapers from '../../components/astro/TrendingPapers.astro';
-import { getTrendingPapers } from '../../lib/heat';
+import CategorySection from '../../components/astro/CategorySection.astro';
+import DateSection from '../../components/astro/DateSection.astro';
+import { loadHeatScores } from '../../lib/heat';
+import { getSiteStats } from '../../lib/stats';
+import { getCategoryGroups, getDateGroups } from '../../lib/group';
 import papers from '../../data/papers.json';
 import type { Paper } from '../../types/paper';
 
 const lang = 'zh';
 const typedPapers = papers as Paper[];
 
-const trendingPapers = getTrendingPapers(typedPapers, 5);
+const heatMap = loadHeatScores();
+const stats = getSiteStats();
+const totalPapers = stats?.totalPapers ?? typedPapers.length;
+
+const categoryGroups = getCategoryGroups(typedPapers, heatMap, 4, 3);
+const dateGroups = getDateGroups(typedPapers, 5);
 
 const newToday = typedPapers.filter((p) => {
   const today = new Date();
@@ -21,6 +29,7 @@ const newToday = typedPapers.filter((p) => {
 
 <BaseLayout lang={lang} title="AI 学术前沿雷达">
   <HeroSection lang={lang} />
-  <StatsBar lang={lang} totalPapers={typedPapers.length} newToday={newToday} />
-  <TrendingPapers papers={trendingPapers} lang={lang} />
+  <StatsBar lang={lang} totalPapers={totalPapers} newToday={newToday} />
+  <CategorySection categories={categoryGroups} lang={lang} />
+  <DateSection periods={dateGroups} lang={lang} />
 </BaseLayout>

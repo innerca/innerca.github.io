@@ -1,0 +1,59 @@
+---
+import type { Paper, Lang } from '../../types/paper';
+import { t } from '../../lib/i18n';
+import PaperCard from '../react/PaperCard';
+
+export interface CategoryGroup {
+  name: string;
+  papers: Paper[];
+}
+
+export interface Props {
+  categories: CategoryGroup[];
+  lang: Lang;
+}
+
+const { categories, lang } = Astro.props;
+---
+
+<section class="mb-16">
+  <div class="max-w-6xl mx-auto px-4 mb-6">
+    <h2 class="text-2xl font-bold text-gradient-cyan-purple mb-2 tracking-wide">
+      📂 {t('browseByCategory', lang)}
+    </h2>
+    <p class="text-sm text-text-secondary font-mono">
+      {t('browseByCategoryDesc', lang)}
+    </p>
+  </div>
+
+  {categories.map((cat) => (
+    <div class="mb-8">
+      <!-- Category heading -->
+      <div class="max-w-6xl mx-auto px-4 mb-3">
+        <h3 class="text-base font-mono font-bold text-neon-cyan tracking-wide">
+          {cat.name}
+        </h3>
+      </div>
+
+      <!-- Papers row -->
+      {cat.papers.length > 0 ? (
+        <div
+          class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide
+                 [&::-webkit-scrollbar]:hidden"
+        >
+          {cat.papers.map((p) => (
+            <div class="flex-shrink-0 w-[320px] snap-start">
+              <PaperCard client:load paper={p} lang={lang} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="max-w-6xl mx-auto px-4">
+          <p class="text-text-secondary text-sm font-mono">
+            {lang === 'zh' ? '暂无论文' : 'No papers'}
+          </p>
+        </div>
+      )}
+    </div>
+  ))}
+</section>
