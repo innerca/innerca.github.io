@@ -7,7 +7,8 @@ import TrendingSection from '../../components/astro/TrendingSection.astro';
 import CategorySection from '../../components/astro/CategorySection.astro';
 import { loadHeatScores } from '../../lib/heat';
 import { getSiteStats } from '../../lib/stats';
-import { getCategoryGroups } from '../../lib/group';
+import { getCuratedCategoryGroups } from '../../lib/group';
+import { computeGroupFrequency } from '../../config/categories';
 import papers from '../../data/papers.json';
 import type { Paper } from '../../types/paper';
 
@@ -18,10 +19,11 @@ const heatMap = loadHeatScores();
 const stats = getSiteStats();
 const totalPapers = stats?.totalPapers ?? typedPapers.length;
 
-// Collect all unique categories for hero quick links
-const allCategories = [...new Set(typedPapers.flatMap((p) => p.categories ?? []))].sort();
+// Hero quick chips: human-readable AI domain labels (not raw arXiv codes)
+const freq = computeGroupFrequency(typedPapers.map((p) => p.categories ?? []));
+const topGroupLabels = freq.slice(0, 4).map((g) => g.label[lang]);
 
-const categoryGroups = getCategoryGroups(typedPapers, heatMap, 4, 6);
+const categoryGroups = getCuratedCategoryGroups(typedPapers, heatMap, 3, 3, 'en');
 
 const newToday = typedPapers.filter((p) => {
   const today = new Date();
@@ -31,7 +33,7 @@ const newToday = typedPapers.filter((p) => {
 ---
 
 <BaseLayout lang={lang} title="Paper Radar">
-  <HeroSection lang={lang} categories={allCategories} />
+  <HeroSection lang={lang} groupLabels={topGroupLabels} />
   <StatsBar lang={lang} totalPapers={totalPapers} newToday={newToday} />
   <LatestPreview papers={typedPapers} lang={lang} />
   <TrendingSection papers={typedPapers} lang={lang} />

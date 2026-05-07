@@ -1,11 +1,11 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import type { Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import { computeGroupFrequency, getCategoryGroup } from '../../config/categories';
-import PaperCard from './PaperCard';
+import CompactPaperRow from './CompactPaperRow';
 
 const VISIBLE_GROUPS = 6;
-const INITIAL_SHOW = 12;
+const INITIAL_SHOW = 8;
 const SHOW_MORE = 12;
 
 interface Props {
@@ -24,11 +24,19 @@ interface MetaItem {
   addedDate?: string;
   citeCount: number;
   heatScore: number;
+  sCite: number;
+  sCode: number;
+  sBuzz: number;
+  sFresh: number;
+  burstBonus: number;
 }
 
 export default function HotContent({ lang }: Props) {
-  const [meta, setMeta] = useState<MetaItem[] | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [allPapers, setAllPapers] = useState<MetaItem[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [hasMorePages, setHasMorePages] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [error, setError] = useState(false);
   const [selectedGroups, setSelectedGroups] = useState<Set<string>>(new Set());
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -36,33 +44,36 @@ export default function HotContent({ lang }: Props) {
   const [showCount, setShowCount] = useState(INITIAL_SHOW);
 
   useEffect(() => {
-    fetch(`/${lang}/search-index.json`)
+    setInitialLoading(true);
+    fetch(`/${lang}/hot-page/0.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load');
         return res.json();
       })
-      .then((data: MetaItem[]) => {
-        setMeta(data);
-        setLoading(false);
+      .then((data: { papers: MetaItem[]; hasMore: boolean }) => {
+        setAllPapers(data.papers);
+        setHasMorePages(data.hasMore);
+        setCurrentPage(0);
+        setInitialLoading(false);
       })
       .catch(() => {
         setError(true);
-        setLoading(false);
+        setInitialLoading(false);
       });
   }, [lang]);
 
-  const categoryGroups = useMemo(() => {
-    if (!meta) return [];
-    const allCodes = meta.map((m) => m.categories ?? []);
-    return computeGroupFrequency(allCodes);
-  }, [meta]);
-
   const hasFilters = selectedGroups.size > 0 || selectedCodes.size > 0;
 
+  const categoryGroups = useMemo(() => {
+    if (allPapers.length === 0) return [];
+    const allCodes = allPapers.map((m) => m.categories ?? []);
+    return computeGroupFrequency(allCodes);
+  }, [allPapers]);
+
   const allSorted = useMemo(() => {
-    if (!meta) return [];
-    return [...meta].sort((a, b) => b.heatScore - a.heatScore);
-  }, [meta]);
+    if (!allPapers.length) return [];
+    return [...allPapers].sort((a, b) => b.heatScore - a.heatScore);
+  }, [allPapers]);
 
   const filtered = useMemo(() => {
     if (!allSorted.length) return [];
@@ -77,12 +88,13 @@ export default function HotContent({ lang }: Props) {
 
   const visiblePapers = filtered.slice(0, showCount);
   const remaining = filtered.length - visiblePapers.length;
+  const showLoadMore = filtered.length > showCount || hasMorePages;
 
   // Individual arXiv code frequencies for Advanced filters
   const rawCategoryCounts = useMemo(() => {
-    if (!meta) return [];
+    if (allPapers.length === 0) return [];
     const counts = new Map<string, number>();
-    for (const m of meta) {
+    for (const m of allPapers) {
       for (const c of (m.categories ?? [])) {
         counts.set(c, (counts.get(c) || 0) + 1);
       }
@@ -90,7 +102,7 @@ export default function HotContent({ lang }: Props) {
     return [...counts.entries()]
       .map(([code, count]) => ({ code, count }))
       .sort((a, b) => b.count - a.count);
-  }, [meta]);
+  }, [allPapers]);
 
   const toggleGroup = (key: string) => {
     setSelectedGroups((prev) => {
@@ -118,7 +130,39 @@ export default function HotContent({ lang }: Props) {
     setShowCount(INITIAL_SHOW);
   };
 
-  if (loading) {
+  const loadingRef = useRef(false);
+
+  const handleShowMore = () => {
+    if (loadingRef.current) return;
+    const newShowCount = showCount + SHOW_MORE;
+    const needMore = newShowCount > allPapers.length && hasMorePages;
+
+    if (needMore) {
+      loadingRef.current = true;
+      setIsLoadingMore(true);
+      fetch(`/${lang}/hot-page/${currentPage + 1}.json`)
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to load');
+          return res.json();
+        })
+        .then((data: { papers: MetaItem[]; hasMore: boolean }) => {
+          setAllPapers((prev) => [...prev, ...data.papers]);
+          setHasMorePages(data.hasMore);
+          setCurrentPage((prev) => prev + 1);
+          setShowCount(newShowCount);
+          setIsLoadingMore(false);
+          loadingRef.current = false;
+        })
+        .catch(() => {
+          setIsLoadingMore(false);
+          loadingRef.current = false;
+        });
+    } else {
+      setShowCount(newShowCount);
+    }
+  };
+
+  if (initialLoading) {
     return (
       <div className="pt-8 max-w-3xl mx-auto px-4">
         <div className="mb-8">
@@ -145,9 +189,9 @@ export default function HotContent({ lang }: Props) {
   }
 
   return (
-    <div className="pt-8 max-w-6xl mx-auto px-4">
+    <div className="pt-8 max-w-3xl mx-auto px-4">
       {/* Header block */}
-      <div className="max-w-3xl mx-auto mb-6">
+      <div className="mb-6">
         <h1 className="text-3xl font-bold text-gradient-cyan-purple mb-2 tracking-wide">
           {t('hot', lang)}
         </h1>
@@ -157,25 +201,17 @@ export default function HotContent({ lang }: Props) {
       </div>
 
       {/* Overview strip */}
-      <div className="max-w-6xl mx-auto mb-5">
+      <div className="mb-5">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-text-secondary/70 px-4 py-2 bg-white/[0.02] rounded-lg border border-white/5">
-          <span>
-            {lang === 'zh' ? `精选：${filtered.length} 篇` : `Top picks: ${filtered.length}`}
-          </span>
-          <span className="text-text-secondary/30">|</span>
           <span className="text-text-secondary/40">
-            {lang === 'zh' ? '新晋上升' : 'New and rising'}
-          </span>
-          <span className="text-text-secondary/30">|</span>
-          <span>
-            {lang === 'zh' ? '基于引用、讨论和收藏趋势评估' : 'Based on recency + citations + activity'}
+            {lang === 'zh' ? '新晋上升 · 综合引用增长、社区讨论和收藏趋势评估' : 'Rising signals · Based on citation growth, community discussion, and bookmarking trends'}
           </span>
         </div>
       </div>
 
       {/* Filter row */}
       {categoryGroups.length > 0 && (
-        <div className="max-w-6xl mx-auto mb-6">
+        <div className="mb-6">
           <div className="flex items-start gap-3">
             <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
               {t('filterCategory', lang)}:
@@ -224,7 +260,7 @@ export default function HotContent({ lang }: Props) {
 
       {/* Advanced filters: individual arXiv taxonomy codes (Doc 24) */}
       {showAdvanced && rawCategoryCounts.length > 0 && (
-        <div className="max-w-6xl mx-auto mb-6 -mt-4">
+        <div className="mb-6 -mt-4">
           <div className="flex items-start gap-3 px-4">
             <span className="text-[10px] text-text-secondary/40 font-mono mt-1 shrink-0">
               {lang === 'zh' ? '分类代码' : 'Taxonomy codes'}:
@@ -251,25 +287,41 @@ export default function HotContent({ lang }: Props) {
         </div>
       )}
 
-      {/* PaperCard results (Doc 24: same skeleton as Latest) */}
+      {/* CompactPaperRow shortlist */}
       {visiblePapers.length > 0 && (
-        <div className="max-w-3xl mx-auto">
-          <div className="grid gap-4">
-            {visiblePapers.map((m, i) => (
-              <PaperCard key={m.id} paper={m as any} lang={lang} index={i} />
-            ))}
-          </div>
+        <div className="max-w-3xl mx-auto space-y-1.5">
+          {visiblePapers.map((m, i) => (
+            <CompactPaperRow
+              key={m.id}
+              paper={m as any}
+              lang={lang}
+              rank={i + 1}
+              heatScore={m.heatScore}
+              index={i}
+              heatSignals={{
+                citeCount: m.citeCount,
+                sCite: m.sCite,
+                sCode: m.sCode,
+                sBuzz: m.sBuzz,
+                sFresh: m.sFresh,
+                burstBonus: m.burstBonus,
+              }}
+            />
+          ))}
 
-          {remaining > 0 && (
+          {showLoadMore && (
             <div className="mt-6 mb-10">
               <button
-                onClick={() => setShowCount((prev) => prev + SHOW_MORE)}
+                onClick={handleShowMore}
                 className="w-full py-3 text-sm font-mono text-text-secondary/60
                   border border-dashed border-text-secondary/20 rounded-lg
                   hover:text-neon-cyan hover:border-neon-cyan/40
                   transition-all duration-200"
+                disabled={isLoadingMore}
               >
-                {t('showMoreSignals', lang)}
+                {isLoadingMore
+                  ? (lang === 'zh' ? '加载中…' : 'Loading…')
+                  : t('showMoreSignals', lang)}
               </button>
             </div>
           )}
