@@ -1,0 +1,70 @@
+{
+  "description": "Conference/journal venue tier mapping for heat score computation",
+  "updated_at": "2026-05-07",
+  "tiers": {
+    "1.0": {
+      "label": "Top Venue",
+      "venues": [
+        "NeurIPS", "ICML", "ICLR", "COLT",
+        "CVPR", "ICCV", "ECCV",
+        "ACL", "EMNLP", "NAACL",
+        "AAAI",
+        "SIGCOMM", "OSDI", "SOSP",
+        "PLDI", "POPL",
+        "STOC", "FOCS", "SODA",
+        "USENIX ATC", "NSDI",
+        "ISCA", "MICRO", "HPCA",
+        "SIGGRAPH", "SIGIR",
+        "WWW", "VLDB", "SIGMOD",
+        "ICRA", "RSS",
+        "Nature", "Science",
+        "Cell",
+        "TPAMI", "IJCV",
+        "JMLR", "AIJ",
+        "TOG"
+      ]
+    },
+    "0.8": {
+      "label": "Strong Venue",
+      "venues": [
+        "AISTATS", "UAI", "ECAI",
+        "ACCV", "BMVC", "WACV",
+        "EACL", "CoNLL",
+        "ICAPS", "IROS",
+        "CIKM", "WSDM", "ECIR",
+        "ICDM", "ECML-PKDD",
+        "COLT",
+        "MICCAI", "IPMI",
+        "ICASSP", "ACM MM",
+        "ICSE", "ASE",
+        "TACL", "TMLR",
+        "IEEE TIP", "IEEE TNNLS",
+        "IEEE TPAMI",
+        "CVIU", "PR",
+        "JMLR", "Machine Learning",
+        "Neural Networks",
+        "Neurocomputing",
+        "Information Sciences"
+      ]
+    },
+    "0.4": {
+      "label": "Normal Venue",
+      "venues": [
+        "ICONIP", "ICANN", "ESANN",
+        "IJCNN", "IEEE SMC",
+        "ACML", "MLSP",
+        "VISAPP", "ICPR",
+        "INTERSPEECH",
+        "NLPCC", "IALP",
+        "CASE", "CIS-RAM",
+        "BigData", "IEEE BigData",
+        "KSEM", "ISWC",
+        "DASFAA", "DEXA"
+      ]
+    },
+    "0.2": {
+      "label": "Preprint / Unknown",
+      "venues": ["arXiv", "Tech Report", "Preprint", "Unknown"]
+    }
+  }
+}

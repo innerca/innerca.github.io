@@ -44,6 +44,11 @@ jobs:
         if: ${{ env.GROQ_API_KEY != '' }}
         run: python scripts/summarize.py
 
+      - name: Compute heat scores
+        run: |
+          python scripts/compute_heat_scores.py
+          python scripts/export_heat_json.py
+
       - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
