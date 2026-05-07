@@ -15,7 +15,7 @@ interface Props {
 
 export default function PaperCard({ paper, lang, index = 0, heatScore }: Props) {
   const title = paper.title[lang];
-  const summary = paper.summary[lang];
+  const summary = paper.summary?.[lang];
   const href = `/${lang}/paper/${paper.id}`;
   const isNewPaper = isNew(paper.addedDate || paper.date);
   const authors = paper.authors ?? [];
@@ -41,9 +41,11 @@ export default function PaperCard({ paper, lang, index = 0, heatScore }: Props) 
       </h3>
 
       {/* Summary */}
-      <p className="text-sm text-text-secondary line-clamp-2 leading-relaxed mb-2">
-        {summary}
-      </p>
+      {summary && (
+        <p className="text-sm text-text-secondary line-clamp-2 leading-relaxed mb-2">
+          {summary}
+        </p>
+      )}
 
       {/* Authors */}
       {authors.length > 0 && (

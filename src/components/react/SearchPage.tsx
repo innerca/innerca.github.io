@@ -1,13 +1,24 @@
-import { useState, useMemo, useEffect } from 'react';
-import type { Paper, Lang } from '../../types/paper';
-import { searchPapers } from '../../lib/searchEngine';
+import { useState, useMemo, useEffect, useRef } from 'react';
+import type { Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import { getSourceConfig } from '../../lib/source';
 import PaperCard from './PaperCard';
-import GlitchText from './GlitchText';
 
 interface Props {
   lang: Lang;
+}
+
+interface MetaItem {
+  id: string;
+  title: { en: string; zh: string };
+  source: string;
+  url: string;
+  authors: { name: string }[];
+  categories: string[];
+  tags: string[];
+  date: string;
+  addedDate?: string;
+  citeCount: number;
 }
 
 const PAGE_SIZE = 20;
@@ -16,10 +27,7 @@ function LoadingSkeleton() {
   return (
     <div className="grid gap-4">
       {Array.from({ length: 5 }).map((_, i) => (
-        <div
-          key={i}
-          className="panel-glass rounded-xl p-5 animate-pulse"
-        >
+        <div key={i} className="panel-glass rounded-xl p-5 animate-pulse">
           <div className="h-5 bg-white/5 rounded w-3/4 mb-3" />
           <div className="h-4 bg-white/5 rounded w-full mb-2" />
           <div className="h-4 bg-white/5 rounded w-2/3 mb-3" />
@@ -31,39 +39,84 @@ function LoadingSkeleton() {
 }
 
 export default function SearchPage({ lang }: Props) {
-  const [papers, setPapers] = useState<Paper[] | null>(null);
+  const [meta, setMeta] = useState<MetaItem[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
+  const [workerReady, setWorkerReady] = useState(false);
+  const workerRef = useRef<Worker | null>(null);
+  const queryRef = useRef('');
+  const pendingQueryRef = useRef(false);
+  const [fulltextIds, setFulltextIds] = useState<Set<number> | null>(null);
   const [selectedSources, setSelectedSources] = useState<Set<string>>(new Set());
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
   const [page, setPage] = useState(0);
 
-  // Fetch slim search data on mount
+  // Load meta on mount
   useEffect(() => {
-    setLoading(true);
     fetch(`/${lang}/search-index.json`)
       .then((res) => res.json())
-      .then((data: Paper[]) => {
-        setPapers(data);
+      .then((data: MetaItem[]) => {
+        setMeta(data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, [lang]);
 
-  // Extract unique sources and categories from data
+  // Create worker and load prebuilt index
+  useEffect(() => {
+    const w = new Worker(
+      new URL('../../lib/search.worker.ts', import.meta.url),
+      { type: 'module' },
+    );
+    workerRef.current = w;
+
+    fetch(`/${lang}/search-prebuilt.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        w.postMessage({ type: 'load', data });
+      });
+
+    w.onmessage = (e: MessageEvent) => {
+      if (e.data.type === 'loaded') {
+        setWorkerReady(true);
+      } else if (e.data.type === 'results') {
+        if (e.data.query === queryRef.current) {
+          setFulltextIds(new Set(e.data.indices));
+          pendingQueryRef.current = false;
+        }
+      }
+    };
+
+    return () => w.terminate();
+  }, [lang]);
+
+  // When worker becomes ready, re-run current query
+  useEffect(() => {
+    if (workerReady && query.trim()) {
+      workerRef.current?.postMessage({ type: 'search', query: query.trim() });
+    }
+  }, [workerReady]);
+
+  const sendToWorker = (q: string) => {
+    queryRef.current = q;
+    pendingQueryRef.current = true;
+    setFulltextIds(null);
+    workerRef.current?.postMessage({ type: 'search', query: q });
+  };
+
+  // Extract filters
   const allSources = useMemo(() => {
-    if (!papers) return [];
-    const keys = new Set(papers.map((p) => p.source).filter(Boolean));
+    if (!meta) return [];
+    const keys = new Set(meta.map((m) => m.source).filter(Boolean));
     return [...keys].sort();
-  }, [papers]);
+  }, [meta]);
 
   const allCategories = useMemo(() => {
-    if (!papers) return [];
-    const cats = new Set(papers.flatMap((p) => p.categories ?? []));
+    if (!meta) return [];
+    const cats = new Set(meta.flatMap((m) => m.categories ?? []));
     return [...cats].sort();
-  }, [papers]);
+  }, [meta]);
 
-  // Toggle helpers
   const toggleSource = (key: string) => {
     setSelectedSources((prev) => {
       const next = new Set(prev);
@@ -89,34 +142,54 @@ export default function SearchPage({ lang }: Props) {
 
   const hasFilters = selectedSources.size > 0 || selectedCategories.size > 0;
 
-  // Text search (only when papers are loaded)
-  const textResults = useMemo(
-    () => papers ? searchPapers(papers, query, lang) : [],
-    [papers, query, lang],
+  // Compute query results
+  const queryResults = useMemo(() => {
+    if (!meta) return [];
+    if (!query.trim() && !hasFilters) return [];
+
+    if (workerReady && fulltextIds && query.trim()) {
+      return fulltextIds.size === 0
+        ? []
+        : meta.filter((_, i) => fulltextIds.has(i));
+    }
+
+    // Basic search: title, authors, tags
+    if (!query.trim()) return meta;
+    const q = query.toLowerCase();
+    return meta.filter((m) => {
+      if ((m.title.en || '').toLowerCase().includes(q)) return true;
+      if ((m.title.zh || '').includes(q)) return true;
+      if ((m.authors || []).some((a) => a.name.toLowerCase().includes(q))) return true;
+      if ((m.tags || []).some((t) => t.toLowerCase().includes(q))) return true;
+      return false;
+    });
+  }, [meta, query, workerReady, fulltextIds, hasFilters]);
+
+  // Apply filters
+  const results = useMemo(
+    () =>
+      queryResults.filter((m) => {
+        if (selectedSources.size > 0 && !selectedSources.has(m.source)) return false;
+        if (selectedCategories.size > 0) {
+          const catSet = new Set(m.categories ?? []);
+          return [...selectedCategories].some((c) => catSet.has(c));
+        }
+        return true;
+      }),
+    [queryResults, selectedSources, selectedCategories],
   );
 
-  // Apply filters on top of text search
-  const results = useMemo(() => {
-    return textResults.filter((p) => {
-      if (selectedSources.size > 0 && !selectedSources.has(p.source)) return false;
-      if (selectedCategories.size > 0) {
-        const paperCats = new Set(p.categories ?? []);
-        const hasMatch = [...selectedCategories].some((c) => paperCats.has(c));
-        if (!hasMatch) return false;
-      }
-      return true;
-    });
-  }, [textResults, selectedSources, selectedCategories]);
-
-  // Reset to first page when query or filters change
+  // Reset page on query/filter change
   useEffect(() => {
     setPage(0);
   }, [query, selectedSources, selectedCategories]);
 
-  // Paginate
   const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   const clampedPage = Math.min(page, totalPages - 1);
-  const paginatedResults = results.slice(clampedPage * PAGE_SIZE, (clampedPage + 1) * PAGE_SIZE);
+  const paginatedResults = results.slice(
+    clampedPage * PAGE_SIZE,
+    (clampedPage + 1) * PAGE_SIZE,
+  );
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -135,7 +208,13 @@ export default function SearchPage({ lang }: Props) {
         <input
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            const val = e.target.value;
+            setQuery(val);
+            if (workerReady && val.trim()) {
+              sendToWorker(val.trim());
+            }
+          }}
           placeholder={t('searchPlaceholder', lang)}
           className="w-full px-6 py-4 text-lg bg-panel border border-neon-cyan/30 rounded-xl
                      text-text-primary placeholder-text-secondary font-mono
@@ -150,14 +229,24 @@ export default function SearchPage({ lang }: Props) {
           stroke="currentColor"
           strokeWidth={2}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
         </svg>
       </div>
 
-      {/* Filters (only shown when data loaded) */}
-      {!loading && papers && (
+      {/* Worker status (subtle) */}
+      {!loading && meta && !workerReady && query.trim() && (
+        <p className="text-xs text-text-secondary/40 font-mono mb-2">
+          {lang === 'zh' ? '全文索引加载中，基础搜索可用...' : 'Loading full-text index, basic search active...'}
+        </p>
+      )}
+
+      {/* Filters */}
+      {!loading && meta && (
         <div className="mb-6 space-y-3">
-          {/* Source filter */}
           {allSources.length > 0 && (
             <div className="flex items-start gap-3">
               <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
@@ -185,7 +274,6 @@ export default function SearchPage({ lang }: Props) {
             </div>
           )}
 
-          {/* Category filter */}
           {allCategories.length > 0 && (
             <div className="flex items-start gap-3">
               <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
@@ -212,7 +300,6 @@ export default function SearchPage({ lang }: Props) {
             </div>
           )}
 
-          {/* Clear filters */}
           {hasFilters && (
             <button
               onClick={clearFilters}
@@ -224,27 +311,29 @@ export default function SearchPage({ lang }: Props) {
         </div>
       )}
 
-      {/* Loading state */}
+      {/* Loading */}
       {loading && <LoadingSkeleton />}
 
-      {/* Results / Empty State */}
-      {!loading && papers && (
+      {/* Results */}
+      {!loading && meta && (query || hasFilters) && (
         <>
-          {(query || hasFilters) && (
-            <p className="text-sm text-text-secondary font-mono mb-4">
-              {results.length}{' '}
-              {lang === 'zh' ? '条结果' : `result${results.length !== 1 ? 's' : ''}`}
-            </p>
-          )}
+          <p className="text-sm text-text-secondary font-mono mb-4">
+            {results.length}{' '}
+            {lang === 'zh' ? '条结果' : `result${results.length !== 1 ? 's' : ''}`}
+          </p>
 
           {results.length > 0 ? (
             <>
               <div className="grid gap-4">
-                {paginatedResults.map((paper, i) => (
-                  <PaperCard key={paper.id} paper={paper} lang={lang} index={i} />
+                {paginatedResults.map((m, i) => (
+                  <PaperCard
+                    key={m.id}
+                    paper={m as any}
+                    lang={lang}
+                    index={i}
+                  />
                 ))}
               </div>
-              {/* Pagination */}
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-4 mt-8 font-mono text-sm">
                   <button
@@ -271,14 +360,14 @@ export default function SearchPage({ lang }: Props) {
                 </div>
               )}
             </>
-          ) : (query || hasFilters) ? (
+          ) : (
             <div className="text-center py-8">
-              <GlitchText text={t('noResults', lang)} />
+              <p className="text-xl font-mono text-neon-cyan/60">{t('noResults', lang)}</p>
               <p className="mt-4 text-sm text-text-secondary/60 font-mono">
                 {t('searchNoResultsHint', lang)}
               </p>
             </div>
-          ) : null}
+          )}
         </>
       )}
     </div>
