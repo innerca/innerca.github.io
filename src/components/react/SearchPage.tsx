@@ -2,7 +2,9 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import type { Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import { getSourceConfig } from '../../lib/source';
+import { computeGroupFrequency, getCategoryGroup } from '../../config/categories';
 import PaperCard from './PaperCard';
+import { getCachedIndex, setCachedIndex } from '../../lib/idb-cache';
 
 interface Props {
   lang: Lang;
@@ -19,10 +21,12 @@ interface MetaItem {
   date: string;
   addedDate?: string;
   citeCount: number;
+  heatScore: number;
 }
 
 const PAGE_SIZE = 20;
 const STORAGE_KEY = 'paper-radar:fulltext-enabled';
+const VISIBLE_GROUPS = 6;
 
 type SearchMode = 'quick' | 'confirming' | 'loading' | 'ready' | 'failed';
 
@@ -51,7 +55,9 @@ export default function SearchPage({ lang }: Props) {
   const pendingQueryRef = useRef(false);
   const [fulltextIds, setFulltextIds] = useState<Set<number> | null>(null);
   const [selectedSources, setSelectedSources] = useState<Set<string>>(new Set());
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+  const [selectedGroups, setSelectedGroups] = useState<Set<string>>(new Set());
+  const [showAdvanced, setShowAdvanced] = useState(false);
+  const [selectedCodes, setSelectedCodes] = useState<Set<string>>(new Set());
   const [page, setPage] = useState(0);
 
   // Doc 15: full-text search mode state
@@ -85,7 +91,7 @@ export default function SearchPage({ lang }: Props) {
     initialCheckDone.current = true;
   }, [lang]);
 
-  // Activate full-text: create worker, fetch prebuilt index
+  // Activate full-text: create worker, load prebuilt index via IndexedDB cache (stale-while-revalidate)
   const activateFulltext = () => {
     setSearchMode('loading');
 
@@ -95,13 +101,28 @@ export default function SearchPage({ lang }: Props) {
     );
     workerRef.current = w;
 
-    fetch(`/${lang}/search-prebuilt.json`)
+    const url = `/${lang}/search-prebuilt.json`;
+    let posted = false;
+
+    const loadIntoWorker = (data: unknown) => {
+      w.postMessage({ type: 'load', data });
+      posted = true;
+    };
+
+    // Cache-first: try IndexedDB
+    getCachedIndex<unknown>(url).then((cached) => {
+      if (cached) loadIntoWorker(cached);
+    });
+
+    // Network refresh: always fetch latest, update cache
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        w.postMessage({ type: 'load', data });
+        setCachedIndex(url, data);
+        if (!posted) loadIntoWorker(data);
       })
       .catch(() => {
-        setSearchMode('failed');
+        if (!posted) setSearchMode('failed');
       });
 
     w.onmessage = (e: MessageEvent) => {
@@ -142,10 +163,25 @@ export default function SearchPage({ lang }: Props) {
     return [...keys].sort();
   }, [meta]);
 
-  const allCategories = useMemo(() => {
+  // Compute grouped categories with counts
+  const categoryGroups = useMemo(() => {
     if (!meta) return [];
-    const cats = new Set(meta.flatMap((m) => m.categories ?? []));
-    return [...cats].sort();
+    const allCodes = meta.map((m) => m.categories ?? []);
+    return computeGroupFrequency(allCodes);
+  }, [meta]);
+
+  // Individual arXiv code frequencies for Advanced filters
+  const rawCategoryCounts = useMemo(() => {
+    if (!meta) return [];
+    const counts = new Map<string, number>();
+    for (const m of meta) {
+      for (const c of (m.categories ?? [])) {
+        counts.set(c, (counts.get(c) || 0) + 1);
+      }
+    }
+    return [...counts.entries()]
+      .map(([code, count]) => ({ code, count }))
+      .sort((a, b) => b.count - a.count);
   }, [meta]);
 
   const toggleSource = (key: string) => {
@@ -157,21 +193,55 @@ export default function SearchPage({ lang }: Props) {
     });
   };
 
-  const toggleCategory = (cat: string) => {
-    setSelectedCategories((prev) => {
+  const toggleGroup = (key: string) => {
+    setSelectedGroups((prev) => {
       const next = new Set(prev);
-      if (next.has(cat)) next.delete(cat);
-      else next.add(cat);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  const toggleCode = (code: string) => {
+    setSelectedCodes((prev) => {
+      const next = new Set(prev);
+      if (next.has(code)) next.delete(code);
+      else next.add(code);
       return next;
     });
   };
 
   const clearFilters = () => {
     setSelectedSources(new Set());
-    setSelectedCategories(new Set());
+    setSelectedGroups(new Set());
+    setSelectedCodes(new Set());
   };
 
-  const hasFilters = selectedSources.size > 0 || selectedCategories.size > 0;
+  const hasFilters = selectedSources.size > 0 || selectedGroups.size > 0 || selectedCodes.size > 0;
+
+  // Browse empty state: top hot papers + recent papers
+  const browseHotPapers = useMemo(() => {
+    if (!meta) return [];
+    return [...meta].sort((a, b) => b.heatScore - a.heatScore).slice(0, 4);
+  }, [meta]);
+
+  const browseRecentPapers = useMemo(() => {
+    if (!meta) return [];
+    return [...meta].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 4);
+  }, [meta]);
+
+  // Relevance scoring for basic search
+  const scoreResult = (m: MetaItem, q: string): number => {
+    const lowerQ = q.toLowerCase();
+    let score = 0;
+    const titleEn = (m.title.en || '').toLowerCase();
+    const titleZh = (m.title.zh || '').toLowerCase();
+    if (titleEn === lowerQ || titleZh === lowerQ) score += 100;
+    else if (titleEn.includes(lowerQ) || titleZh.includes(lowerQ)) score += 50;
+    if ((m.authors || []).some((a) => a.name.toLowerCase().includes(lowerQ))) score += 30;
+    if ((m.tags || []).some((t) => t.toLowerCase().includes(lowerQ))) score += 10;
+    return score;
+  };
 
   // Compute query results
   const queryResults = useMemo(() => {
@@ -179,21 +249,35 @@ export default function SearchPage({ lang }: Props) {
     if (!query.trim() && !hasFilters) return [];
 
     if (searchMode === 'ready' && workerReady && fulltextIds && query.trim()) {
+      // Full-text results: sort by heatScore then recency
       return fulltextIds.size === 0
         ? []
-        : meta.filter((_, i) => fulltextIds.has(i));
+        : meta
+            .filter((_, i) => fulltextIds.has(i))
+            .sort((a, b) => {
+              const heatDiff = b.heatScore - a.heatScore;
+              if (heatDiff !== 0) return heatDiff;
+              return new Date(b.date).getTime() - new Date(a.date).getTime();
+            });
     }
 
-    // Basic search: title, authors, tags
+    // Basic search: title, authors, tags, with relevance scoring
     if (!query.trim()) return meta;
     const q = query.toLowerCase();
-    return meta.filter((m) => {
-      if ((m.title.en || '').toLowerCase().includes(q)) return true;
-      if ((m.title.zh || '').includes(q)) return true;
-      if ((m.authors || []).some((a) => a.name.toLowerCase().includes(q))) return true;
-      if ((m.tags || []).some((t) => t.toLowerCase().includes(q))) return true;
-      return false;
-    });
+    return meta
+      .map((m) => {
+        const relevance = scoreResult(m, q);
+        return { m, relevance };
+      })
+      .filter(({ relevance }) => relevance > 0)
+      .sort((a, b) => {
+        const relDiff = b.relevance - a.relevance;
+        if (relDiff !== 0) return relDiff;
+        const heatDiff = b.m.heatScore - a.m.heatScore;
+        if (heatDiff !== 0) return heatDiff;
+        return new Date(b.m.date).getTime() - new Date(a.m.date).getTime();
+      })
+      .map(({ m }) => m);
   }, [meta, query, searchMode, workerReady, fulltextIds, hasFilters]);
 
   // Apply filters
@@ -201,19 +285,21 @@ export default function SearchPage({ lang }: Props) {
     () =>
       queryResults.filter((m) => {
         if (selectedSources.size > 0 && !selectedSources.has(m.source)) return false;
-        if (selectedCategories.size > 0) {
-          const catSet = new Set(m.categories ?? []);
-          return [...selectedCategories].some((c) => catSet.has(c));
+        if (selectedGroups.size > 0 || selectedCodes.size > 0) {
+          const paperGroups = new Set((m.categories ?? []).map((c) => getCategoryGroup(c)));
+          const groupMatch = [...selectedGroups].some((gk) => paperGroups.has(gk));
+          const codeMatch = [...selectedCodes].some((c) => (m.categories ?? []).includes(c));
+          return groupMatch || codeMatch;
         }
         return true;
       }),
-    [queryResults, selectedSources, selectedCategories],
+    [queryResults, selectedSources, selectedGroups, selectedCodes],
   );
 
   // Reset page on query/filter change
   useEffect(() => {
     setPage(0);
-  }, [query, selectedSources, selectedCategories]);
+  }, [query, selectedSources, selectedGroups, selectedCodes]);
 
   const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   const clampedPage = Math.min(page, totalPages - 1);
@@ -271,19 +357,24 @@ export default function SearchPage({ lang }: Props) {
         </svg>
       </div>
 
-      {/* Search mode strip (Doc 15) */}
+      {/* Search mode strip (Doc 15 / Doc 24: pre-click strip must explain quick search scope AND extra full-text cost) */}
       {!loading && meta && (
-        <div className="mb-6 px-4 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between">
-          <span className="text-xs font-mono text-text-secondary/70">
-            {searchMode === 'quick' && t('quickSearchActive', lang)}
-            {searchMode === 'loading' && t('fulltextLoading', lang)}
-            {searchMode === 'ready' && t('fulltextReady', lang)}
-            {searchMode === 'failed' && t('fulltextFailed', lang)}
-          </span>
+        <div className="mb-6 px-4 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between gap-4">
+          <div className="text-xs font-mono text-text-secondary/70">
+            {searchMode === 'quick' && (
+              <div className="flex flex-col gap-0.5">
+                <span>{t('searchModeTitle', lang)}</span>
+                <span className="text-[10px] text-text-secondary/50">{t('fulltextCostNote', lang)}</span>
+              </div>
+            )}
+            {searchMode === 'loading' && <span>{t('fulltextLoading', lang)}</span>}
+            {searchMode === 'ready' && <span>{t('searchModeFulltext', lang)}</span>}
+            {searchMode === 'failed' && <span>{t('fulltextFailed', lang)}</span>}
+          </div>
           {searchMode === 'quick' && (
             <button
               onClick={() => setSearchMode('confirming')}
-              className="text-xs font-mono text-neon-cyan/70 hover:text-neon-cyan px-2.5 py-1 rounded border border-neon-cyan/20 hover:border-neon-cyan/50 transition-all"
+              className="shrink-0 text-xs font-mono text-neon-cyan/70 hover:text-neon-cyan px-2.5 py-1 rounded border border-neon-cyan/20 hover:border-neon-cyan/50 transition-all"
             >
               {t('enableFulltext', lang)}
             </button>
@@ -291,7 +382,7 @@ export default function SearchPage({ lang }: Props) {
           {searchMode === 'failed' && (
             <button
               onClick={activateFulltext}
-              className="text-xs font-mono text-accent-red/70 hover:text-accent-red px-2.5 py-1 rounded border border-accent-red/20 hover:border-accent-red/50 transition-all"
+              className="shrink-0 text-xs font-mono text-accent-red/70 hover:text-accent-red px-2.5 py-1 rounded border border-accent-red/20 hover:border-accent-red/50 transition-all"
             >
               {t('enableFulltext', lang)}
             </button>
@@ -380,25 +471,64 @@ export default function SearchPage({ lang }: Props) {
             </div>
           )}
 
-          {allCategories.length > 0 && (
+          {categoryGroups.length > 0 && (
             <div className="flex items-start gap-3">
               <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
                 {t('filterCategory', lang)}:
               </span>
               <div className="flex flex-wrap gap-1.5">
-                {allCategories.map((cat) => {
-                  const active = selectedCategories.has(cat);
+                {categoryGroups.slice(0, VISIBLE_GROUPS).map((g) => {
+                  const active = selectedGroups.has(g.key);
                   return (
                     <button
-                      key={cat}
-                      onClick={() => toggleCategory(cat)}
-                      className={`px-2 py-0.5 text-[11px] font-mono rounded border transition-all
+                      key={g.key}
+                      onClick={() => toggleGroup(g.key)}
+                      className={`px-2 py-0.5 text-[11px] font-mono rounded border transition-all duration-200
                         ${active
                           ? 'bg-neon-purple/20 text-neon-purple border-neon-purple/50'
-                          : 'bg-transparent text-text-secondary/60 border-text-secondary/20 hover:border-text-secondary/40'
+                          : 'bg-transparent text-text-secondary/40 border-text-secondary/10 hover:border-text-secondary/30 hover:text-text-secondary/60'
                         }`}
                     >
-                      {cat}
+                      {g.label[lang]} ({g.count})
+                    </button>
+                  );
+                })}
+
+                {/* Advanced filters toggle (Doc 24: level-2 taxonomy) */}
+                <button
+                  onClick={() => setShowAdvanced((prev) => !prev)}
+                  className={`px-2 py-0.5 text-[11px] font-mono rounded border transition-all duration-200
+                    ${showAdvanced
+                      ? 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan/40'
+                      : 'border-dashed border-text-secondary/20 text-text-secondary/40 hover:border-text-secondary/40 hover:text-text-secondary/60'
+                    }`}
+                >
+                  {showAdvanced ? '↑ ' : ''}{t('advancedFilters', lang)}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Advanced filters: individual arXiv taxonomy codes (Doc 24) */}
+          {showAdvanced && rawCategoryCounts.length > 0 && (
+            <div className="flex items-start gap-3 pt-3 border-t border-white/5">
+              <span className="text-[10px] text-text-secondary/40 font-mono mt-1 shrink-0">
+                {lang === 'zh' ? '分类代码' : 'Taxonomy codes'}:
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {rawCategoryCounts.slice(0, 30).map(({ code, count }) => {
+                  const active = selectedCodes.has(code);
+                  return (
+                    <button
+                      key={code}
+                      onClick={() => toggleCode(code)}
+                      className={`px-1.5 py-0.5 text-[10px] font-mono rounded border transition-all duration-200
+                        ${active
+                          ? 'bg-neon-cyan/15 text-neon-cyan border-neon-cyan/40'
+                          : 'bg-transparent text-text-secondary/30 border-text-secondary/10 hover:border-text-secondary/30 hover:text-text-secondary/50'
+                        }`}
+                    >
+                      {code} ({count})
                     </button>
                   );
                 })}
@@ -473,7 +603,6 @@ export default function SearchPage({ lang }: Props) {
                 {t('searchNoResultsHint', lang)}
               </p>
               <div className="flex items-center justify-center gap-4 mt-6">
-                {/* Full-text CTA in empty state (Doc 15) */}
                 {searchMode === 'quick' && (
                   <button
                     onClick={() => setSearchMode('confirming')}
@@ -494,6 +623,58 @@ export default function SearchPage({ lang }: Props) {
             </div>
           )}
         </>
+      )}
+
+      {/* Browse empty state (Doc 23: lightweight browse when no query) */}
+      {!loading && meta && !query.trim() && !hasFilters && (
+        <div className="space-y-8">
+          {/* Rising now */}
+          <section>
+            <h2 className="text-lg font-bold text-gradient-cyan tracking-wide mb-3">
+              🔥 {t('risingNow', lang)}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {browseHotPapers.map((m, i) => (
+                <PaperCard key={m.id} paper={m as any} lang={lang} index={i} />
+              ))}
+            </div>
+          </section>
+
+          {/* Recently added */}
+          <section>
+            <h2 className="text-lg font-bold text-gradient-cyan-purple tracking-wide mb-3">
+              🕐 {t('recentlyAdded', lang)}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {browseRecentPapers.map((m, i) => (
+                <PaperCard key={m.id} paper={m as any} lang={lang} index={i} />
+              ))}
+            </div>
+          </section>
+
+          {/* Browse by domain */}
+          <section>
+            <h2 className="text-lg font-bold text-text-primary tracking-wide mb-3">
+              📂 {t('browseDomain', lang)}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {categoryGroups.map((g) => (
+                <button
+                  key={g.key}
+                  onClick={() => toggleGroup(g.key)}
+                  className="px-3 py-1.5 text-sm font-mono rounded-lg border border-text-secondary/20
+                    text-text-secondary/70 hover:text-neon-cyan hover:border-neon-cyan/40
+                    transition-all duration-200"
+                >
+                  {g.label[lang]}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-text-secondary/40 font-mono mt-3">
+              {lang === 'zh' ? '点击分类开始浏览' : 'Click a category to start browsing'}
+            </p>
+          </section>
+        </div>
       )}
     </div>
   );
