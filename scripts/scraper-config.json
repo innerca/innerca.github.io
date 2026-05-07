@@ -2,6 +2,7 @@
   "sources": [
     {
       "key": "arxiv",
+      "enabled": true,
       "apiUrl": "https://export.arxiv.org/api/query",
       "rateLimitMs": 3000,
       "schedule": "0 6 * * *",

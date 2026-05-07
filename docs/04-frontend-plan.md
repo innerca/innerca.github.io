@@ -11,8 +11,13 @@ paper-radar/
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── config/
+│   │   ├── sources.ts        # 来源注册表（6 来源）
+│   │   ├── features.ts       # 功能开关
+│   │   ├── performance.ts    # 性能参数（trending 配置等）
+│   │   └── site.ts           # 站点配置
 │   ├── data/
-│   │   └── papers.json        # 静态论文数据（5条）
+│   │   └── papers.json        # 静态论文数据（~30 篇，脚本自动更新）
 │   ├── layouts/
 │   │   └── BaseLayout.astro   # 全局布局壳
 │   ├── pages/
@@ -34,7 +39,9 @@ paper-radar/
 │   │   │   ├── PaperCard.tsx
 │   │   │   ├── CountUp.tsx
 │   │   │   ├── GlitchText.tsx
-│   │   │   └── LanguageSwitcher.tsx
+│   │   │   ├── LanguageSwitcher.tsx
+│   │   │   ├── SourceBadge.tsx
+│   │   │   └── ShareButton.tsx
 │   │   ├── astro/             # 纯展示 Astro 组件
 │   │   │   ├── HeroSection.astro
 │   │   │   ├── StatsBar.astro
@@ -46,14 +53,19 @@ paper-radar/
 │   │   │   ├── Navbar.astro
 │   │   │   ├── Footer.astro
 │   │   │   ├── LoadingSkeleton.astro
-│   │   │   └── SearchTrigger.astro
+│   │   │   ├── SearchTrigger.astro
+│   │   │   └── SourceBadge.astro
 │   │   └── ui/                # 纯 CSS 样式组件
 │   │       └── gradients.css
 │   ├── lib/
-│   │   ├── search.ts          # FlexSearch 索引构建 + 查询
-│   │   └── i18n.ts            # 多语言工具函数
+│   │   ├── search.ts          # 子串搜索兜底
+│   │   ├── searchEngine.ts    # FlexSearch 双语全文索引
+│   │   ├── source.ts          # 多来源工具函数
+│   │   ├── date.ts            # 相对时间 / NEW 标记
+│   │   └── i18n.ts            # 多语言文案配置
 │   ├── types/
-│   │   └── paper.ts           # TypeScript 类型定义
+│   │   ├── paper.ts           # Paper、PaperSource、CrawlEntry 等
+│   │   └── domain.ts          # ResearchDomain
 │   └── styles/
 │       ├── global.css         # 全局样式、CSS 变量
 │       └── particles.css      # 粒子 Canvas 样式
@@ -64,25 +76,25 @@ paper-radar/
 ```
                     ┌──────────────────┐
                     │  papers.json     │ (构建时)
-                    │  5 条双语数据    │
+                    │  ~30 篇真实论文   │
                     └────────┬─────────┘
                              │
-              ┌──────────────┴──────────────┐
-              │                             │
-     ┌────────▼────────┐          ┌─────────▼────────┐
-     │ Astro 页面组件   │          │ FlexSearch 索引   │
-     │ (构建时渲染)     │          │ (构建时生成)       │
-     └────────┬────────┘          └─────────┬────────┘
-              │                             │
-     ┌────────▼────────┐          ┌─────────▼────────┐
-     │ React 岛屿组件  │          │ 前端搜索运行时    │
-     │ (客户端水合)    │          │ (实时过滤 + 高亮) │
-     └─────────────────┘          └──────────────────┘
+              ┌──────────────┴──────────────────┐
+              │                                  │
+     ┌────────▼────────┐              ┌──────────▼────────┐
+     │ Astro 页面组件   │              │ FlexSearch 索引   │
+     │ (构建时渲染)     │              │ (客户端构建)       │
+     └────────┬────────┘              └──────────┬────────┘
+              │                                  │
+     ┌────────▼────────┐              ┌──────────▼────────┐
+     │ React 岛屿组件  │              │ 搜索运行时         │
+     │ (客户端水合)    │              │ (实时过滤 + 兜底)  │
+     └─────────────────┘              └───────────────────┘
 ```
 
-- **静态数据**：所有页面在构建时通过 `Astro.glob()` 或直接 import 载入 `papers.json`
-- **详情页**：使用 Astro 动态路由 `[id].astro`，通过 `params` 匹配论文 ID
-- **搜索**：构建时用 FlexSearch 创建索引，以 JSON 嵌入页面；客户端实时搜索
+- **静态数据**：所有页面在构建时通过 `import` 载入 `papers.json`
+- **详情页**：使用 Astro 动态路由 `[id].astro`，通过 `params` 匹配论文 ID；使用 `getPrimarySource()` 和 `getExternalUrl()` 多来源兼容
+- **搜索**：客户端 FlexSearch Document 索引（7 字段），兜底到 `search.ts` 子串匹配
 - **多语言**：通过 Astro 的 `prefixDefaultLocale` 路由策略，`/zh/` 和 `/en/` 两组独立页面
 
 ## 三、组件详细设计
@@ -153,13 +165,15 @@ SearchPage（React 岛屿）
 ```
 PaperDetail.astro（纯 Astro，构建时渲染）
 ├── 标题（霓虹渐变）
-├── 核心要点（有序列表）
+├── 核心要点
 ├── 摘要
-├── 元数据（日期、来源、引用数）
+├── 元数据（日期、SourceBadge、引用数、收录时间）
 ├── 标签列表
 │   └── <TagBadge /> × N
-└── 外部链接按钮
-    └── <NeonButton />
+├── 外部链接按钮
+│   └── <NeonButton />
+└── 分享按钮
+    └── <ShareButton client:load />  — Web Share / 邮件 / 复制链接
 ```
 
 ## 四、样式系统
@@ -215,25 +229,39 @@ theme: {
 ## 六、搜索实现
 
 ```typescript
-// 构建时（lib/search.ts）
+// 客户端（lib/searchEngine.ts）
 import FlexSearch from 'flexsearch'
 
-export function buildIndex(papers: Paper[], lang: 'zh' | 'en') {
-  const index = new FlexSearch.Document({
-    tokenize: lang === 'zh' ? 'forward' : 'forward',
+let index: FlexSearch.Document<Paper, string[]> | null = null
+
+export function buildSearchIndex(papers: Paper[]) {
+  index = new FlexSearch.Document({
+    tokenize: 'forward',
     document: {
       id: 'id',
-      index: ['title', 'summary', 'tags'],
+      index: [
+        'title.zh', 'title.en',
+        'summary.zh', 'summary.en',
+        'core_points.zh', 'core_points.en',
+        'tags',
+      ],
     },
   })
-  papers.forEach(p => index.add(p))
-  return index
+  papers.forEach(p => index!.add(p))
+}
+
+export function searchPapers(papers: Paper[], query: string, lang: Lang): Paper[] {
+  try {
+    // FlexSearch 搜索，try/catch 兜底
+  } catch {
+    return fallbackSubstringSearch(papers, query, lang)
+  }
 }
 ```
 
-- 按语言构建两个独立索引
-- 索引导出为 JSON 在页面加载时恢复
-- 搜索结果高亮通过正则替换匹配词
+- 单索引覆盖 7 个字段，支持中英文混合搜索
+- 使用 `tokenize: 'forward'` 提高中文匹配度
+- `try/catch` 兜底到子串匹配，FlexSearch 不可用时无退化
 
 ## 七、响应式断点
 

@@ -5,6 +5,8 @@ export interface Paper {
   source: string;
   /** Primary source URL */
   url: string;
+  /** Digital Object Identifier (for cross-source dedup) */
+  doi?: string;
   title: BilingualField;
   summary: BilingualField;
   core_points: BilingualField;

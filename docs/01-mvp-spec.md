@@ -19,7 +19,11 @@
 | 搜索 | FlexSearch (轻量全文检索) |
 | 粒子背景 | 自写 Canvas 组件 (无依赖) |
 | 多语言 | Astro i18n 路由 (`/zh`, `/en`) |
-| 数据 | `src/data/papers.json` (静态 JSON) |
+| 配置 | `src/config/` (来源注册表、功能开关、性能参数) |
+| 数据 | `src/data/papers.json` (静态 JSON，由脚本自动更新) |
+| 数据采集 | `scripts/fetch.js` 调度器 + `fetch-arxiv.js` arXiv 模块 |
+| 跨源去重 | `scripts/lib/dedup.js` (DOI / arXiv ID / 标题三级匹配) |
+| 部署 | GitHub Pages (Actions 定时构建) |
 
 ## 3. 视觉风格
 ### 3.1 颜色
@@ -75,7 +79,8 @@
 - `<LatestPapers />` - 纵向卡片列表，分页或“加载更多”
 
 **详情页** (`pages/zh/paper/[id].astro`)：
-- `<PaperDetail />` - 标题、核心要点、摘要、元数据、标签
+- `<PaperDetail />` - 标题、核心要点、摘要、元数据、来源标签、标签列表、外部链接
+- `<ShareButton />` - 分享（Web Share API）、复制链接、邮件发送
 
 **搜索页** (`pages/zh/search.astro`)：
 - `<SearchPage />` - 搜索框 + 结果列表，复用卡片组件
@@ -83,30 +88,60 @@
 ### 通用 UI 组件
 - `PaperCard` (React)：复用性最高的卡片，接收 `paper` 对象和语言设置
 - `TagBadge`：小标签
+- `SourceBadge` (Astro + React)：来源标签，带颜色和图标
 - `NeonButton`：霓虹边框按钮
+- `ShareButton` (React)：分享/复制链接/邮件发送
 - `CountUp`：数字滚动动画
 - `GlitchText`：故障效果文本 (用于错误/空状态)
 - `LoadingSkeleton`：卡片闪烁占位
 
 ## 6. 数据格式 (`papers.json`)
-示例结构（所有文本字段均为双语对象）：
+当前 ~30 篇真实 arXiv 论文，由 `scripts/fetch-papers.js` 自动采集，GitHub Actions 每日更新。示例结构（多来源字段均已可选，向后兼容）：
+
 ```json
 [
   {
-    "id": "2301.12345",
-    "title": { "zh": "扩散模型在分子生成中的应用", "en": "Diffusion Models for Molecule Generation" },
-    "summary": { "zh": "该论文提出...", "en": "This paper proposes..." },
-    "core_points": { "zh": "1. 新架构...", "en": "1. New architecture..." },
-    "tags": ["扩散模型", "药物发现"],
-    "entities": [ {"name": "Diffusion", "type": "method"}, {"name": "QM9", "type": "dataset"} ],
-    "date": "2025-01-15",
-    "citeCount": 42,
+    "id": "2605.05207",
+    "title": { "zh": "...", "en": "..." },
+    "summary": { "zh": "...", "en": "..." },
+    "core_points": { "zh": "", "en": "" },
+    "tags": ["...", "..."],
+    "entities": [ {"name": "...", "type": "method"} ],
+    "date": "2026-05-06",
+    "addedDate": "2026-05-07",
+    "citeCount": 0,
     "isTrending": false,
-    "source": "arXiv",
-    "url": "https://arxiv.org/abs/2301.12345"
+    "source": "arxiv",
+    "url": "https://arxiv.org/abs/2605.05207",
+    "authors": [
+      {"name": "...", "affiliations": ["..."]}
+    ],
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2605.05207",
+        "url": "https://arxiv.org/abs/2605.05207",
+        "citeCount": 0,
+        "lastCrawled": "2026-05-07T06:00:00Z",
+        "crawlStatus": "success"
+      }
+    ],
+    "domains": ["natural-language-processing"],
+    "relatedPapers": [],
+    "status": "auto",
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T06:00:00Z",
+        "status": "success",
+        "papersFound": 1
+      }
+    ]
   }
 ]
 ```
+
+所有 `sources`、`crawlHistory`、`domains`、`relatedPapers`、`curation` 字段均为可选，支持未来多源扩展而不破坏现有代码。
 
 ## 7. 动画要求
 - **页面过渡**：使用 Framer Motion `AnimatePresence`，淡入淡出 (opacity 0↔1, duration 0.2s)
@@ -117,9 +152,10 @@
 - **粒子背景**：canvas 动画，约 60 个粒子，连线距离 < 100px，速度极慢
 
 ## 8. 搜索功能 (FlexSearch)
-- 构建时预生成搜索索引（中文按字分词，英文按词分词）
-- 前端实时过滤，搜索结果高亮匹配词
-- 支持中英文混合搜索
+- 客户端实时搜索，FlexSearch Field-Document 索引（7 个字段：title/zh/en、summary/zh/en、core_points/zh/en、tags）
+- 搜索跨语言：输入中文可匹配英文摘要，反之亦然
+- 兜底到子串匹配（FlexSearch 不可用时）
+- 搜索页使用 React 岛屿 `client:only` 模式加载
 
 ## 9. 性能指标 (Lighthouse)
 - Performance > 90
@@ -129,11 +165,21 @@
 
 ## 10. 交付物
 1. 完整的 Astro 项目，含所有页面、组件、样式
-2. 示例 `papers.json` 包含 5 篇模拟数据
-3. 粒子背景独立组件
-4. 多语言路由完美运行
-5. 所有动画流畅
-6. 响应式设计 (桌面/平板/手机)
+2. `scripts/fetch.js` — 多源爬取调度器（可扩展 OpenReview、DBLP 等）
+3. `scripts/fetch-arxiv.js` — arXiv 爬取模块
+4. `scripts/lib/dedup.js` — 跨源去重引擎（DOI → arXiv ID → 标题三级匹配）
+5. `scripts/scraper-config.json` — 爬取配置集中管理
+6. `scripts/fetch-papers.js` — 向后兼容别名
+7. `src/config/sources.ts` — 来源注册表（arXiv、OpenReview、Semantic Scholar 等 6 来源）
+8. `src/lib/searchEngine.ts` — FlexSearch 双语搜索引擎
+9. `src/lib/date.ts` — 相对时间、NEW 标记等日期工具
+10. `src/lib/source.ts` — 多来源工具函数
+11. 来源标签组件 (SourceBadge) + 分享按钮组件 (ShareButton)
+12. GitHub Actions 每日自动采集 → 构建 → 部署
+13. 粒子背景独立组件
+14. 多语言路由完美运行
+15. 所有动画流畅
+16. 响应式设计 (桌面/平板/手机)
 
 ---
 

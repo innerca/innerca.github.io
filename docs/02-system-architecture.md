@@ -50,13 +50,15 @@
 
 | 模块 | 功能说明 | 阶段 |
 |------|----------|------|
-| 📥 多源采集 | 定时抓取 arXiv + Semantic Scholar 等论文元数据及引用量 | MVP |
-| 🤖 AI 加工 | 生成中英双语摘要、核心要点、实体标签，输出结构化 JSON | MVP |
-| 🌍 多语言展示 | 网站 UI 和论文内容均按 `/zh` `/en` 路由提供 | MVP |
+| 📥 多源采集 | 定时抓取 arXiv + Semantic Scholar 论文元数据及引用量 | MVP |
+| 🌍 多语言展示 | 网站 UI 按 `/zh` `/en` 路由提供，论文内容待 AI 翻译接入 | MVP |
 | 🎮 游戏化 UI | 暗色粒子背景、霓虹发光卡片、动态数字、交错动画 | MVP |
-| 🔍 全文搜索 | 纯前端 FlexSearch，支持中英文 | MVP |
-| 📡 RSS/API | 构建时生成多语言 Feed、机器可读 JSON 端点 | MVP |
-| 🛡️ 高性能 | 首屏 < 2s，动画 60fps，PWA 离线访问 | MVP |
+| 🔍 全文搜索 | 纯前端 FlexSearch，7 字段中英文混合搜索 | MVP |
+| 🔗 多来源标识 | 来源标签组件，展示论文所属多个来源 | MVP |
+| 📨 分享 | Web Share API + 复制链接 + 邮件发送 | MVP |
+| 🤖 AI 加工 | 生成中英双语摘要、核心要点（计划接入 Groq） | 第二阶段 |
+| 📡 RSS/API | 构建时生成多语言 Feed、机器可读 JSON 端点 | 第二阶段 |
+| 🛡️ 高性能 | 首屏 < 2s，动画 60fps | MVP |
 | 👩‍💻 AI 运维 | 通过 Issue 让 AI 修改主题、添加组件，自动 PR | 第二阶段 |
 | 🧠 知识图谱 | 实体关系可视化 (react-force-graph) | 第二阶段 |
 | 💬 AI 问答 | Worker 代理 LLM，结合论文库即时回答 | 第三阶段 |
@@ -75,19 +77,42 @@
 | 数据源 | `papers.json` | 全部内容唯一源头 |
 | AI 模型 | Groq (Llama 3.1) 或 GPT‑4o‑mini | 成本极低，支持 JSON 模式 |
 | 前端搜索 | FlexSearch | 纯客户端全文检索 |
-| 部署平台 | Cloudflare Pages | 无限流量，自带 CDN、限流 |
-| 调度 | GitHub Actions | 定时采集、总结、构建 |
+| 部署平台 | GitHub Pages | 免费静态托管 |
+| 调度 | GitHub Actions | 定时采集、构建、部署 |
+| 数据采集 | `scripts/fetch.js` + `fetch-arxiv.js` | 多源调度器 + 模块架构 |
+| 跨源去重 | `scripts/lib/dedup.js` | DOI/arXiv ID/标题三级匹配 |
 | 监控/限流 | Cloudflare WAF + Rate Limiting | 免费层级即够用 |
 
 ---
 
 ## 6. 数据流水线过程  
 
-1. **采集**：`fetcher_arxiv.py` 拉取最近 1～3 天论文 → `new.json`  
-2. **补充**：`enricher_s2.py` 查询引用量和影响指数 (可选)  
-3. **AI 加工**：`summarizer.py` 调用 LLM → 输出双语结构化 JSON (含摘要、标签、实体)  
-4. **持久化**：将新条目增量追加至 `src/data/papers.json`  
-5. **部署触发**：`papers.json` 推送到仓库 → GitHub Actions 自动执行 `npm run build` → 部署到 Cloudflare Pages  
+1. **采集**：`scripts/fetch.js`（调度器）读取 `scripts/scraper-config.json` 配置，依次调用各数据源爬取模块  
+   - **arXiv**：`scripts/fetch-arxiv.js` 通过 arXiv API 拉取最新论文 → 解析为结构化 Paper 对象  
+   - 后续可扩展 OpenReview、DBLP 等（只需新增 `fetch-xxx.js` 模块 + 在 `fetch.js` 注册一个 `case`）  
+2. **补充**：通过 Semantic Scholar batch API 查询每篇论文的引用量（arXiv 模块内置）  
+3. **跨源去重**：`scripts/lib/dedup.js` 按 DOI → arXiv ID → 标题归一化的优先级匹配，同一篇论文跨来源自动合并 `sources[]`，不重复收录  
+4. **趋势计算**：30 天内论文按引用数取 Top 5，无引用数据时按日期降序  
+5. **持久化**：新条目按 arXiv ID 去重后增量追加至 `src/data/papers.json`，保留 `crawlHistory`  
+6. **部署触发**：`papers.json` 推送到仓库 → GitHub Actions 执行 `npm run fetch && npm run build` → 部署到 GitHub Pages  
+
+### 旧脚本兼容
+- `scripts/fetch-papers.js` 保留为向后兼容的别名，调用 `fetch.js` 并显示 deprecation 提示
+- `npm run fetch-papers` 和 `npm run fetch` 均可运行
+
+### 历史数据回填
+- 见 `scripts/fetch-history.js`：按月分块，结合 arXiv API 的 `submittedDate` 过滤，逐一爬取历史月份
+- 6 个月历史 ≈ 50 秒，12 个月 ≈ 90 秒
+
+### 多来源数据模型
+- 来源注册表 `src/config/sources.ts`：arXiv、OpenReview、Semantic Scholar、DBLP、X/Twitter、Other
+- 每篇论文的 `sources[]` 数组记录多来源信息（ID、URL、引用数、爬取状态）
+- PaperCard 和 PaperDetail 通过 `SourceBadge` 展示来源标签，颜色和图标由注册表配置
+
+### 后续 AI 加工（第二阶段）
+- 接入 Groq（Llama 模型），生成正式的中英双语核心要点和摘要优化
+- 自动实体识别和跨领域关联
+- 接入后修改 `fetch-papers.js` 或新增 `scripts/llm-enrich.js`
 
 此流水线每天自动运行一次，完全无需人工干预。
 
@@ -108,9 +133,9 @@
 | 事项 | 方案 |
 |------|------|
 | 代码托管 | GitHub 公开仓库 |
-| 自动部署 | 推送 main 分支 → Cloudflare Pages 自动构建 |
-| 域名 | 自定义域名 `mijiu.top` (可选) |
-| 成本 | Cloudflare 免费计划 + LLM 免费额度 ≈ 零成本 |
+| 自动部署 | 每日 06:00 UTC 定时 Actions → `npm run fetch-papers` → `npm run build` → GitHub Pages |
+| 域名 | GitHub Pages 默认域名 (`innerca.github.io`) |
+| 成本 | GitHub 免费计划 + 后续 LLM (Groq) ≈ 零成本 |
 | AI 维护 | 通过 Issue 触发 Actions 脚本，AI 读指令、改代码、提 PR |
 
 ---

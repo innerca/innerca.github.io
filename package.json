@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "fetch": "node scripts/fetch.js",
     "fetch-papers": "node scripts/fetch-papers.js"
   },
   "dependencies": {
