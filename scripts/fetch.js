@@ -3,7 +3,7 @@
 /**
  * Paper Scraper Coordinator
  *
- * Orchestrates multi-source paper fetching, deduplication, and trending.
+ * Orchestrates multi-source paper fetching, deduplication, and tiered storage.
  *
  * Usage: node scripts/fetch.js
  * Schedule: daily via GitHub Actions (UTC 06:00)
@@ -20,38 +20,6 @@ import { splitByTier, loadWarm, writeWarm, writeCold } from './lib/tiers.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONFIG_FILE = path.resolve(__dirname, './scraper-config.json');
 const DATA_FILE = path.resolve(__dirname, '../src/data/papers.json');
-
-// ─── Trending ────────────────────────────────────────────────────
-
-/**
- * Determine trending papers based on recency + citation count.
- * Falls back to date-based sorting when citation data is unavailable.
- */
-function computeTrending(papers, { windowDays = 30, topN = 5, minCiteCount = 0 } = {}) {
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - windowDays);
-  const cutoffStr = cutoff.toISOString().split('T')[0];
-
-  const candidates = papers
-    .filter((p) => p.date && p.date >= cutoffStr && (p.citeCount || 0) >= minCiteCount)
-    .sort((a, b) => {
-      const citeDiff = (b.citeCount || 0) - (a.citeCount || 0);
-      if (citeDiff !== 0) return citeDiff;
-      return (b.date || '').localeCompare(a.date || '');
-    });
-
-  const trendingIds = new Set(candidates.slice(0, topN).map((p) => p.id));
-
-  for (const paper of papers) {
-    if (paper.status === 'curated') continue;
-    paper.isTrending = trendingIds.has(paper.id);
-  }
-
-  const trendCount = papers.filter((p) => p.isTrending).length;
-  console.log(`  Trending: ${trendCount} papers (window: ${windowDays}d, top ${topN})`);
-
-  return papers;
-}
 
 // ─── Source dispatcher ────────────────────────────────────────────
 
@@ -123,10 +91,7 @@ async function main() {
     console.log(`  Kept/updated: ${stats.kept}`);
     console.log(`  Total after merge: ${stats.total}`);
 
-    // 5. Compute trending
-    computeTrending(merged);
-
-    // 6. Split into tiers and write
+    // 5. Split into tiers and write
     const { hot: newHot, warm: newWarm, cold: newCold } = splitByTier(merged);
 
     await writeFile(DATA_FILE, JSON.stringify(newHot, null, 2) + '\n');
