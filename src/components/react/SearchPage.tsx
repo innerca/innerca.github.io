@@ -22,6 +22,11 @@ interface MetaItem {
   addedDate?: string;
   citeCount: number;
   heatScore: number;
+  sCite: number;
+  sCode: number;
+  sBuzz: number;
+  sFresh: number;
+  burstBonus: number;
 }
 
 const PAGE_SIZE = 20;
