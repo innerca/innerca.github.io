@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node -e \"const p=require('./src/data/papers.json'); const fs=require('fs'); const latest=p.toSorted((a,b)=>b.date.localeCompare(a.date))[0]?.date||''; fs.writeFileSync('src/data/stats.json', JSON.stringify({totalPapers:p.length,generatedAt:new Date().toISOString().split('T')[0],latestPaperDate:latest},null,2)+'\\n')\"",
     "build": "astro build",
     "preview": "astro preview",
     "fetch": "node scripts/fetch.js",
