@@ -56,7 +56,11 @@ export async function fetchArxivPapers(config) {
   console.log(`  Categories: ${config.categories.join(', ')}`);
   console.log(`  URL: ${url}\n`);
 
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    headers: {
+      'User-Agent': 'PaperRadar/1.0 (arXiv crawler; https://innerca.github.io)',
+    },
+  });
   if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText}`);
 
   const xml = await res.text();
