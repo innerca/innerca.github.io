@@ -6,6 +6,7 @@ import { formatDateWithRelative } from '../../lib/date';
 import TagBadge from './TagBadge.astro';
 import NeonButton from './NeonButton.astro';
 import SourceBadge from './SourceBadge.astro';
+import ShareButton from '../react/ShareButton';
 
 export interface Props {
   paper: Paper;
@@ -90,4 +91,5 @@ const addedDate = paper.addedDate ? formatDateWithRelative(paper.addedDate, lang
 
   <!-- External link -->
   <NeonButton href={externalUrl} label={t('viewOriginal', lang)} external />
+  <ShareButton client:load {paper} {lang} />
 </article>
