@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { searchPapers } from '../../lib/searchEngine';
 import { t } from '../../lib/i18n';
+import { getSourceConfig } from '../../lib/source';
 import PaperCard from './PaperCard';
 import GlitchText from './GlitchText';
 
@@ -12,16 +13,69 @@ interface Props {
 
 export default function SearchPage({ papers, lang }: Props) {
   const [query, setQuery] = useState('');
+  const [selectedSources, setSelectedSources] = useState<Set<string>>(new Set());
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
 
-  const results = useMemo(
+  // Extract unique sources and categories from data
+  const allSources = useMemo(() => {
+    const keys = new Set(papers.map((p) => p.source).filter(Boolean));
+    return [...keys].sort();
+  }, [papers]);
+
+  const allCategories = useMemo(() => {
+    const cats = new Set(papers.flatMap((p) => p.categories ?? []));
+    return [...cats].sort();
+  }, [papers]);
+
+  // Toggle helpers
+  const toggleSource = (key: string) => {
+    setSelectedSources((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  const toggleCategory = (cat: string) => {
+    setSelectedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      return next;
+    });
+  };
+
+  const clearFilters = () => {
+    setSelectedSources(new Set());
+    setSelectedCategories(new Set());
+  };
+
+  const hasFilters = selectedSources.size > 0 || selectedCategories.size > 0;
+
+  // Text search
+  const textResults = useMemo(
     () => searchPapers(papers, query, lang),
     [papers, query, lang],
   );
 
+  // Apply filters on top of text search
+  const results = useMemo(() => {
+    return textResults.filter((p) => {
+      if (selectedSources.size > 0 && !selectedSources.has(p.source)) return false;
+      if (selectedCategories.size > 0) {
+        const paperCats = new Set(p.categories ?? []);
+        const hasMatch = [...selectedCategories].some((c) => paperCats.has(c));
+        if (!hasMatch) return false;
+      }
+      return true;
+    });
+  }, [textResults, selectedSources, selectedCategories]);
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       {/* Search Input */}
-      <div className="relative mb-8">
+      <div className="relative mb-6">
         <input
           type="text"
           value={query}
@@ -44,8 +98,77 @@ export default function SearchPage({ papers, lang }: Props) {
         </svg>
       </div>
 
+      {/* Filters */}
+      <div className="mb-6 space-y-3">
+        {/* Source filter */}
+        {allSources.length > 0 && (
+          <div className="flex items-start gap-3">
+            <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
+              {t('filterSource', lang)}:
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {allSources.map((key) => {
+                const cfg = getSourceConfig(key);
+                const active = selectedSources.has(key);
+                return (
+                  <button
+                    key={key}
+                    onClick={() => toggleSource(key)}
+                    className={`px-2.5 py-1 text-xs font-mono rounded-full border transition-all
+                      ${active
+                        ? 'border-neon-cyan text-neon-cyan bg-neon-cyan/10 shadow-[0_0_8px_rgba(0,240,255,0.2)]'
+                        : 'border-text-secondary/30 text-text-secondary/70 hover:border-text-secondary/60'
+                      }`}
+                    style={active ? {} : {}}
+                  >
+                    {cfg?.icon ?? '🔗'} {cfg?.label.en ?? key}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Category filter */}
+        {allCategories.length > 0 && (
+          <div className="flex items-start gap-3">
+            <span className="text-xs text-text-secondary font-mono mt-1 shrink-0">
+              {t('filterCategory', lang)}:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {allCategories.map((cat) => {
+                const active = selectedCategories.has(cat);
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => toggleCategory(cat)}
+                    className={`px-2 py-0.5 text-[11px] font-mono rounded border transition-all
+                      ${active
+                        ? 'bg-neon-purple/20 text-neon-purple border-neon-purple/50'
+                        : 'bg-transparent text-text-secondary/60 border-text-secondary/20 hover:border-text-secondary/40'
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Clear filters */}
+        {hasFilters && (
+          <button
+            onClick={clearFilters}
+            className="text-xs text-text-secondary/50 hover:text-accent-red font-mono transition-colors"
+          >
+            ✕ {t('filterClear', lang)}
+          </button>
+        )}
+      </div>
+
       {/* Results Count */}
-      {query && (
+      {(query || hasFilters) && (
         <p className="text-sm text-text-secondary font-mono mb-4">
           {results.length}{' '}
           {lang === 'zh' ? '条结果' : `result${results.length !== 1 ? 's' : ''}`}
@@ -59,7 +182,7 @@ export default function SearchPage({ papers, lang }: Props) {
             <PaperCard key={paper.id} paper={paper} lang={lang} index={i} />
           ))}
         </div>
-      ) : query ? (
+      ) : (query || hasFilters) ? (
         <GlitchText text={t('noResults', lang)} />
       ) : null}
     </div>
