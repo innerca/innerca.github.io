@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/astro/HeroSection.astro';
+import StatsBar from '../../components/astro/StatsBar.astro';
+import TrendingPapers from '../../components/astro/TrendingPapers.astro';
+import LatestPapers from '../../components/astro/LatestPapers.astro';
+import papers from '../../data/papers.json';
+import type { Paper } from '../../types/paper';
+
+const lang = 'en';
+const typedPapers = papers as Paper[];
+const trendingPapers = typedPapers.filter((p) => p.isTrending);
+const latestPapers = [...typedPapers].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+const newThisWeek = typedPapers.filter((p) => {
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  return new Date(p.date) >= weekAgo;
+}).length;
+---
+
+<BaseLayout lang={lang} title="AI Paper Radar">
+  <HeroSection lang={lang} />
+  <StatsBar lang={lang} totalPapers={typedPapers.length} newThisWeek={newThisWeek} />
+  <TrendingPapers papers={trendingPapers} lang={lang} />
+  <LatestPapers papers={latestPapers} lang={lang} />
+</BaseLayout>

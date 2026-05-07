@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PaperDetail from '../../../components/astro/PaperDetail.astro';
+import papers from '../../../data/papers.json';
+import type { Paper } from '../../../types/paper';
+
+export async function getStaticPaths() {
+  const allPapers = papers as Paper[];
+  return allPapers.map((p) => ({
+    params: { id: p.id },
+    props: { paper: p },
+  }));
+}
+
+const { id } = Astro.params;
+const { paper } = Astro.props as { paper: Paper };
+const lang = 'en';
+---
+
+<BaseLayout lang={lang} title={`${paper.title.en} - AI Paper Radar`}>
+  <div class="pt-8">
+    <PaperDetail paper={paper} lang={lang} />
+  </div>
+</BaseLayout>

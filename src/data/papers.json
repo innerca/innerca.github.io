@@ -1,0 +1,67 @@
+[
+  {
+    "id": "2401.001",
+    "title": { "zh": "扩散模型在分子生成中的应用", "en": "Diffusion Models for Molecule Generation" },
+    "summary": { "zh": "该论文提出了一种基于扩散模型的分子生成框架，能够高效地探索化学空间并生成具有理想属性的新型分子结构。", "en": "This paper proposes a diffusion model-based framework for molecular generation, efficiently exploring chemical space to generate novel molecular structures with desired properties." },
+    "core_points": { "zh": "1. 提出了一种新的分子图扩散过程\n2. 在QM9数据集上达到SOTA\n3. 支持条件生成（性质导向）", "en": "1. Novel molecular graph diffusion process\n2. State-of-the-art results on QM9 benchmark\n3. Supports conditional generation (property-guided)" },
+    "tags": ["扩散模型", "分子生成", "药物发现"],
+    "entities": [{"name": "Diffusion", "type": "method"}, {"name": "QM9", "type": "dataset"}],
+    "date": "2025-01-15",
+    "citeCount": 42,
+    "isTrending": true,
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2401.001"
+  },
+  {
+    "id": "2401.002",
+    "title": { "zh": "大型语言模型的推理能力涌现", "en": "Emergent Reasoning in Large Language Models" },
+    "summary": { "zh": "本研究系统性地分析了LLM中推理能力的涌现现象，发现模型规模超过某个阈值后，链式推理能力会出现显著提升。", "en": "This study systematically analyzes the emergence of reasoning capabilities in LLMs, finding that chain-of-thought reasoning improves dramatically beyond a certain model scale threshold." },
+    "core_points": { "zh": "1. 推理能力在特定规模阈值后涌现\n2. 提出了评估推理涌现的量化指标\n3. 分析表明训练数据质量比数量更重要", "en": "1. Reasoning emerges beyond specific scale thresholds\n2. Quantitative metrics for measuring emergence\n3. Training data quality matters more than quantity" },
+    "tags": ["LLM", "推理", "涌现"],
+    "entities": [{"name": "GPT-4", "type": "model"}, {"name": "Chain-of-Thought", "type": "method"}],
+    "date": "2025-02-20",
+    "citeCount": 128,
+    "isTrending": true,
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2401.002"
+  },
+  {
+    "id": "2401.003",
+    "title": { "zh": "高效视觉Transformer的架构搜索", "en": "Efficient Vision Transformer via Architecture Search" },
+    "summary": { "zh": "本文提出了一种自动化的视觉Transformer架构搜索方法，在保持高精度的同时显著降低了计算开销。", "en": "This paper introduces an automated architecture search method for Vision Transformers, significantly reducing computational costs while maintaining high accuracy." },
+    "core_points": { "zh": "1. 可微分架构搜索适用于ViT\n2. 发现的架构比DeiT快3倍\n3. 在ImageNet上达到同等精度", "en": "1. Differentiable architecture search adapted for ViT\n2. Discovered architectures 3x faster than DeiT\n3. Comparable accuracy on ImageNet" },
+    "tags": ["视觉Transformer", "架构搜索", "模型压缩"],
+    "entities": [{"name": "ViT", "type": "model"}, {"name": "ImageNet", "type": "dataset"}],
+    "date": "2025-03-10",
+    "citeCount": 67,
+    "isTrending": false,
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2401.003"
+  },
+  {
+    "id": "2401.004",
+    "title": { "zh": "基于强化学习的代码生成优化", "en": "Code Generation Optimization with Reinforcement Learning" },
+    "summary": { "zh": "该工作利用强化学习来优化代码生成模型的输出，通过执行反馈信号提高生成代码的正确性和效率。", "en": "This work leverages reinforcement learning to optimize code generation model outputs, improving correctness and efficiency through execution feedback signals." },
+    "core_points": { "zh": "1. 使用执行结果作为奖励信号\n2. 在HumanEval上Pass@k提升15%\n3. 生成的代码运行时效率更高", "en": "1. Execution results as reward signals\n2. 15% improvement on HumanEval Pass@k\n3. Generated code is more runtime-efficient" },
+    "tags": ["代码生成", "强化学习", "LLM"],
+    "entities": [{"name": "RLHF", "type": "method"}, {"name": "HumanEval", "type": "dataset"}],
+    "date": "2025-04-05",
+    "citeCount": 89,
+    "isTrending": true,
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2401.004"
+  },
+  {
+    "id": "2401.005",
+    "title": { "zh": "多模态学习中的知识融合策略", "en": "Knowledge Fusion Strategies in Multimodal Learning" },
+    "summary": { "zh": "本文综述了多模态学习中知识融合的最新策略，并提出了一种统一的融合框架来整合视觉、语言和听觉信息。", "en": "This paper surveys recent knowledge fusion strategies in multimodal learning and proposes a unified fusion framework integrating visual, linguistic, and auditory information." },
+    "core_points": { "zh": "1. 系统的多模态融合方法分类\n2. 提出了统一融合架构\n3. 在多个基准上验证了有效性", "en": "1. Systematic taxonomy of fusion methods\n2. Unified fusion architecture proposed\n3. Validated across multiple benchmarks" },
+    "tags": ["多模态", "知识融合", "综述"],
+    "entities": [{"name": "CLIP", "type": "model"}, {"name": "MultiModal", "type": "method"}],
+    "date": "2025-04-28",
+    "citeCount": 15,
+    "isTrending": false,
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2401.005"
+  }
+]
