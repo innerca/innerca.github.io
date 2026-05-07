@@ -1,7 +1,13 @@
 {
   "version": "half_year_heat_v1",
-  "generated_at": "2026-05-07T14:50:56Z",
+  "generated_at": "2026-05-07T21:27:46Z",
   "window_days": 180,
+  "warmup_days": 1,
+  "warmup_mode": "warmup",
+  "missing_signals": {
+    "b_cite": "Citation history: 1/7 days needed for burst",
+    "s_code": "Papers with Code not yet integrated"
+  },
   "counts": {
     "total_papers": 9812,
     "fields": 90,

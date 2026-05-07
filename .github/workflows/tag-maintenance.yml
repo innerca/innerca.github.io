@@ -47,12 +47,27 @@ jobs:
         if: ${{ env.GROQ_API_KEY != '' }}
         run: python scripts/manage_tags.py
 
+      - name: Pull citation signals
+        run: python scripts/pull_citation_signals.py
+
+      - name: Pull HF Daily Papers signals
+        run: python scripts/pull_hf_signals.py
+
+      - name: Compute heat scores
+        run: |
+          python scripts/compute_heat_scores.py
+          python scripts/export_heat_json.py
+
+      - name: Refresh derived stats
+        run: npm run prebuild
+
       # ── Commit tag changes ──
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: monthly AI tag maintenance"
+          commit_message: "chore: monthly AI tag maintenance [skip ci]"
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
+          file_pattern: src/data/**
 
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3

@@ -5,7 +5,7 @@ Export heat score results into frontend-consumable JSON files.
 Produces:
   - src/data/paper_heat_scores.json  (full ranked list with badges)
   - src/data/field_heat_topn.json    (top N per field)
-  - src/data/heat_score_meta.json    (metadata for frontend)
+  - src/data/heat_score_meta.json    (metadata for frontend, preserves warmup state)
 
 Usage: python scripts/export_heat_json.py
 """
@@ -82,9 +82,12 @@ def main():
 
     # ── Write meta ──
     meta = {
-        "version": "half_year_heat_v1",
+        "version": all_scores.get("version", "half_year_heat_v1"),
         "generated_at": field_output["generated_at"],
         "window_days": field_output["window_days"],
+        "warmup_days": all_scores.get("warmup_days", 0),
+        "warmup_mode": all_scores.get("warmup_mode", "cold"),
+        "missing_signals": all_scores.get("missing_signals", {}),
         "counts": {
             "total_papers": len(papers),
             "fields": len(field_topn),

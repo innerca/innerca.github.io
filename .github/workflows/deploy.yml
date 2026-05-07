@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -39,20 +39,39 @@ jobs:
 
       # ── Data pipeline ──
       - name: Fetch papers from arXiv
-        continue-on-error: true
+        if: ${{ github.event_name != 'push' }}
         run: npm run fetch
 
       - name: Summarize with Groq AI
-        if: ${{ env.GROQ_API_KEY != '' }}
+        if: ${{ github.event_name != 'push' && env.GROQ_API_KEY != '' }}
         run: python scripts/summarize.py
 
+      - name: Pull citation signals
+        if: ${{ github.event_name != 'push' }}
+        run: python scripts/pull_citation_signals.py
+
       - name: Pull HF Daily Papers signals
+        if: ${{ github.event_name != 'push' }}
         run: python scripts/pull_hf_signals.py
 
       - name: Compute heat scores
+        if: ${{ github.event_name != 'push' }}
         run: |
           python scripts/compute_heat_scores.py
           python scripts/export_heat_json.py
+
+      - name: Refresh derived stats
+        if: ${{ github.event_name != 'push' }}
+        run: npm run prebuild
+
+      - name: Commit refreshed data
+        if: ${{ github.event_name != 'push' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: daily data refresh [skip ci]"
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          file_pattern: src/data/**
 
       - run: npm run build
 
