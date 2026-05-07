@@ -33,7 +33,7 @@ function tokenize(text: string): string[] {
 
 export async function GET() {
   const typed = papers as Paper[];
-  const idx: Record<string, number[]> = {};
+  const idx: Record<string, number[]> = Object.create(null);
 
   for (let i = 0; i < typed.length; i++) {
     const p = typed[i];
