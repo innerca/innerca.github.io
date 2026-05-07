@@ -1,12 +1,8 @@
 export const siteConfig = {
-  name: 'PAPER_RADAR',
+  name: 'Paper Radar',
   description: {
-    zh: 'AI 学术前沿雷达',
-    en: 'AI Paper Radar',
-  },
-  tagline: {
-    zh: '每日追踪 · AI 驱动翻译 · 开放知识中枢',
-    en: 'Daily Tracking · AI Translation · Open Knowledge Hub',
+    zh: 'AI 论文雷达',
+    en: 'Paper Radar',
   },
   url: 'https://github.com/innerca',
   social: {
@@ -15,15 +11,15 @@ export const siteConfig = {
   nav: {
     zh: [
       { label: '首页', href: '/zh' },
-      { label: '热度', href: '/zh/hot' },
       { label: '最新', href: '/zh/latest' },
       { label: '搜索', href: '/zh/search' },
+      { label: '值得关注', href: '/zh/hot' },
     ],
     en: [
       { label: 'Home', href: '/en' },
-      { label: 'Hot', href: '/en/hot' },
       { label: 'Latest', href: '/en/latest' },
       { label: 'Search', href: '/en/search' },
+      { label: 'Rising Signals', href: '/en/hot' },
     ],
   },
 } as const;

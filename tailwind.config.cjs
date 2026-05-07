@@ -13,8 +13,9 @@ module.exports = {
         'text-secondary': '#8892b0',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Manrope', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'monospace'],
       },
       boxShadow: {
         'neon': '0 0 15px rgba(0,240,255,0.15)',

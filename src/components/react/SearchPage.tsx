@@ -22,6 +22,9 @@ interface MetaItem {
 }
 
 const PAGE_SIZE = 20;
+const STORAGE_KEY = 'paper-radar:fulltext-enabled';
+
+type SearchMode = 'quick' | 'confirming' | 'loading' | 'ready' | 'failed';
 
 function LoadingSkeleton() {
   return (
@@ -51,6 +54,12 @@ export default function SearchPage({ lang }: Props) {
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
   const [page, setPage] = useState(0);
 
+  // Doc 15: full-text search mode state
+  const [searchMode, setSearchMode] = useState<SearchMode>('quick');
+  const [rememberChoice, setRememberChoice] = useState(false);
+  // Track whether we've already checked localStorage on mount
+  const initialCheckDone = useRef(false);
+
   // Load meta on mount
   useEffect(() => {
     fetch(`/${lang}/search-index.json`)
@@ -62,8 +71,24 @@ export default function SearchPage({ lang }: Props) {
       .catch(() => setLoading(false));
   }, [lang]);
 
-  // Create worker and load prebuilt index
+  // Check localStorage on mount for remembered fulltext preference
   useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'true') {
+        setSearchMode('loading');
+        activateFulltext();
+      }
+    } catch {
+      // localStorage unavailable — proceed in quick mode
+    }
+    initialCheckDone.current = true;
+  }, [lang]);
+
+  // Activate full-text: create worker, fetch prebuilt index
+  const activateFulltext = () => {
+    setSearchMode('loading');
+
     const w = new Worker(
       new URL('../../lib/search.worker.ts', import.meta.url),
       { type: 'module' },
@@ -74,11 +99,19 @@ export default function SearchPage({ lang }: Props) {
       .then((res) => res.json())
       .then((data) => {
         w.postMessage({ type: 'load', data });
+      })
+      .catch(() => {
+        setSearchMode('failed');
       });
 
     w.onmessage = (e: MessageEvent) => {
       if (e.data.type === 'loaded') {
         setWorkerReady(true);
+        setSearchMode('ready');
+        // Re-run current query with fulltext
+        if (queryRef.current.trim()) {
+          w.postMessage({ type: 'search', query: queryRef.current.trim() });
+        }
       } else if (e.data.type === 'results') {
         if (e.data.query === queryRef.current) {
           setFulltextIds(new Set(e.data.indices));
@@ -86,16 +119,14 @@ export default function SearchPage({ lang }: Props) {
         }
       }
     };
+  };
 
-    return () => w.terminate();
-  }, [lang]);
-
-  // When worker becomes ready, re-run current query
+  // When worker becomes ready in 'ready' mode, re-run current query
   useEffect(() => {
-    if (workerReady && query.trim()) {
+    if (searchMode === 'ready' && workerReady && query.trim()) {
       workerRef.current?.postMessage({ type: 'search', query: query.trim() });
     }
-  }, [workerReady]);
+  }, [searchMode, workerReady]);
 
   const sendToWorker = (q: string) => {
     queryRef.current = q;
@@ -147,7 +178,7 @@ export default function SearchPage({ lang }: Props) {
     if (!meta) return [];
     if (!query.trim() && !hasFilters) return [];
 
-    if (workerReady && fulltextIds && query.trim()) {
+    if (searchMode === 'ready' && workerReady && fulltextIds && query.trim()) {
       return fulltextIds.size === 0
         ? []
         : meta.filter((_, i) => fulltextIds.has(i));
@@ -163,7 +194,7 @@ export default function SearchPage({ lang }: Props) {
       if ((m.tags || []).some((t) => t.toLowerCase().includes(q))) return true;
       return false;
     });
-  }, [meta, query, workerReady, fulltextIds, hasFilters]);
+  }, [meta, query, searchMode, workerReady, fulltextIds, hasFilters]);
 
   // Apply filters
   const results = useMemo(
@@ -191,6 +222,9 @@ export default function SearchPage({ lang }: Props) {
     (clampedPage + 1) * PAGE_SIZE,
   );
 
+  // Determine if user has typed a query (for empty-state CTA)
+  const hasQuery = query.trim().length > 0;
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       {/* Page title */}
@@ -204,14 +238,14 @@ export default function SearchPage({ lang }: Props) {
       </div>
 
       {/* Search Input */}
-      <div className="relative mb-6">
+      <div className="relative mb-3">
         <input
           type="text"
           value={query}
           onChange={(e) => {
             const val = e.target.value;
             setQuery(val);
-            if (workerReady && val.trim()) {
+            if (searchMode === 'ready' && workerReady && val.trim()) {
               sendToWorker(val.trim());
             }
           }}
@@ -237,11 +271,83 @@ export default function SearchPage({ lang }: Props) {
         </svg>
       </div>
 
-      {/* Worker status (subtle) */}
-      {!loading && meta && !workerReady && query.trim() && (
-        <p className="text-xs text-text-secondary/40 font-mono mb-2">
-          {lang === 'zh' ? '全文索引加载中，基础搜索可用...' : 'Loading full-text index, basic search active...'}
-        </p>
+      {/* Search mode strip (Doc 15) */}
+      {!loading && meta && (
+        <div className="mb-6 px-4 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between">
+          <span className="text-xs font-mono text-text-secondary/70">
+            {searchMode === 'quick' && t('quickSearchActive', lang)}
+            {searchMode === 'loading' && t('fulltextLoading', lang)}
+            {searchMode === 'ready' && t('fulltextReady', lang)}
+            {searchMode === 'failed' && t('fulltextFailed', lang)}
+          </span>
+          {searchMode === 'quick' && (
+            <button
+              onClick={() => setSearchMode('confirming')}
+              className="text-xs font-mono text-neon-cyan/70 hover:text-neon-cyan px-2.5 py-1 rounded border border-neon-cyan/20 hover:border-neon-cyan/50 transition-all"
+            >
+              {t('enableFulltext', lang)}
+            </button>
+          )}
+          {searchMode === 'failed' && (
+            <button
+              onClick={activateFulltext}
+              className="text-xs font-mono text-accent-red/70 hover:text-accent-red px-2.5 py-1 rounded border border-accent-red/20 hover:border-accent-red/50 transition-all"
+            >
+              {t('enableFulltext', lang)}
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Confirmation modal (Doc 15) */}
+      {searchMode === 'confirming' && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="panel-glass rounded-xl p-6 max-w-sm mx-4 w-full">
+            <h3 className="text-lg font-bold text-neon-cyan font-mono mb-3">
+              {t('fulltextModalTitle', lang)}
+            </h3>
+            <p className="text-sm text-text-secondary leading-relaxed mb-4">
+              {t('fulltextModalBody', lang)}
+            </p>
+            <label className="flex items-center gap-2 mb-4 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={rememberChoice}
+                onChange={(e) => setRememberChoice(e.target.checked)}
+                className="w-4 h-4 rounded border-text-secondary/30 bg-transparent accent-neon-cyan"
+              />
+              <span className="text-xs text-text-secondary/70 font-mono">
+                {t('fulltextRemember', lang)}
+              </span>
+            </label>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => {
+                  if (rememberChoice) {
+                    try { localStorage.setItem(STORAGE_KEY, 'true'); } catch {}
+                  }
+                  activateFulltext();
+                }}
+                className="flex-1 px-4 py-2 rounded-lg text-sm font-mono font-bold text-neon-cyan border border-neon-cyan/50
+                           hover:bg-neon-cyan/10 transition-all"
+              >
+                {t('fulltextEnableNow', lang)}
+              </button>
+              <button
+                onClick={() => {
+                  setSearchMode('quick');
+                  if (rememberChoice) {
+                    try { localStorage.setItem(STORAGE_KEY, 'false'); } catch {}
+                  }
+                }}
+                className="flex-1 px-4 py-2 rounded-lg text-sm font-mono text-text-secondary border border-text-secondary/20
+                           hover:text-text-primary hover:border-text-secondary/40 transition-all"
+              >
+                {t('fulltextNotNow', lang)}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Filters */}
@@ -343,7 +449,7 @@ export default function SearchPage({ lang }: Props) {
                                disabled:opacity-30 disabled:cursor-not-allowed
                                hover:bg-neon-cyan/10 transition-all"
                   >
-                    ← {lang === 'zh' ? '上一页' : 'Prev'}
+                    &larr; {lang === 'zh' ? '上一页' : 'Prev'}
                   </button>
                   <span className="text-text-secondary">
                     {clampedPage + 1} / {totalPages}
@@ -355,7 +461,7 @@ export default function SearchPage({ lang }: Props) {
                                disabled:opacity-30 disabled:cursor-not-allowed
                                hover:bg-neon-cyan/10 transition-all"
                   >
-                    {lang === 'zh' ? '下一页' : 'Next'} →
+                    {lang === 'zh' ? '下一页' : 'Next'} &rarr;
                   </button>
                 </div>
               )}
@@ -366,6 +472,25 @@ export default function SearchPage({ lang }: Props) {
               <p className="mt-4 text-sm text-text-secondary/60 font-mono">
                 {t('searchNoResultsHint', lang)}
               </p>
+              <div className="flex items-center justify-center gap-4 mt-6">
+                {/* Full-text CTA in empty state (Doc 15) */}
+                {searchMode === 'quick' && (
+                  <button
+                    onClick={() => setSearchMode('confirming')}
+                    className="px-4 py-2 text-xs font-mono rounded border border-neon-cyan/30 text-neon-cyan/70
+                               hover:text-neon-cyan hover:border-neon-cyan hover:bg-neon-cyan/5 transition-all"
+                  >
+                    {t('fulltextCTA', lang)} &rarr;
+                  </button>
+                )}
+                <a
+                  href={`/${lang}/latest`}
+                  className="px-4 py-2 text-xs font-mono rounded border border-text-secondary/30 text-text-secondary/60
+                             hover:text-text-secondary hover:border-text-secondary/60 transition-all"
+                >
+                  {t('browseLatest', lang)} &rarr;
+                </a>
+              </div>
             </div>
           )}
         </>

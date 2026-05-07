@@ -19,15 +19,20 @@ const top3 = hotPapers.slice(0, 3);
 const rest = hotPapers.slice(3);
 ---
 
-<BaseLayout lang={lang} title="热度论文 - AI 学术前沿雷达" currentPath="/zh/hot">
+<BaseLayout lang={lang} title="值得关注 - AI 论文雷达" currentPath="/zh/hot">
   <div class="pt-8 max-w-6xl mx-auto px-4">
     <!-- Header -->
     <div class="max-w-3xl mx-auto mb-8">
       <h1 class="text-3xl font-bold text-gradient-cyan-purple mb-2 tracking-wide">
-        🔥 {t('hot', lang)}
+        🔭 {t('hot', lang)}
       </h1>
       <p class="text-sm text-text-secondary/70 font-mono">
         {t('hotDesc', lang)}
+      </p>
+      <p class="text-xs text-text-secondary/50 font-mono mt-2">
+        <a href="/zh/latest" class="hover:text-neon-cyan transition-colors">
+          {t('viewLatest', lang)} &rarr;
+        </a>
       </p>
     </div>
 
@@ -72,10 +77,11 @@ const rest = hotPapers.slice(3);
               {score != null && (
                 <div class="mb-3">
                   <div class="flex items-center justify-between text-[10px] font-mono text-text-secondary mb-1">
-                    <span>热度</span>
-                    <span>{score.toFixed(0)}</span>
+                    <span>
+                      {score >= 80 ? '🔥 强势信号' : score >= 60 ? '上升中' : score >= 30 ? '受关注' : '值得注意'}
+                    </span>
                   </div>
-                  <div class="h-1.5 rounded-full bg-text-secondary/10 overflow-hidden">
+                  <div class="h-1 rounded-full bg-text-secondary/10 overflow-hidden">
                     <div
                       class="h-full rounded-full transition-all"
                       style={{
@@ -116,6 +122,17 @@ const rest = hotPapers.slice(3);
             <PaperCard client:load paper={p} lang={lang} index={i} />
           ))}
         </div>
+      </div>
+    )}
+    <!-- Cross-link -->
+    {hotPapers.length > 0 && (
+      <div class="max-w-3xl mx-auto mt-10 text-center">
+        <a
+          href="/zh/latest"
+          class="text-xs font-mono text-text-secondary/50 hover:text-neon-cyan transition-colors"
+        >
+          {t('viewLatest', lang)} &rarr;
+        </a>
       </div>
     )}
   </div>

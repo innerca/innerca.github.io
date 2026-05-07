@@ -13,8 +13,6 @@ export interface Props {
 const { lang, currentPath = '' } = Astro.props;
 const navLinks = siteConfig.nav[lang];
 const logoLabel = siteConfig.name;
-const logoFirst = logoLabel.replace(/_.*$/, '');
-const logoSuffix = logoLabel.replace(/^[^_]+/, '');
 const otherLang = lang === 'zh' ? 'en' : 'zh';
 const otherHref = currentPath.replace(/^\/(zh|en)/, `/${otherLang}`) || `/${otherLang}`;
 ---
@@ -22,9 +20,8 @@ const otherHref = currentPath.replace(/^\/(zh|en)/, `/${otherLang}`) || `/${othe
 <nav class="fixed top-0 left-0 right-0 z-50 bg-[rgba(11,15,25,0.75)] backdrop-blur-md border-b border-[rgba(0,240,255,0.1)]">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href={`/${lang}`} class="font-bold text-lg tracking-wider">
-      <span class="text-gradient-cyan-purple">{logoFirst}</span>
-      <span class="text-neon-cyan">{logoSuffix}</span>
+    <a href={`/${lang}`} class="font-bold text-lg tracking-wider text-gradient-cyan-purple">
+      {logoLabel}
     </a>
 
     <!-- Desktop Nav -->

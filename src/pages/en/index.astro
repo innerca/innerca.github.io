@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/astro/HeroSection.astro';
 import StatsBar from '../../components/astro/StatsBar.astro';
+import LatestPreview from '../../components/astro/LatestPreview.astro';
 import TrendingSection from '../../components/astro/TrendingSection.astro';
 import CategorySection from '../../components/astro/CategorySection.astro';
 import { loadHeatScores } from '../../lib/heat';
@@ -29,9 +30,10 @@ const newToday = typedPapers.filter((p) => {
 }).length;
 ---
 
-<BaseLayout lang={lang} title="AI Paper Radar">
+<BaseLayout lang={lang} title="Paper Radar">
   <HeroSection lang={lang} categories={allCategories} />
   <StatsBar lang={lang} totalPapers={totalPapers} newToday={newToday} />
+  <LatestPreview papers={typedPapers} lang={lang} />
   <TrendingSection papers={typedPapers} lang={lang} />
   <CategorySection categories={categoryGroups} lang={lang} />
 </BaseLayout>

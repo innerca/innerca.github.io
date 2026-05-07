@@ -159,14 +159,22 @@ export default function LatestContent({ lang }: Props) {
               })}
             </div>
           </div>
-          {hasFilters && (
-            <button
-              onClick={clearFilters}
-              className="mt-2 text-xs text-text-secondary/50 hover:text-accent-red font-mono transition-colors"
+          <div className="flex items-center gap-4 mt-2">
+            {hasFilters && (
+              <button
+                onClick={clearFilters}
+                className="text-xs text-text-secondary/50 hover:text-accent-red font-mono transition-colors"
+              >
+                ✕ {t('filterClear', lang)}
+              </button>
+            )}
+            <a
+              href={`/${lang}/search`}
+              className="text-xs text-neon-cyan/60 hover:text-neon-cyan font-mono transition-colors"
             >
-              ✕ {t('filterClear', lang)}
-            </button>
-          )}
+              {t('searchAllPapers', lang)} &rarr;
+            </a>
+          </div>
         </div>
       )}
 

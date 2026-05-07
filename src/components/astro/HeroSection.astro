@@ -13,6 +13,10 @@ const topCats = categories.slice(0, 4);
 ---
 
 <section class="relative pt-20 pb-12 md:pt-28 md:pb-16 text-center overflow-hidden">
+    <!-- Atmospheric gradient disc (Doc 18) -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+      style="background: radial-gradient(circle, rgba(0,240,255,0.04) 0%, rgba(179,71,234,0.02) 40%, transparent 70%);">
+    </div>
   <div class="relative z-10 max-w-4xl mx-auto px-4">
     <h1 class="text-4xl md:text-6xl font-bold text-gradient-cyan-purple mb-4 tracking-tight">
       {t('heroTitle', lang)}
@@ -34,6 +38,19 @@ const topCats = categories.slice(0, 4);
       </svg>
       {lang === 'zh' ? '搜索论文' : 'Search Papers'}
     </a>
+
+    <!-- Browse Latest CTA (secondary) -->
+    <div class="mb-6">
+      <a
+        href={`/${lang}/latest`}
+        class="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-mono text-text-secondary/80
+               border border-text-secondary/20 rounded-full
+               hover:text-neon-cyan hover:border-neon-cyan/40
+               transition-all duration-200"
+      >
+        {t('browseLatest', lang)} &rarr;
+      </a>
+    </div>
 
     <!-- Quick categories -->
     {topCats.length > 0 && (

@@ -10,7 +10,7 @@ interface Particle {
   alpha: number;
 }
 
-const COLORS = ['#00f0ff', '#b347ea', '#00d4ff', '#c084fc'];
+const COLORS = ['#00f0ff', '#00d4ff', '#b347ea', '#7c3aed'];
 
 function getParticleCount(): number {
   if (typeof window === 'undefined') return perfConfig.particleCount;
@@ -114,7 +114,7 @@ export default function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.5 }}
+      style={{ opacity: 0.3 }}
       aria-hidden="true"
     />
   );

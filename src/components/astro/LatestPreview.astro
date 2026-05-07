@@ -2,7 +2,6 @@
 import type { Paper, Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import PaperCard from '../react/PaperCard';
-import { getTrendingPapers } from '../../lib/heat';
 
 export interface Props {
   papers: Paper[];
@@ -10,32 +9,36 @@ export interface Props {
 }
 
 const { papers, lang } = Astro.props;
-const trending = getTrendingPapers(papers, 6);
+
+// Sort by date descending, take top 6
+const latest = [...papers]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 6);
 ---
 
-{trending.length > 0 && (
+{latest.length > 0 && (
   <section class="mb-16">
     <div class="max-w-6xl mx-auto px-4 mb-4">
       <div class="flex items-end justify-between">
         <div>
-          <h2 class="text-xl font-bold text-gradient-cyan tracking-wide">
-            {t('homeHotTitle', lang)}
+          <h2 class="text-xl font-bold text-gradient-cyan-purple tracking-wide">
+            {t('latest', lang)}
           </h2>
           <p class="text-sm text-text-secondary/70 font-mono mt-1">
-            {t('homeHotDesc', lang)}
+            {t('latestDesc', lang)}
           </p>
         </div>
         <a
-          href={`/${lang}/hot`}
+          href={`/${lang}/latest`}
           class="text-xs font-mono text-neon-cyan/70 hover:text-neon-cyan transition-colors shrink-0"
         >
-          {t('hot', lang)} &rarr;
+          {t('viewAllLatest', lang)} &rarr;
         </a>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {trending.map((p, i) => (
+        {latest.map((p, i) => (
           <PaperCard client:visible paper={p} lang={lang} index={i} />
         ))}
       </div>

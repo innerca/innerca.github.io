@@ -8,8 +8,8 @@ export const GET: APIRoute = async (context) => {
   const site = context.site?.toString() ?? 'https://innerca.github.io';
 
   return rss({
-    title: 'AI 学术前沿雷达',
-    description: '每日追踪 AI 领域最新学术论文 · 开放知识中枢',
+    title: 'AI 论文雷达',
+    description: '每日追踪 AI 领域最新论文动态',
     site,
     items: allPapers.map((p) => ({
       title: p.title.zh || p.title.en,

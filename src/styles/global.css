@@ -3,13 +3,31 @@
 @tailwind utilities;
 
 :root {
+  /* Base */
   --bg-primary: #0b0f19;
-  --panel-bg: rgba(20, 27, 45, 0.8);
+  --bg-canvas: #080b12;
+  --surface-bg: rgba(20, 27, 45, 0.8);
+  --surface-spotlight: rgba(25, 35, 55, 0.85);
+
+  /* Accents — cyan leads, purple supports */
   --neon-cyan: #00f0ff;
   --neon-purple: #b347ea;
   --accent-red: #ff6b6b;
+  --accent-amber: #ffd93d;
+
+  /* Text */
   --text-primary: #e0e0e0;
   --text-secondary: #8892b0;
+
+  /* Glow — more restrained baseline */
+  --glow-default: 0 0 0px transparent;
+  --glow-hover: 0 0 15px rgba(0, 240, 255, 0.25);
+  --glow-focus: 0 0 20px rgba(0, 240, 255, 0.15);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Manrope', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
 }
 
 html {
@@ -30,8 +48,28 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   min-height: 100vh;
+}
+
+/* Base heading typography — display font for editorial headings */
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+/* Hero-level heading — tighter tracking for editorial masthead presence */
+h1 {
+  letter-spacing: -0.02em;
+}
+
+/* Section-level heading — balanced */
+h2 {
+  letter-spacing: -0.01em;
+}
+
+/* Keep metadata and body text clean */
+p, li, blockquote {
+  font-family: var(--font-sans);
 }
 
 @layer utilities {
@@ -42,11 +80,46 @@ body {
     background-clip: text;
   }
 
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, var(--neon-cyan), #66f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Typography roles — display / body / metadata */
+
+  /* Brand/display moments: wordmark, hero headline, major section titles */
+  .typo-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  /* Metadata / technical labels: dates, counters, badges */
+  .typo-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  /* Standard glass panel — subtle by default */
   .panel-glass {
-    background: var(--panel-bg);
+    background: var(--surface-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 240, 255, 0.15);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    box-shadow: var(--glow-default);
+  }
+
+  /* Spotlight/featured panel — richer, for hero/highlight moments */
+  .panel-spotlight {
+    background: var(--surface-spotlight);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 4px 24px rgba(0, 240, 255, 0.08);
   }
 
   .line-clamp-1 {
@@ -80,7 +153,7 @@ body {
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(0, 240, 255, 0.4), rgba(179, 71, 234, 0.4));
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(179, 71, 234, 0.3));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;

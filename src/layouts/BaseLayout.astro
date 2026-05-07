@@ -11,7 +11,7 @@ export interface Props {
   currentPath?: string;
 }
 
-const { lang, title = 'AI Paper Radar', currentPath = '' } = Astro.props;
+const { lang, title = siteConfig.description.en, currentPath = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ const { lang, title = 'AI Paper Radar', currentPath = '' } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
