@@ -12,13 +12,15 @@ const { papers, lang } = Astro.props;
 ---
 
 <section class="mb-16">
-  <h2 class="text-2xl font-bold text-gradient-cyan-purple mb-6 px-4 tracking-wide">
-    🔥 {t('trending', lang)}
-  </h2>
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gradient-cyan-purple mb-6 tracking-wide">
+      🔥 {t('trending', lang)}
+    </h2>
+  </div>
 
   {papers.length > 0 ? (
     <div
-      class="flex gap-4 overflow-x-auto pb-4 px-4 snap-x snap-mandatory scrollbar-hide
+      class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide
              [&::-webkit-scrollbar]:hidden"
     >
       {papers.map((p) => (
@@ -28,8 +30,10 @@ const { papers, lang } = Astro.props;
       ))}
     </div>
   ) : (
-    <p class="text-text-secondary text-sm font-mono px-4">
-      {lang === 'zh' ? '暂无趋势论文' : 'No trending papers'}
-    </p>
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-text-secondary text-sm font-mono">
+        {lang === 'zh' ? '暂无趋势论文' : 'No trending papers'}
+      </p>
+    </div>
   )}
 </section>
