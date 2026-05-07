@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/astro/HeroSection.astro';
 import StatsBar from '../../components/astro/StatsBar.astro';
+import TrendingSection from '../../components/astro/TrendingSection.astro';
 import CategorySection from '../../components/astro/CategorySection.astro';
 import { loadHeatScores } from '../../lib/heat';
 import { getSiteStats } from '../../lib/stats';
@@ -16,6 +17,9 @@ const heatMap = loadHeatScores();
 const stats = getSiteStats();
 const totalPapers = stats?.totalPapers ?? typedPapers.length;
 
+// Collect all unique categories for hero quick links
+const allCategories = [...new Set(typedPapers.flatMap((p) => p.categories ?? []))].sort();
+
 const categoryGroups = getCategoryGroups(typedPapers, heatMap, 4, 6);
 
 const newToday = typedPapers.filter((p) => {
@@ -26,7 +30,8 @@ const newToday = typedPapers.filter((p) => {
 ---
 
 <BaseLayout lang={lang} title="AI 学术前沿雷达">
-  <HeroSection lang={lang} />
+  <HeroSection lang={lang} categories={allCategories} />
   <StatsBar lang={lang} totalPapers={totalPapers} newToday={newToday} />
+  <TrendingSection papers={typedPapers} lang={lang} />
   <CategorySection categories={categoryGroups} lang={lang} />
 </BaseLayout>

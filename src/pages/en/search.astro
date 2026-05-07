@@ -1,15 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SearchPage from '../../components/react/SearchPage';
-import papers from '../../data/papers.json';
-import type { Paper } from '../../types/paper';
 
 const lang = 'en';
-const typedPapers = papers as Paper[];
 ---
 
 <BaseLayout lang={lang} title="Search - AI Paper Radar" currentPath="/en/search">
-  <div class="pt-8">
-    <SearchPage client:load papers={typedPapers} lang={lang} />
-  </div>
+  <SearchPage client:load lang={lang} />
 </BaseLayout>

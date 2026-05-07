@@ -67,3 +67,8 @@ src/
 - **不主动 `git push`**：除非用户明确要求，不得执行推送操作。所有修改仅停留在本地工作区。
 - **每次功能修改后自动 commit**：每完成一个原子性的功能修改后，主动执行 `git add` + `git commit`，无需等待用户提示。commit message 使用 conventional commits 风格（`feat:`、`fix:`、`chore:`、`refactor:`、`docs:`），附 `Co-Authored-By`。
 - **push 前合并相关 commit**：在 push 之前，将同一需求/功能的多笔相关 commit 合并（squash）为一个，保持提交历史清晰。
+- **推送流程**：`dev` 分支开发，合并到 `main` 再推送：
+  1. `git checkout main`
+  2. `git rebase dev`
+  3. `git push origin main`
+  4. `git checkout dev`

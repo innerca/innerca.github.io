@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { getPrimarySource } from '../../lib/source';
@@ -10,39 +9,24 @@ interface Props {
   paper: Paper;
   lang: Lang;
   index?: number;
-  /** Optional override — if not provided, component will try to load from paper_heat_scores.json */
+  /** Optional heat score — passed from parent when available */
   heatScore?: number;
 }
 
-export default function PaperCard({ paper, lang, index = 0, heatScore: heatScoreProp }: Props) {
-  const [localHeatScore, setLocalHeatScore] = useState<number | null>(null);
+export default function PaperCard({ paper, lang, index = 0, heatScore }: Props) {
   const title = paper.title[lang];
   const summary = paper.summary[lang];
   const href = `/${lang}/paper/${paper.id}`;
   const isNewPaper = isNew(paper.addedDate || paper.date);
   const authors = paper.authors ?? [];
 
-  // Lazy-load heat score if not passed as prop
-  const heatScore = heatScoreProp ?? localHeatScore;
-  useEffect(() => {
-    if (heatScoreProp !== undefined) return;
-    import('../../data/paper_heat_scores.json')
-      .then((mod) => {
-        const match = (mod as any).papers?.find((p: any) => p.paper_id === paper.id);
-        if (match?.heat_score != null) setLocalHeatScore(match.heat_score);
-      })
-      .catch(() => {});
-  }, [paper.id, heatScoreProp]);
-
   return (
-    <motion.a
+    <a
       href={href}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05, duration: 0.3 }}
-      whileHover={{ y: -4, boxShadow: '0 0 15px rgba(0,240,255,0.3)' }}
-      whileTap={{ scale: 0.98 }}
-      className="block panel-glass rounded-xl p-5 cursor-pointer group relative overflow-hidden"
+      className="block panel-glass rounded-xl p-5 cursor-pointer group relative overflow-hidden
+                 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,240,255,0.3)]
+                 transition-all duration-300"
+      style={{ animation: `fadeInUp 0.3s ease-out both`, animationDelay: `${index * 0.05}s` }}
     >
       {/* Trending badge */}
       {paper.isTrending && (
@@ -112,6 +96,6 @@ export default function PaperCard({ paper, lang, index = 0, heatScore: heatScore
         <SourceBadge source={getPrimarySource(paper)} />
         <span>📖 {paper.citeCount}</span>
       </div>
-    </motion.a>
+    </a>
   );
 }

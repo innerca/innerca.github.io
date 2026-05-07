@@ -3,6 +3,7 @@ import type { Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import { siteConfig } from '../../config/site';
 import SearchTrigger from './SearchTrigger.astro';
+import MobileMenu from '../react/MobileMenu';
 
 export interface Props {
   lang: Lang;
@@ -14,6 +15,8 @@ const navLinks = siteConfig.nav[lang];
 const logoLabel = siteConfig.name;
 const logoFirst = logoLabel.replace(/_.*$/, '');
 const logoSuffix = logoLabel.replace(/^[^_]+/, '');
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherHref = currentPath.replace(/^\/(zh|en)/, `/${otherLang}`) || `/${otherLang}`;
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-[rgba(11,15,25,0.75)] backdrop-blur-md border-b border-[rgba(0,240,255,0.1)]">
@@ -40,17 +43,21 @@ const logoSuffix = logoLabel.replace(/^[^_]+/, '');
       ))}
       <div class="flex items-center gap-2 ml-4 pl-4 border-l border-white/10">
         <SearchTrigger lang={lang} />
+        <a
+          href={otherHref}
+          class="px-2.5 py-1 text-xs font-mono border border-white/20 rounded
+                 text-text-secondary hover:text-neon-cyan hover:border-neon-cyan/50
+                 transition-all duration-200"
+        >
+          {otherLang === 'zh' ? '中文' : 'EN'}
+        </a>
       </div>
     </div>
 
     <!-- Mobile: icons only -->
     <div class="flex md:hidden items-center gap-2">
       <SearchTrigger lang={lang} />
-      <button class="p-2 text-text-secondary" aria-label="Menu">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <MobileMenu client:load lang={lang} currentPath={currentPath} />
     </div>
   </div>
 </nav>

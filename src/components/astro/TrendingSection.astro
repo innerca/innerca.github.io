@@ -1,0 +1,31 @@
+---
+import type { Paper, Lang } from '../../types/paper';
+import { t } from '../../lib/i18n';
+import PaperCard from '../react/PaperCard';
+import { getTrendingPapers } from '../../lib/heat';
+
+export interface Props {
+  papers: Paper[];
+  lang: Lang;
+}
+
+const { papers, lang } = Astro.props;
+const trending = getTrendingPapers(papers, 6);
+---
+
+{trending.length > 0 && (
+  <section class="mb-16">
+    <div class="max-w-6xl mx-auto px-4 mb-4">
+      <h2 class="text-xl font-bold text-gradient-cyan-purple tracking-wide">
+        🔥 {t('hot', lang)}
+      </h2>
+    </div>
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {trending.map((p, i) => (
+          <PaperCard client:visible paper={p} lang={lang} index={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
