@@ -38,7 +38,9 @@ jobs:
       - run: pip install groq
 
       # ── Data pipeline ──
-      - run: npm run fetch
+      - name: Fetch papers from arXiv
+        continue-on-error: true
+        run: npm run fetch
 
       - name: Summarize with Groq AI
         if: ${{ env.GROQ_API_KEY != '' }}
