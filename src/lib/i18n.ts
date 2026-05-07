@@ -73,6 +73,11 @@ export const navText: Record<Lang, Record<string, string>> = {
     loadOlderPapers: '加载更早论文',
     showMoreSignals: '展开更多信号',
     advancedFilters: '高级筛选',
+    signalCite: '↑{count} 引用',
+    signalCode: '代码',
+    signalBuzz: '热议',
+    signalRising: '上升',
+    signalNew: '新增',
   },
   en: {
     home: 'Home',
@@ -146,6 +151,11 @@ export const navText: Record<Lang, Record<string, string>> = {
     loadOlderPapers: 'Load older papers',
     showMoreSignals: 'Show more signals',
     advancedFilters: 'Advanced filters',
+    signalCite: '↑{count} cites',
+    signalCode: 'Code',
+    signalBuzz: 'Buzz',
+    signalRising: 'Rising',
+    signalNew: 'New',
   },
 };
 

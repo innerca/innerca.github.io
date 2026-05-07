@@ -14,6 +14,20 @@ interface HeatScoreData {
 }
 
 /**
+ * Breakdown of the sub-signals that compose a paper's heat score.
+ * Used to show "why this paper is hot" in compact rows.
+ */
+export interface HeatSignalBreakdown {
+  heatScore: number;
+  citeCount: number;
+  sCite: number;
+  sCode: number;
+  sBuzz: number;
+  sFresh: number;
+  burstBonus: number;
+}
+
+/**
  * Load heat scores from paper_heat_scores.json into a Map<paper_id, score>.
  * Returns an empty Map if the file doesn't exist or is unparseable.
  */
@@ -31,6 +45,34 @@ export function loadHeatScores(): Map<string, number> {
     // Silently fall back to empty map
   }
   return heatMap;
+}
+
+/**
+ * Load full heat signal breakdowns from paper_heat_scores.json.
+ * Returns a Map<paper_id, HeatSignalBreakdown>.
+ */
+export function loadHeatSignals(): Map<string, HeatSignalBreakdown> {
+  const map = new Map<string, HeatSignalBreakdown>();
+  const heatPath = path.resolve('src/data/paper_heat_scores.json');
+  try {
+    if (fs.existsSync(heatPath)) {
+      const raw = JSON.parse(fs.readFileSync(heatPath, 'utf-8')) as HeatScoreData;
+      for (const p of raw.papers ?? []) {
+        map.set(p.paper_id, {
+          heatScore: (p as any).heat_score ?? 0,
+          citeCount: (p as any).cite_count ?? 0,
+          sCite: (p as any).s_cite ?? 0,
+          sCode: (p as any).s_code ?? 0,
+          sBuzz: (p as any).s_buzz ?? 0,
+          sFresh: (p as any).s_fresh ?? 0,
+          burstBonus: (p as any).burst_bonus ?? 0,
+        });
+      }
+    }
+  } catch {
+    // Silently fall back to empty map
+  }
+  return map;
 }
 
 /**

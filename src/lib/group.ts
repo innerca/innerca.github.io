@@ -1,4 +1,6 @@
 import type { Paper } from '../types/paper';
+import { computeGroupFrequency, getCategoryGroup, getGroupLabel } from '../config/categories';
+import type { BilingualField } from '../types/paper';
 
 /**
  * Group papers by their primary (first) category and return top papers
@@ -12,7 +14,6 @@ export function getCategoryGroups(
 ): { name: string; papers: Paper[] }[] {
   // Count papers per category
   const catCount = new Map<string, number>();
-  // Also track papers per category
   const catPapers = new Map<string, Paper[]>();
 
   for (const p of papers) {
@@ -23,24 +24,66 @@ export function getCategoryGroups(
     catPapers.get(primary)!.push(p);
   }
 
-  // Sort categories by frequency, pick top N
   const topCats = [...catCount.entries()]
     .sort((a, b) => b[1] - a[1])
     .slice(0, topCategories)
     .map(([name]) => name);
 
-  // For each category, pick top papers by heat score (or date)
   return topCats.map((name) => {
     const catPapersList = catPapers.get(name)!;
     const sorted = [...catPapersList].sort((a, b) => {
       const aScore = heatMap.get(a.id) ?? 0;
       const bScore = heatMap.get(b.id) ?? 0;
       if (aScore !== bScore) return bScore - aScore;
-      // Fallback: newer first
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
     return { name, papers: sorted.slice(0, papersPerCategory) };
   });
+}
+
+/**
+ * Group papers by curated category groups (from categories.ts) instead of raw arXiv codes.
+ * Uses human-readable group labels, with diversity caps to prevent AI-overweighting.
+ */
+export function getCuratedCategoryGroups(
+  papers: Paper[],
+  heatMap: Map<string, number>,
+  maxGroups = 3,
+  papersPerGroup = 2,
+  lang: 'zh' | 'en' | string = 'en',
+): { name: string; papers: Paper[] }[] {
+  const allCodes = papers.map((p) => p.categories ?? []);
+  const freq = computeGroupFrequency(allCodes);
+
+  // Pick top groups, then ensure at least one non-core-AI group is included
+  const coreAI = new Set(['ml-ai', 'nlp', 'cv']);
+  const topNonAI = freq.filter((g) => !coreAI.has(g.key));
+  const topAI = freq.filter((g) => coreAI.has(g.key));
+
+  const selected: typeof freq = [];
+  for (const g of topNonAI.slice(0, Math.max(1, maxGroups - 1))) {
+    selected.push(g);
+  }
+  const remainingSlots = maxGroups - selected.length;
+  for (const g of topAI.slice(0, remainingSlots)) {
+    selected.push(g);
+  }
+
+  // For each selected group, find matching papers and pick top by heat
+  return selected.map((g) => {
+    const label = getGroupLabel(g.key);
+    const name = label ? (label as BilingualField)[lang as keyof BilingualField] || (label as BilingualField).en : g.key;
+    const matching = papers.filter((p) =>
+      (p.categories ?? []).some((c) => getCategoryGroup(c) === g.key),
+    );
+    const sorted = [...matching].sort((a, b) => {
+      const aScore = heatMap.get(a.id) ?? 0;
+      const bScore = heatMap.get(b.id) ?? 0;
+      if (aScore !== bScore) return bScore - aScore;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    return { name, papers: sorted.slice(0, papersPerGroup) };
+  }).filter((g) => g.papers.length > 0);
 }
 
 type WeekStart = number; // ms epoch
