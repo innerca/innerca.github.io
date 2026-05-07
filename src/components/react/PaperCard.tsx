@@ -1,21 +1,38 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { getPrimarySource } from '../../lib/source';
 import { relativeDate, isNew } from '../../lib/date';
 import SourceBadge from './SourceBadge';
+import HeatBadge from './HeatBadge';
 
 interface Props {
   paper: Paper;
   lang: Lang;
   index?: number;
+  /** Optional override — if not provided, component will try to load from paper_heat_scores.json */
+  heatScore?: number;
 }
 
-export default function PaperCard({ paper, lang, index = 0 }: Props) {
+export default function PaperCard({ paper, lang, index = 0, heatScore: heatScoreProp }: Props) {
+  const [localHeatScore, setLocalHeatScore] = useState<number | null>(null);
   const title = paper.title[lang];
   const summary = paper.summary[lang];
   const href = `/${lang}/paper/${paper.id}`;
   const isNewPaper = isNew(paper.addedDate || paper.date);
   const authors = paper.authors ?? [];
+
+  // Lazy-load heat score if not passed as prop
+  const heatScore = heatScoreProp ?? localHeatScore;
+  useEffect(() => {
+    if (heatScoreProp !== undefined) return;
+    import('../../data/paper_heat_scores.json')
+      .then((mod) => {
+        const match = (mod as any).papers?.find((p: any) => p.paper_id === paper.id);
+        if (match?.heat_score != null) setLocalHeatScore(match.heat_score);
+      })
+      .catch(() => {});
+  }, [paper.id, heatScoreProp]);
 
   return (
     <motion.a
@@ -91,6 +108,7 @@ export default function PaperCard({ paper, lang, index = 0 }: Props) {
             <span className="text-neon-cyan text-[10px] font-bold">NEW</span>
           )}
         </span>
+        {heatScore != null && <HeatBadge score={heatScore} size="sm" />}
         <SourceBadge source={getPrimarySource(paper)} />
         <span>💬 {paper.citeCount}</span>
       </div>

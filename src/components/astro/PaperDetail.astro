@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import type { Paper, Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import { getPaperSources, getExternalUrl } from '../../lib/source';
@@ -21,6 +23,18 @@ const allSources = getPaperSources(paper);
 const externalUrl = getExternalUrl(paper);
 const addedDate = paper.addedDate ? formatDateWithRelative(paper.addedDate, lang) : null;
 const authors = paper.authors ?? [];
+
+// Load heat score from generated data (if available)
+let heatScore: number | null = null;
+try {
+  const heatPath = path.resolve('src/data/paper_heat_scores.json');
+  if (fs.existsSync(heatPath)) {
+    const raw = fs.readFileSync(heatPath, 'utf-8');
+    const data = JSON.parse(raw);
+    const match = (data.papers ?? []).find((p: any) => p.paper_id === paper.id);
+    if (match?.heat_score != null) heatScore = match.heat_score;
+  }
+} catch {} // graceful fallback
 
 function slugify(name) {
   return name
@@ -123,6 +137,14 @@ function slugify(name) {
       ))}
     </span>
 
+    {heatScore != null && (
+      <span class="flex items-center gap-1" title={`Heat score: ${heatScore.toFixed(1)}`}>
+        <span style={{ color: heatScore >= 60 ? '#ff6b6b' : heatScore >= 30 ? '#ffd93d' : '#4a5568' }}>
+          {heatScore >= 80 ? '🔥' : heatScore >= 60 ? 'Hot' : heatScore >= 30 ? 'Warm' : 'Cool'}
+        </span>
+        <span>{heatScore.toFixed(0)}</span>
+      </span>
+    )}
     <span>💬 {paper.citeCount} {t('citeCount', lang)}</span>
     {addedDate && (
       <span class="flex items-center gap-1 text-xs opacity-70">
