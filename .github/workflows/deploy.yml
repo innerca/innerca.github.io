@@ -44,6 +44,9 @@ jobs:
         if: ${{ env.GROQ_API_KEY != '' }}
         run: python scripts/summarize.py
 
+      - name: Pull HF Daily Papers signals
+        run: python scripts/pull_hf_signals.py
+
       - name: Compute heat scores
         run: |
           python scripts/compute_heat_scores.py
