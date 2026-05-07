@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/astro/HeroSection.astro';
 import StatsBar from '../../components/astro/StatsBar.astro';
@@ -9,7 +11,30 @@ import type { Paper } from '../../types/paper';
 
 const lang = 'zh';
 const typedPapers = papers as Paper[];
-const trendingPapers = typedPapers.filter((p) => p.isTrending);
+
+// Load heat scores and pick top 5 for trending
+let trendingPapers: Paper[] = [];
+try {
+  const heatPath = path.resolve('src/data/paper_heat_scores.json');
+  if (fs.existsSync(heatPath)) {
+    const raw = JSON.parse(fs.readFileSync(heatPath, 'utf-8'));
+    const heatMap = new Map<string, number>();
+    for (const p of (raw.papers ?? [])) {
+      if (p.heat_score != null) heatMap.set(p.paper_id, p.heat_score);
+    }
+    const scored = typedPapers
+      .map((p) => ({ paper: p, score: heatMap.get(p.id) ?? 0 }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map(({ paper }) => paper);
+    trendingPapers = scored;
+  }
+} catch {}
+// Fallback: use isTrending flag if heat scores unavailable
+if (trendingPapers.length === 0) {
+  trendingPapers = typedPapers.filter((p) => p.isTrending);
+}
+
 const latestPapers = [...typedPapers].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
