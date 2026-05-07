@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LatestPapers from '../../components/astro/LatestPapers.astro';
+import papers from '../../data/papers.json';
+import type { Paper } from '../../types/paper';
+
+const lang = 'zh';
+const typedPapers = papers as Paper[];
+
+const latestPapers = [...typedPapers].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+---
+
+<BaseLayout lang={lang} title="最新论文 - AI 学术前沿雷达" currentPath="/zh/latest">
+  <div class="pt-8">
+    <LatestPapers papers={latestPapers} lang={lang} />
+  </div>
+</BaseLayout>

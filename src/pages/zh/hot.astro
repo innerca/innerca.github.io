@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PaperCard from '../../components/react/PaperCard';
+import { t } from '../../lib/i18n';
+import { getHotPapers } from '../../lib/heat';
+import papers from '../../data/papers.json';
+import type { Paper } from '../../types/paper';
+
+const lang = 'zh';
+const typedPapers = papers as Paper[];
+
+const hotPapers = getHotPapers(typedPapers);
+---
+
+<BaseLayout lang={lang} title="热度论文 - AI 学术前沿雷达" currentPath="/zh/hot">
+  <div class="pt-8 max-w-6xl mx-auto px-4">
+    <h1 class="text-2xl font-bold text-gradient-cyan-purple mb-6 tracking-wide">
+      🔥 {t('hot', lang)}
+    </h1>
+    <div class="grid gap-4 max-w-3xl mx-auto">
+      {hotPapers.length > 0 ? (
+        hotPapers.map((p, i) => (
+          <PaperCard client:load paper={p} lang={lang} index={i} />
+        ))
+      ) : (
+        <p class="text-text-secondary text-sm font-mono text-center py-8">
+          {t('noHotPapers', lang)}
+        </p>
+      )}
+    </div>
+  </div>
+</BaseLayout>

@@ -15,10 +15,14 @@ export const siteConfig = {
   nav: {
     zh: [
       { label: '首页', href: '/zh' },
+      { label: '最新', href: '/zh/latest' },
+      { label: '热度', href: '/zh/hot' },
       { label: '搜索', href: '/zh/search' },
     ],
     en: [
       { label: 'Home', href: '/en' },
+      { label: 'Latest', href: '/en/latest' },
+      { label: 'Hot', href: '/en/hot' },
       { label: 'Search', href: '/en/search' },
     ],
   },

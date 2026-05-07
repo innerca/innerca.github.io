@@ -26,6 +26,8 @@ export const navText: Record<Lang, Record<string, string>> = {
     detailCorePoints: '核心要点',
     detailAbstract: '摘要',
     added: '收录',
+    hot: '热度论文',
+    noHotPapers: '暂无热度论文',
   },
   en: {
     home: 'Home',
@@ -52,6 +54,8 @@ export const navText: Record<Lang, Record<string, string>> = {
     detailCorePoints: 'Key Points',
     detailAbstract: 'Abstract',
     added: 'Added',
+    hot: 'Hot Papers',
+    noHotPapers: 'No hot papers',
   },
 };
 
