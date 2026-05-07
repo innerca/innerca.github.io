@@ -53,12 +53,13 @@
 | 📥 多源采集 | 定时抓取 arXiv + Semantic Scholar 论文元数据及引用量 | MVP |
 | 🌍 多语言展示 | 网站 UI 按 `/zh` `/en` 路由提供，论文内容待 AI 翻译接入 | MVP |
 | 🎮 游戏化 UI | 暗色粒子背景、霓虹发光卡片、动态数字、交错动画 | MVP |
-| 🔍 全文搜索 | 纯前端 FlexSearch，7 字段中英文混合搜索 | MVP |
+| 🔍 全文搜索 | 纯前端 FlexSearch，7 字段中英文混合搜索，支持来源筛选 | MVP |
 | 🔗 多来源标识 | 来源标签组件，展示论文所属多个来源 | MVP |
 | 📨 分享 | Web Share API + 复制链接 + 邮件发送 | MVP |
+| 🧊 分层存储 | 按论文日期自动划分热/温/冷三层，控制构建体积 | MVP |
 | 🤖 AI 加工 | 生成中英双语摘要、核心要点（计划接入 Groq） | 第二阶段 |
 | 📡 RSS/API | 构建时生成多语言 Feed、机器可读 JSON 端点 | 第二阶段 |
-| 🛡️ 高性能 | 首屏 < 2s，动画 60fps | MVP |
+| 🏷️ 来源/领域筛选 | 搜索页按 source key / categories 过滤论文 | 第二阶段 |
 | 👩‍💻 AI 运维 | 通过 Issue 让 AI 修改主题、添加组件，自动 PR | 第二阶段 |
 | 🧠 知识图谱 | 实体关系可视化 (react-force-graph) | 第二阶段 |
 | 💬 AI 问答 | Worker 代理 LLM，结合论文库即时回答 | 第三阶段 |
@@ -74,7 +75,7 @@
 | 前端交互 | React 18 + Framer Motion | 动画与动态组件 |
 | 样式体系 | Tailwind CSS + CSS 变量 | 暗色主题，易于维护 |
 | 粒子背景 | 自研 Canvas 组件 | 轻量，无依赖 |
-| 数据源 | `papers.json` | 全部内容唯一源头 |
+| 数据源 | `papers.json` (热) + `papers.warm.json` + `papers-archive/` | 三层分层存储 |
 | AI 模型 | Groq (Llama 3.1) 或 GPT‑4o‑mini | 成本极低，支持 JSON 模式 |
 | 前端搜索 | FlexSearch | 纯客户端全文检索 |
 | 部署平台 | GitHub Pages | 免费静态托管 |
@@ -107,7 +108,29 @@
 ### 多来源数据模型
 - 来源注册表 `src/config/sources.ts`：arXiv、OpenReview、Semantic Scholar、DBLP、X/Twitter、Other
 - 每篇论文的 `sources[]` 数组记录多来源信息（ID、URL、引用数、爬取状态）
-- PaperCard 和 PaperDetail 通过 `SourceBadge` 展示来源标签，颜色和图标由注册表配置
+- PaperCard 展示主来源，PaperDetail 展示所有来源
+
+### 数据源扩展路线图
+
+| 数据源 | 优先级 | 核心价值 | 接入方式 |
+|--------|--------|----------|----------|
+| arXiv + Semantic Scholar | 🔴 必接 | 最新论文 + 引用数据 | 已实现 |
+| Hugging Face Daily Papers | 🟡 建议接 | 社区热度筛选 | HF Papers CLI / API |
+| DBLP | 🟡 建议接 | CS 领域权威，会议/期刊等级 | `fetch-dblp.js` 爬取模块 |
+| Papers with Code | 🟢 可选 | 代码复现性标记 | API 查询 GitHub 链接 |
+| OpenReview | 🟢 可选 | 同行评审意见 | OpenReview API |
+| ResearchRabbit / Connected Papers | ⚠️ 暂缓 | 引用网络探索 | 独立工具，不直接集成 |
+
+### 多维度筛选策略
+
+未来论文质量评估可引入加权"发现分数"，综合以下维度：
+
+| 维度 | 数据来源 | 权重方向 |
+|------|----------|----------|
+| 学术影响力 | Semantic Scholar 引用数、CORE 会议等级 | 高 |
+| 社区热度 | Hugging Face upvote、GitHub Star | 中 |
+| 代码复现性 | Papers with Code 标记、GitHub 仓库链接 | 高 |
+| 主题新颖度 | AI 聚类、关键词趋势分析 | 低（后期） |
 
 ### 后续 AI 加工（第二阶段）
 - 接入 Groq（Llama 模型），生成正式的中英双语核心要点和摘要优化
@@ -140,21 +163,64 @@
 
 ---
 
-## 9. 里程碑（分阶段）  
+## 9. 数据生命周期与分层存储  
 
-### 🥇 MVP（1-2 周）  
-- 假数据 `papers.json` (5 篇) 驱动的前端站点  
-- 全部页面与路由、多语言、搜索、动画  
-- 部署到 Cloudflare Pages  
+随着论文数量增长（日增 ~30 篇），采用三层分层策略控制构建体积和前端负载。  
 
-### 🥈 自动化闭环（3-4 周）  
-- 接入真实采集流水线与 AI 总结  
-- GitHub Actions 每日自动更新数据并构建  
+| 层级 | 时间范围 | 存储位置 | 前端行为 |
+|------|----------|----------|----------|
+| 🔥 **热** | ≤ 90 天 | `papers.json` | 首页加载、搜索索引、生成详情页 |
+| 🌤️ **温** | 90–365 天 | `papers.warm.json` | 保留详情页，不参与搜索索引 |
+| ❄️ **冷** | > 365 天 | `papers-archive/YYYY/MM.json` | 无独立详情页，通过归档浏览器访问 |
+
+### 数据流
+
+```
+每日爬取 → 去重合并 → splitByTier(merged)
+                          ├── hot  → papers.json（首页/搜索/详情页）
+                          ├── warm → papers.warm.json（仅详情页）
+                          └── cold → papers-archive/（归档）
+```
+
+### 关键规则
+
+- **去重范围**：每日爬取时仅对热 + 温论文做去重，冷数据已"密封"
+- **自动降级**：每次 `fetch.js` 运行时自动按日期分派到对应层级，无需人工干预
+- **无损归档**：冷数据不删除，仅移至归档目录，仍可通过构建时的归档索引访问
+- **阈值配置**：`src/config/performance.ts` 的 `dataTiers` 可调
+
+### 规模估算
+
+| 时间 | 论文数 | papers.json | 构建时间 |
+|------|--------|-------------|----------|
+| 当前 | ~30 | ~60 KB | < 2s |
+| 3 个月（纯热） | ~2,700 | ~5 MB | ~5s |
+| 1 年（热+温） | ~11,000 | ~5 + 15 MB | ~15s |
+| 带 >1 年归档 | ~22,000+ | 热数据不变 | 不变 |
+
+---
+
+## 10. 功能路线图  
+
+### 🥇 MVP（已完成）  
+- 多源数据模型与去重引擎  
+- 多语言路由、FlexSearch 全文搜索  
+- 赛博朋克 UI、粒子背景、卡片动画  
+- 来源标签组件、分享按钮  
+- 分层存储基础设施  
+- 部署到 GitHub Pages  
+
+### 🥈 自动化闭环（当前阶段）  
+- 接入真实 arXiv 采集流水线  
+- GitHub Actions 每日自动构建 → 部署  
+- 来源/领域筛选（搜索页 filter）  
+- LLM 智能摘要（接入 Groq）  
 - RSS/JSON 端点上线  
 
 ### 🥉 增强与自治（后续）  
 - 知识图谱可视化、AI 问答  
-- AI 自动生成周报、通过 Issue 参与代码维护  
+- AI 自动生成周报  
+- 通过 Issue 让 AI 参与代码维护  
 
 ---
 

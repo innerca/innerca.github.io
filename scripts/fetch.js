@@ -15,6 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchArxivPapers, enrichPapers } from './fetch-arxiv.js';
 import { mergeNewPapers } from './lib/dedup.js';
+import { splitByTier, loadWarm, writeWarm, writeCold } from './lib/tiers.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONFIG_FILE = path.resolve(__dirname, './scraper-config.json');
@@ -97,12 +98,14 @@ async function main() {
     const config = JSON.parse(await readFile(CONFIG_FILE, 'utf-8'));
     const sources = config.sources || [];
 
-    // 2. Load existing papers
-    let existing = [];
+    // 2. Load existing papers (hot + warm for dedup; cold is sealed)
+    let hot = [];
     if (existsSync(DATA_FILE)) {
-      existing = JSON.parse(await readFile(DATA_FILE, 'utf-8'));
-      console.log(`Loaded ${existing.length} existing papers from data file`);
+      hot = JSON.parse(await readFile(DATA_FILE, 'utf-8'));
     }
+    const warm = await loadWarm();
+    const allExisting = [...hot, ...warm];
+    console.log(`Loaded ${hot.length} hot + ${warm.length} warm papers`);
 
     // 3. Run all enabled scrapers
     const newPapers = await runScrapers(sources);
@@ -114,7 +117,7 @@ async function main() {
     }
 
     // 4. Cross-source dedup merge
-    const { merged, stats } = mergeNewPapers(newPapers, existing);
+    const { merged, stats } = mergeNewPapers(newPapers, allExisting);
     console.log(`\nMerge results:`);
     console.log(`  Added: ${stats.added}`);
     console.log(`  Kept/updated: ${stats.kept}`);
@@ -123,12 +126,14 @@ async function main() {
     // 5. Compute trending
     computeTrending(merged);
 
-    // 6. Write
-    await writeFile(DATA_FILE, JSON.stringify(merged, null, 2) + '\n');
+    // 6. Split into tiers and write
+    const { hot: newHot, warm: newWarm, cold: newCold } = splitByTier(merged);
 
-    // 7. Touch package.json to invalidate Astro cache on next build
-    const pkgPath = path.resolve(__dirname, '../package.json');
+    await writeFile(DATA_FILE, JSON.stringify(newHot, null, 2) + '\n');
+    await writeWarm(newWarm);
+    await writeCold(newCold);
 
+    console.log(`  Hot: ${newHot.length} | Warm: ${newWarm.length} | Cold: ${newCold.length}`);
     console.log(`\n✓ Done`);
   } catch (err) {
     console.error(`\n✗ Error: ${err.message}`);

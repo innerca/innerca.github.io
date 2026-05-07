@@ -16,3 +16,21 @@ export const trending = {
 } as const;
 
 export type Trending = typeof trending;
+
+/**
+ * Data tier thresholds (in days).
+ *
+ * Hot:   papers.json — loaded on every page, indexed for search, detail pages generated
+ * Warm:  papers.warm.json — detail pages exist, but not in search index
+ * Cold:  papers-archive/YYYY/ — no detail pages, accessible via archive browser
+ *
+ * When papers.age >= warmDays, they're moved to warm on the next fetch run.
+ * When papers.age >= coldDays, they're moved to cold archive.
+ */
+export const dataTiers = {
+  hotDays: 90,
+  warmDays: 365,
+  coldDays: Infinity, // never auto-delete, just archive
+} as const;
+
+export type DataTiers = typeof dataTiers;

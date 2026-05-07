@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Daily Update & Deploy
 
 on:
   push:
@@ -19,15 +19,33 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     steps:
       - uses: actions/checkout@v4
+
+      # ── Node.js for Astro ──
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm run fetch-papers
+
+      # ── Python for Groq summarizer ──
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install groq
+
+      # ── Data pipeline ──
+      - run: npm run fetch
+
+      - name: Summarize with Groq AI
+        if: ${{ env.GROQ_API_KEY != '' }}
+        run: python scripts/summarize.py
+
       - run: npm run build
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

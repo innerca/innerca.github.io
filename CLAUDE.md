@@ -65,4 +65,5 @@ src/
 ## 五、Git 操作规范
 
 - **不主动 `git push`**：除非用户明确要求，不得执行推送操作。所有修改仅停留在本地工作区。
-- **每次代码修改后提交一次 commit，push 前合并相关 commit**：每完成一个原子性的代码修改就创建一次 commit；在 push 之前，将同一需求/功能的多笔相关 commit 合并（squash）为一个，保持提交历史清晰。
+- **每次功能修改后自动 commit**：每完成一个原子性的功能修改后，主动执行 `git add` + `git commit`，无需等待用户提示。commit message 使用 conventional commits 风格（`feat:`、`fix:`、`chore:`、`refactor:`、`docs:`），附 `Co-Authored-By`。
+- **push 前合并相关 commit**：在 push 之前，将同一需求/功能的多笔相关 commit 合并（squash）为一个，保持提交历史清晰。
