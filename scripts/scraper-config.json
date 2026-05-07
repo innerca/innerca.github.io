@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "key": "arxiv",
+      "apiUrl": "https://export.arxiv.org/api/query",
+      "rateLimitMs": 3000,
+      "schedule": "0 6 * * *",
+      "categories": ["cs.AI", "cs.LG", "cs.CL", "cs.CV", "cs.NE", "cs.MA", "cs.IR"],
+      "maxResults": 30,
+      "enrichment": {
+        "semanticScholar": {
+          "apiUrl": "https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount,externalIds",
+          "batchSize": 100
+        }
+      }
+    }
+  ]
+}
