@@ -29,7 +29,7 @@ export async function getStaticPaths() {
   }
 
   return [...authorMap.entries()]
-    .filter(([, papers]) => papers.length > 0)
+    .filter(([slug, papers]) => slug.length > 0 && papers.length > 0)
     .map(([slug, authorPapers]) => {
       // Recover original name from first match
       const authorName = authorPapers[0].authors?.find(

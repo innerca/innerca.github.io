@@ -23,7 +23,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { XMLParser } from 'fast-xml-parser';
 
-import { enrichPapers } from './fetch-arxiv.js';
+import { fetchCitationCounts } from './fetch-arxiv.js';
 import { mergeNewPapers } from './lib/dedup.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -288,11 +288,24 @@ async function main() {
     return;
   }
 
-  // 3. Enrich with S2 citation counts
+  // 3. Enrich with S2 citation counts (batched to avoid 500 ID limit)
   console.log('\nEnriching with Semantic Scholar citation counts...');
-  const enriched = await enrichPapers(allNewPapers);
-  const withCitations = enriched.filter((p) => p.citeCount > 0).length;
-  console.log(`  ${withCitations}/${allNewPapers.length} papers have citation data`);
+  const BATCH_SIZE = 100;
+  let totalWithCitations = 0;
+  for (let i = 0; i < allNewPapers.length; i += BATCH_SIZE) {
+    const batch = allNewPapers.slice(i, i + BATCH_SIZE);
+    const citeMap = await fetchCitationCounts(batch);
+    for (const paper of batch) {
+      if (citeMap.has(paper.id)) {
+        paper.citeCount = citeMap.get(paper.id);
+        totalWithCitations++;
+        const arxivSource = paper.sources?.find((s) => s.key === 'arxiv');
+        if (arxivSource) arxivSource.citeCount = paper.citeCount;
+      }
+    }
+    process.stdout.write(`\r    Batch ${Math.ceil((i + BATCH_SIZE) / BATCH_SIZE)}/${Math.ceil(allNewPapers.length / BATCH_SIZE)} (${totalWithCitations} with citations)`);
+  }
+  console.log(`\n  ${totalWithCitations}/${allNewPapers.length} papers have citation data`);
 
   // 4. Dedup merge
   console.log('\nMerging with existing database...');

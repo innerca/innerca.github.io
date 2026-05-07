@@ -1,11 +1,14 @@
 {
   "version": "half_year_heat_v1",
-  "generated_at": "2026-05-07T14:28:11Z",
+  "generated_at": "2026-05-07T14:39:48Z",
+  "warmup_days": 1,
+  "warmup_mode": "warmup",
   "window_days": 180,
   "counts": {
-    "total_papers": 30,
-    "fields": 12,
-    "hot_papers": 5,
-    "rising_papers": 0
+    "total_papers": 9812,
+    "ranked_papers": 9812,
+    "fields": 90,
+    "hot": 1018,
+    "rising": 0
   }
 }

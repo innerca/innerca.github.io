@@ -113,12 +113,16 @@ def match_venue_tier(venue_raw, tier_data):
     return 0.2
 
 
+def get_primary_field(paper):
+    """Extract primary field from paper data."""
+    return paper.get("primary_field") or (paper.get("categories") or ["unknown"])[0]
+
 def compute_field_stats(papers):
     """Compute global citation statistics per field + age bucket."""
     # Group papers by field + age bucket
     buckets = {}
     for p in papers:
-        field = p.get("primary_field", "unknown")
+        field = get_primary_field(p)
         days = days_since(p.get("date", ""))
         bucket_label, _ = get_age_bucket(days)
         key = (field, bucket_label)
@@ -198,7 +202,7 @@ def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, f
     if days > WINDOW_DAYS:
         return None  # Outside window
 
-    primary_field = paper.get("primary_field") or (paper.get("categories") or ["unknown"])[0]
+    primary_field = get_primary_field(paper)
     cite_count = paper.get("citeCount", 0)
 
     # ── S_cite: log1p normalized by field + age bucket ──
