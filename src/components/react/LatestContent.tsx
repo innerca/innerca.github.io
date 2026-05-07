@@ -1,0 +1,129 @@
+import { useState, useMemo } from 'react';
+import type { Paper, Lang } from '../../types/paper';
+import { t } from '../../lib/i18n';
+import PaperCard from './PaperCard';
+
+interface Props {
+  papers: Paper[];
+  lang: Lang;
+}
+
+export default function LatestContent({ papers, lang }: Props) {
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+
+  // Extract unique categories
+  const allCategories = useMemo(() => {
+    const cats = new Set(papers.flatMap((p) => p.categories ?? []));
+    return [...cats].sort();
+  }, [papers]);
+
+  const toggleCategory = (cat: string) => {
+    setSelectedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      return next;
+    });
+  };
+
+  const clearFilters = () => setSelectedCategories(new Set());
+
+  const hasFilters = selectedCategories.size > 0;
+
+  // Filter + group by date, newest first, max 7 days
+  const dateGroups = useMemo(() => {
+    const filtered = hasFilters
+      ? papers.filter((p) => {
+          const paperCats = new Set(p.categories ?? []);
+          return [...selectedCategories].some((c) => paperCats.has(c));
+        })
+      : papers;
+
+    const sorted = [...filtered].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+
+    const groups: { date: string; papers: Paper[] }[] = [];
+    const seenDates = new Set<string>();
+    for (const p of sorted) {
+      if (!seenDates.has(p.date)) {
+        if (seenDates.size >= 7) break;
+        seenDates.add(p.date);
+        groups.push({ date: p.date, papers: [p] });
+      } else {
+        groups[groups.length - 1].papers.push(p);
+      }
+    }
+    return groups;
+  }, [papers, selectedCategories, hasFilters]);
+
+  const totalPapers = dateGroups.reduce((sum, g) => sum + g.papers.length, 0);
+
+  return (
+    <div class="pt-8">
+      {/* Category filter chips */}
+      {allCategories.length > 0 && (
+        <div class="max-w-6xl mx-auto px-4 mb-6">
+          <div class="flex items-start gap-3">
+            <span class="text-xs text-text-secondary font-mono mt-1 shrink-0">
+              {t('filterCategory', lang)}:
+            </span>
+            <div class="flex flex-wrap gap-1.5">
+              {allCategories.map((cat) => {
+                const active = selectedCategories.has(cat);
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => toggleCategory(cat)}
+                    class={`px-2 py-0.5 text-[11px] font-mono rounded border transition-all
+                      ${active
+                        ? 'bg-neon-purple/20 text-neon-purple border-neon-purple/50'
+                        : 'bg-transparent text-text-secondary/60 border-text-secondary/20 hover:border-text-secondary/40'
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {hasFilters && (
+            <button
+              onClick={clearFilters}
+              class="mt-2 text-xs text-text-secondary/50 hover:text-accent-red font-mono transition-colors"
+            >
+              ✕ {t('filterClear', lang)}
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Results */}
+      {totalPapers > 0 ? (
+        <div class="space-y-10">
+          {dateGroups.map((g) => (
+            <section>
+              <div class="max-w-6xl mx-auto px-4 mb-2">
+                <p class="text-xs text-text-secondary font-mono">
+                  {g.date} &middot; {g.papers.length}{' '}
+                  {lang === 'zh' ? '篇' : `paper${g.papers.length !== 1 ? 's' : ''}`}
+                </p>
+              </div>
+              <div class="grid gap-4 max-w-3xl mx-auto px-4">
+                {g.papers.map((p, i) => (
+                  <PaperCard key={p.id} paper={p} lang={lang} index={i} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div class="max-w-6xl mx-auto px-4 text-center py-12">
+          <p class="text-sm text-text-secondary font-mono">
+            {lang === 'zh' ? '没有匹配的论文' : 'No matching papers'}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,40 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import LatestPapers from '../../components/astro/LatestPapers.astro';
+import LatestContent from '../../components/react/LatestContent';
 import papers from '../../data/papers.json';
 import type { Paper } from '../../types/paper';
 
 const lang = 'zh';
 const typedPapers = papers as Paper[];
-
-// Group papers by date, newest first, max 7 days
-const sorted = [...typedPapers].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-);
-const dateGroups: { date: string; papers: Paper[] }[] = [];
-const seenDates = new Set<string>();
-for (const p of sorted) {
-  if (!seenDates.has(p.date)) {
-    if (seenDates.size >= 7) break;
-    seenDates.add(p.date);
-    dateGroups.push({ date: p.date, papers: [p] });
-  } else {
-    dateGroups[dateGroups.length - 1].papers.push(p);
-  }
-}
 ---
 
 <BaseLayout lang={lang} title="最新论文 - AI 学术前沿雷达" currentPath="/zh/latest">
-  <div class="pt-8 space-y-10">
-    {dateGroups.map((g) => (
-      <section>
-        <div class="max-w-6xl mx-auto px-4 mb-2">
-          <p class="text-xs text-text-secondary font-mono">
-            {g.date} &middot; {g.papers.length} 篇
-          </p>
-        </div>
-        <LatestPapers papers={g.papers} lang={lang} />
-      </section>
-    ))}
-  </div>
+  <LatestContent client:load papers={typedPapers} lang={lang} />
 </BaseLayout>
