@@ -33,6 +33,7 @@ DATA_DIR = PROJECT_ROOT / "src" / "data"
 PAPERS_FILE = DATA_DIR / "papers.json"
 VENUE_TIERS_FILE = DATA_DIR / "venue_tiers.json"
 SIGNALS_DIR = DATA_DIR / "signals" / "citations"
+SIGNALS_HF_DIR = DATA_DIR / "signals" / "hf"
 OUTPUT_FILE = DATA_DIR / "paper_heat_scores.json"
 META_FILE = DATA_DIR / "heat_score_meta.json"
 
@@ -192,9 +193,40 @@ def load_citation_history():
     return deltas, len(snapshots)
 
 
+def load_hf_signatures():
+    """Load HF Daily Papers snapshots and return set of featured arXiv IDs
+    for two windows: last 7 days, and last 30 days."""
+    hf_7d = set()
+    hf_30d = set()
+
+    if not SIGNALS_HF_DIR.exists():
+        return hf_7d, hf_30d
+
+    now = datetime.now(timezone.utc)
+    snapshots = sorted(SIGNALS_HF_DIR.glob("*.json"))
+
+    for sp in snapshots:
+        try:
+            date_str = sp.stem  # YYYY-MM-DD
+            d = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+            days_ago = (now - d).days
+            if days_ago > 30:
+                continue
+
+            data = json.loads(open(sp).read())
+            ids = {p["arxiv_id"] for p in data.get("papers", []) if p.get("arxiv_id")}
+            if days_ago <= 7:
+                hf_7d.update(ids)
+            hf_30d.update(ids)
+        except (ValueError, json.JSONDecodeError):
+            continue
+
+    return hf_7d, hf_30d
+
+
 # ─── Scoring ────────────────────────────────────────────────────────
 
-def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta):
+def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta, hf_7d, hf_30d):
     """Compute all heat score components for a single paper."""
     days = days_since(paper.get("date", ""))
     bucket_label, fresh_score = get_age_bucket(days)
@@ -216,8 +248,8 @@ def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, f
     # ── S_code: no data source yet ──
     s_code = 0.0
 
-    # ── S_buzz: no data source yet ──
-    s_buzz = 0.0
+    # ── S_buzz: HF Daily Papers ──
+    s_buzz = 1.0 if paper.get("id", "") in hf_7d else (0.6 if paper.get("id", "") in hf_30d else 0.0)
 
     # ── S_venue ──
     venue_raw = paper.get("venue", "")
@@ -240,11 +272,12 @@ def score_paper(paper, field_stats, venue_tiers, warmup_mode, citation_deltas, f
         delta = citation_deltas.get(paper_id_arxiv, 0)
         b_cite = clamp(delta / field_p95_delta) if field_p95_delta > 0 else 0.0
 
-    elif warmup_mode == "warmup":
-        # Weak burst: only HF/code (no citation history yet)
-        pass  # b_cite stays 0, b_buzz/code handled below
+    # ── B_buzz: HF first featured in last 7d ──
+    paper_id = paper.get("id", "")
+    if paper_id in hf_7d:
+        # Check if this is a recent first appearance (weak burst)
+        b_buzz = 1.0
 
-    # b_buzz and b_code are always 0 until HF/PwC are integrated
     burst_bonus = min(BURST_CAP, BURST_W_CITE * b_cite + BURST_W_BUZZ * b_buzz + BURST_W_CODE * b_code)
 
     heat_score = base_score + burst_bonus
@@ -359,10 +392,16 @@ def main():
     all_deltas = list(citation_deltas.values())
     field_p95_delta = sorted(all_deltas)[max(0, int(len(all_deltas) * 0.95) - 1)] if len(all_deltas) > 0 else 0
 
+    # Load HF signals
+    hf_7d, hf_30d = load_hf_signatures()
+    hf_count_7d = len(hf_7d)
+    hf_count_30d = len(hf_30d)
+    print(f"HF: {hf_count_7d} papers in last 7d, {hf_count_30d} in last 30d")
+
     # Score each paper
     scored = []
     for p in window_papers:
-        result = score_paper(p, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta)
+        result = score_paper(p, field_stats, venue_tiers, warmup_mode, citation_deltas, field_p95_delta, hf_7d, hf_30d)
         if result:
             scored.append(result)
 
@@ -393,9 +432,8 @@ def main():
     missing = {}
     if warmup_mode != "ready":
         missing["b_cite"] = f"Citation history: {snapshots_count}/7 days needed for burst"
-    if True:  # Always missing until integrated
+    if True:
         missing["s_code"] = "Papers with Code not yet integrated"
-        missing["s_buzz"] = "Hugging Face Daily Papers not yet integrated"
 
     # Save
     output = {
