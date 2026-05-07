@@ -110,6 +110,7 @@ export default function PaperCard({ paper, lang, index = 0, heatScore: heatScore
         </span>
         {heatScore != null && <HeatBadge score={heatScore} size="sm" />}
         <SourceBadge source={getPrimarySource(paper)} />
+        <span>📖 {paper.citeCount}</span>
       </div>
     </motion.a>
   );

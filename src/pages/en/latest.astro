@@ -7,13 +7,29 @@ import type { Paper } from '../../types/paper';
 const lang = 'en';
 const typedPapers = papers as Paper[];
 
-const latestPapers = [...typedPapers].sort(
+// Only show latest day's papers (statically computed at build time)
+const sorted = [...typedPapers].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
+const latestDate = sorted.length > 0 ? sorted[0].date : '';
+const latestPapers = sorted.filter((p) => p.date === latestDate);
+const remainingToday = sorted.length - latestPapers.length;
 ---
 
 <BaseLayout lang={lang} title="Latest Papers - AI Paper Radar" currentPath="/en/latest">
   <div class="pt-8">
+    <div class="max-w-6xl mx-auto px-4 mb-2">
+      <p class="text-xs text-text-secondary font-mono">
+        {latestDate} &middot; {latestPapers.length} paper{latestPapers.length !== 1 ? 's' : ''}
+      </p>
+    </div>
     <LatestPapers papers={latestPapers} lang={lang} />
+    {remainingToday > 0 && (
+      <div class="max-w-6xl mx-auto px-4 mt-6 text-center">
+        <p class="text-sm text-text-secondary font-mono">
+          + {remainingToday} more paper{remainingToday !== 1 ? 's' : ''} from earlier dates
+        </p>
+      </div>
+    )}
   </div>
 </BaseLayout>
