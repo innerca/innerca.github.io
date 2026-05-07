@@ -1,7 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { t } from '../../lib/i18n';
 import PaperCard from './PaperCard';
+
+const INITIAL_SHOW = 5;
+const SHOW_MORE = 10;
 
 interface Props {
   papers: Paper[];
@@ -10,6 +13,7 @@ interface Props {
 
 export default function LatestContent({ papers, lang }: Props) {
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+  const [showCounts, setShowCounts] = useState<Record<string, number>>({});
 
   // Extract unique categories
   const allCategories = useMemo(() => {
@@ -26,9 +30,17 @@ export default function LatestContent({ papers, lang }: Props) {
     });
   };
 
-  const clearFilters = () => setSelectedCategories(new Set());
+  const clearFilters = () => {
+    setSelectedCategories(new Set());
+    setShowCounts({});
+  };
 
   const hasFilters = selectedCategories.size > 0;
+
+  // Reset per-day show counts when filters change
+  useEffect(() => {
+    setShowCounts({});
+  }, [selectedCategories]);
 
   // Filter + group by date, newest first, max 7 days
   const dateGroups = useMemo(() => {
@@ -101,21 +113,44 @@ export default function LatestContent({ papers, lang }: Props) {
       {/* Results */}
       {totalPapers > 0 ? (
         <div class="space-y-10">
-          {dateGroups.map((g) => (
-            <section>
-              <div class="max-w-6xl mx-auto px-4 mb-2">
-                <p class="text-xs text-text-secondary font-mono">
-                  {g.date} &middot; {g.papers.length}{' '}
-                  {lang === 'zh' ? '篇' : `paper${g.papers.length !== 1 ? 's' : ''}`}
-                </p>
-              </div>
-              <div class="grid gap-4 max-w-3xl mx-auto px-4">
-                {g.papers.map((p, i) => (
-                  <PaperCard key={p.id} paper={p} lang={lang} index={i} />
-                ))}
-              </div>
-            </section>
-          ))}
+          {dateGroups.map((g) => {
+            const visible = showCounts[g.date] ?? INITIAL_SHOW;
+            const shown = g.papers.slice(0, visible);
+            const remaining = g.papers.length - shown.length;
+            return (
+              <section key={g.date}>
+                <div class="max-w-6xl mx-auto px-4 mb-2">
+                  <p class="text-xs text-text-secondary font-mono">
+                    {g.date} &middot; {g.papers.length}{' '}
+                    {lang === 'zh' ? '篇' : `paper${g.papers.length !== 1 ? 's' : ''}`}
+                  </p>
+                </div>
+                <div class="grid gap-4 max-w-3xl mx-auto px-4">
+                  {shown.map((p, i) => (
+                    <PaperCard key={p.id} paper={p} lang={lang} index={i} />
+                  ))}
+                </div>
+                {remaining > 0 && (
+                  <div class="max-w-3xl mx-auto px-4 mt-2">
+                    <button
+                      onClick={() =>
+                        setShowCounts((prev) => ({
+                          ...prev,
+                          [g.date]: (prev[g.date] ?? INITIAL_SHOW) + SHOW_MORE,
+                        }))
+                      }
+                      class="w-full py-3 text-sm font-mono text-text-secondary/60
+                             border border-dashed border-text-secondary/20 rounded-lg
+                             hover:text-neon-cyan hover:border-neon-cyan/40
+                             transition-all duration-200"
+                    >
+                      +{Math.min(remaining, SHOW_MORE)} {lang === 'zh' ? '更多' : 'more'}
+                    </button>
+                  </div>
+                )}
+              </section>
+            );
+          })}
         </div>
       ) : (
         <div class="max-w-6xl mx-auto px-4 text-center py-12">
