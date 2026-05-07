@@ -35,17 +35,14 @@ const { categories, lang } = Astro.props;
         </h3>
       </div>
 
-      <!-- Papers row -->
+      <!-- Papers grid: 3 columns, 2 rows -->
       {cat.papers.length > 0 ? (
-        <div
-          class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide justify-center
-                 [&::-webkit-scrollbar]:hidden"
-        >
-          {cat.papers.map((p) => (
-            <div class="flex-shrink-0 w-[320px] snap-start">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {cat.papers.map((p) => (
               <PaperCard client:load paper={p} lang={lang} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ) : (
         <div class="max-w-6xl mx-auto px-4">
