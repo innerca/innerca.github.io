@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { searchPapers } from '../../lib/searchEngine';
 import { t } from '../../lib/i18n';
@@ -11,10 +11,13 @@ interface Props {
   lang: Lang;
 }
 
+const PAGE_SIZE = 20;
+
 export default function SearchPage({ papers, lang }: Props) {
   const [query, setQuery] = useState('');
   const [selectedSources, setSelectedSources] = useState<Set<string>>(new Set());
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+  const [page, setPage] = useState(0);
 
   // Extract unique sources and categories from data
   const allSources = useMemo(() => {
@@ -71,6 +74,16 @@ export default function SearchPage({ papers, lang }: Props) {
       return true;
     });
   }, [textResults, selectedSources, selectedCategories]);
+
+  // Reset to first page when query or filters change
+  useEffect(() => {
+    setPage(0);
+  }, [query, selectedSources, selectedCategories]);
+
+  // Paginate
+  const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
+  const clampedPage = Math.min(page, totalPages - 1);
+  const paginatedResults = results.slice(clampedPage * PAGE_SIZE, (clampedPage + 1) * PAGE_SIZE);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -177,11 +190,39 @@ export default function SearchPage({ papers, lang }: Props) {
 
       {/* Results / Empty State */}
       {results.length > 0 ? (
-        <div className="grid gap-4">
-          {results.map((paper, i) => (
-            <PaperCard key={paper.id} paper={paper} lang={lang} index={i} />
-          ))}
-        </div>
+        <>
+          <div className="grid gap-4">
+            {paginatedResults.map((paper, i) => (
+              <PaperCard key={paper.id} paper={paper} lang={lang} index={i} />
+            ))}
+          </div>
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-8 font-mono text-sm">
+              <button
+                onClick={() => setPage((p) => Math.max(0, p - 1))}
+                disabled={clampedPage === 0}
+                className="px-4 py-2 rounded border border-neon-cyan/30 text-neon-cyan
+                           disabled:opacity-30 disabled:cursor-not-allowed
+                           hover:bg-neon-cyan/10 transition-all"
+              >
+                ← {lang === 'zh' ? '上一页' : 'Prev'}
+              </button>
+              <span className="text-text-secondary">
+                {clampedPage + 1} / {totalPages}
+              </span>
+              <button
+                onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+                disabled={clampedPage >= totalPages - 1}
+                className="px-4 py-2 rounded border border-neon-cyan/30 text-neon-cyan
+                           disabled:opacity-30 disabled:cursor-not-allowed
+                           hover:bg-neon-cyan/10 transition-all"
+              >
+                {lang === 'zh' ? '下一页' : 'Next'} →
+              </button>
+            </div>
+          )}
+        </>
       ) : (query || hasFilters) ? (
         <GlitchText text={t('noResults', lang)} />
       ) : null}
