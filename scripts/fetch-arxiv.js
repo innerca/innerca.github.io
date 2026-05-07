@@ -58,7 +58,7 @@ export async function fetchArxivPapers(config) {
 
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'PaperRadar/1.0 (mailto:innerca@github)',
+      'User-Agent': 'PaperRadar/1.0 (mingchxing@qq.com)',
     },
   });
   if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText}`);
