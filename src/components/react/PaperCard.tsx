@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Paper, Lang } from '../../types/paper';
 import { getPrimarySource } from '../../lib/source';
-import { relativeDate, isNew } from '../../lib/date';
+import { relativeDate } from '../../lib/date';
 import SourceBadge from './SourceBadge';
 import HeatBadge from './HeatBadge';
 
@@ -17,7 +17,6 @@ export default function PaperCard({ paper, lang, index = 0, heatScore }: Props) 
   const title = paper.title[lang];
   const summary = paper.summary?.[lang];
   const href = `/${lang}/paper/${paper.id}`;
-  const isNewPaper = isNew(paper.addedDate || paper.date);
   const authors = paper.authors ?? [];
 
   return (
@@ -88,12 +87,7 @@ export default function PaperCard({ paper, lang, index = 0, heatScore }: Props) 
 
       {/* Meta */}
       <div className="flex items-center gap-3 text-xs text-text-secondary font-mono">
-        <span className="flex items-center gap-1">
-          <span>{relativeDate(paper.date, lang)}</span>
-          {isNewPaper && (
-            <span className="text-neon-cyan text-[10px] font-bold">NEW</span>
-          )}
-        </span>
+        <span>{relativeDate(paper.date, lang)}</span>
         {heatScore != null && <HeatBadge score={heatScore} size="sm" />}
         <SourceBadge source={getPrimarySource(paper)} />
         <span>📖 {paper.citeCount}</span>

@@ -1,19 +1,41 @@
 ---
-// Root route: server-side redirect to default locale (/en) handled by Astro i18n middleware.
-// Client-side fallback for static export / dev scenarios.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/astro/HeroSection.astro';
+import StatsBar from '../components/astro/StatsBar.astro';
+import LatestPreview from '../components/astro/LatestPreview.astro';
+import TrendingSection from '../components/astro/TrendingSection.astro';
+import CategorySection from '../components/astro/CategorySection.astro';
+import { loadHeatScores } from '../lib/heat';
+import { getSiteStats } from '../lib/stats';
+import { getCuratedCategoryGroups } from '../lib/group';
+import { computeGroupFrequency } from '../config/categories';
+import papers from '../data/papers.json';
+import type { Paper } from '../types/paper';
+
+const lang = 'en';
+const typedPapers = papers as Paper[];
+
+const heatMap = loadHeatScores();
+const stats = getSiteStats();
+const totalPapers = stats?.totalPapers ?? typedPapers.length;
+
+// Hero quick chips: human-readable AI domain labels (not raw arXiv codes)
+const freq = computeGroupFrequency(typedPapers.map((p) => p.categories ?? []));
+const topGroupLabels = freq.slice(0, 4).map((g) => g.label[lang]);
+
+const categoryGroups = getCuratedCategoryGroups(typedPapers, heatMap, 3, 3, 'en');
+
+const newToday = typedPapers.filter((p) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(p.date) >= today;
+}).length;
 ---
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paper Radar</title>
-</head>
-<body style="background:#0b0f19; color:#e0e0e0; display:flex; align-items:center; justify-content:center; min-height:100vh; font-family:monospace;">
-  <p>Redirecting...</p>
-  <script>
-    window.location.replace('/en');
-  </script>
-</body>
-</html>
+<BaseLayout lang={lang} title="Paper Radar">
+  <HeroSection lang={lang} groupLabels={topGroupLabels} />
+  <StatsBar lang={lang} totalPapers={totalPapers} newToday={newToday} />
+  <LatestPreview papers={typedPapers} lang={lang} />
+  <TrendingSection papers={typedPapers} lang={lang} />
+  <CategorySection categories={categoryGroups} lang={lang} />
+</BaseLayout>

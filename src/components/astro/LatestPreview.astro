@@ -10,7 +10,7 @@ export interface Props {
 
 const { papers, lang } = Astro.props;
 
-// Sort by date descending, take top 6
+// Sort by date descending, take top 6 for a complete 3×2 grid
 const latest = [...papers]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .slice(0, 6);

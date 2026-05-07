@@ -8,7 +8,6 @@ import { formatDateWithRelative } from '../../lib/date';
 import TagBadge from './TagBadge.astro';
 import NeonButton from './NeonButton.astro';
 import SourceBadge from './SourceBadge.astro';
-import ShareButton from '../react/ShareButton';
 
 export interface Props {
   paper: Paper;
@@ -170,7 +169,5 @@ function slugify(name) {
   <!-- Action bar -->
   <div class="panel-glass rounded-xl p-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
     <NeonButton href={externalUrl} label={t('viewOriginal', lang)} external />
-    <div class="hidden sm:block w-px h-8 bg-text-secondary/10"></div>
-    <ShareButton client:load {paper} {lang} />
   </div>
 </article>

@@ -5,11 +5,11 @@ import { siteConfig } from '../../config/site';
 
 export interface Props {
   lang: Lang;
-  categories: string[];
+  groupLabels: string[];
 }
 
-const { lang, categories } = Astro.props;
-const topCats = categories.slice(0, 4);
+const { lang, groupLabels } = Astro.props;
+const topLabels = groupLabels.slice(0, 4);
 ---
 
 <section class="relative pt-20 pb-12 md:pt-28 md:pb-16 text-center overflow-hidden">
@@ -52,18 +52,18 @@ const topCats = categories.slice(0, 4);
       </a>
     </div>
 
-    <!-- Quick categories -->
-    {topCats.length > 0 && (
+    <!-- Quick categories (human-readable group labels) -->
+    {topLabels.length > 0 && (
       <div class="flex flex-wrap justify-center gap-2 mb-6">
-        {topCats.map((cat) => (
+        {topLabels.map((label) => (
           <a
-            key={cat}
+            key={label}
             href={`/${lang}/search`}
             class="px-3 py-1 text-[11px] font-mono rounded-full border border-text-secondary/20
                    text-text-secondary/70 hover:text-neon-purple hover:border-neon-purple/40
                    transition-all duration-200"
           >
-            {cat}
+            {label}
           </a>
         ))}
       </div>
