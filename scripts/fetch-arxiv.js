@@ -3,33 +3,27 @@
 /**
  * arXiv Paper Fetcher Module
  *
- * Fetches recent AI/ML papers from the arXiv API, enriches with
- * Semantic Scholar citation counts, and returns normalized Paper objects.
+ * Fetches recent AI/ML papers from arXiv RSS feeds (one per category),
+ * enriches with Semantic Scholar citation counts, and returns normalized
+ * Paper objects.
+ *
+ * Switched from export.arxiv.org API to RSS because the API aggressively
+ * rate-limits (429) on multi-category queries and even single-category
+ * queries from shared IP pools like GitHub Actions. RSS returns 200 with
+ * hundreds of entries per category and no rate limiting.
  *
  * Usage (standalone):  node scripts/fetch-arxiv.js
  * Usage (via fetch.js): import { fetchArxivPapers } from './fetch-arxiv.js'
  */
-
-import { XMLParser } from 'fast-xml-parser';
 
 const S2_BATCH_API =
   'https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount,externalIds';
 
 // ─── Helpers ───────────────────────────────────────────────────
 
-function toArray(x) {
-  if (x == null) return [];
-  return Array.isArray(x) ? x : [x];
-}
-
 function stripHtml(text) {
   if (!text) return '';
   return text.replace(/<\/?[^>]+(>|$)/g, '').trim();
-}
-
-function extractArxivId(url) {
-  const m = String(url).match(/\/abs\/(\d+\.\d+)/);
-  return m ? m[1] : String(url).split('/').pop().replace(/v\d+$/, '');
 }
 
 function sleep(ms) {
@@ -45,78 +39,50 @@ export async function fetchWithRetry(url, options = {}, maxRetries = 4) {
     const res = await fetch(url, options);
     if (res.status !== 429) return res;
 
-    const baseDelay = 4000 * Math.pow(2, attempt); // 4s, 8s, 16s, 32s
-    const jitter = baseDelay * (0.8 + Math.random() * 0.4); // ±20%
+    const baseDelay = 4000 * Math.pow(2, attempt);
+    const jitter = baseDelay * (0.8 + Math.random() * 0.4);
     const delay = Math.min(Math.round(jitter), 60000);
 
-    console.warn(`  ⚠ arXiv 429 (attempt ${attempt + 1}/${maxRetries + 1}), retrying in ${(delay / 1000).toFixed(1)}s...`);
+    console.warn(`  ⚠ 429 (attempt ${attempt + 1}/${maxRetries + 1}), retrying in ${(delay / 1000).toFixed(1)}s...`);
     await sleep(delay);
   }
 
   const res = await fetch(url, options);
-  if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText} (exhausted retries)`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText} (exhausted retries)`);
   return res;
 }
 
-// ─── Fetch from arXiv API ──────────────────────────────────────
-
-/**
- * Parse a single arXiv API response XML into Paper objects.
- */
-function parseArxivResponse(xml, addedDate) {
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    attributeNamePrefix: '@_',
-    textNodeName: '#text',
-  });
-  const data = parser.parse(xml);
-  const entries = toArray(data.feed?.entry);
-
-  return entries.map((entry) => {
-    const rawTitle = stripHtml(entry.title || '');
-    const rawSummary = stripHtml(entry.summary || '');
-    const arxivId = extractArxivId(entry.id);
-    const entryUrl = String(entry.id || '').replace(/^http:\/\//i, 'https://');
-
-    return {
-      id: arxivId,
-      source: 'arxiv',
-      sourceId: entryUrl,
-      url: entryUrl,
-      title: { zh: rawTitle, en: rawTitle },
-      summary: { zh: rawSummary, en: rawSummary },
-      core_points: { zh: '', en: '' },
-      authors: toArray(entry.author).map((a) => ({
-        name: typeof a === 'object' ? a.name || 'Unknown' : String(a),
-      })),
-      date: entry.published ? entry.published.split('T')[0] : '',
-      updatedDate: entry.updated ? entry.updated.split('T')[0] : null,
-      addedDate,
-      categories: toArray(entry.category)
-        .map((c) => (typeof c === 'object' ? c['@_term'] || '' : String(c)))
-        .filter(Boolean),
-      tags: [],
-      entities: [],
-      citeCount: 0,
-      isTrending: false,
-      status: 'discovered',
-      sources: [
-        { key: 'arxiv', sourceId: arxivId, url: entryUrl, lastCrawled: addedDate, citeCount: 0 },
-      ],
-      curation: [{
-        field: 'all', generatedBy: 'scraper', confidence: 0.9,
-        timestamp: new Date().toISOString(), requiresReview: false,
-      }],
-      crawlHistory: [{
-        source: 'arxiv', timestamp: new Date().toISOString(), status: 'success', papersFound: 0,
-      }],
-    };
-  });
+function parseRssDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? '' : d.toISOString().split('T')[0];
 }
 
 /**
- * Fetch papers from arXiv API.
- * Queries each category separately to avoid 429 on complex multi-category OR queries.
+ * Parse RSS description field: "arXiv:XXXX.XXXXXvN Announce Type: XXX\nAbstract: ..."
+ */
+function parseRssDescription(desc) {
+  const result = { arxivId: '', abstract: '' };
+  if (!desc) return result;
+  const idMatch = desc.match(/arXiv:(\d+\.\d+)/);
+  if (idMatch) result.arxivId = idMatch[1];
+  const absMatch = desc.match(/Abstract:\s*([\s\S]*)/);
+  if (absMatch) result.abstract = stripHtml(absMatch[1].trim());
+  return result;
+}
+
+// ─── Fetch from arXiv RSS ──────────────────────────────────────
+
+/**
+ * Fetch papers from arXiv RSS feeds (one request per category).
+ * RSS is not rate-limited like export.arxiv.org, making it suitable
+ * for CI/CD runners and shared IP environments.
+ *
+ * @param {object} config
+ * @param {string[]} config.categories
+ * @param {number} config.maxResults  Max papers to keep per category
+ * @param {number} config.rateLimitMs  Delay between categories (for politeness)
+ * @returns {Promise<object[]>} Normalized Paper objects
  */
 export async function fetchArxivPapers(config) {
   const today = new Date().toISOString().split('T')[0];
@@ -124,23 +90,55 @@ export async function fetchArxivPapers(config) {
   const allPapers = [];
 
   for (const cat of config.categories) {
-    const url = `${config.apiUrl}?search_query=cat:${cat}&sortBy=submittedDate&sortOrder=descending&max_results=${config.maxResults}`;
-    console.log(`\n  [${cat}] Fetching up to ${config.maxResults} papers...`);
+    const rssUrl = `https://rss.arxiv.org/rss/${cat}`;
+    console.log(`\n  [${cat}] Fetching from RSS...`);
 
-    const res = await fetchWithRetry(url, {
+    const res = await fetch(rssUrl, {
       headers: { 'User-Agent': 'PaperRadar/1.0 (mingchxing@qq.com)' },
     });
     if (!res.ok) { console.warn(`  ⚠ [${cat}] HTTP ${res.status}, skipping`); continue; }
 
     const xml = await res.text();
-    if (!xml.includes('<entry>')) { console.log(`  [${cat}] No entries`); continue; }
-
-    const papers = parseArxivResponse(xml, today);
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) || [];
     let added = 0;
-    for (const p of papers) {
-      if (!seen.has(p.id)) { seen.add(p.id); allPapers.push(p); added++; }
+
+    for (const itemXml of items.slice(0, config.maxResults)) {
+      const title = stripHtml((itemXml.match(/<title>(.*?)<\/title>/) || [])[1] || '');
+      const link = (itemXml.match(/<link>(.*?)<\/link>/) || [])[1] || '';
+      const desc = (itemXml.match(/<description>([\s\S]*?)<\/description>/) || [])[1] || '';
+      const pubDate = (itemXml.match(/<pubDate>(.*?)<\/pubDate>/) || [])[1] || '';
+      const creatorRaw = (itemXml.match(/<dc:creator>(.*?)<\/dc:creator>/) || [])[1] || '';
+      const categories = [...itemXml.matchAll(/<category>(.*?)<\/category>/g)].map(m => m[1]);
+
+      const { arxivId, abstract } = parseRssDescription(desc);
+      if (!arxivId || seen.has(arxivId)) continue;
+      seen.add(arxivId);
+
+      allPapers.push({
+        id: arxivId,
+        source: 'arxiv',
+        sourceId: link,
+        url: link,
+        title: { zh: title, en: title },
+        summary: { zh: abstract, en: abstract },
+        core_points: { zh: '', en: '' },
+        authors: creatorRaw.split(', ').filter(Boolean).map((n) => ({ name: n.trim() })),
+        date: parseRssDate(pubDate),
+        updatedDate: null,
+        addedDate: today,
+        categories,
+        tags: [],
+        entities: [],
+        citeCount: 0,
+        isTrending: false,
+        status: 'discovered',
+        sources: [{ key: 'arxiv', sourceId: arxivId, url: link, lastCrawled: today, citeCount: 0 }],
+        curation: [{ field: 'all', generatedBy: 'scraper', confidence: 0.9, timestamp: new Date().toISOString(), requiresReview: false }],
+        crawlHistory: [{ source: 'arxiv', timestamp: new Date().toISOString(), status: 'success', papersFound: 0 }],
+      });
+      added++;
     }
-    console.log(`  [${cat}] ${papers.length} entries, ${added} new after dedup`);
+    console.log(`  ${items.length} entries in feed, ${added} new after dedup`);
 
     if (cat !== config.categories[config.categories.length - 1]) {
       await sleep(config.rateLimitMs || 3000);
@@ -156,10 +154,6 @@ export async function fetchArxivPapers(config) {
 /**
  * Fetch citation counts from Semantic Scholar batch API.
  * Fails gracefully — returns empty Map on error.
- *
- * @param {object[]} papers
- * @param {object} [enrichConfig]
- * @returns {Promise<Map<string, number>>}
  */
 export async function fetchCitationCounts(papers, enrichConfig = {}) {
   const apiUrl = enrichConfig.apiUrl || S2_BATCH_API;
@@ -175,10 +169,7 @@ export async function fetchCitationCounts(papers, enrichConfig = {}) {
     });
 
     if (!res.ok) {
-      const text = await res.text();
-      console.warn(
-        `  Semantic Scholar API returned HTTP ${res.status}${text ? `: ${text.slice(0, 100)}` : ''}`,
-      );
+      console.warn(`  Semantic Scholar API returned HTTP ${res.status}`);
       return new Map();
     }
 
@@ -189,12 +180,7 @@ export async function fetchCitationCounts(papers, enrichConfig = {}) {
         map.set(item.externalIds.ArXiv, item.citationCount ?? 0);
       }
     }
-
-    const fetched = map.size;
-    const notFound = ids.length - fetched;
-    console.log(
-      `  Citation counts: ${fetched} fetched${notFound > 0 ? `, ${notFound} not in index (too new?)` : ''}`,
-    );
+    console.log(`  Citation counts: ${map.size} fetched${ids.length - map.size > 0 ? `, ${ids.length - map.size} not found` : ''}`);
     return map;
   } catch (err) {
     console.warn(`  Failed to fetch citation counts: ${err.message}`);
@@ -203,12 +189,7 @@ export async function fetchCitationCounts(papers, enrichConfig = {}) {
 }
 
 /**
- * Enrich papers with citation counts.
- * Mutates papers in place and returns them.
- *
- * @param {object[]} papers
- * @param {object} [enrichConfig]
- * @returns {Promise<object[]>}
+ * Enrich papers with citation counts. Mutates papers in place.
  */
 export async function enrichPapers(papers, enrichConfig = {}) {
   const citeMap = await fetchCitationCounts(papers, enrichConfig);
@@ -219,12 +200,8 @@ export async function enrichPapers(papers, enrichConfig = {}) {
       const arxivSource = paper.sources?.find((s) => s.key === 'arxiv');
       if (arxivSource) arxivSource.citeCount = paper.citeCount;
     }
-
-    // Update crawlHistory papersFound
     const arxivCrawl = paper.crawlHistory?.find((c) => c.source === 'arxiv');
-    if (arxivCrawl) {
-      arxivCrawl.papersFound = papers.length;
-    }
+    if (arxivCrawl) arxivCrawl.papersFound = papers.length;
   }
 
   return papers;
@@ -247,7 +224,6 @@ async function main() {
   process.exit(0);
 }
 
-// Allow both import and standalone execution
 const isMainModule = process.argv[1]?.endsWith('fetch-arxiv.js');
 if (isMainModule) {
   await main();
