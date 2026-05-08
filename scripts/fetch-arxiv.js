@@ -38,7 +38,7 @@ function sleep(ms) {
 
 /**
  * Fetch with exponential backoff for HTTP 429 rate limiting.
- * Base delay: 4s, max: 60s, jitter: ±20%
+ * Base delay: 4s, max: 60s, jitter: ±20%, up to 4 retries.
  */
 export async function fetchWithRetry(url, options = {}, maxRetries = 4) {
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -53,7 +53,6 @@ export async function fetchWithRetry(url, options = {}, maxRetries = 4) {
     await sleep(delay);
   }
 
-  // Last attempt: throw regardless
   const res = await fetch(url, options);
   if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText} (exhausted retries)`);
   return res;
