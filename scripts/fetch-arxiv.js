@@ -61,48 +61,18 @@ export async function fetchWithRetry(url, options = {}, maxRetries = 4) {
 // ─── Fetch from arXiv API ──────────────────────────────────────
 
 /**
- * Fetch papers from arXiv API.
- *
- * @param {object} config Source configuration
- * @param {string} config.apiUrl
- * @param {string[]} config.categories
- * @param {number} config.maxResults
- * @param {number} config.rateLimitMs
- * @returns {Promise<object[]>} Normalized Paper objects
+ * Parse a single arXiv API response XML into Paper objects.
  */
-export async function fetchArxivPapers(config) {
-  const query = config.categories.map((c) => `cat:${c}`).join('+OR+');
-  const url = `${config.apiUrl}?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=${config.maxResults}`;
-
-  console.log(`\nFetching ${config.maxResults} papers from arXiv...`);
-  console.log(`  Categories: ${config.categories.join(', ')}`);
-  console.log(`  URL: ${url}\n`);
-
-  const res = await fetchWithRetry(url, {
-    headers: {
-      'User-Agent': 'PaperRadar/1.0 (mingchxing@qq.com)',
-    },
-  });
-  if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText}`);
-
-  const xml = await res.text();
-  if (!xml.includes('<entry>')) {
-    throw new Error('arXiv API returned no entries');
-  }
-
+function parseArxivResponse(xml, addedDate) {
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@_',
     textNodeName: '#text',
   });
-
   const data = parser.parse(xml);
   const entries = toArray(data.feed?.entry);
-  console.log(`  Parsed ${entries.length} entries from API response`);
 
-  const today = new Date().toISOString().split('T')[0];
-
-  const papers = entries.map((entry) => {
+  return entries.map((entry) => {
     const rawTitle = stripHtml(entry.title || '');
     const rawSummary = stripHtml(entry.summary || '');
     const arxivId = extractArxivId(entry.id);
@@ -121,7 +91,7 @@ export async function fetchArxivPapers(config) {
       })),
       date: entry.published ? entry.published.split('T')[0] : '',
       updatedDate: entry.updated ? entry.updated.split('T')[0] : null,
-      addedDate: today,
+      addedDate,
       categories: toArray(entry.category)
         .map((c) => (typeof c === 'object' ? c['@_term'] || '' : String(c)))
         .filter(Boolean),
@@ -131,35 +101,54 @@ export async function fetchArxivPapers(config) {
       isTrending: false,
       status: 'discovered',
       sources: [
-        {
-          key: 'arxiv',
-          sourceId: arxivId,
-          url: entryUrl,
-          lastCrawled: today,
-          citeCount: 0,
-        },
+        { key: 'arxiv', sourceId: arxivId, url: entryUrl, lastCrawled: addedDate, citeCount: 0 },
       ],
-      curation: [
-        {
-          field: 'all',
-          generatedBy: 'scraper',
-          confidence: 0.9,
-          timestamp: new Date().toISOString(),
-          requiresReview: false,
-        },
-      ],
-      crawlHistory: [
-        {
-          source: 'arxiv',
-          timestamp: new Date().toISOString(),
-          status: 'success',
-          papersFound: 0, // filled after enrichment
-        },
-      ],
+      curation: [{
+        field: 'all', generatedBy: 'scraper', confidence: 0.9,
+        timestamp: new Date().toISOString(), requiresReview: false,
+      }],
+      crawlHistory: [{
+        source: 'arxiv', timestamp: new Date().toISOString(), status: 'success', papersFound: 0,
+      }],
     };
   });
+}
 
-  return papers;
+/**
+ * Fetch papers from arXiv API.
+ * Queries each category separately to avoid 429 on complex multi-category OR queries.
+ */
+export async function fetchArxivPapers(config) {
+  const today = new Date().toISOString().split('T')[0];
+  const seen = new Set();
+  const allPapers = [];
+
+  for (const cat of config.categories) {
+    const url = `${config.apiUrl}?search_query=cat:${cat}&sortBy=submittedDate&sortOrder=descending&max_results=${config.maxResults}`;
+    console.log(`\n  [${cat}] Fetching up to ${config.maxResults} papers...`);
+
+    const res = await fetchWithRetry(url, {
+      headers: { 'User-Agent': 'PaperRadar/1.0 (mingchxing@qq.com)' },
+    });
+    if (!res.ok) { console.warn(`  ⚠ [${cat}] HTTP ${res.status}, skipping`); continue; }
+
+    const xml = await res.text();
+    if (!xml.includes('<entry>')) { console.log(`  [${cat}] No entries`); continue; }
+
+    const papers = parseArxivResponse(xml, today);
+    let added = 0;
+    for (const p of papers) {
+      if (!seen.has(p.id)) { seen.add(p.id); allPapers.push(p); added++; }
+    }
+    console.log(`  [${cat}] ${papers.length} entries, ${added} new after dedup`);
+
+    if (cat !== config.categories[config.categories.length - 1]) {
+      await sleep(config.rateLimitMs || 3000);
+    }
+  }
+
+  console.log(`\n  Total: ${allPapers.length} unique papers across ${config.categories.length} categories`);
+  return allPapers;
 }
 
 // ─── Enrichment ─────────────────────────────────────────────────
