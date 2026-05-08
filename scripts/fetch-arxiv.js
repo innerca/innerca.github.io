@@ -36,6 +36,29 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/**
+ * Fetch with exponential backoff for HTTP 429 rate limiting.
+ * Base delay: 4s, max: 60s, jitter: ±20%
+ */
+export async function fetchWithRetry(url, options = {}, maxRetries = 4) {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    const res = await fetch(url, options);
+    if (res.status !== 429) return res;
+
+    const baseDelay = 4000 * Math.pow(2, attempt); // 4s, 8s, 16s, 32s
+    const jitter = baseDelay * (0.8 + Math.random() * 0.4); // ±20%
+    const delay = Math.min(Math.round(jitter), 60000);
+
+    console.warn(`  ⚠ arXiv 429 (attempt ${attempt + 1}/${maxRetries + 1}), retrying in ${(delay / 1000).toFixed(1)}s...`);
+    await sleep(delay);
+  }
+
+  // Last attempt: throw regardless
+  const res = await fetch(url, options);
+  if (!res.ok) throw new Error(`arXiv API HTTP ${res.status}: ${res.statusText} (exhausted retries)`);
+  return res;
+}
+
 // ─── Fetch from arXiv API ──────────────────────────────────────
 
 /**
@@ -56,7 +79,7 @@ export async function fetchArxivPapers(config) {
   console.log(`  Categories: ${config.categories.join(', ')}`);
   console.log(`  URL: ${url}\n`);
 
-  const res = await fetch(url, {
+  const res = await fetchWithRetry(url, {
     headers: {
       'User-Agent': 'PaperRadar/1.0 (mingchxing@qq.com)',
     },
