@@ -1,5 +1,1671 @@
 [
   {
+    "id": "2602.13543",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13543v1",
+    "url": "https://arxiv.org/abs/2602.13543v1",
+    "title": {
+      "zh": "LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News",
+      "en": "LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News"
+    },
+    "summary": {
+      "zh": "Large Language Models (LLMs) with agentic web search capabilities show strong potential for tasks requiring real-time information access and complex fact retrieval, yet evaluating such systems remains challenging. We introduce \\bench, a rigorous and regularly updated benchmark designed to assess the agentic web search abilities of LLMs. \\bench automatically generates fresh question-answer pairs from recent news articles, ensuring that questions require information beyond an LLM's training data and enabling clear separation between internal knowledge and search capability. The benchmark features intentionally difficult questions requiring multi-hop search queries, page visits, and reasoning, making it well-suited for evaluating agentic search behavior. Our automated data curation and question generation pipeline enables frequent benchmark updates and supports construction of a large-scale training dataset for agentic web search models, addressing the scarcity of such data in the research community. To ensure reliable evaluation, we include a subset of human-verified samples in the test set. We evaluate a broad range of systems using \\bench, including commercial and open-weight LLMs as well as LLM-based web search APIs. The leaderboard, datasets, and code are publicly available at livenewsbench.com.",
+      "en": "Large Language Models (LLMs) with agentic web search capabilities show strong potential for tasks requiring real-time information access and complex fact retrieval, yet evaluating such systems remains challenging. We introduce \\bench, a rigorous and regularly updated benchmark designed to assess the agentic web search abilities of LLMs. \\bench automatically generates fresh question-answer pairs from recent news articles, ensuring that questions require information beyond an LLM's training data and enabling clear separation between internal knowledge and search capability. The benchmark features intentionally difficult questions requiring multi-hop search queries, page visits, and reasoning, making it well-suited for evaluating agentic search behavior. Our automated data curation and question generation pipeline enables frequent benchmark updates and supports construction of a large-scale training dataset for agentic web search models, addressing the scarcity of such data in the research community. To ensure reliable evaluation, we include a subset of human-verified samples in the test set. We evaluate a broad range of systems using \\bench, including commercial and open-weight LLMs as well as LLM-based web search APIs. The leaderboard, datasets, and code are publicly available at livenewsbench.com."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Yunfan Zhang"
+      },
+      {
+        "name": "Kathleen McKeown"
+      },
+      {
+        "name": "Smaranda Muresan"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13543",
+        "url": "https://arxiv.org/abs/2602.13543v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.343Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.343Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13704",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13704v2",
+    "url": "https://arxiv.org/abs/2602.13704v2",
+    "title": {
+      "zh": "Pailitao-VL: Unified Embedding and Reranker for Real-Time Multi-Modal Industrial Search",
+      "en": "Pailitao-VL: Unified Embedding and Reranker for Real-Time Multi-Modal Industrial Search"
+    },
+    "summary": {
+      "zh": "In this work, we presented Pailitao-VL, a comprehensive multi-modal retrieval system engineered for high-precision, real-time industrial search. We here address three critical challenges in the current SOTA solution: insufficient retrieval granularity, vulnerability to environmental noise, and prohibitive efficiency-performance gap. Our primary contribution lies in two fundamental paradigm shifts. First, we transitioned the embedding paradigm from traditional contrastive learning to an absolute ID-recognition task. Through anchoring instances to a globally consistent latent space defined by billions of semantic prototypes, we successfully overcome the stochasticity and granularity bottlenecks inherent in existing embedding solutions. Second, we evolved the generative reranker from isolated pointwise evaluation to the compare-and-calibrate listwise policy. By synergizing chunk-based comparative reasoning with calibrated absolute relevance scoring, the system achieves nuanced discriminative resolution while circumventing the prohibitive latency typically associated with conventional reranking methods. Extensive offline benchmarks and online A/B tests on Alibaba e-commerce platform confirm that Pailitao-VL achieves state-of-the-art performance and delivers substantial business impact. This work demonstrates a robust and scalable path for deploying advanced MLLM-based retrieval architectures in demanding, large-scale production environments.",
+      "en": "In this work, we presented Pailitao-VL, a comprehensive multi-modal retrieval system engineered for high-precision, real-time industrial search. We here address three critical challenges in the current SOTA solution: insufficient retrieval granularity, vulnerability to environmental noise, and prohibitive efficiency-performance gap. Our primary contribution lies in two fundamental paradigm shifts. First, we transitioned the embedding paradigm from traditional contrastive learning to an absolute ID-recognition task. Through anchoring instances to a globally consistent latent space defined by billions of semantic prototypes, we successfully overcome the stochasticity and granularity bottlenecks inherent in existing embedding solutions. Second, we evolved the generative reranker from isolated pointwise evaluation to the compare-and-calibrate listwise policy. By synergizing chunk-based comparative reasoning with calibrated absolute relevance scoring, the system achieves nuanced discriminative resolution while circumventing the prohibitive latency typically associated with conventional reranking methods. Extensive offline benchmarks and online A/B tests on Alibaba e-commerce platform confirm that Pailitao-VL achieves state-of-the-art performance and delivers substantial business impact. This work demonstrates a robust and scalable path for deploying advanced MLLM-based retrieval architectures in demanding, large-scale production environments."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Lei Chen"
+      },
+      {
+        "name": "Chen Ju"
+      },
+      {
+        "name": "Xu Chen"
+      },
+      {
+        "name": "Zhicheng Wang"
+      },
+      {
+        "name": "Yuheng Jiao"
+      },
+      {
+        "name": "Hongfeng Zhan"
+      },
+      {
+        "name": "Zhaoyang Li"
+      },
+      {
+        "name": "Shihao Xu"
+      },
+      {
+        "name": "Zhixiang Zhao"
+      },
+      {
+        "name": "Tong Jia"
+      },
+      {
+        "name": "Lin Li"
+      },
+      {
+        "name": "Yuan Gao"
+      },
+      {
+        "name": "Jun Song"
+      },
+      {
+        "name": "Jinsong Lan"
+      },
+      {
+        "name": "Xiaoyong Zhu"
+      },
+      {
+        "name": "Bo Zheng"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-03-05",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13704",
+        "url": "https://arxiv.org/abs/2602.13704v2",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.343Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.343Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.00084",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.00084v2",
+    "url": "https://arxiv.org/abs/2603.00084v2",
+    "title": {
+      "zh": "DeepXiv-SDK: An Agentic Data Interface for Scientific Literature",
+      "en": "DeepXiv-SDK: An Agentic Data Interface for Scientific Literature"
+    },
+    "summary": {
+      "zh": "LLM-agents are increasingly used to accelerate the progress of scientific research. Yet a persistent bottleneck is data access: agents not only lack readily available tools for retrieval, but also have to work with unstrcutured, human-centric data on the Internet, such as HTML web-pages and PDF files, leading to excessive token consumption, limit working efficiency, and brittle evidence look-up. This gap motivates the development of \\textit{an agentic data interface}, which is designed to enable agents to access and utilize scientific literature in a more effective, efficient, and cost-aware manner.\n  In this paper, we introduce DeepXiv-SDK, which offers a three-layer agentic data interface for scientific literature. 1) Data Layer, which transforms unstructured, human-centric data into normalized and structured representations in JSON format, improving data usability and enabling progressive accessibility of the data. 2) Service Layer, which presents readily available tools for data access and ad-hoc retrieval. It also enables a rich form of agent usage, including CLI, MCP, and Python SDK. 3) Application Layer, which creates a built-in agent, packaging basic tools from the service layer to support complex data access demands.\n  DeepXiv-SDK currently supports the complete ArXiv corpus, and is synchronized daily to incorporate new releases. It is designed to extend to all common open-access corpora, such as PubMed Central, bioRxiv, medRxiv, and chemRxiv. We release RESTful APIs, an open-source Python SDK, and a web demo showcasing deep search and deep research workflows. DeepXiv-SDK is free to use with registration.",
+      "en": "LLM-agents are increasingly used to accelerate the progress of scientific research. Yet a persistent bottleneck is data access: agents not only lack readily available tools for retrieval, but also have to work with unstrcutured, human-centric data on the Internet, such as HTML web-pages and PDF files, leading to excessive token consumption, limit working efficiency, and brittle evidence look-up. This gap motivates the development of \\textit{an agentic data interface}, which is designed to enable agents to access and utilize scientific literature in a more effective, efficient, and cost-aware manner.\n  In this paper, we introduce DeepXiv-SDK, which offers a three-layer agentic data interface for scientific literature. 1) Data Layer, which transforms unstructured, human-centric data into normalized and structured representations in JSON format, improving data usability and enabling progressive accessibility of the data. 2) Service Layer, which presents readily available tools for data access and ad-hoc retrieval. It also enables a rich form of agent usage, including CLI, MCP, and Python SDK. 3) Application Layer, which creates a built-in agent, packaging basic tools from the service layer to support complex data access demands.\n  DeepXiv-SDK currently supports the complete ArXiv corpus, and is synchronized daily to incorporate new releases. It is designed to extend to all common open-access corpora, such as PubMed Central, bioRxiv, medRxiv, and chemRxiv. We release RESTful APIs, an open-source Python SDK, and a web demo showcasing deep search and deep research workflows. DeepXiv-SDK is free to use with registration."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Hongjin Qian"
+      },
+      {
+        "name": "Ziyi Xia"
+      },
+      {
+        "name": "Ze Liu"
+      },
+      {
+        "name": "Jianlyu Chen"
+      },
+      {
+        "name": "Kun Luo"
+      },
+      {
+        "name": "Minghao Qin"
+      },
+      {
+        "name": "Chaofan Li"
+      },
+      {
+        "name": "Lei Xiong"
+      },
+      {
+        "name": "Junwei Lan"
+      },
+      {
+        "name": "Sen Wang"
+      },
+      {
+        "name": "Zhengyang Liang"
+      },
+      {
+        "name": "Yingxia Shao"
+      },
+      {
+        "name": "Defu Lian"
+      },
+      {
+        "name": "Zheng Liu"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-03-03",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.DL",
+      "cs.AI",
+      "cs.CL",
+      "cs.IR"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.00084",
+        "url": "https://arxiv.org/abs/2603.00084v2",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.04421",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.04421v2",
+    "url": "https://arxiv.org/abs/2603.04421v2",
+    "title": {
+      "zh": "Do Mixed-Vendor Multi-Agent LLMs Improve Clinical Diagnosis?",
+      "en": "Do Mixed-Vendor Multi-Agent LLMs Improve Clinical Diagnosis?"
+    },
+    "summary": {
+      "zh": "Multi-agent large language model (LLM) systems have emerged as a promising approach for clinical diagnosis, leveraging collaboration among agents to refine medical reasoning. However, most existing frameworks rely on single-vendor teams (e.g., multiple agents from the same model family), which risk correlated failure modes that reinforce shared biases rather than correcting them. We investigate the impact of vendor diversity by comparing Single-LLM, Single-Vendor, and Mixed-Vendor Multi-Agent Conversation (MAC) frameworks. Using three doctor agents instantiated with o4-mini, Gemini-2.5-Pro, and Claude-4.5-Sonnet, we evaluate performance on RareBench and DiagnosisArena. Mixed-vendor configurations consistently outperform single-vendor counterparts, achieving state-of-the-art recall and accuracy. Overlap analysis reveals the underlying mechanism: mixed-vendor teams pool complementary inductive biases, surfacing correct diagnoses that individual models or homogeneous teams collectively miss. These results highlight vendor diversity as a key design principle for robust clinical diagnostic systems.",
+      "en": "Multi-agent large language model (LLM) systems have emerged as a promising approach for clinical diagnosis, leveraging collaboration among agents to refine medical reasoning. However, most existing frameworks rely on single-vendor teams (e.g., multiple agents from the same model family), which risk correlated failure modes that reinforce shared biases rather than correcting them. We investigate the impact of vendor diversity by comparing Single-LLM, Single-Vendor, and Mixed-Vendor Multi-Agent Conversation (MAC) frameworks. Using three doctor agents instantiated with o4-mini, Gemini-2.5-Pro, and Claude-4.5-Sonnet, we evaluate performance on RareBench and DiagnosisArena. Mixed-vendor configurations consistently outperform single-vendor counterparts, achieving state-of-the-art recall and accuracy. Overlap analysis reveals the underlying mechanism: mixed-vendor teams pool complementary inductive biases, surfacing correct diagnoses that individual models or homogeneous teams collectively miss. These results highlight vendor diversity as a key design principle for robust clinical diagnostic systems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Grace Chang Yuan"
+      },
+      {
+        "name": "Xiaoman Zhang"
+      },
+      {
+        "name": "Sung Eun Kim"
+      },
+      {
+        "name": "Pranav Rajpurkar"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-03-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.MA"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.04421",
+        "url": "https://arxiv.org/abs/2603.04421v2",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13653",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13653v1",
+    "url": "https://arxiv.org/abs/2602.13653v1",
+    "title": {
+      "zh": "Building Autonomous GUI Navigation via Agentic-Q Estimation and Step-Wise Policy Optimization",
+      "en": "Building Autonomous GUI Navigation via Agentic-Q Estimation and Step-Wise Policy Optimization"
+    },
+    "summary": {
+      "zh": "Recent advances in Multimodal Large Language Models (MLLMs) have substantially driven the progress of autonomous agents for Graphical User Interface (GUI). Nevertheless, in real-world applications, GUI agents are often faced with non-stationary environments, leading to high computational costs for data curation and policy optimization. In this report, we introduce a novel MLLM-centered framework for GUI agents, which consists of two components: agentic-Q estimation and step-wise policy optimization. The former one aims to optimize a Q-model that can generate step-wise values to evaluate the contribution of a given action to task completion. The latter one takes step-wise samples from the state-action trajectory as inputs, and optimizes the policy via reinforcement learning with our agentic-Q model. It should be noticed that (i) all state-action trajectories are produced by the policy itself, so that the data collection costs are manageable; (ii) the policy update is decoupled from the environment, ensuring stable and efficient optimization. Empirical evaluations show that our framework endows Ovis2.5-9B with powerful GUI interaction capabilities, achieving remarkable performances on GUI navigation and grounding benchmarks and even surpassing contenders with larger scales.",
+      "en": "Recent advances in Multimodal Large Language Models (MLLMs) have substantially driven the progress of autonomous agents for Graphical User Interface (GUI). Nevertheless, in real-world applications, GUI agents are often faced with non-stationary environments, leading to high computational costs for data curation and policy optimization. In this report, we introduce a novel MLLM-centered framework for GUI agents, which consists of two components: agentic-Q estimation and step-wise policy optimization. The former one aims to optimize a Q-model that can generate step-wise values to evaluate the contribution of a given action to task completion. The latter one takes step-wise samples from the state-action trajectory as inputs, and optimizes the policy via reinforcement learning with our agentic-Q model. It should be noticed that (i) all state-action trajectories are produced by the policy itself, so that the data collection costs are manageable; (ii) the policy update is decoupled from the environment, ensuring stable and efficient optimization. Empirical evaluations show that our framework endows Ovis2.5-9B with powerful GUI interaction capabilities, achieving remarkable performances on GUI navigation and grounding benchmarks and even surpassing contenders with larger scales."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Yibo Wang"
+      },
+      {
+        "name": "Guangda Huzhang"
+      },
+      {
+        "name": "Yuwei Hu"
+      },
+      {
+        "name": "Yu Xia"
+      },
+      {
+        "name": "Shiyin Lu"
+      },
+      {
+        "name": "Qing-Guo Chen"
+      },
+      {
+        "name": "Zhao Xu"
+      },
+      {
+        "name": "Weihua Luo"
+      },
+      {
+        "name": "Kaifu Zhang"
+      },
+      {
+        "name": "Lijun Zhang"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV",
+      "cs.HC"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13653",
+        "url": "https://arxiv.org/abs/2602.13653v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13540",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13540v1",
+    "url": "https://arxiv.org/abs/2602.13540v1",
+    "title": {
+      "zh": "On Calibration of Large Language Models: From Response To Capability",
+      "en": "On Calibration of Large Language Models: From Response To Capability"
+    },
+    "summary": {
+      "zh": "Large language models (LLMs) are widely deployed as general-purpose problem solvers, making accurate confidence estimation critical for reliable use. Prior work on LLM calibration largely focuses on response-level confidence, which estimates the correctness of a single generated output. However, this formulation is misaligned with many practical settings where the central question is how likely a model is to solve a query overall. We show that this mismatch results from the stochastic nature of modern LLM decoding, under which single-response correctness fails to reflect underlying model capability. To address this issue, we introduce capability calibration, which targets the model's expected accuracy on a query. We formally distinguish capability calibration from response calibration and show that the two differ both theoretically and empirically. We establish an empirical evaluation setup and study a range of confidence estimation methods. Our results demonstrate that capability-calibrated confidence improves pass@$k$ prediction and inference budget allocation, establishing a foundation with potential for diverse applications.",
+      "en": "Large language models (LLMs) are widely deployed as general-purpose problem solvers, making accurate confidence estimation critical for reliable use. Prior work on LLM calibration largely focuses on response-level confidence, which estimates the correctness of a single generated output. However, this formulation is misaligned with many practical settings where the central question is how likely a model is to solve a query overall. We show that this mismatch results from the stochastic nature of modern LLM decoding, under which single-response correctness fails to reflect underlying model capability. To address this issue, we introduce capability calibration, which targets the model's expected accuracy on a query. We formally distinguish capability calibration from response calibration and show that the two differ both theoretically and empirically. We establish an empirical evaluation setup and study a range of confidence estimation methods. Our results demonstrate that capability-calibrated confidence improves pass@$k$ prediction and inference budget allocation, establishing a foundation with potential for diverse applications."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Sin-Han Yang"
+      },
+      {
+        "name": "Cheng-Kuang Wu"
+      },
+      {
+        "name": "Chieh-Yen Lin"
+      },
+      {
+        "name": "Yun-Nung Chen"
+      },
+      {
+        "name": "Hung-yi Lee"
+      },
+      {
+        "name": "Shao-Hua Sun"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13540",
+        "url": "https://arxiv.org/abs/2602.13540v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.09992",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.09992v1",
+    "url": "https://arxiv.org/abs/2603.09992v1",
+    "title": {
+      "zh": "TAMUSA-Chat: A Domain-Adapted Large Language Model Conversational System for Research and Responsible Deployment",
+      "en": "TAMUSA-Chat: A Domain-Adapted Large Language Model Conversational System for Research and Responsible Deployment"
+    },
+    "summary": {
+      "zh": "This paper presents TAMUSA-Chat, a research-oriented framework for building domain-adapted large language model conversational systems. The work addresses critical challenges in adapting general-purpose foundation models to institutional contexts through supervised fine-tuning, retrieval-augmented generation, and systematic evaluation methodologies. We describe the complete architecture encompassing data acquisition from institutional sources, preprocessing pipelines, embedding construction, model training workflows, and deployment strategies. The system integrates modular components enabling reproducible experimentation with training configurations, hyper-parameters, and evaluation protocols. Our implementation demonstrates how academic institutions can develop contextually grounded conversational agents while maintaining transparency, governance compliance, and responsible AI practices. Through empirical analysis of fine-tuning behavior across model sizes and training iterations, we provide insights into domain adaptation efficiency, computational resource requirements, and quality-cost trade-offs. The publicly available codebase at https://github.com/alsmadi/TAMUSA_LLM_Based_Chat_app supports continued research into institutional LLM deployment, evaluation methodologies, and ethical considerations for educational AI systems.",
+      "en": "This paper presents TAMUSA-Chat, a research-oriented framework for building domain-adapted large language model conversational systems. The work addresses critical challenges in adapting general-purpose foundation models to institutional contexts through supervised fine-tuning, retrieval-augmented generation, and systematic evaluation methodologies. We describe the complete architecture encompassing data acquisition from institutional sources, preprocessing pipelines, embedding construction, model training workflows, and deployment strategies. The system integrates modular components enabling reproducible experimentation with training configurations, hyper-parameters, and evaluation protocols. Our implementation demonstrates how academic institutions can develop contextually grounded conversational agents while maintaining transparency, governance compliance, and responsible AI practices. Through empirical analysis of fine-tuning behavior across model sizes and training iterations, we provide insights into domain adaptation efficiency, computational resource requirements, and quality-cost trade-offs. The publicly available codebase at https://github.com/alsmadi/TAMUSA_LLM_Based_Chat_app supports continued research into institutional LLM deployment, evaluation methodologies, and ethical considerations for educational AI systems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Izzat Alsmadi"
+      },
+      {
+        "name": "Anas Alsobeh"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.09992",
+        "url": "https://arxiv.org/abs/2603.09992v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.344Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13901",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13901v1",
+    "url": "https://arxiv.org/abs/2602.13901v1",
+    "title": {
+      "zh": "RPGD: RANSAC-P3P Gradient Descent for Extrinsic Calibration in 3D Human Pose Estimation",
+      "en": "RPGD: RANSAC-P3P Gradient Descent for Extrinsic Calibration in 3D Human Pose Estimation"
+    },
+    "summary": {
+      "zh": "In this paper, we propose RPGD (RANSAC-P3P Gradient Descent), a human-pose-driven extrinsic calibration framework that robustly aligns MoCap-based 3D skeletal data with monocular or multi-view RGB cameras using only natural human motion. RPGD formulates extrinsic calibration as a coarse-to-fine problem tailored to human poses, combining the global robustness of RANSAC-P3P with Gradient-Descent-based refinement. We evaluate RPGD on three large-scale public 3D HPE datasets as well as on a self-collected in-the-wild dataset. Experimental results demonstrate that RPGD consistently recovers extrinsic parameters with accuracy comparable to the provided ground truth, achieving sub-pixel MPJPE reprojection error even in challenging, noisy settings. These results indicate that RPGD provides a practical and automatic solution for reliable extrinsic calibration of large-scale 3D HPE dataset collection.",
+      "en": "In this paper, we propose RPGD (RANSAC-P3P Gradient Descent), a human-pose-driven extrinsic calibration framework that robustly aligns MoCap-based 3D skeletal data with monocular or multi-view RGB cameras using only natural human motion. RPGD formulates extrinsic calibration as a coarse-to-fine problem tailored to human poses, combining the global robustness of RANSAC-P3P with Gradient-Descent-based refinement. We evaluate RPGD on three large-scale public 3D HPE datasets as well as on a self-collected in-the-wild dataset. Experimental results demonstrate that RPGD consistently recovers extrinsic parameters with accuracy comparable to the provided ground truth, achieving sub-pixel MPJPE reprojection error even in challenging, noisy settings. These results indicate that RPGD provides a practical and automatic solution for reliable extrinsic calibration of large-scale 3D HPE dataset collection."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Zhanyu Tuo"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13901",
+        "url": "https://arxiv.org/abs/2602.13901v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13855",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13855v1",
+    "url": "https://arxiv.org/abs/2602.13855v1",
+    "title": {
+      "zh": "From Fluent to Verifiable: Claim-Level Auditability for Deep Research Agents",
+      "en": "From Fluent to Verifiable: Claim-Level Auditability for Deep Research Agents"
+    },
+    "summary": {
+      "zh": "A deep research agent produces a fluent scientific report in minutes; a careful reader then tries to verify the main claims and discovers the real cost is not reading, but tracing: which sentence is supported by which passage, what was ignored, and where evidence conflicts. We argue that as research generation becomes cheap, auditability becomes the bottleneck, and the dominant risk shifts from isolated factual errors to scientifically styled outputs whose claim-evidence links are weak, missing, or misleading. This perspective proposes claim-level auditability as a first-class design and evaluation target for deep research agents, distills recurring long-horizon failure modes (objective drift, transient constraints, and unverifiable inference), and introduces the Auditable Autonomous Research (AAR) standard, a compact measurement framework that makes auditability testable via provenance coverage, provenance soundness, contradiction transparency, and audit effort. We then argue for semantic provenance with protocolized validation: persistent, queryable provenance graphs that encode claim--evidence relations (including conflicts) and integrate continuous validation during synthesis rather than after publication, with practical instrumentation patterns to support deployment at scale.",
+      "en": "A deep research agent produces a fluent scientific report in minutes; a careful reader then tries to verify the main claims and discovers the real cost is not reading, but tracing: which sentence is supported by which passage, what was ignored, and where evidence conflicts. We argue that as research generation becomes cheap, auditability becomes the bottleneck, and the dominant risk shifts from isolated factual errors to scientifically styled outputs whose claim-evidence links are weak, missing, or misleading. This perspective proposes claim-level auditability as a first-class design and evaluation target for deep research agents, distills recurring long-horizon failure modes (objective drift, transient constraints, and unverifiable inference), and introduces the Auditable Autonomous Research (AAR) standard, a compact measurement framework that makes auditability testable via provenance coverage, provenance soundness, contradiction transparency, and audit effort. We then argue for semantic provenance with protocolized validation: persistent, queryable provenance graphs that encode claim--evidence relations (including conflicts) and integrate continuous validation during synthesis rather than after publication, with practical instrumentation patterns to support deployment at scale."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Razeen A Rasheed"
+      },
+      {
+        "name": "Somnath Banerjee"
+      },
+      {
+        "name": "Animesh Mukherjee"
+      },
+      {
+        "name": "Rima Hazra"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.IR",
+      "cs.MA"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13855",
+        "url": "https://arxiv.org/abs/2602.13855v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13650",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13650v1",
+    "url": "https://arxiv.org/abs/2602.13650v1",
+    "title": {
+      "zh": "KorMedMCQA-V: A Multimodal Benchmark for Evaluating Vision-Language Models on the Korean Medical Licensing Examination",
+      "en": "KorMedMCQA-V: A Multimodal Benchmark for Evaluating Vision-Language Models on the Korean Medical Licensing Examination"
+    },
+    "summary": {
+      "zh": "We introduce KorMedMCQA-V, a Korean medical licensing-exam-style multimodal multiple-choice question answering benchmark for evaluating vision-language models (VLMs). The dataset consists of 1,534 questions with 2,043 associated images from Korean Medical Licensing Examinations (2012-2023), with about 30% containing multiple images requiring cross-image evidence integration. Images cover clinical modalities including X-ray, computed tomography (CT), electrocardiography (ECG), ultrasound, endoscopy, and other medical visuals. We benchmark over 50 VLMs across proprietary and open-source categories-spanning general-purpose, medical-specialized, and Korean-specialized families-under a unified zero-shot evaluation protocol. The best proprietary model (Gemini-3.0-Pro) achieves 96.9% accuracy, the best open-source model (Qwen3-VL-32B-Thinking) 83.7%, and the best Korean-specialized model (VARCO-VISION-2.0-14B) only 43.2%. We further find that reasoning-oriented model variants gain up to +20 percentage points over instruction-tuned counterparts, medical domain specialization yields inconsistent gains over strong general-purpose baselines, all models degrade on multi-image questions, and performance varies notably across imaging modalities. By complementing the text-only KorMedMCQA benchmark, KorMedMCQA-V forms a unified evaluation suite for Korean medical reasoning across text-only and multimodal conditions. The dataset is available via Hugging Face Datasets: https://huggingface.co/datasets/seongsubae/KorMedMCQA-V.",
+      "en": "We introduce KorMedMCQA-V, a Korean medical licensing-exam-style multimodal multiple-choice question answering benchmark for evaluating vision-language models (VLMs). The dataset consists of 1,534 questions with 2,043 associated images from Korean Medical Licensing Examinations (2012-2023), with about 30% containing multiple images requiring cross-image evidence integration. Images cover clinical modalities including X-ray, computed tomography (CT), electrocardiography (ECG), ultrasound, endoscopy, and other medical visuals. We benchmark over 50 VLMs across proprietary and open-source categories-spanning general-purpose, medical-specialized, and Korean-specialized families-under a unified zero-shot evaluation protocol. The best proprietary model (Gemini-3.0-Pro) achieves 96.9% accuracy, the best open-source model (Qwen3-VL-32B-Thinking) 83.7%, and the best Korean-specialized model (VARCO-VISION-2.0-14B) only 43.2%. We further find that reasoning-oriented model variants gain up to +20 percentage points over instruction-tuned counterparts, medical domain specialization yields inconsistent gains over strong general-purpose baselines, all models degrade on multi-image questions, and performance varies notably across imaging modalities. By complementing the text-only KorMedMCQA benchmark, KorMedMCQA-V forms a unified evaluation suite for Korean medical reasoning across text-only and multimodal conditions. The dataset is available via Hugging Face Datasets: https://huggingface.co/datasets/seongsubae/KorMedMCQA-V."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Byungjin Choi"
+      },
+      {
+        "name": "Seongsu Bae"
+      },
+      {
+        "name": "Sunjun Kweon"
+      },
+      {
+        "name": "Edward Choi"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13650",
+        "url": "https://arxiv.org/abs/2602.13650v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.04419",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.04419v1",
+    "url": "https://arxiv.org/abs/2603.04419v1",
+    "title": {
+      "zh": "Context-Dependent Affordance Computation in Vision-Language Models",
+      "en": "Context-Dependent Affordance Computation in Vision-Language Models"
+    },
+    "summary": {
+      "zh": "We characterize the phenomenon of context-dependent affordance computation in vision-language models (VLMs). Through a large-scale computational study (n=3,213 scene-context pairs from COCO-2017) using Qwen-VL 30B and LLaVA-1.5-13B subject to systematic context priming across 7 agentic personas, we demonstrate massive affordance drift: mean Jaccard similarity between context conditions is 0.095 (95% CI: [0.093, 0.096], p 90% of lexical scene description is context-dependent. Sentence-level cosine similarity confirms substantial drift at the semantic level (mean = 0.415, 58.5% context-dependent). Stochastic baseline experiments (2,384 inference runs across 4 temperatures and 5 seeds) confirm this drift reflects genuine context effects rather than generation noise: within-prime variance is substantially lower than cross-prime variance across all conditions. Tucker decomposition with bootstrap stability analysis (n=1,000 resamples) reveals stable orthogonal latent factors: a \"Culinary Manifold\" isolated to chef contexts and an \"Access Axis\" spanning child-mobility contrasts. These findings establish that VLMs compute affordances in a substantially context-dependent manner -- with the difference between lexical (90%) and semantic (58.5%) measures reflecting that surface vocabulary changes more than underlying meaning under context shifts -- and suggest a direction for robotics research: dynamic, query-dependent ontological projection (JIT Ontology) rather than static world modeling. We do not claim to establish processing order or architectural primacy; such claims require internal representational analysis beyond output behavior.",
+      "en": "We characterize the phenomenon of context-dependent affordance computation in vision-language models (VLMs). Through a large-scale computational study (n=3,213 scene-context pairs from COCO-2017) using Qwen-VL 30B and LLaVA-1.5-13B subject to systematic context priming across 7 agentic personas, we demonstrate massive affordance drift: mean Jaccard similarity between context conditions is 0.095 (95% CI: [0.093, 0.096], p 90% of lexical scene description is context-dependent. Sentence-level cosine similarity confirms substantial drift at the semantic level (mean = 0.415, 58.5% context-dependent). Stochastic baseline experiments (2,384 inference runs across 4 temperatures and 5 seeds) confirm this drift reflects genuine context effects rather than generation noise: within-prime variance is substantially lower than cross-prime variance across all conditions. Tucker decomposition with bootstrap stability analysis (n=1,000 resamples) reveals stable orthogonal latent factors: a \"Culinary Manifold\" isolated to chef contexts and an \"Access Axis\" spanning child-mobility contrasts. These findings establish that VLMs compute affordances in a substantially context-dependent manner -- with the difference between lexical (90%) and semantic (58.5%) measures reflecting that surface vocabulary changes more than underlying meaning under context shifts -- and suggest a direction for robotics research: dynamic, query-dependent ontological projection (JIT Ontology) rather than static world modeling. We do not claim to establish processing order or architectural primacy; such claims require internal representational analysis beyond output behavior."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Murad Farzulla"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.04419",
+        "url": "https://arxiv.org/abs/2603.04419v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13697",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13697v1",
+    "url": "https://arxiv.org/abs/2602.13697v1",
+    "title": {
+      "zh": "No Need to Train Your RDB Foundation Model",
+      "en": "No Need to Train Your RDB Foundation Model"
+    },
+    "summary": {
+      "zh": "Relational databases (RDBs) contain vast amounts of heterogeneous tabular information that can be exploited for predictive modeling purposes. But since the space of potential targets is vast across enterprise settings, how can we \\textit{avoid retraining} a new model each time we wish to predict a new quantity of interest? Foundation models based on in-context learning (ICL) offer a convenient option, but so far are largely restricted to single-table operability. In generalizing to multiple interrelated tables, it is essential to compress variably-sized RDB neighborhoods into fixed-length ICL samples for consumption by the decoder. However, the details here are critical: unlike existing supervised learning RDB pipelines, we provide theoretical and empirical evidence that ICL-specific compression should be constrained \\emph{within} high-dimensional RDB columns where all entities share units and roles, not \\textit{across} columns where the relevance of heterogeneous data types cannot possibly be determined without label information. Conditioned on this restriction, we then demonstrate that encoder expressiveness is actually not compromised by excluding trainable parameters. Hence we arrive at a principled family of RDB encoders that can be seamlessly paired with already-existing single-table ICL foundation models, whereby no training or fine-tuning is required. From a practical standpoint, we develop scalable SQL primitives to implement the encoder stage, resulting in an easy-to-use open-source RDB foundation model\\footnote{\\label{foot: RDBLearn_learn} https://github.com/HKUSHXLab/rdblearn} capable of robust performance on unseen datasets out of the box.",
+      "en": "Relational databases (RDBs) contain vast amounts of heterogeneous tabular information that can be exploited for predictive modeling purposes. But since the space of potential targets is vast across enterprise settings, how can we \\textit{avoid retraining} a new model each time we wish to predict a new quantity of interest? Foundation models based on in-context learning (ICL) offer a convenient option, but so far are largely restricted to single-table operability. In generalizing to multiple interrelated tables, it is essential to compress variably-sized RDB neighborhoods into fixed-length ICL samples for consumption by the decoder. However, the details here are critical: unlike existing supervised learning RDB pipelines, we provide theoretical and empirical evidence that ICL-specific compression should be constrained \\emph{within} high-dimensional RDB columns where all entities share units and roles, not \\textit{across} columns where the relevance of heterogeneous data types cannot possibly be determined without label information. Conditioned on this restriction, we then demonstrate that encoder expressiveness is actually not compromised by excluding trainable parameters. Hence we arrive at a principled family of RDB encoders that can be seamlessly paired with already-existing single-table ICL foundation models, whereby no training or fine-tuning is required. From a practical standpoint, we develop scalable SQL primitives to implement the encoder stage, resulting in an easy-to-use open-source RDB foundation model\\footnote{\\label{foot: RDBLearn_learn} https://github.com/HKUSHXLab/rdblearn} capable of robust performance on unseen datasets out of the box."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Linjie Xu"
+      },
+      {
+        "name": "Yanlin Zhang"
+      },
+      {
+        "name": "Quan Gan"
+      },
+      {
+        "name": "Minjie Wang"
+      },
+      {
+        "name": "David Wipf"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.DB",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 3,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13697",
+        "url": "https://arxiv.org/abs/2602.13697v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 3
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.345Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.18495",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.18495v1",
+    "url": "https://arxiv.org/abs/2602.18495v1",
+    "title": {
+      "zh": "RDBLearn: Simple In-Context Prediction Over Relational Databases",
+      "en": "RDBLearn: Simple In-Context Prediction Over Relational Databases"
+    },
+    "summary": {
+      "zh": "Recent advances in tabular in-context learning (ICL) show that a single pretrained model can adapt to new prediction tasks from a small set of labeled examples, avoiding per-task training and heavy tuning. However, many real-world tasks live in relational databases, where predictive signal is spread across multiple linked tables rather than a single flat table. We show that tabular ICL can be extended to relational prediction with a simple recipe: automatically featurize each target row using relational aggregations over its linked records, materialize the resulting augmented table, and run an off-the-shelf tabular foundation model on it. We package this approach in \\textit{RDBLearn} (https://github.com/HKUSHXLab/rdblearn), an easy-to-use toolkit with a scikit-learn-style estimator interface that makes it straightforward to swap different tabular ICL backends; a complementary agent-specific interface is provided as well. Across a broad collection of RelBench and 4DBInfer datasets, RDBLearn is the best-performing foundation model approach we evaluate, at times even outperforming strong supervised baselines trained or fine-tuned on each dataset.",
+      "en": "Recent advances in tabular in-context learning (ICL) show that a single pretrained model can adapt to new prediction tasks from a small set of labeled examples, avoiding per-task training and heavy tuning. However, many real-world tasks live in relational databases, where predictive signal is spread across multiple linked tables rather than a single flat table. We show that tabular ICL can be extended to relational prediction with a simple recipe: automatically featurize each target row using relational aggregations over its linked records, materialize the resulting augmented table, and run an off-the-shelf tabular foundation model on it. We package this approach in \\textit{RDBLearn} (https://github.com/HKUSHXLab/rdblearn), an easy-to-use toolkit with a scikit-learn-style estimator interface that makes it straightforward to swap different tabular ICL backends; a complementary agent-specific interface is provided as well. Across a broad collection of RelBench and 4DBInfer datasets, RDBLearn is the best-performing foundation model approach we evaluate, at times even outperforming strong supervised baselines trained or fine-tuned on each dataset."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Yanlin Zhang"
+      },
+      {
+        "name": "Linjie Xu"
+      },
+      {
+        "name": "Quan Gan"
+      },
+      {
+        "name": "David Wipf"
+      },
+      {
+        "name": "Minjie Wang"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.DB",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.18495",
+        "url": "https://arxiv.org/abs/2602.18495v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.346Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.346Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13583",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13583v1",
+    "url": "https://arxiv.org/abs/2602.13583v1",
+    "title": {
+      "zh": "Differentiable Rule Induction from Raw Sequence Inputs",
+      "en": "Differentiable Rule Induction from Raw Sequence Inputs"
+    },
+    "summary": {
+      "zh": "Rule learning-based models are widely used in highly interpretable scenarios due to their transparent structures. Inductive logic programming (ILP), a form of machine learning, induces rules from facts while maintaining interpretability. Differentiable ILP models enhance this process by leveraging neural networks to improve robustness and scalability. However, most differentiable ILP methods rely on symbolic datasets, facing challenges when learning directly from raw data. Specifically, they struggle with explicit label leakage: The inability to map continuous inputs to symbolic variables without explicit supervision of input feature labels. In this work, we address this issue by integrating a self-supervised differentiable clustering model with a novel differentiable ILP model, enabling rule learning from raw data without explicit label leakage. The learned rules effectively describe raw data through its features. We demonstrate that our method intuitively and precisely learns generalized rules from time series and image data.",
+      "en": "Rule learning-based models are widely used in highly interpretable scenarios due to their transparent structures. Inductive logic programming (ILP), a form of machine learning, induces rules from facts while maintaining interpretability. Differentiable ILP models enhance this process by leveraging neural networks to improve robustness and scalability. However, most differentiable ILP methods rely on symbolic datasets, facing challenges when learning directly from raw data. Specifically, they struggle with explicit label leakage: The inability to map continuous inputs to symbolic variables without explicit supervision of input feature labels. In this work, we address this issue by integrating a self-supervised differentiable clustering model with a novel differentiable ILP model, enabling rule learning from raw data without explicit label leakage. The learned rules effectively describe raw data through its features. We demonstrate that our method intuitively and precisely learns generalized rules from time series and image data."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Kun Gao"
+      },
+      {
+        "name": "Katsumi Inoue"
+      },
+      {
+        "name": "Yongzhi Cao"
+      },
+      {
+        "name": "Hanpin Wang"
+      },
+      {
+        "name": "Feng Yang"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 4,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13583",
+        "url": "https://arxiv.org/abs/2602.13583v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 4
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.346Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.346Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13813",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13813v3",
+    "url": "https://arxiv.org/abs/2602.13813v3",
+    "title": {
+      "zh": "Pawsterior: Variational Flow Matching for Structured Simulation-Based Inference",
+      "en": "Pawsterior: Variational Flow Matching for Structured Simulation-Based Inference"
+    },
+    "summary": {
+      "zh": "We introduce Pawsterior, a variational flow-matching framework for improved and extended simulation-based inference (SBI). Many SBI problems involve posteriors constrained by structured domains, such as bounded physical parameters or hybrid discrete-continuous variables, yet standard flow-matching methods typically operate in unconstrained spaces. This mismatch leads to inefficient learning and difficulty respecting physical constraints. Our contributions are twofold. First, generalizing the geometric inductive bias of CatFlow, we formalize endpoint-induced affine geometric confinement, a principle that incorporates domain geometry directly into the inference process via a two-sided variational model. This formulation improves numerical stability during sampling and leads to consistently better posterior fidelity, as demonstrated by improved classifier two-sample test performance across standard SBI benchmarks. Second, and more importantly, our variational parameterization enables SBI tasks involving discrete latent structure (e.g., switching systems) that are fundamentally incompatible with conventional flow-matching approaches. By addressing both geometric constraints and discrete latent structure, Pawsterior provides a principled way to apply flow-matching in a broader range of structured SBI settings.",
+      "en": "We introduce Pawsterior, a variational flow-matching framework for improved and extended simulation-based inference (SBI). Many SBI problems involve posteriors constrained by structured domains, such as bounded physical parameters or hybrid discrete-continuous variables, yet standard flow-matching methods typically operate in unconstrained spaces. This mismatch leads to inefficient learning and difficulty respecting physical constraints. Our contributions are twofold. First, generalizing the geometric inductive bias of CatFlow, we formalize endpoint-induced affine geometric confinement, a principle that incorporates domain geometry directly into the inference process via a two-sided variational model. This formulation improves numerical stability during sampling and leads to consistently better posterior fidelity, as demonstrated by improved classifier two-sample test performance across standard SBI benchmarks. Second, and more importantly, our variational parameterization enables SBI tasks involving discrete latent structure (e.g., switching systems) that are fundamentally incompatible with conventional flow-matching approaches. By addressing both geometric constraints and discrete latent structure, Pawsterior provides a principled way to apply flow-matching in a broader range of structured SBI settings."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Jorge Carrasco-Pollo"
+      },
+      {
+        "name": "Floor Eijkelboom"
+      },
+      {
+        "name": "Jan-Willem van de Meent"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13813",
+        "url": "https://arxiv.org/abs/2602.13813v3",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.22230",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.22230v1",
+    "url": "https://arxiv.org/abs/2602.22230v1",
+    "title": {
+      "zh": "An Adaptive Multichain Blockchain: A Multiobjective Optimization Approach",
+      "en": "An Adaptive Multichain Blockchain: A Multiobjective Optimization Approach"
+    },
+    "summary": {
+      "zh": "Blockchains are widely used for secure transaction processing, but their scalability remains limited, and existing multichain designs are typically static even as demand and capacity shift. We cast blockchain configuration as a multiagent resource-allocation problem: applications and operators declare demand, capacity, and price bounds; an optimizer groups them into ephemeral chains each epoch and sets a chain-level clearing price. The objective maximizes a governance-weighted combination of normalized utilities for applications, operators, and the system. The model is modular -- accommodating capability compatibility, application-type diversity, and epoch-to-epoch stability -- and can be solved off-chain with outcomes verifiable on-chain. We analyze fairness and incentive issues and present simulations that highlight trade-offs among throughput, decentralization, operator yield, and service stability.",
+      "en": "Blockchains are widely used for secure transaction processing, but their scalability remains limited, and existing multichain designs are typically static even as demand and capacity shift. We cast blockchain configuration as a multiagent resource-allocation problem: applications and operators declare demand, capacity, and price bounds; an optimizer groups them into ephemeral chains each epoch and sets a chain-level clearing price. The objective maximizes a governance-weighted combination of normalized utilities for applications, operators, and the system. The model is modular -- accommodating capability compatibility, application-type diversity, and epoch-to-epoch stability -- and can be solved off-chain with outcomes verifiable on-chain. We analyze fairness and incentive issues and present simulations that highlight trade-offs among throughput, decentralization, operator yield, and service stability."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Nimrod Talmon"
+      },
+      {
+        "name": "Haim Zysberg"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CR",
+      "cs.GT",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.22230",
+        "url": "https://arxiv.org/abs/2602.22230v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13921",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13921v1",
+    "url": "https://arxiv.org/abs/2602.13921v1",
+    "title": {
+      "zh": "GREPO: A Benchmark for Graph Neural Networks on Repository-Level Bug Localization",
+      "en": "GREPO: A Benchmark for Graph Neural Networks on Repository-Level Bug Localization"
+    },
+    "summary": {
+      "zh": "Repository-level bug localization-the task of identifying where code must be modified to fix a bug-is a critical software engineering challenge. Standard Large Language Modles (LLMs) are often unsuitable for this task due to context window limitations that prevent them from processing entire code repositories. As a result, various retrieval methods are commonly used, including keyword matching, text similarity, and simple graph-based heuristics such as Breadth-First Search. Graph Neural Networks (GNNs) offer a promising alternative due to their ability to model complex, repository-wide dependencies; however, their application has been hindered by the lack of a dedicated benchmark. To address this gap, we introduce GREPO, the first GNN benchmark for repository-scale bug localization tasks. GREPO comprises 86 Python repositories and 47294 bug-fixing tasks, providing graph-based data structures ready for direct GNN processing. Our evaluation of various GNN architectures shows outstanding performance compared to established information retrieval baselines. This work highlights the potential of GNNs for bug localization and established GREPO as a foundation resource for future research, The code is available at https://github.com/qingpingmo/GREPO.",
+      "en": "Repository-level bug localization-the task of identifying where code must be modified to fix a bug-is a critical software engineering challenge. Standard Large Language Modles (LLMs) are often unsuitable for this task due to context window limitations that prevent them from processing entire code repositories. As a result, various retrieval methods are commonly used, including keyword matching, text similarity, and simple graph-based heuristics such as Breadth-First Search. Graph Neural Networks (GNNs) offer a promising alternative due to their ability to model complex, repository-wide dependencies; however, their application has been hindered by the lack of a dedicated benchmark. To address this gap, we introduce GREPO, the first GNN benchmark for repository-scale bug localization tasks. GREPO comprises 86 Python repositories and 47294 bug-fixing tasks, providing graph-based data structures ready for direct GNN processing. Our evaluation of various GNN architectures shows outstanding performance compared to established information retrieval baselines. This work highlights the potential of GNNs for bug localization and established GREPO as a foundation resource for future research, The code is available at https://github.com/qingpingmo/GREPO."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Juntong Wang"
+      },
+      {
+        "name": "Libin Chen"
+      },
+      {
+        "name": "Xiyuan Wang"
+      },
+      {
+        "name": "Shijia Kang"
+      },
+      {
+        "name": "Haotong Yang"
+      },
+      {
+        "name": "Da Zheng"
+      },
+      {
+        "name": "Muhan Zhang"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13921",
+        "url": "https://arxiv.org/abs/2602.13921v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13842",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13842v1",
+    "url": "https://arxiv.org/abs/2602.13842v1",
+    "title": {
+      "zh": "Automated Prediction of Paravalvular Regurgitation before Transcatheter Aortic Valve Implantation",
+      "en": "Automated Prediction of Paravalvular Regurgitation before Transcatheter Aortic Valve Implantation"
+    },
+    "summary": {
+      "zh": "Severe aortic stenosis is a common and life-threatening condition in elderly patients, often treated with Transcatheter Aortic Valve Implantation (TAVI). Despite procedural advances, paravalvular aortic regurgitation (PVR) remains one of the most frequent post-TAVI complications, with a proven impact on long-term prognosis.\n  In this work, we investigate the potential of deep learning to predict the occurrence of PVR from preoperative cardiac CT. To this end, a dataset of preoperative TAVI patients was collected, and 3D convolutional neural networks were trained on isotropic CT volumes. The results achieved suggest that volumetric deep learning can capture subtle anatomical features from pre-TAVI imaging, opening new perspectives for personalized risk assessment and procedural optimization. Source code is available at https://github.com/EIDOSLAB/tavi.",
+      "en": "Severe aortic stenosis is a common and life-threatening condition in elderly patients, often treated with Transcatheter Aortic Valve Implantation (TAVI). Despite procedural advances, paravalvular aortic regurgitation (PVR) remains one of the most frequent post-TAVI complications, with a proven impact on long-term prognosis.\n  In this work, we investigate the potential of deep learning to predict the occurrence of PVR from preoperative cardiac CT. To this end, a dataset of preoperative TAVI patients was collected, and 3D convolutional neural networks were trained on isotropic CT volumes. The results achieved suggest that volumetric deep learning can capture subtle anatomical features from pre-TAVI imaging, opening new perspectives for personalized risk assessment and procedural optimization. Source code is available at https://github.com/EIDOSLAB/tavi."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Michele Cannito"
+      },
+      {
+        "name": "Riccardo Renzulli"
+      },
+      {
+        "name": "Adson Duarte"
+      },
+      {
+        "name": "Farzad Nikfam"
+      },
+      {
+        "name": "Carlo Alberto Barbano"
+      },
+      {
+        "name": "Enrico Chiesa"
+      },
+      {
+        "name": "Francesco Bruno"
+      },
+      {
+        "name": "Federico Giacobbe"
+      },
+      {
+        "name": "Wojciech Wanha"
+      },
+      {
+        "name": "Arturo Giordano"
+      },
+      {
+        "name": "Marco Grangetto"
+      },
+      {
+        "name": "Fabrizio D'Ascenzo"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13842",
+        "url": "https://arxiv.org/abs/2602.13842v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.09991",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.09991v1",
+    "url": "https://arxiv.org/abs/2603.09991v1",
+    "title": {
+      "zh": "PoultryLeX-Net: Domain-Adaptive Dual-Stream Transformer Architecture for Large-Scale Poultry Stakeholder Modeling",
+      "en": "PoultryLeX-Net: Domain-Adaptive Dual-Stream Transformer Architecture for Large-Scale Poultry Stakeholder Modeling"
+    },
+    "summary": {
+      "zh": "The rapid growth of the global poultry industry, driven by rising demand for affordable animal protein, has intensified public discourse surrounding production practices, housing, management, animal welfare, and supply-chain transparency. Social media platforms such as X (formerly Twitter) generate large volumes of unstructured textual data that capture stakeholder sentiment across the poultry industry. Extracting accurate sentiment signals from this domain-specific discourse remains challenging due to contextual ambiguity, linguistic variability, and limited domain awareness in general-purpose language models. This study presents PoultryLeX-Net, a lexicon-enhanced, domain-adaptive dual-stream transformer framework for fine-grained sentiment analysis in poultry-related text. The proposed architecture integrates sentiment classification, topic modeling, and contextual representation learning through domain-specific embeddings and gated cross-attention mechanisms. A lexicon-guided stream captures poultry-specific terminology and sentiment cues, while contextual stream models long-range semantic dependencies. Latent Dirichlet Allocation is employed to identify dominant thematic structures associated with production management and welfare-related discussions, providing complementary interpretability to sentiment predictions. PoultryLeX-Net was evaluated against multiple baseline models, including convolutional neural network and pre-trained transformer architectures such as DistilBERT and RoBERTa. PoultryLeX-Net consistently outperformed all baselines, achieving an accuracy of 97.35%, an F1 score of 96.67%, and an area under the receiver operating characteristic curve (AUC-ROC) of 99.61% across sentiment classification tasks. Overall, domain adaptation and dual-stream attention markedly improve sentiment classification, enabling scalable intelligence for poultry production decision support.",
+      "en": "The rapid growth of the global poultry industry, driven by rising demand for affordable animal protein, has intensified public discourse surrounding production practices, housing, management, animal welfare, and supply-chain transparency. Social media platforms such as X (formerly Twitter) generate large volumes of unstructured textual data that capture stakeholder sentiment across the poultry industry. Extracting accurate sentiment signals from this domain-specific discourse remains challenging due to contextual ambiguity, linguistic variability, and limited domain awareness in general-purpose language models. This study presents PoultryLeX-Net, a lexicon-enhanced, domain-adaptive dual-stream transformer framework for fine-grained sentiment analysis in poultry-related text. The proposed architecture integrates sentiment classification, topic modeling, and contextual representation learning through domain-specific embeddings and gated cross-attention mechanisms. A lexicon-guided stream captures poultry-specific terminology and sentiment cues, while contextual stream models long-range semantic dependencies. Latent Dirichlet Allocation is employed to identify dominant thematic structures associated with production management and welfare-related discussions, providing complementary interpretability to sentiment predictions. PoultryLeX-Net was evaluated against multiple baseline models, including convolutional neural network and pre-trained transformer architectures such as DistilBERT and RoBERTa. PoultryLeX-Net consistently outperformed all baselines, achieving an accuracy of 97.35%, an F1 score of 96.67%, and an area under the receiver operating characteristic curve (AUC-ROC) of 99.61% across sentiment classification tasks. Overall, domain adaptation and dual-stream attention markedly improve sentiment classification, enabling scalable intelligence for poultry production decision support."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Stephen Afrifa"
+      },
+      {
+        "name": "Biswash Khatiwada"
+      },
+      {
+        "name": "Kapalik Khanal"
+      },
+      {
+        "name": "Sanjay Shah"
+      },
+      {
+        "name": "Lingjuan Wang-Li"
+      },
+      {
+        "name": "Ramesh Bahadur Bist"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.09991",
+        "url": "https://arxiv.org/abs/2603.09991v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.348Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13681",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13681v1",
+    "url": "https://arxiv.org/abs/2602.13681v1",
+    "title": {
+      "zh": "An Ensemble Learning Approach towards Waste Segmentation in Cluttered Environment",
+      "en": "An Ensemble Learning Approach towards Waste Segmentation in Cluttered Environment"
+    },
+    "summary": {
+      "zh": "Environmental pollution is a critical global issue, with recycling emerging as one of the most viable solutions. This study focuses on waste segregation, a crucial step in recycling processes to obtain raw material. Recent advancements in computer vision have significantly contributed to waste classification and recognition. In waste segregation, segmentation masks are essential for robots to accurately localize and pick objects from conveyor belts. The complexity of real-world waste environments, characterized by deformed items without specific patterns and overlapping objects, further complicates waste segmentation tasks. This paper proposes an Ensemble Learning approach to improve segmentation accuracy by combining high performing segmentation models, U-Net and FPN, using a weighted average method. U-Net excels in capturing fine details and boundaries in segmentation tasks, while FPN effectively handles scale variation and context in complex environments, and their combined masks result in more precise predictions. The dataset used closely mimics real-life waste scenarios, and preprocessing techniques were applied to enhance feature learning for deep learning segmentation models. The ensemble model, referred to as EL-4, achieved an IoU value of 0.8306, an improvement over U-Net's 0.8065, and reduced Dice loss to 0.09019 from FPN's 0.1183. This study could contribute to the efficiency of waste sorting at Material Recovery Facility, facilitating better raw material acquisition for recycling with minimal human intervention and enhancing the overall throughput.",
+      "en": "Environmental pollution is a critical global issue, with recycling emerging as one of the most viable solutions. This study focuses on waste segregation, a crucial step in recycling processes to obtain raw material. Recent advancements in computer vision have significantly contributed to waste classification and recognition. In waste segregation, segmentation masks are essential for robots to accurately localize and pick objects from conveyor belts. The complexity of real-world waste environments, characterized by deformed items without specific patterns and overlapping objects, further complicates waste segmentation tasks. This paper proposes an Ensemble Learning approach to improve segmentation accuracy by combining high performing segmentation models, U-Net and FPN, using a weighted average method. U-Net excels in capturing fine details and boundaries in segmentation tasks, while FPN effectively handles scale variation and context in complex environments, and their combined masks result in more precise predictions. The dataset used closely mimics real-life waste scenarios, and preprocessing techniques were applied to enhance feature learning for deep learning segmentation models. The ensemble model, referred to as EL-4, achieved an IoU value of 0.8306, an improvement over U-Net's 0.8065, and reduced Dice loss to 0.09019 from FPN's 0.1183. This study could contribute to the efficiency of waste sorting at Material Recovery Facility, facilitating better raw material acquisition for recycling with minimal human intervention and enhancing the overall throughput."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Maimoona Jafar"
+      },
+      {
+        "name": "Syed Imran Ali"
+      },
+      {
+        "name": "Ahsan Saadat"
+      },
+      {
+        "name": "Muhammad Bilal"
+      },
+      {
+        "name": "Shah Khalid"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13681",
+        "url": "https://arxiv.org/abs/2602.13681v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13606",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13606v1",
+    "url": "https://arxiv.org/abs/2602.13606v1",
+    "title": {
+      "zh": "Multi-Modal Sensing and Fusion in mmWave Beamforming for Connected Vehicles: A Transformer Based Framework",
+      "en": "Multi-Modal Sensing and Fusion in mmWave Beamforming for Connected Vehicles: A Transformer Based Framework"
+    },
+    "summary": {
+      "zh": "Millimeter wave (mmWave) communication, utilizing beamforming techniques to address the inherent path loss limitation, is considered as one of the key technologies to support ever increasing high throughput and low latency demands of connected vehicles. However, adopting standard defined beamforming approach in highly dynamic vehicular environments often incurs high beam training overheads and reduction in the available airtime for communications, which is mainly due to exchanging pilot signals and exhaustive beam measurements. To this end, we present a multi-modal sensing and fusion learning framework as a potential alternative solution to reduce such overheads. In this framework, we first extract the representative features from the sensing modalities by modality specific encoders, then, utilize multi-head cross-modal attention to learn dependencies and correlations between different modalities, and subsequently fuse the multimodal features to obtain predicted top-k beams so that the best line-of-sight links can be proactively established. To show the generalizability of the proposed framework, we perform a comprehensive experiment in four different vehicle-to-infrastructure (V2I) and vehicle-to-vehicle (V2V) scenarios from real world multimodal and 60 GHz mmWave wireless sensing data. The experiment reveals that the proposed framework (i) achieves up to 96.72% accuracy on predicting top-15 beams correctly, (ii) incurs roughly 0.77 dB average power loss, and (iii) improves the overall latency and beam searching space overheads by 86.81% and 76.56% respectively for top-15 beams compared to standard defined approach.",
+      "en": "Millimeter wave (mmWave) communication, utilizing beamforming techniques to address the inherent path loss limitation, is considered as one of the key technologies to support ever increasing high throughput and low latency demands of connected vehicles. However, adopting standard defined beamforming approach in highly dynamic vehicular environments often incurs high beam training overheads and reduction in the available airtime for communications, which is mainly due to exchanging pilot signals and exhaustive beam measurements. To this end, we present a multi-modal sensing and fusion learning framework as a potential alternative solution to reduce such overheads. In this framework, we first extract the representative features from the sensing modalities by modality specific encoders, then, utilize multi-head cross-modal attention to learn dependencies and correlations between different modalities, and subsequently fuse the multimodal features to obtain predicted top-k beams so that the best line-of-sight links can be proactively established. To show the generalizability of the proposed framework, we perform a comprehensive experiment in four different vehicle-to-infrastructure (V2I) and vehicle-to-vehicle (V2V) scenarios from real world multimodal and 60 GHz mmWave wireless sensing data. The experiment reveals that the proposed framework (i) achieves up to 96.72% accuracy on predicting top-15 beams correctly, (ii) incurs roughly 0.77 dB average power loss, and (iii) improves the overall latency and beam searching space overheads by 86.81% and 76.56% respectively for top-15 beams compared to standard defined approach."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Muhammad Baqer Mollah"
+      },
+      {
+        "name": "Honggang Wang"
+      },
+      {
+        "name": "Mohammad Ataul Karim"
+      },
+      {
+        "name": "Hua Fang"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-02-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.NI",
+      "cs.AI",
+      "cs.ET",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13606",
+        "url": "https://arxiv.org/abs/2602.13606v1",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2602.13864",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2602.13864v2",
+    "url": "https://arxiv.org/abs/2602.13864v2",
+    "title": {
+      "zh": "Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation",
+      "en": "Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation"
+    },
+    "summary": {
+      "zh": "Learning in the presence of missing data can result in biased predictions and poor generalizability, among other difficulties, which data imputation methods only partially address. In neural networks, activation functions significantly affect performance yet typical options (e.g., ReLU, Swish) operate only on feature values and do not account for missingness indicators or confidence scores. We propose Three-Channel Evolved Activations (3C-EA), which we evolve using Genetic Programming to produce multivariate activation functions f(x, m, c) in the form of trees that take (i) the feature value x, (ii) a missingness indicator m, and (iii) an imputation confidence score c. To make these activations useful beyond the input layer, we introduce ChannelProp, an algorithm that deterministically propagates missingness and confidence values via linear layers based on weight magnitudes, retaining reliability signals throughout the network. We evaluate 3C-EA and ChannelProp on datasets with natural and injected (MCAR/MAR/MNAR) missingness at multiple rates under identical preprocessing and splits. Results indicate that integrating missingness and confidence inputs into the activation search improves classification performance under missingness.",
+      "en": "Learning in the presence of missing data can result in biased predictions and poor generalizability, among other difficulties, which data imputation methods only partially address. In neural networks, activation functions significantly affect performance yet typical options (e.g., ReLU, Swish) operate only on feature values and do not account for missingness indicators or confidence scores. We propose Three-Channel Evolved Activations (3C-EA), which we evolve using Genetic Programming to produce multivariate activation functions f(x, m, c) in the form of trees that take (i) the feature value x, (ii) a missingness indicator m, and (iii) an imputation confidence score c. To make these activations useful beyond the input layer, we introduce ChannelProp, an algorithm that deterministically propagates missingness and confidence values via linear layers based on weight magnitudes, retaining reliability signals throughout the network. We evaluate 3C-EA and ChannelProp on datasets with natural and injected (MCAR/MAR/MNAR) missingness at multiple rates under identical preprocessing and splits. Results indicate that integrating missingness and confidence inputs into the activation search improves classification performance under missingness."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Naeem Shahabi Sani"
+      },
+      {
+        "name": "Ferial Najiantabriz"
+      },
+      {
+        "name": "Shayan Shafaei"
+      },
+      {
+        "name": "Dean F. Hougen"
+      }
+    ],
+    "date": "2026-02-14",
+    "updatedDate": "2026-04-28",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.NE",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2602.13864",
+        "url": "https://arxiv.org/abs/2602.13864v2",
+        "lastCrawled": "2026-05-15",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:49.349Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
     "id": "2602.12649",
     "source": "arxiv",
     "sourceId": "https://arxiv.org/abs/2602.12649v1",
