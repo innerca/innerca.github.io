@@ -1,12 +1,12 @@
 {
   "snapshot_date": "2026-06-02",
-  "fetched_at": "2026-06-02T10:00:35Z",
-  "paper_count": 42,
+  "fetched_at": "2026-06-02T11:23:07Z",
+  "paper_count": 46,
   "papers": [
     {
       "arxiv_id": "2605.30611",
       "title": "Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs",
-      "upvotes": 54,
+      "upvotes": 67,
       "published_at": "2026-05-28T00:00:00.000Z"
     },
     {
@@ -18,13 +18,13 @@
     {
       "arxiv_id": "2605.28556",
       "title": "A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks",
-      "upvotes": 41,
+      "upvotes": 44,
       "published_at": "2026-05-27T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.02404",
       "title": "K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts",
-      "upvotes": 39,
+      "upvotes": 40,
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
@@ -34,22 +34,22 @@
       "published_at": "2026-05-28T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2605.30351",
-      "title": "VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion",
-      "upvotes": 20,
-      "published_at": "2026-05-28T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2606.02564",
       "title": "VLMs are Good Teachers for Video Reasoning via Adaptive Test-Time Optimization",
-      "upvotes": 19,
+      "upvotes": 20,
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.02482",
       "title": "X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding",
-      "upvotes": 19,
+      "upvotes": 20,
       "published_at": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2605.30351",
+      "title": "VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion",
+      "upvotes": 20,
+      "published_at": "2026-05-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.01311",
@@ -72,13 +72,13 @@
     {
       "arxiv_id": "2606.01247",
       "title": "Where to Look: Can Foundation Models Reach a Target Viewpoint Through Active Exploration?",
-      "upvotes": 14,
+      "upvotes": 15,
       "published_at": "2026-05-31T00:00:00.000Z"
     },
     {
       "arxiv_id": "2605.31057",
       "title": "LVSA: Training-Free Sparse Attention for Long Video Diffusion",
-      "upvotes": 11,
+      "upvotes": 12,
       "published_at": "2026-05-29T00:00:00.000Z"
     },
     {
@@ -86,6 +86,12 @@
       "title": "ESPO: Early-Stopping Proximal Policy Optimization",
       "upvotes": 11,
       "published_at": "2026-05-28T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2605.25659",
+      "title": "StreamChar: Long-Horizon Streaming Character Audio-Video Generation with Decoupled Orchestration",
+      "upvotes": 11,
+      "published_at": "2026-05-25T00:00:00.000Z"
     },
     {
       "arxiv_id": "2605.24202",
@@ -100,10 +106,10 @@
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2605.25659",
-      "title": "StreamChar: Long-Horizon Streaming Character Audio-Video Generation with Decoupled Orchestration",
+      "arxiv_id": "2605.29588",
+      "title": "Brain-IT-VQA: From Brain Signals to Answers",
       "upvotes": 10,
-      "published_at": "2026-05-25T00:00:00.000Z"
+      "published_at": "2026-05-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.02031",
@@ -112,15 +118,9 @@
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2605.29588",
-      "title": "Brain-IT-VQA: From Brain Signals to Answers",
-      "upvotes": 9,
-      "published_at": "2026-05-28T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2606.02553",
       "title": "LongLive-RAG: A General Retrieval-Augmented Framework for Long Video Generation",
-      "upvotes": 8,
+      "upvotes": 9,
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
@@ -150,7 +150,7 @@
     {
       "arxiv_id": "2606.01528",
       "title": "Joint Agent Memory and Exploration Learning via Novelty Signals",
-      "upvotes": 4,
+      "upvotes": 5,
       "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
@@ -158,6 +158,12 @@
       "title": "RoboSemanticBench: Diagnosing Semantic Grounding in Action Prediction for VLA Models",
       "upvotes": 4,
       "published_at": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.01132",
+      "title": "HakushoBench: A Japanese Chart and Table VQA Benchmark from Governmental White Papers",
+      "upvotes": 4,
+      "published_at": "2026-05-31T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.01533",
@@ -172,10 +178,16 @@
       "published_at": "2026-05-31T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.01132",
-      "title": "HakushoBench: A Japanese Chart and Table VQA Benchmark from Governmental White Papers",
+      "arxiv_id": "2606.00660",
+      "title": "FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search",
       "upvotes": 3,
-      "published_at": "2026-05-31T00:00:00.000Z"
+      "published_at": "2026-05-30T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.00090",
+      "title": "Silent Failures in Physical AI: A Literature Review of Runtime Action Authorization for Autonomous Systems",
+      "upvotes": 3,
+      "published_at": "2026-05-23T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.01682",
@@ -188,12 +200,6 @@
       "title": "LongAttnComp: Cross-Family Context Compression for Long-Context Reasoning",
       "upvotes": 2,
       "published_at": "2026-05-31T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2606.00660",
-      "title": "FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search",
-      "upvotes": 2,
-      "published_at": "2026-05-30T00:00:00.000Z"
     },
     {
       "arxiv_id": "2605.29992",
@@ -212,6 +218,12 @@
       "title": "Not only where, But when: Temporal Scheduling for RLVR",
       "upvotes": 2,
       "published_at": "2026-05-25T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2605.24614",
+      "title": "Measuring the Depth of LLM Unlearning via Activation Patching",
+      "upvotes": 2,
+      "published_at": "2026-05-23T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.00089",
@@ -250,10 +262,22 @@
       "published_at": "2026-05-29T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.00090",
-      "title": "Silent Failures in Physical AI: A Literature Review of Runtime Action Authorization for Autonomous Systems",
-      "upvotes": 1,
-      "published_at": "2026-05-23T00:00:00.000Z"
+      "arxiv_id": "2606.02248",
+      "title": "Geometric Latent Reasoning Induces Shorter Generations in LLMs",
+      "upvotes": 0,
+      "published_at": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.01356",
+      "title": "A Formally Verified Library of Mathematical Finance in Lean 4",
+      "upvotes": 0,
+      "published_at": "2026-05-31T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2605.28983",
+      "title": "The Hamilton-Jacobi Theory of Deep Learning",
+      "upvotes": 0,
+      "published_at": "2026-05-27T00:00:00.000Z"
     }
   ]
 }
