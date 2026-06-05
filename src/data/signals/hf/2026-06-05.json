@@ -1,19 +1,19 @@
 {
   "snapshot_date": "2026-06-05",
-  "fetched_at": "2026-06-05T09:04:15Z",
-  "paper_count": 33,
+  "fetched_at": "2026-06-05T10:52:09Z",
+  "paper_count": 34,
   "papers": [
-    {
-      "arxiv_id": "2606.04743",
-      "title": "TIDE: Proactive Multi-Problem Discovery via Template-Guided Iteration",
-      "upvotes": 29,
-      "published_at": "2026-06-03T00:00:00.000Z"
-    },
     {
       "arxiv_id": "2606.05553",
       "title": "ArcANE: Do Role-Playing Language Agents Stay in Character at the Right Time?",
-      "upvotes": 27,
+      "upvotes": 34,
       "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.04743",
+      "title": "TIDE: Proactive Multi-Problem Discovery via Template-Guided Iteration",
+      "upvotes": 30,
+      "published_at": "2026-06-03T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.05259",
@@ -24,8 +24,14 @@
     {
       "arxiv_id": "2606.05622",
       "title": "AdaPlanBench: Evaluating Adaptive Planning in Large Language Model Agents under World and User Constraints",
-      "upvotes": 22,
+      "upvotes": 24,
       "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.03312",
+      "title": "RobotValues: Evaluating Household Robots When Human Values Conflict",
+      "upvotes": 20,
+      "published_at": "2026-06-02T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.06428",
@@ -34,16 +40,16 @@
       "published_at": "2026-06-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.03312",
-      "title": "RobotValues: Evaluating Household Robots When Human Values Conflict",
-      "upvotes": 18,
-      "published_at": "2026-06-02T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2606.06042",
       "title": "LoomVideo: Unifying Multimodal Inputs into Video Generation and Editing",
       "upvotes": 16,
       "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.05275",
+      "title": "Personal AI Agent for Camera Roll VQA",
+      "upvotes": 15,
+      "published_at": "2026-06-03T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.04703",
@@ -52,14 +58,14 @@
       "published_at": "2026-06-03T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.05275",
-      "title": "Personal AI Agent for Camera Roll VQA",
-      "upvotes": 14,
-      "published_at": "2026-06-03T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2606.06477",
       "title": "Complexity-Balanced Diffusion Splitting",
+      "upvotes": 13,
+      "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.04811",
+      "title": "Dream.exe: Can Video Generation Models Dream Executable Robot Manipulation?",
       "upvotes": 11,
       "published_at": "2026-06-04T00:00:00.000Z"
     },
@@ -76,6 +82,12 @@
       "published_at": "2026-06-04T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2606.06294",
+      "title": "Towards One-to-Many Temporal Grounding",
+      "upvotes": 4,
+      "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2606.03092",
       "title": "The Shadow Price of Reasoning: Economic Perspective on Optimal Budget Allocation for LLMs",
       "upvotes": 4,
@@ -88,10 +100,22 @@
       "published_at": "2026-06-04T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2606.06021",
+      "title": "OPRD: On-Policy Representation Distillation",
+      "upvotes": 3,
+      "published_at": "2026-06-04T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2605.30159",
       "title": "Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents",
       "upvotes": 3,
       "published_at": "2026-05-28T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2606.05846",
+      "title": "Towards Truly Multilingual ASR: Generalizing Code-Switching ASR to Unseen Language Pairs",
+      "upvotes": 2,
+      "published_at": "2026-06-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.05769",
@@ -106,28 +130,16 @@
       "published_at": "2026-06-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.06021",
-      "title": "OPRD: On-Policy Representation Distillation",
-      "upvotes": 2,
-      "published_at": "2026-06-04T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2606.03841",
       "title": "EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management",
       "upvotes": 2,
       "published_at": "2026-06-02T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2606.06294",
-      "title": "Towards One-to-Many Temporal Grounding",
-      "upvotes": 1,
-      "published_at": "2026-06-04T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2606.05846",
-      "title": "Towards Truly Multilingual ASR: Generalizing Code-Switching ASR to Unseen Language Pairs",
-      "upvotes": 1,
-      "published_at": "2026-06-04T00:00:00.000Z"
+      "arxiv_id": "2606.02569",
+      "title": "AdaCodec: A Predictive Visual Code for Video MLLMs",
+      "upvotes": 2,
+      "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
       "arxiv_id": "2606.05645",
@@ -164,12 +176,6 @@
       "title": "SEAOTTER: Sensor Embedded Autoencoding with One-Time Transcode for Efficient Reconstruction",
       "upvotes": 1,
       "published_at": "2026-06-02T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2606.02569",
-      "title": "AdaCodec: A Predictive Visual Code for Video MLLMs",
-      "upvotes": 1,
-      "published_at": "2026-06-01T00:00:00.000Z"
     },
     {
       "arxiv_id": "2605.31058",
