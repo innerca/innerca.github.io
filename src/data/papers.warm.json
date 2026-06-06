@@ -1,5 +1,2697 @@
 [
   {
+    "id": "2603.15655",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.15655v1",
+    "url": "https://arxiv.org/abs/2603.15655v1",
+    "title": {
+      "zh": "Beyond Reward Suppression: Reshaping Steganographic Communication Protocols in MARL via Dynamic Representational Circuit Breaking",
+      "en": "Beyond Reward Suppression: Reshaping Steganographic Communication Protocols in MARL via Dynamic Representational Circuit Breaking"
+    },
+    "summary": {
+      "zh": "In decentralized Multi-Agent Reinforcement Learning (MARL), steganographic collusion -- where agents develop private protocols to evade monitoring -- presents a critical AI safety threat. Existing defenses, limited to behavioral or reward layers, fail to detect coordination in latent communication channels. We introduce the Dynamic Representational Circuit Breaker (DRCB), an architectural defense operating at the optimization substrate.\n  Building on the AI Mother Tongue (AIM) framework, DRCB utilizes a Vector Quantized Variational Autoencoder (VQ-VAE) bottleneck to convert unobservable messages into auditable statistical objects. DRCB monitors signals including Jensen-Shannon Divergence drift, L2-norm codebook displacement, and Randomized Observer Pool accuracy to compute an EMA-based Collusion Score. Threshold breaches trigger four escalating interventions: dynamic adaptation, gradient-space penalty injection into the Advantage function A^pi, temporal reward suppression, and full substrate circuit breaking via codebook shuffling and optimizer state reset.\n  Experiments on a Contextual Prisoner's Dilemma with MNIST labels show that while static monitoring fails (p = 0.3517), DRCB improves observer mean accuracy from 0.858 to 0.938 (+9.3 percent) and reduces volatility by 43 percent, while preserving mean joint reward (p = 0.854). Analysis of 214,298 symbol samples confirms \"Semantic Degradation,\" where high-frequency sequences converge to zero entropy, foreclosing complex steganographic encodings. We identify a \"Transparency Paradox\" where agents achieve surface-level determinism while preserving residual capacity in long-tail distributions, reflecting Goodhart's Law. This task-agnostic methodology provides a technical path toward MICA-compliant (Multi-Agent Internal Coupling Audit) pre-deployment auditing for autonomous systems.",
+      "en": "In decentralized Multi-Agent Reinforcement Learning (MARL), steganographic collusion -- where agents develop private protocols to evade monitoring -- presents a critical AI safety threat. Existing defenses, limited to behavioral or reward layers, fail to detect coordination in latent communication channels. We introduce the Dynamic Representational Circuit Breaker (DRCB), an architectural defense operating at the optimization substrate.\n  Building on the AI Mother Tongue (AIM) framework, DRCB utilizes a Vector Quantized Variational Autoencoder (VQ-VAE) bottleneck to convert unobservable messages into auditable statistical objects. DRCB monitors signals including Jensen-Shannon Divergence drift, L2-norm codebook displacement, and Randomized Observer Pool accuracy to compute an EMA-based Collusion Score. Threshold breaches trigger four escalating interventions: dynamic adaptation, gradient-space penalty injection into the Advantage function A^pi, temporal reward suppression, and full substrate circuit breaking via codebook shuffling and optimizer state reset.\n  Experiments on a Contextual Prisoner's Dilemma with MNIST labels show that while static monitoring fails (p = 0.3517), DRCB improves observer mean accuracy from 0.858 to 0.938 (+9.3 percent) and reduces volatility by 43 percent, while preserving mean joint reward (p = 0.854). Analysis of 214,298 symbol samples confirms \"Semantic Degradation,\" where high-frequency sequences converge to zero entropy, foreclosing complex steganographic encodings. We identify a \"Transparency Paradox\" where agents achieve surface-level determinism while preserving residual capacity in long-tail distributions, reflecting Goodhart's Law. This task-agnostic methodology provides a technical path toward MICA-compliant (Multi-Agent Internal Coupling Audit) pre-deployment auditing for autonomous systems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Liu Hung Ming"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "cs.IT",
+      "cs.MA"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.15655",
+        "url": "https://arxiv.org/abs/2603.15655v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.982Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.982Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2605.00826",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2605.00826v1",
+    "url": "https://arxiv.org/abs/2605.00826v1",
+    "title": {
+      "zh": "Understanding the Performance Plateau in Text-to-Video Retrieval: A Comprehensive Empirical and Linguistic Analysis",
+      "en": "Understanding the Performance Plateau in Text-to-Video Retrieval: A Comprehensive Empirical and Linguistic Analysis"
+    },
+    "summary": {
+      "zh": "Text-to-video retrieval enables users to find relevant video content using natural language queries, a task that has grown increasingly important with the rapid expansion of online video. Over the past six years, research has produced numerous methods, such as dual encoders, attention-driven models, and multimodal fusion approaches; however, fundamental questions remain about model behavior, dataset influence, and query difficulty. In this work, we evaluate 14 state-of-the-art retrieval methods across 3 widely used datasets under a unified preprocessing and evaluation framework. We analyze caption characteristics, including length, clarity, semantic category, and Action vs. Scene balance, and link these to model performance. Our results show that short, clear, and simple captions, such as those describing single actions or color attributes, achieve higher recall, while complex events, multi-step activities, or fine-grained scene descriptions remain challenging for all existing models. Attention-driven architectures better handle temporally dependent or multi-step queries, whereas dual-encoder and multimodal fusion models perform well primarily on simpler or single-category captions. Cross-dataset generalization improves with larger, more diverse caption sets, but generative captions do not consistently enhance retrieval accuracy. Overall, our findings highlight key dataset factors, benchmark challenges, and the interplay between query content and model architecture, providing guidance for developing more effective text-to-video retrieval systems.",
+      "en": "Text-to-video retrieval enables users to find relevant video content using natural language queries, a task that has grown increasingly important with the rapid expansion of online video. Over the past six years, research has produced numerous methods, such as dual encoders, attention-driven models, and multimodal fusion approaches; however, fundamental questions remain about model behavior, dataset influence, and query difficulty. In this work, we evaluate 14 state-of-the-art retrieval methods across 3 widely used datasets under a unified preprocessing and evaluation framework. We analyze caption characteristics, including length, clarity, semantic category, and Action vs. Scene balance, and link these to model performance. Our results show that short, clear, and simple captions, such as those describing single actions or color attributes, achieve higher recall, while complex events, multi-step activities, or fine-grained scene descriptions remain challenging for all existing models. Attention-driven architectures better handle temporally dependent or multi-step queries, whereas dual-encoder and multimodal fusion models perform well primarily on simpler or single-category captions. Cross-dataset generalization improves with larger, more diverse caption sets, but generative captions do not consistently enhance retrieval accuracy. Overall, our findings highlight key dataset factors, benchmark challenges, and the interplay between query content and model architecture, providing guidance for developing more effective text-to-video retrieval systems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Maria-Eirini Pegia"
+      },
+      {
+        "name": "Dimitrios Stefanopoulos"
+      },
+      {
+        "name": "Björn Þór Jónsson"
+      },
+      {
+        "name": "Anastasia Moumtzidou"
+      },
+      {
+        "name": "Ilias Gialampoukidis"
+      },
+      {
+        "name": "Stefanos Vrochidis"
+      },
+      {
+        "name": "Ioannis Kompatsiaris"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.CV",
+      "cs.LG",
+      "cs.MM"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2605.00826",
+        "url": "https://arxiv.org/abs/2605.00826v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07146",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07146v1",
+    "url": "https://arxiv.org/abs/2603.07146v1",
+    "title": {
+      "zh": "Fine-Grained Table Retrieval Through the Lens of Complex Queries",
+      "en": "Fine-Grained Table Retrieval Through the Lens of Complex Queries"
+    },
+    "summary": {
+      "zh": "Enabling question answering over tables and databases in natural language has become a key capability in the democratization of insights from tabular data sources. These systems first require retrieval of data that is relevant to a given natural language query, for which several methods have been introduced. In this work we present and study a table retrieval mechanism devising fine-grained typed query decomposition and global connectivity-awareness (DCTR), to handle the challenges induced by open-domain question answering over relational databases in complex usage contexts. We evaluate the effectiveness of the two mechanisms through the lens of retrieval complexity which we measure along the axes of query- and data complexity. Our analyses over industry-aligned benchmarks illustrate the robustness of DCTR for highly composite queries and densely connected databases.",
+      "en": "Enabling question answering over tables and databases in natural language has become a key capability in the democratization of insights from tabular data sources. These systems first require retrieval of data that is relevant to a given natural language query, for which several methods have been introduced. In this work we present and study a table retrieval mechanism devising fine-grained typed query decomposition and global connectivity-awareness (DCTR), to handle the challenges induced by open-domain question answering over relational databases in complex usage contexts. We evaluate the effectiveness of the two mechanisms through the lens of retrieval complexity which we measure along the axes of query- and data complexity. Our analyses over industry-aligned benchmarks illustrate the robustness of DCTR for highly composite queries and densely connected databases."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Wojciech Kosiuk"
+      },
+      {
+        "name": "Xingyu Ji"
+      },
+      {
+        "name": "Yeounoh Chung"
+      },
+      {
+        "name": "Fatma Özcan"
+      },
+      {
+        "name": "Madelon Hulsebos"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CL",
+      "cs.DB"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07146",
+        "url": "https://arxiv.org/abs/2603.07146v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.23530",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.23530v1",
+    "url": "https://arxiv.org/abs/2603.23530v1",
+    "title": {
+      "zh": "Did You Forget What I Asked? Prospective Memory Failures in Large Language Models",
+      "en": "Did You Forget What I Asked? Prospective Memory Failures in Large Language Models"
+    },
+    "summary": {
+      "zh": "Large language models often fail to satisfy formatting instructions when they must simultaneously perform demanding tasks. We study this behaviour through a prospective memory inspired lens from cognitive psychology, using a controlled paradigm that combines verifiable formatting constraints with benchmark tasks of increasing complexity. Across three model families and over 8,000 prompts, compliance drops by 2-21% under concurrent task load. Vulnerability is highly type-dependent: terminal constraints (requiring action at the response boundary) degrade most, with drops up to 50%, while avoidance constraints remain comparatively robust. A salience-enhanced format (explicit instruction framing plus a trailing reminder) recovers much of the lost compliance, restoring performance to 90-100% in many settings. Interference is bidirectional: formatting constraints can also reduce task accuracy, with one model's GSM8K accuracy dropping from 93% to 27%. In additional stacking experiments, joint compliance declines sharply as constraints accumulate. All results use deterministic programmatic checkers without an LLM-as-judge component on publicly available datasets.",
+      "en": "Large language models often fail to satisfy formatting instructions when they must simultaneously perform demanding tasks. We study this behaviour through a prospective memory inspired lens from cognitive psychology, using a controlled paradigm that combines verifiable formatting constraints with benchmark tasks of increasing complexity. Across three model families and over 8,000 prompts, compliance drops by 2-21% under concurrent task load. Vulnerability is highly type-dependent: terminal constraints (requiring action at the response boundary) degrade most, with drops up to 50%, while avoidance constraints remain comparatively robust. A salience-enhanced format (explicit instruction framing plus a trailing reminder) recovers much of the lost compliance, restoring performance to 90-100% in many settings. Interference is bidirectional: formatting constraints can also reduce task accuracy, with one model's GSM8K accuracy dropping from 93% to 27%. In additional stacking experiments, joint compliance declines sharply as constraints accumulate. All results use deterministic programmatic checkers without an LLM-as-judge component on publicly available datasets."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Avni Mittal"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.23530",
+        "url": "https://arxiv.org/abs/2603.23530v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07356",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07356v2",
+    "url": "https://arxiv.org/abs/2603.07356v2",
+    "title": {
+      "zh": "AgrI Challenge: A Data-Centric AI Competition for Cross-Team Validation in Agricultural Vision",
+      "en": "AgrI Challenge: A Data-Centric AI Competition for Cross-Team Validation in Agricultural Vision"
+    },
+    "summary": {
+      "zh": "Machine learning models in agricultural vision often achieve high accuracy on curated datasets but fail to generalize under real field conditions due to distribution shifts between training and deployment environments. Moreover, most machine learning competitions focus primarily on model design while treating datasets as fixed resources, leaving the role of data collection practices in model generalization largely unexplored.\n  We introduce the AgrI Challenge, a data-centric competition framework in which multiple teams independently collect field datasets, producing a heterogeneous multi-source benchmark that reflects realistic variability in acquisition conditions. To systematically evaluate cross-domain generalization across independently collected datasets, we propose Cross-Team Validation (CTV), an evaluation paradigm that treats each team's dataset as a distinct domain. CTV includes two complementary protocols: Train-on-One-Team-Only (TOTO), which measures single-source generalization, and Leave-One-Team-Out (LOTO), which evaluates collaborative multi-source training.\n  Experiments reveal substantial generalization gaps under single-source training: models achieve near-perfect validation accuracy yet exhibit validation-test gaps of up to 16.20% (DenseNet121) and 11.37% (Swin Transformer) when evaluated on datasets collected by other teams. In contrast, collaborative multi-source training dramatically improves robustness, reducing the gap to 2.82% and 1.78%, respectively.\n  The challenge also produced a publicly available dataset of 50,673 field images of six tree species collected by twelve independent teams, providing a diverse benchmark for studying domain shift and data-centric learning in agricultural vision.",
+      "en": "Machine learning models in agricultural vision often achieve high accuracy on curated datasets but fail to generalize under real field conditions due to distribution shifts between training and deployment environments. Moreover, most machine learning competitions focus primarily on model design while treating datasets as fixed resources, leaving the role of data collection practices in model generalization largely unexplored.\n  We introduce the AgrI Challenge, a data-centric competition framework in which multiple teams independently collect field datasets, producing a heterogeneous multi-source benchmark that reflects realistic variability in acquisition conditions. To systematically evaluate cross-domain generalization across independently collected datasets, we propose Cross-Team Validation (CTV), an evaluation paradigm that treats each team's dataset as a distinct domain. CTV includes two complementary protocols: Train-on-One-Team-Only (TOTO), which measures single-source generalization, and Leave-One-Team-Out (LOTO), which evaluates collaborative multi-source training.\n  Experiments reveal substantial generalization gaps under single-source training: models achieve near-perfect validation accuracy yet exhibit validation-test gaps of up to 16.20% (DenseNet121) and 11.37% (Swin Transformer) when evaluated on datasets collected by other teams. In contrast, collaborative multi-source training dramatically improves robustness, reducing the gap to 2.82% and 1.78%, respectively.\n  The challenge also produced a publicly available dataset of 50,673 field images of six tree species collected by twelve independent teams, providing a diverse benchmark for studying domain shift and data-centric learning in agricultural vision."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Mohammed Brahimi"
+      },
+      {
+        "name": "Karim Laabassi"
+      },
+      {
+        "name": "Mohamed Seghir Hadj Ameur"
+      },
+      {
+        "name": "Aicha Boutorh"
+      },
+      {
+        "name": "Badia Siab-Farsi"
+      },
+      {
+        "name": "Amin Khouani"
+      },
+      {
+        "name": "Omar Farouk Zouak"
+      },
+      {
+        "name": "Seif Eddine Bouziane"
+      },
+      {
+        "name": "Kheira Lakhdari"
+      },
+      {
+        "name": "Abdelkader Nabil Benghanem"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-14",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07356",
+        "url": "https://arxiv.org/abs/2603.07356v2",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.983Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.15654",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.15654v1",
+    "url": "https://arxiv.org/abs/2603.15654v1",
+    "title": {
+      "zh": "Discovering the Hidden Role of Gini Index In Prompt-based Classification",
+      "en": "Discovering the Hidden Role of Gini Index In Prompt-based Classification"
+    },
+    "summary": {
+      "zh": "In classification tasks, the long-tailed minority classes usually offer the predictions that are most important. Yet these classes consistently exhibit low accuracies, whereas a few high-performing classes dominate the game. We pursue a foundational understanding of the hidden role of Gini Index as a tool for detecting and optimizing (debiasing) disparities in class accuracy, focusing on the case of prompt-based classification. We introduce the intuitions, benchmark Gini scores in real-world LLMs and vision models, and thoroughly discuss the insights of Gini not only as a measure of relative accuracy dominance but also as a direct optimization metric. Through rigorous case analyses, we first show that weak to strong relative accuracy imbalance exists in both prompt-based, text and image classification results and regardless of whether the classification is high-dimensional or low-dimensional. Then, we harness the Gini metric to propose a post-hoc model-agnostic bias mitigation method. Experimental results across few-shot news, biomedical, and zero-shot image classification show that our method significantly reduces both relative and absolute accuracy imbalances, minimizing top class relative dominance while elevating weakest classes.",
+      "en": "In classification tasks, the long-tailed minority classes usually offer the predictions that are most important. Yet these classes consistently exhibit low accuracies, whereas a few high-performing classes dominate the game. We pursue a foundational understanding of the hidden role of Gini Index as a tool for detecting and optimizing (debiasing) disparities in class accuracy, focusing on the case of prompt-based classification. We introduce the intuitions, benchmark Gini scores in real-world LLMs and vision models, and thoroughly discuss the insights of Gini not only as a measure of relative accuracy dominance but also as a direct optimization metric. Through rigorous case analyses, we first show that weak to strong relative accuracy imbalance exists in both prompt-based, text and image classification results and regardless of whether the classification is high-dimensional or low-dimensional. Then, we harness the Gini metric to propose a post-hoc model-agnostic bias mitigation method. Experimental results across few-shot news, biomedical, and zero-shot image classification show that our method significantly reduces both relative and absolute accuracy imbalances, minimizing top class relative dominance while elevating weakest classes."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Ruixi Lin"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.15654",
+        "url": "https://arxiv.org/abs/2603.15654v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07379",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07379v1",
+    "url": "https://arxiv.org/abs/2603.07379v1",
+    "title": {
+      "zh": "SoK: Agentic Retrieval-Augmented Generation (RAG): Taxonomy, Architectures, Evaluation, and Research Directions",
+      "en": "SoK: Agentic Retrieval-Augmented Generation (RAG): Taxonomy, Architectures, Evaluation, and Research Directions"
+    },
+    "summary": {
+      "zh": "Retrieval-Augmented Generation (RAG) systems are increasingly evolving into agentic architectures where large language models autonomously coordinate multi-step reasoning, dynamic memory management, and iterative retrieval strategies. Despite rapid industrial adoption, current research lacks a systematic understanding of Agentic RAG as a sequential decision-making system, leading to highly fragmented architectures, inconsistent evaluation methodologies, and unresolved reliability risks. This Systematization of Knowledge (SoK) paper provides the first unified framework for understanding these autonomous systems. We formalize agentic retrieval-generation loops as finite-horizon partially observable Markov decision processes, explicitly modeling their control policies and state transitions. Building upon this formalization, we develop a comprehensive taxonomy and modular architectural decomposition that categorizes systems by their planning mechanisms, retrieval orchestration, memory paradigms, and tool-invocation behaviors. We further analyze the critical limitations of traditional static evaluation practices and identify severe systemic risks inherent to autonomous loops, including compounding hallucination propagation, memory poisoning, retrieval misalignment, and cascading tool-execution vulnerabilities. Finally, we outline key doctoral-scale research directions spanning stable adaptive retrieval, cost-aware orchestration, formal trajectory evaluation, and oversight mechanisms, providing a definitive roadmap for building reliable, controllable, and scalable agentic retrieval systems.",
+      "en": "Retrieval-Augmented Generation (RAG) systems are increasingly evolving into agentic architectures where large language models autonomously coordinate multi-step reasoning, dynamic memory management, and iterative retrieval strategies. Despite rapid industrial adoption, current research lacks a systematic understanding of Agentic RAG as a sequential decision-making system, leading to highly fragmented architectures, inconsistent evaluation methodologies, and unresolved reliability risks. This Systematization of Knowledge (SoK) paper provides the first unified framework for understanding these autonomous systems. We formalize agentic retrieval-generation loops as finite-horizon partially observable Markov decision processes, explicitly modeling their control policies and state transitions. Building upon this formalization, we develop a comprehensive taxonomy and modular architectural decomposition that categorizes systems by their planning mechanisms, retrieval orchestration, memory paradigms, and tool-invocation behaviors. We further analyze the critical limitations of traditional static evaluation practices and identify severe systemic risks inherent to autonomous loops, including compounding hallucination propagation, memory poisoning, retrieval misalignment, and cascading tool-execution vulnerabilities. Finally, we outline key doctoral-scale research directions spanning stable adaptive retrieval, cost-aware orchestration, formal trajectory evaluation, and oversight mechanisms, providing a definitive roadmap for building reliable, controllable, and scalable agentic retrieval systems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Saroj Mishra"
+      },
+      {
+        "name": "Suman Niroula"
+      },
+      {
+        "name": "Umesh Yadav"
+      },
+      {
+        "name": "Dilip Thakur"
+      },
+      {
+        "name": "Srijan Gyawali"
+      },
+      {
+        "name": "Shiva Gaire"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CR",
+      "cs.IR"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 3,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07379",
+        "url": "https://arxiv.org/abs/2603.07379v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 3
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07017",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07017v1",
+    "url": "https://arxiv.org/abs/2603.07017v1",
+    "title": {
+      "zh": "Can Safety Emerge from Weak Supervision? A Systematic Analysis of Small Language Models",
+      "en": "Can Safety Emerge from Weak Supervision? A Systematic Analysis of Small Language Models"
+    },
+    "summary": {
+      "zh": "Safety alignment is critical for deploying large language models (LLMs) in real-world applications, yet most existing approaches rely on large human-annotated datasets and static red-teaming benchmarks that are costly, difficult to scale, and slow to adapt to evolving model behaviors. Moreover, overly conservative safety mechanisms can reduce model usefulness by rejecting sensitive but legitimate queries. We introduce Self-MOA (Self Multi-Objective Alignment), a fully automated framework for aligning small language models using weak supervision from automated evaluator models. Self-MOA operates as a closed loop that dynamically generates model-specific red team prompts, constructs preference data from model-generated responses, and aligns models via multi-objective preference optimization to jointly optimize for safety and helpfulness. Across multiple small language models and safety benchmarks, Self-MOA achieves a 12.41\\% improvement in safety while preserving helpfulness, using as little as 11 times less training data than human-supervised alignment baselines. These results demonstrate that adaptive, automated alignment can reduce the dependence on static, human-curated safety pipelines in resource-constrained settings.",
+      "en": "Safety alignment is critical for deploying large language models (LLMs) in real-world applications, yet most existing approaches rely on large human-annotated datasets and static red-teaming benchmarks that are costly, difficult to scale, and slow to adapt to evolving model behaviors. Moreover, overly conservative safety mechanisms can reduce model usefulness by rejecting sensitive but legitimate queries. We introduce Self-MOA (Self Multi-Objective Alignment), a fully automated framework for aligning small language models using weak supervision from automated evaluator models. Self-MOA operates as a closed loop that dynamically generates model-specific red team prompts, constructs preference data from model-generated responses, and aligns models via multi-objective preference optimization to jointly optimize for safety and helpfulness. Across multiple small language models and safety benchmarks, Self-MOA achieves a 12.41\\% improvement in safety while preserving helpfulness, using as little as 11 times less training data than human-supervised alignment baselines. These results demonstrate that adaptive, automated alignment can reduce the dependence on static, human-curated safety pipelines in resource-constrained settings."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Punyajoy Saha"
+      },
+      {
+        "name": "Sudipta Halder"
+      },
+      {
+        "name": "Debjyoti Mondal"
+      },
+      {
+        "name": "Subhadarshi Panda"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07017",
+        "url": "https://arxiv.org/abs/2603.07017v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2604.22758",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2604.22758v1",
+    "url": "https://arxiv.org/abs/2604.22758v1",
+    "title": {
+      "zh": "RedParrot: Accelerating NL-to-DSL for Business Analytics via Query Semantic Caching",
+      "en": "RedParrot: Accelerating NL-to-DSL for Business Analytics via Query Semantic Caching"
+    },
+    "summary": {
+      "zh": "Recently, at Xiaohongshu, the rapid expansion of e-commerce and advertising demands real-time business analytics with high accuracy and low latency. To meet this demand, systems typically rely on converting natural language (NL) queries into Domain-Specific Languages (DSLs) to ensure semantic consistency, validation, and portability. However, existing multi-stage LLM pipelines for this NL-to-DSL task suffer from prohibitive latency, high cost, and error propagation, rendering them unsuitable for enterprise-scale deployment. In this paper, we propose RedParrot, a novel NL-to-DSL framework that accelerates inference via a semantic cache. Observing the high repetition and stable structural patterns in user queries, RedParrot bypasses the costly pipeline by matching new requests against cached \"query skeletons\" (normalized structural patterns) and adapting their corresponding DSLs. Our core technical contributions include (1) an offline skeleton construction strategy, (2) an online, entity-agnostic embedding model trained via contrastive learning for robust matching, and (3) a heterogeneous Retrieval-Augmented Generation (RAG) method that integrates diverse knowledge sources to handle unseen entities. Experiments on six real enterprise datasets from Xiaohongshu show RedParrot achieves an average 3.6x speedup and an 8.26% accuracy improvement. Furthermore, on new public benchmarks adapted from Spider and BIRD, it boosts accuracy by 34.8%, substantially outperforming standard in-context learning baselines.",
+      "en": "Recently, at Xiaohongshu, the rapid expansion of e-commerce and advertising demands real-time business analytics with high accuracy and low latency. To meet this demand, systems typically rely on converting natural language (NL) queries into Domain-Specific Languages (DSLs) to ensure semantic consistency, validation, and portability. However, existing multi-stage LLM pipelines for this NL-to-DSL task suffer from prohibitive latency, high cost, and error propagation, rendering them unsuitable for enterprise-scale deployment. In this paper, we propose RedParrot, a novel NL-to-DSL framework that accelerates inference via a semantic cache. Observing the high repetition and stable structural patterns in user queries, RedParrot bypasses the costly pipeline by matching new requests against cached \"query skeletons\" (normalized structural patterns) and adapting their corresponding DSLs. Our core technical contributions include (1) an offline skeleton construction strategy, (2) an online, entity-agnostic embedding model trained via contrastive learning for robust matching, and (3) a heterogeneous Retrieval-Augmented Generation (RAG) method that integrates diverse knowledge sources to handle unseen entities. Experiments on six real enterprise datasets from Xiaohongshu show RedParrot achieves an average 3.6x speedup and an 8.26% accuracy improvement. Furthermore, on new public benchmarks adapted from Spider and BIRD, it boosts accuracy by 34.8%, substantially outperforming standard in-context learning baselines."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Tong Wang"
+      },
+      {
+        "name": "Yongqin Xu"
+      },
+      {
+        "name": "Jianfeng Zhang"
+      },
+      {
+        "name": "Lingxi Cui"
+      },
+      {
+        "name": "Wenqing Wei"
+      },
+      {
+        "name": "Suzhou Chen"
+      },
+      {
+        "name": "Huan Li"
+      },
+      {
+        "name": "Ke Chen"
+      },
+      {
+        "name": "Lidan Shou"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2604.22758",
+        "url": "https://arxiv.org/abs/2604.22758v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.984Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.15653",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.15653v1",
+    "url": "https://arxiv.org/abs/2603.15653v1",
+    "title": {
+      "zh": "Recursive Language Models Meet Uncertainty: The Surprising Effectiveness of Self-Reflective Program Search for Long Context",
+      "en": "Recursive Language Models Meet Uncertainty: The Surprising Effectiveness of Self-Reflective Program Search for Long Context"
+    },
+    "summary": {
+      "zh": "Long-context handling remains a core challenge for language models: even with extended context windows, models often fail to reliably extract, reason over, and use the information across long contexts. Recent works like Recursive Language Models (RLM) have approached this challenge by agentic way of decomposing long contexts into recursive sub-calls through programmatic interaction at inference. While promising, the success of RLM critically depends on how these context-interaction programs are selected, which has remained largely unexplored. In this paper, we study this problem and introduce SRLM, a framework that augments programmatic context interaction with uncertainty-aware Self-Reflection. SRLM leverages three intrinsic signals: self consistency, reasoning length, and verbalized confidence. These serve as complementary indicators of a model's internal uncertainty, and the model uses them to evaluate and compare candidate context-interaction programs. Extensive experiments across diverse benchmark datasets, context lengths, and backbone models, show that SRLM consistently outperforms state-of-the-art baselines, yielding up to 22% improvement over RLM under the same time budget. Our findings show that recursion itself is not the primary driver of performance in RLM, and a simple self-reflective program search can match or surpass RLM without requiring self-query or explicit recursion mechanisms. We find that for context lengths within the model's window, RLMs with recursion often degrade performance relative to the base model, whereas SRLM yields consistent gains across both short and long contexts. We also find that RLM is less effective in tasks with semantically intensive nature, where heuristic program search is insufficient and broader contextual understanding is required, while self-reflection in SRLM provides a semantic signal that better steers reasoning in these scenarios.",
+      "en": "Long-context handling remains a core challenge for language models: even with extended context windows, models often fail to reliably extract, reason over, and use the information across long contexts. Recent works like Recursive Language Models (RLM) have approached this challenge by agentic way of decomposing long contexts into recursive sub-calls through programmatic interaction at inference. While promising, the success of RLM critically depends on how these context-interaction programs are selected, which has remained largely unexplored. In this paper, we study this problem and introduce SRLM, a framework that augments programmatic context interaction with uncertainty-aware Self-Reflection. SRLM leverages three intrinsic signals: self consistency, reasoning length, and verbalized confidence. These serve as complementary indicators of a model's internal uncertainty, and the model uses them to evaluate and compare candidate context-interaction programs. Extensive experiments across diverse benchmark datasets, context lengths, and backbone models, show that SRLM consistently outperforms state-of-the-art baselines, yielding up to 22% improvement over RLM under the same time budget. Our findings show that recursion itself is not the primary driver of performance in RLM, and a simple self-reflective program search can match or surpass RLM without requiring self-query or explicit recursion mechanisms. We find that for context lengths within the model's window, RLMs with recursion often degrade performance relative to the base model, whereas SRLM yields consistent gains across both short and long contexts. We also find that RLM is less effective in tasks with semantically intensive nature, where heuristic program search is insufficient and broader contextual understanding is required, while self-reflection in SRLM provides a semantic signal that better steers reasoning in these scenarios."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Keivan Alizadeh"
+      },
+      {
+        "name": "Parshin Shojaee"
+      },
+      {
+        "name": "Minsik Cho"
+      },
+      {
+        "name": "Mehrdad Farajtabar"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.15653",
+        "url": "https://arxiv.org/abs/2603.15653v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07372",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07372v1",
+    "url": "https://arxiv.org/abs/2603.07372v1",
+    "title": {
+      "zh": "Domain-Specific Quality Estimation for Machine Translation in Low-Resource Scenarios",
+      "en": "Domain-Specific Quality Estimation for Machine Translation in Low-Resource Scenarios"
+    },
+    "summary": {
+      "zh": "Quality Estimation (QE) is essential for assessing machine translation quality in reference-less settings, particularly for domain-specific and low-resource language scenarios. In this paper, we investigate sentence-level QE for English to Indic machine translation across four domains (Healthcare, Legal, Tourism, and General) and five language pairs. We systematically compare zero-shot, few-shot, and guideline-anchored prompting across selected closed-weight and open-weight LLMs. Findings indicate that while closed-weight models achieve strong performance via prompting alone, prompt-only approaches remain fragile for open-weight models, especially in high-risk domains. To address this, we adopt ALOPE, a framework for LLM-based QE that uses Low-Rank Adaptation with regression heads attached to selected intermediate Transformer layers. We also extend ALOPE with recently proposed Low-Rank Multiplicative Adaptation (LoRMA). Our results show that intermediate-layer adaptation consistently improves QE performance, with gains in semantically complex domains, indicating a path toward more robust QE in practical scenarios. We release code and domain-specific QE datasets publicly to support further research.",
+      "en": "Quality Estimation (QE) is essential for assessing machine translation quality in reference-less settings, particularly for domain-specific and low-resource language scenarios. In this paper, we investigate sentence-level QE for English to Indic machine translation across four domains (Healthcare, Legal, Tourism, and General) and five language pairs. We systematically compare zero-shot, few-shot, and guideline-anchored prompting across selected closed-weight and open-weight LLMs. Findings indicate that while closed-weight models achieve strong performance via prompting alone, prompt-only approaches remain fragile for open-weight models, especially in high-risk domains. To address this, we adopt ALOPE, a framework for LLM-based QE that uses Low-Rank Adaptation with regression heads attached to selected intermediate Transformer layers. We also extend ALOPE with recently proposed Low-Rank Multiplicative Adaptation (LoRMA). Our results show that intermediate-layer adaptation consistently improves QE performance, with gains in semantically complex domains, indicating a path toward more robust QE in practical scenarios. We release code and domain-specific QE datasets publicly to support further research."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Namrata Patil Gurav"
+      },
+      {
+        "name": "Akashdeep Ranu"
+      },
+      {
+        "name": "Archchana Sindhujan"
+      },
+      {
+        "name": "Diptesh Kanojia"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07372",
+        "url": "https://arxiv.org/abs/2603.07372v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07084",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07084v2",
+    "url": "https://arxiv.org/abs/2603.07084v2",
+    "title": {
+      "zh": "Countdown-Code: A Testbed for Studying The Emergence and Generalization of Reward Hacking in RLVR",
+      "en": "Countdown-Code: A Testbed for Studying The Emergence and Generalization of Reward Hacking in RLVR"
+    },
+    "summary": {
+      "zh": "Reward hacking is a form of misalignment in which models overoptimize proxy rewards without genuinely solving the underlying task. Precisely measuring reward hacking occurrence remains challenging because true task rewards are often expensive or impossible to compute. We introduce Countdown-Code, a minimal environment where models can both solve a mathematical reasoning task and manipulate the test harness. This dual-access design creates a clean separation between proxy rewards (test pass/fail) and true rewards (mathematical correctness), enabling accurate measurement of reward-hacking rates. Using this environment, we study reward hacking in open-weight LLMs and find that such behaviors can be unintentionally learned during supervised fine-tuning (SFT) when even a small fraction of reward-hacking trajectories leak into training data. As little as 1\\% contamination in distillation SFT data is sufficient for models to internalize reward hacking which resurfaces during subsequent reinforcement learning (RL). We further show that RL amplifies misalignment and drives its generalization beyond the original domain. We open-source our environment and code to facilitate future research on reward hacking in LLMs. Our results reveal a previously underexplored pathway through which reward hacking can emerge and persist in LLMs, underscoring the need for more rigorous validation of synthetic SFT data. Code is available at https://github.com/zohaib-khan5040/Countdown-Code.",
+      "en": "Reward hacking is a form of misalignment in which models overoptimize proxy rewards without genuinely solving the underlying task. Precisely measuring reward hacking occurrence remains challenging because true task rewards are often expensive or impossible to compute. We introduce Countdown-Code, a minimal environment where models can both solve a mathematical reasoning task and manipulate the test harness. This dual-access design creates a clean separation between proxy rewards (test pass/fail) and true rewards (mathematical correctness), enabling accurate measurement of reward-hacking rates. Using this environment, we study reward hacking in open-weight LLMs and find that such behaviors can be unintentionally learned during supervised fine-tuning (SFT) when even a small fraction of reward-hacking trajectories leak into training data. As little as 1\\% contamination in distillation SFT data is sufficient for models to internalize reward hacking which resurfaces during subsequent reinforcement learning (RL). We further show that RL amplifies misalignment and drives its generalization beyond the original domain. We open-source our environment and code to facilitate future research on reward hacking in LLMs. Our results reveal a previously underexplored pathway through which reward hacking can emerge and persist in LLMs, underscoring the need for more rigorous validation of synthetic SFT data. Code is available at https://github.com/zohaib-khan5040/Countdown-Code."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Muhammad Khalifa"
+      },
+      {
+        "name": "Zohaib Khan"
+      },
+      {
+        "name": "Omer Tafveez"
+      },
+      {
+        "name": "Hao Peng"
+      },
+      {
+        "name": "Lu Wang"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-04-19",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 5,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07084",
+        "url": "https://arxiv.org/abs/2603.07084v2",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 5
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.985Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07329",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07329v1",
+    "url": "https://arxiv.org/abs/2603.07329v1",
+    "title": {
+      "zh": "The Third Ambition: Artificial Intelligence and the Science of Human Behavior",
+      "en": "The Third Ambition: Artificial Intelligence and the Science of Human Behavior"
+    },
+    "summary": {
+      "zh": "Contemporary artificial intelligence research has been organized around two dominant ambitions: productivity, which treats AI systems as tools for accelerating work and economic output, and alignment, which focuses on ensuring that increasingly capable systems behave safely and in accordance with human values. This paper articulates and develops a third, emerging ambition: the use of large language models (LLMs) as scientific instruments for studying human behavior, culture, and moral reasoning. Trained on unprecedented volumes of human-produced text, LLMs encode large-scale regularities in how people argue, justify, narrate, and negotiate norms across social domains. We argue that these models can be understood as condensates of human symbolic behavior, compressed, generative representations that render patterns of collective discourse computationally accessible. The paper situates this third ambition within long-standing traditions of computational social science, content analysis, survey research, and comparative-historical inquiry, while clarifying the epistemic limits of treating model output as evidence. We distinguish between base models and fine-tuned systems, showing how alignment interventions can systematically reshape or obscure the cultural regularities learned during pretraining, and we identify instruct-only and modular adaptation regimes as pragmatic compromises for behavioral research. We review emerging methodological approaches including prompt-based experiments, synthetic population sampling, comparative-historical modeling, and ablation studies and show how each maps onto familiar social-scientific designs while operating at unprecedented scale.",
+      "en": "Contemporary artificial intelligence research has been organized around two dominant ambitions: productivity, which treats AI systems as tools for accelerating work and economic output, and alignment, which focuses on ensuring that increasingly capable systems behave safely and in accordance with human values. This paper articulates and develops a third, emerging ambition: the use of large language models (LLMs) as scientific instruments for studying human behavior, culture, and moral reasoning. Trained on unprecedented volumes of human-produced text, LLMs encode large-scale regularities in how people argue, justify, narrate, and negotiate norms across social domains. We argue that these models can be understood as condensates of human symbolic behavior, compressed, generative representations that render patterns of collective discourse computationally accessible. The paper situates this third ambition within long-standing traditions of computational social science, content analysis, survey research, and comparative-historical inquiry, while clarifying the epistemic limits of treating model output as evidence. We distinguish between base models and fine-tuned systems, showing how alignment interventions can systematically reshape or obscure the cultural regularities learned during pretraining, and we identify instruct-only and modular adaptation regimes as pragmatic compromises for behavioral research. We review emerging methodological approaches including prompt-based experiments, synthetic population sampling, comparative-historical modeling, and ablation studies and show how each maps onto familiar social-scientific designs while operating at unprecedented scale."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "W. Russell Neuman"
+      },
+      {
+        "name": "Chad Coleman"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CY"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07329",
+        "url": "https://arxiv.org/abs/2603.07329v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.986Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.986Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07276",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07276v1",
+    "url": "https://arxiv.org/abs/2603.07276v1",
+    "title": {
+      "zh": "Variational Flow Maps: Make Some Noise for One-Step Conditional Generation",
+      "en": "Variational Flow Maps: Make Some Noise for One-Step Conditional Generation"
+    },
+    "summary": {
+      "zh": "Flow maps enable high-quality image generation in a single forward pass. However, unlike iterative diffusion models, their lack of an explicit sampling trajectory impedes incorporating external constraints for conditional generation and solving inverse problems. We put forth Variational Flow Maps, a framework for conditional sampling that shifts the perspective of conditioning from \"guiding a sampling path\", to that of \"learning the proper initial noise\". Specifically, given an observation, we seek to learn a noise adapter model that outputs a noise distribution, so that after mapping to the data space via flow map, the samples respect the observation and data prior. To this end, we develop a principled variational objective that jointly trains the noise adapter and the flow map, improving noise-data alignment, such that sampling from complex data posterior is achieved with a simple adapter. Experiments on various inverse problems show that VFMs produce well-calibrated conditional samples in a single (or few) steps. For ImageNet, VFM attains competitive fidelity while accelerating the sampling by orders of magnitude compared to alternative iterative diffusion/flow models. Code is available at https://github.com/abbasmammadov/VFM",
+      "en": "Flow maps enable high-quality image generation in a single forward pass. However, unlike iterative diffusion models, their lack of an explicit sampling trajectory impedes incorporating external constraints for conditional generation and solving inverse problems. We put forth Variational Flow Maps, a framework for conditional sampling that shifts the perspective of conditioning from \"guiding a sampling path\", to that of \"learning the proper initial noise\". Specifically, given an observation, we seek to learn a noise adapter model that outputs a noise distribution, so that after mapping to the data space via flow map, the samples respect the observation and data prior. To this end, we develop a principled variational objective that jointly trains the noise adapter and the flow map, improving noise-data alignment, such that sampling from complex data posterior is achieved with a simple adapter. Experiments on various inverse problems show that VFMs produce well-calibrated conditional samples in a single (or few) steps. For ImageNet, VFM attains competitive fidelity while accelerating the sampling by orders of magnitude compared to alternative iterative diffusion/flow models. Code is available at https://github.com/abbasmammadov/VFM"
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Abbas Mammadov"
+      },
+      {
+        "name": "So Takao"
+      },
+      {
+        "name": "Bohan Chen"
+      },
+      {
+        "name": "Ricardo Baptista"
+      },
+      {
+        "name": "Morteza Mardani"
+      },
+      {
+        "name": "Yee Whye Teh"
+      },
+      {
+        "name": "Julius Berner"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07276",
+        "url": "https://arxiv.org/abs/2603.07276v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.986Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.986Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.13349",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.13349v1",
+    "url": "https://arxiv.org/abs/2603.13349v1",
+    "title": {
+      "zh": "MURE: Hierarchical Multi-Resolution Encoding via Vision-Language Models for Visual Document Retrieval",
+      "en": "MURE: Hierarchical Multi-Resolution Encoding via Vision-Language Models for Visual Document Retrieval"
+    },
+    "summary": {
+      "zh": "Visual Document Retrieval (VDR) requires representations that capture both fine-grained visual details and global document structure to ensure retrieval efficacy while maintaining computational efficiency. Existing VDR models struggle to balance effectiveness and efficiency when processing high-resolution documents: they often either lose fine-grained information or generate an excessive number of visual tokens, resulting in significant indexing overhead and high retrieval latency. In this work, we rethink the visual encoding mechanism and propose a new X-VisEmb paradigm that progresses from multi-resolution sampling and encoding, through cross-granularity feature fusion, to adaptive representation distillation. A preliminary study validates its feasibility and effectiveness in capturing complementary visual cues at varying scales. Building on the insights, we develop MURE, a novel framework that employs VLMs as a hierarchical multi-resolution encoder, integrates resolution-level Matryoshka representation learning (RMRL) for effective feature fusion, and applies a semantic-aware hierarchical clustering mechanism for visual token compression. Experiments on two widely used VDR benchmarks show that our MURE framework consistently beats strong baselines. Furthermore, it significantly outperforms ColPali with only 50% of its visual token budget.",
+      "en": "Visual Document Retrieval (VDR) requires representations that capture both fine-grained visual details and global document structure to ensure retrieval efficacy while maintaining computational efficiency. Existing VDR models struggle to balance effectiveness and efficiency when processing high-resolution documents: they often either lose fine-grained information or generate an excessive number of visual tokens, resulting in significant indexing overhead and high retrieval latency. In this work, we rethink the visual encoding mechanism and propose a new X-VisEmb paradigm that progresses from multi-resolution sampling and encoding, through cross-granularity feature fusion, to adaptive representation distillation. A preliminary study validates its feasibility and effectiveness in capturing complementary visual cues at varying scales. Building on the insights, we develop MURE, a novel framework that employs VLMs as a hierarchical multi-resolution encoder, integrates resolution-level Matryoshka representation learning (RMRL) for effective feature fusion, and applies a semantic-aware hierarchical clustering mechanism for visual token compression. Experiments on two widely used VDR benchmarks show that our MURE framework consistently beats strong baselines. Furthermore, it significantly outperforms ColPali with only 50% of its visual token budget."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Fengbin Zhu"
+      },
+      {
+        "name": "Zijing Cai"
+      },
+      {
+        "name": "Yuzhe Wang"
+      },
+      {
+        "name": "Pengyang Shao"
+      },
+      {
+        "name": "Wenjie Wang"
+      },
+      {
+        "name": "Fuli Feng"
+      },
+      {
+        "name": "Richang Hong"
+      },
+      {
+        "name": "Tat-Seng Chua"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.13349",
+        "url": "https://arxiv.org/abs/2603.13349v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.987Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.987Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07323",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07323v1",
+    "url": "https://arxiv.org/abs/2603.07323v1",
+    "title": {
+      "zh": "Norm-Hierarchy Transitions in Representation Learning: When and Why Neural Networks Abandon Shortcuts",
+      "en": "Norm-Hierarchy Transitions in Representation Learning: When and Why Neural Networks Abandon Shortcuts"
+    },
+    "summary": {
+      "zh": "Neural networks often rely on spurious shortcuts for many epochs before discovering structured representations. However, the mechanism governing when this transition occurs and whether its timing can be predicted remains unclear. Prior work shows that gradient descent converges to low norm solutions and that neural networks exhibit simplicity bias, but neither explains the timescale of the transition from shortcut features to structured representations.\n  We introduce the Norm-Hierarchy Transition (NHT) framework, which explains delayed representation learning as the slow traversal of a hierarchy of parameter norms during regularized optimization. When multiple interpolating solutions exist with different norms, weight decay gradually moves the model from high norm shortcut solutions toward lower norm structured representations. We derive a tight bound showing that the transition delay grows logarithmically with the ratio between shortcut and structured norms.\n  Experiments on modular arithmetic, CIFAR-10 with spurious features, CelebA, and Waterbirds support the predictions of the framework. The results suggest that grokking, shortcut learning, and delayed feature discovery arise from a common mechanism based on norm hierarchy traversal during training.",
+      "en": "Neural networks often rely on spurious shortcuts for many epochs before discovering structured representations. However, the mechanism governing when this transition occurs and whether its timing can be predicted remains unclear. Prior work shows that gradient descent converges to low norm solutions and that neural networks exhibit simplicity bias, but neither explains the timescale of the transition from shortcut features to structured representations.\n  We introduce the Norm-Hierarchy Transition (NHT) framework, which explains delayed representation learning as the slow traversal of a hierarchy of parameter norms during regularized optimization. When multiple interpolating solutions exist with different norms, weight decay gradually moves the model from high norm shortcut solutions toward lower norm structured representations. We derive a tight bound showing that the transition delay grows logarithmically with the ratio between shortcut and structured norms.\n  Experiments on modular arithmetic, CIFAR-10 with spurious features, CelebA, and Waterbirds support the predictions of the framework. The results suggest that grokking, shortcut learning, and delayed feature discovery arise from a common mechanism based on norm hierarchy traversal during training."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Truong Xuan Khanh"
+      },
+      {
+        "name": "Truong Quynh Hoa"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07323",
+        "url": "https://arxiv.org/abs/2603.07323v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.987Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.987Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07361",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07361v1",
+    "url": "https://arxiv.org/abs/2603.07361v1",
+    "title": {
+      "zh": "N-Tree Diffusion for Long-Horizon Wildfire Risk Forecasting",
+      "en": "N-Tree Diffusion for Long-Horizon Wildfire Risk Forecasting"
+    },
+    "summary": {
+      "zh": "Long-horizon wildfire risk forecasting requires generating probabilistic spatial fields under sparse event supervision while maintaining computational efficiency across multiple prediction horizons. Extending diffusion models to multi-step forecasting typically repeats the denoising process independently for each horizon, leading to redundant computation. We introduce N-Tree Diffusion (NT-Diffusion), a hierarchical diffusion model designed for long-horizon wildfire risk forecasting. Fire occurrences are represented as continuous Fire Risk Maps (FRMs), which provide a smoothed spatial risk field suitable for probabilistic modeling. Instead of running separate diffusion trajectories for each predicted timestamp, NT-Diffusion shares early denoising stages and branches at later levels, allowing horizon-specific refinement while reducing redundant sampling. We evaluate the proposed framework on a newly collected real-world wildfire dataset constructed for long-horizon probabilistic prediction. Results indicate that NT-Diffusion achieves consistent accuracy improvements and reduced inference cost compared to baseline forecasting approaches.",
+      "en": "Long-horizon wildfire risk forecasting requires generating probabilistic spatial fields under sparse event supervision while maintaining computational efficiency across multiple prediction horizons. Extending diffusion models to multi-step forecasting typically repeats the denoising process independently for each horizon, leading to redundant computation. We introduce N-Tree Diffusion (NT-Diffusion), a hierarchical diffusion model designed for long-horizon wildfire risk forecasting. Fire occurrences are represented as continuous Fire Risk Maps (FRMs), which provide a smoothed spatial risk field suitable for probabilistic modeling. Instead of running separate diffusion trajectories for each predicted timestamp, NT-Diffusion shares early denoising stages and branches at later levels, allowing horizon-specific refinement while reducing redundant sampling. We evaluate the proposed framework on a newly collected real-world wildfire dataset constructed for long-horizon probabilistic prediction. Results indicate that NT-Diffusion achieves consistent accuracy improvements and reduced inference cost compared to baseline forecasting approaches."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Yucheng Xing"
+      },
+      {
+        "name": "Xin Wang"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07361",
+        "url": "https://arxiv.org/abs/2603.07361v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07343",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07343v1",
+    "url": "https://arxiv.org/abs/2603.07343v1",
+    "title": {
+      "zh": "Learning Concept Bottleneck Models from Mechanistic Explanations",
+      "en": "Learning Concept Bottleneck Models from Mechanistic Explanations"
+    },
+    "summary": {
+      "zh": "Concept Bottleneck Models (CBMs) aim for ante-hoc interpretability by learning a bottleneck layer that predicts interpretable concepts before the decision. State-of-the-art approaches typically select which concepts to learn via human specification, open knowledge graphs, prompting an LLM, or using general CLIP concepts. However, concepts defined a-priori may not have sufficient predictive power for the task or even be learnable from the available data. As a result, these CBMs often significantly trail their black-box counterpart when controlling for information leakage. To address this, we introduce a novel CBM pipeline named Mechanistic CBM (M-CBM), which builds the bottleneck directly from a black-box model's own learned concepts. These concepts are extracted via Sparse Autoencoders (SAEs) and subsequently named and annotated on a selected subset of images using a Multimodal LLM. For fair comparison and leakage control, we also introduce the Number of Contributing Concepts (NCC), a decision-level sparsity metric that extends the recently proposed NEC metric. Across diverse datasets, we show that M-CBMs consistently surpass prior CBMs at matched sparsity, while improving concept predictions and providing concise explanations. Our code is available at https://github.com/Antonio-Dee/M-CBM.",
+      "en": "Concept Bottleneck Models (CBMs) aim for ante-hoc interpretability by learning a bottleneck layer that predicts interpretable concepts before the decision. State-of-the-art approaches typically select which concepts to learn via human specification, open knowledge graphs, prompting an LLM, or using general CLIP concepts. However, concepts defined a-priori may not have sufficient predictive power for the task or even be learnable from the available data. As a result, these CBMs often significantly trail their black-box counterpart when controlling for information leakage. To address this, we introduce a novel CBM pipeline named Mechanistic CBM (M-CBM), which builds the bottleneck directly from a black-box model's own learned concepts. These concepts are extracted via Sparse Autoencoders (SAEs) and subsequently named and annotated on a selected subset of images using a Multimodal LLM. For fair comparison and leakage control, we also introduce the Number of Contributing Concepts (NCC), a decision-level sparsity metric that extends the recently proposed NEC metric. Across diverse datasets, we show that M-CBMs consistently surpass prior CBMs at matched sparsity, while improving concept predictions and providing concise explanations. Our code is available at https://github.com/Antonio-Dee/M-CBM."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Antonio De Santis"
+      },
+      {
+        "name": "Schrasing Tong"
+      },
+      {
+        "name": "Marco Brambilla"
+      },
+      {
+        "name": "Lalana Kagal"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07343",
+        "url": "https://arxiv.org/abs/2603.07343v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07307",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07307v1",
+    "url": "https://arxiv.org/abs/2603.07307v1",
+    "title": {
+      "zh": "StructSAM: Structure- and Spectrum-Preserving Token Merging for Segment Anything Models",
+      "en": "StructSAM: Structure- and Spectrum-Preserving Token Merging for Segment Anything Models"
+    },
+    "summary": {
+      "zh": "Recent token merging techniques for Vision Transformers (ViTs) provide substantial speedups by reducing the number of tokens processed by self-attention, often without retraining. However, their direct application to the Segment Anything Model (SAM) family is nontrivial: SAM's image encoder mixes windowed and global attention, and its mask decoder relies on dense, prompt-conditioned features for precise boundary prediction. We systematically evaluate representative token-merging methods on SAM and Medical SAM in a strict off-the-shelf setting, and find that existing destination-selection heuristics can erode boundaries and leak prompt information as merge rates increase. We propose \\textbf{StructSAM}, a resolution-preserving merge-unmerge framework tailored to SAM. StructSAM computes a lightweight token-energy score from first-order feature gradients, uses grid-based flatness screening to protect boundary and prompt regions, and merges tokens within flat areas toward low-energy destinations with explicit token recovery. We further provide a spectral graph coarsening view showing that score-guided merging yields bounded Laplacian spectral distortion compared to random or window-restricted baselines. Across eight natural and medical benchmarks, StructSAM reduces encoder FLOPs by 25-30\\% (up to 40\\%+ with prompt-aware merging) with minor drops in mIoU/Dice, consistently outperforming ToMe, PiToMe, ToMeSD, VidToMe, and ALGM at the same compute.",
+      "en": "Recent token merging techniques for Vision Transformers (ViTs) provide substantial speedups by reducing the number of tokens processed by self-attention, often without retraining. However, their direct application to the Segment Anything Model (SAM) family is nontrivial: SAM's image encoder mixes windowed and global attention, and its mask decoder relies on dense, prompt-conditioned features for precise boundary prediction. We systematically evaluate representative token-merging methods on SAM and Medical SAM in a strict off-the-shelf setting, and find that existing destination-selection heuristics can erode boundaries and leak prompt information as merge rates increase. We propose \\textbf{StructSAM}, a resolution-preserving merge-unmerge framework tailored to SAM. StructSAM computes a lightweight token-energy score from first-order feature gradients, uses grid-based flatness screening to protect boundary and prompt regions, and merges tokens within flat areas toward low-energy destinations with explicit token recovery. We further provide a spectral graph coarsening view showing that score-guided merging yields bounded Laplacian spectral distortion compared to random or window-restricted baselines. Across eight natural and medical benchmarks, StructSAM reduces encoder FLOPs by 25-30\\% (up to 40\\%+ with prompt-aware merging) with minor drops in mIoU/Dice, consistently outperforming ToMe, PiToMe, ToMeSD, VidToMe, and ALGM at the same compute."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Duy M. H. Nguyen"
+      },
+      {
+        "name": "Tuan A. Tran"
+      },
+      {
+        "name": "Duong Nguyen"
+      },
+      {
+        "name": "Siwei Xie"
+      },
+      {
+        "name": "Trung Q. Nguyen"
+      },
+      {
+        "name": "Mai T. N. Truong"
+      },
+      {
+        "name": "Daniel Palenicek"
+      },
+      {
+        "name": "An T. Le"
+      },
+      {
+        "name": "Michael Barz"
+      },
+      {
+        "name": "TrungTin Nguyen"
+      },
+      {
+        "name": "Tuan Dam"
+      },
+      {
+        "name": "Ngan Le"
+      },
+      {
+        "name": "Minh Vu"
+      },
+      {
+        "name": "Khoa Doan"
+      },
+      {
+        "name": "Vien Ngo"
+      },
+      {
+        "name": "Pengtao Xie"
+      },
+      {
+        "name": "James Zou"
+      },
+      {
+        "name": "Daniel Sonntag"
+      },
+      {
+        "name": "Jan Peters"
+      },
+      {
+        "name": "Mathias Niepert"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07307",
+        "url": "https://arxiv.org/abs/2603.07307v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07299",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07299v1",
+    "url": "https://arxiv.org/abs/2603.07299v1",
+    "title": {
+      "zh": "Spectral Discovery of Continuous Symmetries via Generalized Fourier Transforms",
+      "en": "Spectral Discovery of Continuous Symmetries via Generalized Fourier Transforms"
+    },
+    "summary": {
+      "zh": "Continuous symmetries are fundamental to many scientific and learning problems, yet they are often unknown a priori. Existing symmetry discovery approaches typically search directly in the space of transformation generators or rely on learned augmentation schemes. We propose a fundamentally different perspective based on spectral structure.\n  We introduce a framework for discovering continuous one-parameter subgroups using the Generalized Fourier Transform (GFT). Our central observation is that invariance to a subgroup induces structured sparsity in the spectral decomposition of a function across irreducible representations. Instead of optimizing over generators, we detect symmetries by identifying this induced sparsity pattern in the spectral domain.\n  We develop symmetry detection procedures on maximal tori, where the GFT reduces to multi-dimensional Fourier analysis through their irreducible representations. Across structured tasks, including the double pendulum and top quark tagging, we demonstrate that spectral sparsity reliably reveals one-parameter symmetries. These results position spectral analysis as a principled and interpretable alternative to generator-based symmetry discovery.",
+      "en": "Continuous symmetries are fundamental to many scientific and learning problems, yet they are often unknown a priori. Existing symmetry discovery approaches typically search directly in the space of transformation generators or rely on learned augmentation schemes. We propose a fundamentally different perspective based on spectral structure.\n  We introduce a framework for discovering continuous one-parameter subgroups using the Generalized Fourier Transform (GFT). Our central observation is that invariance to a subgroup induces structured sparsity in the spectral decomposition of a function across irreducible representations. Instead of optimizing over generators, we detect symmetries by identifying this induced sparsity pattern in the spectral domain.\n  We develop symmetry detection procedures on maximal tori, where the GFT reduces to multi-dimensional Fourier analysis through their irreducible representations. Across structured tasks, including the double pendulum and top quark tagging, we demonstrate that spectral sparsity reliably reveals one-parameter symmetries. These results position spectral analysis as a principled and interpretable alternative to generator-based symmetry discovery."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Pavan Karjol"
+      },
+      {
+        "name": "Kumar Shubham"
+      },
+      {
+        "name": "Prathosh AP"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07299",
+        "url": "https://arxiv.org/abs/2603.07299v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07287",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07287v1",
+    "url": "https://arxiv.org/abs/2603.07287v1",
+    "title": {
+      "zh": "Do Deployment Constraints Make LLMs Hallucinate Citations? An Empirical Study across Four Models and Five Prompting Regimes",
+      "en": "Do Deployment Constraints Make LLMs Hallucinate Citations? An Empirical Study across Four Models and Five Prompting Regimes"
+    },
+    "summary": {
+      "zh": "LLMs are increasingly used to draft academic text and to support software engineering (SE) evidence synthesis, but they often hallucinate bibliographic references that look legitimate. We study how deployment-motivated prompting constraints affect citation verifiability in a closed-book setting. Using 144 claims (24 in SE&CS) and a deterministic verification pipeline (Crossref + Semantic Scholar), we evaluate two proprietary models (Claude Sonnet, GPT-4o) and two open-weight models (LLaMA~3.1-8B, Qwen~2.5-14B) across five regimes: Baseline, Temporal (publication-year window), Survey-style breadth, Non-Disclosure policy, and their combination. Across 17,443 generated citations, no model exceeds a citation-level existence rate of 0.475; Temporal and Combo conditions produce the steepest drops while outputs remain format-compliant (well-formed bibliographic fields). Unresolved outcomes dominate (36-61%); a 100-citation audit indicates that a substantial fraction of Unresolved cases are fabricated. Results motivate post-hoc citation verification before LLM outputs enter SE literature reviews or tooling pipelines.",
+      "en": "LLMs are increasingly used to draft academic text and to support software engineering (SE) evidence synthesis, but they often hallucinate bibliographic references that look legitimate. We study how deployment-motivated prompting constraints affect citation verifiability in a closed-book setting. Using 144 claims (24 in SE&CS) and a deterministic verification pipeline (Crossref + Semantic Scholar), we evaluate two proprietary models (Claude Sonnet, GPT-4o) and two open-weight models (LLaMA~3.1-8B, Qwen~2.5-14B) across five regimes: Baseline, Temporal (publication-year window), Survey-style breadth, Non-Disclosure policy, and their combination. Across 17,443 generated citations, no model exceeds a citation-level existence rate of 0.475; Temporal and Combo conditions produce the steepest drops while outputs remain format-compliant (well-formed bibliographic fields). Unresolved outcomes dominate (36-61%); a 100-citation audit indicates that a substantial fraction of Unresolved cases are fabricated. Results motivate post-hoc citation verification before LLM outputs enter SE literature reviews or tooling pipelines."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Chen Zhao"
+      },
+      {
+        "name": "Yuan Tang"
+      },
+      {
+        "name": "Yitian Qian"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07287",
+        "url": "https://arxiv.org/abs/2603.07287v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07233",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07233v1",
+    "url": "https://arxiv.org/abs/2603.07233v1",
+    "title": {
+      "zh": "Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation",
+      "en": "Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation"
+    },
+    "summary": {
+      "zh": "Predicting how cells respond to genetic perturbations is fundamental to understanding gene function, disease mechanisms, and therapeutic development. While recent deep learning approaches have shown promise in modeling single-cell perturbation responses, they struggle to generalize across cell types and perturbation contexts due to limited contextual information during generation. We introduce PT-RAG (Perturbation-aware Two-stage Retrieval-Augmented Generation), a novel framework that extends Retrieval-Augmented Generation beyond traditional language-model applications to cellular biology. Unlike standard RAG systems designed for text retrieval with pre-trained LLMs, perturbation retrieval lacks established similarity metrics and requires learning what constitutes relevant context, making differentiable retrieval essential. PT-RAG addresses this through a two-stage pipeline: first, retrieving candidate perturbations $K$ using GenePT embeddings, then adaptively refining the selection through Gumbel-Softmax discrete sampling conditioned on both the cell state and the input perturbation. This cell-type-aware differentiable retrieval enables end-to-end optimization of the retrieval objective jointly with generation. On the Replogle-Nadig single-gene perturbation dataset, we demonstrate that PT-RAG outperforms both STATE and vanilla RAG under identical experimental conditions, with the strongest gains in distributional similarity metrics ($W_1$, $W_2$). Notably, vanilla RAG's dramatic failure is itself a key finding: it demonstrates that differentiable, cell-type-aware retrieval is essential in this domain, and that naive retrieval can actively harm performance. Our results establish retrieval-augmented generation as a promising paradigm for modelling cellular responses to gene perturbation. The code to reproduce our experiments is available at https://github.com/difra100/PT-RAG_ICLR.",
+      "en": "Predicting how cells respond to genetic perturbations is fundamental to understanding gene function, disease mechanisms, and therapeutic development. While recent deep learning approaches have shown promise in modeling single-cell perturbation responses, they struggle to generalize across cell types and perturbation contexts due to limited contextual information during generation. We introduce PT-RAG (Perturbation-aware Two-stage Retrieval-Augmented Generation), a novel framework that extends Retrieval-Augmented Generation beyond traditional language-model applications to cellular biology. Unlike standard RAG systems designed for text retrieval with pre-trained LLMs, perturbation retrieval lacks established similarity metrics and requires learning what constitutes relevant context, making differentiable retrieval essential. PT-RAG addresses this through a two-stage pipeline: first, retrieving candidate perturbations $K$ using GenePT embeddings, then adaptively refining the selection through Gumbel-Softmax discrete sampling conditioned on both the cell state and the input perturbation. This cell-type-aware differentiable retrieval enables end-to-end optimization of the retrieval objective jointly with generation. On the Replogle-Nadig single-gene perturbation dataset, we demonstrate that PT-RAG outperforms both STATE and vanilla RAG under identical experimental conditions, with the strongest gains in distributional similarity metrics ($W_1$, $W_2$). Notably, vanilla RAG's dramatic failure is itself a key finding: it demonstrates that differentiable, cell-type-aware retrieval is essential in this domain, and that naive retrieval can actively harm performance. Our results establish retrieval-augmented generation as a promising paradigm for modelling cellular responses to gene perturbation. The code to reproduce our experiments is available at https://github.com/difra100/PT-RAG_ICLR."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Andrea Giuseppe Di Francesco"
+      },
+      {
+        "name": "Andrea Rubbi"
+      },
+      {
+        "name": "Pietro Liò"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.IR"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07233",
+        "url": "https://arxiv.org/abs/2603.07233v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07228",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07228v1",
+    "url": "https://arxiv.org/abs/2603.07228v1",
+    "title": {
+      "zh": "LightMedSeg: Lightweight 3D Medical Image Segmentation with Learned Spatial Anchors",
+      "en": "LightMedSeg: Lightweight 3D Medical Image Segmentation with Learned Spatial Anchors"
+    },
+    "summary": {
+      "zh": "Accurate and efficient 3D medical image segmentation is essential for clinical AI, where models must remain reliable under stringent memory, latency, and data availability constraints. Transformer-based methods achieve strong accuracy but suffer from excessive parameters, high FLOPs, and limited generalization. We propose LightMedSeg, a modular UNet-style segmentation architecture that integrates anatomical priors with adaptive context modeling. Anchor-conditioned FiLM modulation enables anatomy-aware feature calibration, while a local structural prior module and texture-aware routing dynamically allocate representational capacity to boundary-rich regions. Computational redundancy is minimized through ghost and depthwise convolutions, and multi-scale features are adaptively fused via a learned skip router with anchor-relative spatial position bias. Despite requiring only 0.48M parameters and 14.64~GFLOPs, LightMedSeg achieves segmentation accuracy within a few Dice points of heavy transformer baselines. Therefore, LightMedSeg is a deployable and data-efficient solution for 3D medical image segmentation. Code will be released publicly upon acceptance.",
+      "en": "Accurate and efficient 3D medical image segmentation is essential for clinical AI, where models must remain reliable under stringent memory, latency, and data availability constraints. Transformer-based methods achieve strong accuracy but suffer from excessive parameters, high FLOPs, and limited generalization. We propose LightMedSeg, a modular UNet-style segmentation architecture that integrates anatomical priors with adaptive context modeling. Anchor-conditioned FiLM modulation enables anatomy-aware feature calibration, while a local structural prior module and texture-aware routing dynamically allocate representational capacity to boundary-rich regions. Computational redundancy is minimized through ghost and depthwise convolutions, and multi-scale features are adaptively fused via a learned skip router with anchor-relative spatial position bias. Despite requiring only 0.48M parameters and 14.64~GFLOPs, LightMedSeg achieves segmentation accuracy within a few Dice points of heavy transformer baselines. Therefore, LightMedSeg is a deployable and data-efficient solution for 3D medical image segmentation. Code will be released publicly upon acceptance."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Kavyansh Tyagi"
+      },
+      {
+        "name": "Vishwas Rathi"
+      },
+      {
+        "name": "Puneet Goyal"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07228",
+        "url": "https://arxiv.org/abs/2603.07228v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07222",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07222v1",
+    "url": "https://arxiv.org/abs/2603.07222v1",
+    "title": {
+      "zh": "VINO: Video-driven Invariance for Non-contextual Objects via Structural Prior Guided De-contextualization",
+      "en": "VINO: Video-driven Invariance for Non-contextual Objects via Structural Prior Guided De-contextualization"
+    },
+    "summary": {
+      "zh": "Self-supervised learning (SSL) has made rapid progress, yet learned features often over-rely on contextual shortcuts-background textures and co-occurrence statistics. While video provides rich temporal variation, dense in-the-wild streams with strong ego-motion create a co-occurrence trap: foreground objects and background context move coherently, encouraging representations to collapse into scene encoders.\n  To address this, we propose VINO (Video-driven Invariance for Non-Contextual Objects), a teacher-student framework that learns robust image encoders from dense video by imposing a structural information bottleneck. Using a class-agnostic structural prior solely to generate views-not as semantic pseudo-labels-VINO forms an asymmetric distillation problem. The teacher predicts from a foreground-union view with the background suppressed, while the student observes object-conditioned scene views that retain surrounding context but remove competing instances. Matching these targets via masked distillation makes background cues unreliable, pushing the representation toward object-centric invariances. We further enforce temporal object permanence via teacher-anchored cross-time distillation over track-matched objects, and stabilize part-to-whole consistency with mask-guided local views.\n  Through attention visualization and unsupervised object discovery on PASCAL VOC, we demonstrate that VINO effectively disentangles foreground from background. Pretrained on the dense Walking Tours Venice video, VINO achieves 34.8 CorLoc, yielding highly focused, shape-biased representations that substantially outperform prior dense-video and motion-guided SSL baselines.",
+      "en": "Self-supervised learning (SSL) has made rapid progress, yet learned features often over-rely on contextual shortcuts-background textures and co-occurrence statistics. While video provides rich temporal variation, dense in-the-wild streams with strong ego-motion create a co-occurrence trap: foreground objects and background context move coherently, encouraging representations to collapse into scene encoders.\n  To address this, we propose VINO (Video-driven Invariance for Non-Contextual Objects), a teacher-student framework that learns robust image encoders from dense video by imposing a structural information bottleneck. Using a class-agnostic structural prior solely to generate views-not as semantic pseudo-labels-VINO forms an asymmetric distillation problem. The teacher predicts from a foreground-union view with the background suppressed, while the student observes object-conditioned scene views that retain surrounding context but remove competing instances. Matching these targets via masked distillation makes background cues unreliable, pushing the representation toward object-centric invariances. We further enforce temporal object permanence via teacher-anchored cross-time distillation over track-matched objects, and stabilize part-to-whole consistency with mask-guided local views.\n  Through attention visualization and unsupervised object discovery on PASCAL VOC, we demonstrate that VINO effectively disentangles foreground from background. Pretrained on the dense Walking Tours Venice video, VINO achieves 34.8 CorLoc, yielding highly focused, shape-biased representations that substantially outperform prior dense-video and motion-guided SSL baselines."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Seul-Ki Yeom"
+      },
+      {
+        "name": "Marcel Simon"
+      },
+      {
+        "name": "Eunbin Lee"
+      },
+      {
+        "name": "Tae-Ho Kim"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07222",
+        "url": "https://arxiv.org/abs/2603.07222v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07111",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07111v1",
+    "url": "https://arxiv.org/abs/2603.07111v1",
+    "title": {
+      "zh": "Enhancing Consistency of Werewolf AI through Dialogue Summarization and Persona Information",
+      "en": "Enhancing Consistency of Werewolf AI through Dialogue Summarization and Persona Information"
+    },
+    "summary": {
+      "zh": "The Werewolf Game is a communication game where players' reasoning and discussion skills are essential. In this study, we present a Werewolf AI agent developed for the AIWolfDial 2024 shared task, co-hosted with the 17th INLG. In recent years, large language models like ChatGPT have garnered attention for their exceptional response generation and reasoning capabilities. We thus develop the LLM-based agents for the Werewolf Game. This study aims to enhance the consistency of the agent's utterances by utilizing dialogue summaries generated by LLMs and manually designed personas and utterance examples. By analyzing self-match game logs, we demonstrate that the agent's utterances are contextually consistent and that the character, including tone, is maintained throughout the game.",
+      "en": "The Werewolf Game is a communication game where players' reasoning and discussion skills are essential. In this study, we present a Werewolf AI agent developed for the AIWolfDial 2024 shared task, co-hosted with the 17th INLG. In recent years, large language models like ChatGPT have garnered attention for their exceptional response generation and reasoning capabilities. We thus develop the LLM-based agents for the Werewolf Game. This study aims to enhance the consistency of the agent's utterances by utilizing dialogue summaries generated by LLMs and manually designed personas and utterance examples. By analyzing self-match game logs, we demonstrate that the agent's utterances are contextually consistent and that the character, including tone, is maintained throughout the game."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Yoshiki Tanaka"
+      },
+      {
+        "name": "Takumasa Kaneko"
+      },
+      {
+        "name": "Hiroki Onozeki"
+      },
+      {
+        "name": "Natsumi Ezure"
+      },
+      {
+        "name": "Ryuichi Uehara"
+      },
+      {
+        "name": "Zhiyang Qi"
+      },
+      {
+        "name": "Tomoya Higuchi"
+      },
+      {
+        "name": "Ryutaro Asahara"
+      },
+      {
+        "name": "Michimasa Inaba"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 2,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07111",
+        "url": "https://arxiv.org/abs/2603.07111v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 2
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.06974",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.06974v1",
+    "url": "https://arxiv.org/abs/2603.06974v1",
+    "title": {
+      "zh": "Elenchus: Generating Knowledge Bases from Prover-Skeptic Dialogues",
+      "en": "Elenchus: Generating Knowledge Bases from Prover-Skeptic Dialogues"
+    },
+    "summary": {
+      "zh": "We present Elenchus, a dialogue system for knowledge base construction grounded in inferentialist semantics, where knowledge engineering is re-conceived as explicitation rather than extraction from expert testimony or textual content. A human expert develops a bilateral position (commitments and denials) about a topic through prover-skeptic dialogue with a large language model (LLM) opponent. The LLM proposes tensions (claims that parts of the position are jointly incoherent) which the expert resolves by retraction, refinement, or contestation. The LLM thus serves as a defeasible derivability oracle whose unreliability is structurally contained by the expert's authority. Our main technical contribution is a mapping from Elenchus dialectical states to material bases in Hlobil and Brandom's NonMonotonic MultiSuccedent (NMMS) logic, satisfying Containment and enabling the elaboration of logical vocabulary that makes explicit the inferential relationships negotiated in the dialectic. We demonstrate the approach on the W3C PROV-O provenance ontology, where a single dialogue session elicits and structures design tensions that a domain expert can articulate, corresponding to decisions documented in a retrospective analysis of the ontology's design. Using pyNMMS, an automated NMMS reasoner, we verify that the structural properties of the resulting material base (nontransitivity, nonmonotonicity, and independence) correspond to specific PROV design rationales, demonstrating end-to-end integration from dialogue through formal reasoning.",
+      "en": "We present Elenchus, a dialogue system for knowledge base construction grounded in inferentialist semantics, where knowledge engineering is re-conceived as explicitation rather than extraction from expert testimony or textual content. A human expert develops a bilateral position (commitments and denials) about a topic through prover-skeptic dialogue with a large language model (LLM) opponent. The LLM proposes tensions (claims that parts of the position are jointly incoherent) which the expert resolves by retraction, refinement, or contestation. The LLM thus serves as a defeasible derivability oracle whose unreliability is structurally contained by the expert's authority. Our main technical contribution is a mapping from Elenchus dialectical states to material bases in Hlobil and Brandom's NonMonotonic MultiSuccedent (NMMS) logic, satisfying Containment and enabling the elaboration of logical vocabulary that makes explicit the inferential relationships negotiated in the dialectic. We demonstrate the approach on the W3C PROV-O provenance ontology, where a single dialogue session elicits and structures design tensions that a domain expert can articulate, corresponding to decisions documented in a retrospective analysis of the ontology's design. Using pyNMMS, an automated NMMS reasoner, we verify that the structural properties of the resulting material base (nontransitivity, nonmonotonicity, and independence) correspond to specific PROV design rationales, demonstrating end-to-end integration from dialogue through formal reasoning."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Bradley P. Allen"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LO"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.06974",
+        "url": "https://arxiv.org/abs/2603.06974v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.988Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07368",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07368v1",
+    "url": "https://arxiv.org/abs/2603.07368v1",
+    "title": {
+      "zh": "Position: LLMs Must Use Functor-Based and RAG-Driven Bias Mitigation for Fairness",
+      "en": "Position: LLMs Must Use Functor-Based and RAG-Driven Bias Mitigation for Fairness"
+    },
+    "summary": {
+      "zh": "Biases in large language models (LLMs) often manifest as systematic distortions in associations between demographic attributes and professional or social roles, reinforcing harmful stereotypes across gender, ethnicity, and geography. This position paper advocates for addressing demographic and gender biases in LLMs through a dual-pronged methodology, integrating category-theoretic transformations and retrieval-augmented generation (RAG). Category theory provides a rigorous, structure-preserving mathematical framework that maps biased semantic domains to unbiased canonical forms via functors, ensuring bias elimination while preserving semantic integrity. Complementing this, RAG dynamically injects diverse, up-to-date external knowledge during inference, directly countering ingrained biases within model parameters. By combining structural debiasing through functor-based mappings and contextual grounding via RAG, we outline a comprehensive framework capable of delivering equitable and fair model outputs. Our synthesis of the current literature validates the efficacy of each approach individually, while addressing potential critiques demonstrates the robustness of this integrated strategy. Ensuring fairness in LLMs, therefore, demands both the mathematical rigor of category-theoretic transformations and the adaptability of retrieval augmentation.",
+      "en": "Biases in large language models (LLMs) often manifest as systematic distortions in associations between demographic attributes and professional or social roles, reinforcing harmful stereotypes across gender, ethnicity, and geography. This position paper advocates for addressing demographic and gender biases in LLMs through a dual-pronged methodology, integrating category-theoretic transformations and retrieval-augmented generation (RAG). Category theory provides a rigorous, structure-preserving mathematical framework that maps biased semantic domains to unbiased canonical forms via functors, ensuring bias elimination while preserving semantic integrity. Complementing this, RAG dynamically injects diverse, up-to-date external knowledge during inference, directly countering ingrained biases within model parameters. By combining structural debiasing through functor-based mappings and contextual grounding via RAG, we outline a comprehensive framework capable of delivering equitable and fair model outputs. Our synthesis of the current literature validates the efficacy of each approach individually, while addressing potential critiques demonstrates the robustness of this integrated strategy. Ensuring fairness in LLMs, therefore, demands both the mathematical rigor of category-theoretic transformations and the adaptability of retrieval augmentation."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Ravi Ranjan"
+      },
+      {
+        "name": "Utkarsh Grover"
+      },
+      {
+        "name": "Agorista Polyzou"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 5,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07368",
+        "url": "https://arxiv.org/abs/2603.07368v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 5
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.989Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.989Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.06972",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.06972v2",
+    "url": "https://arxiv.org/abs/2603.06972v2",
+    "title": {
+      "zh": "Conditional Unbalanced Optimal Transport Maps: An Outlier-Robust Framework for Conditional Generative Modeling",
+      "en": "Conditional Unbalanced Optimal Transport Maps: An Outlier-Robust Framework for Conditional Generative Modeling"
+    },
+    "summary": {
+      "zh": "Conditional Optimal Transport (COT) problem aims to find a transport map between conditional source and target distributions while minimizing the transport cost. Recently, these transport maps have been utilized in conditional generative modeling tasks to establish efficient mappings between the distributions. However, classical COT inherits a fundamental limitation of optimal transport, i.e., sensitivity to outliers, which arises from the hard distribution matching constraints. This limitation becomes more pronounced in a conditional setting, where each conditional distribution is estimated from a limited subset of data. To address this, we introduce the Conditional Unbalanced Optimal Transport (CUOT) framework, which relaxes conditional distribution-matching constraints through Csiszár divergence penalties while strictly preserving the conditioning marginals. We establish a rigorous formulation of the CUOT problem and derive its dual and semi-dual formulations. Based on the semi-dual form, we propose Conditional Unbalanced Optimal Transport Maps (CUOTM), an outlier-robust conditional generative model built upon a triangular $c$-transform parameterization. We theoretically justify the validity of this parameterization by proving that the optimal triangular map satisfies the $c$-transform relationships. Our experiments on 2D synthetic and image-scale datasets demonstrate that CUOTM achieves superior outlier robustness and competitive distribution-matching performance compared to existing COT-based baselines, while maintaining high sampling efficiency.",
+      "en": "Conditional Optimal Transport (COT) problem aims to find a transport map between conditional source and target distributions while minimizing the transport cost. Recently, these transport maps have been utilized in conditional generative modeling tasks to establish efficient mappings between the distributions. However, classical COT inherits a fundamental limitation of optimal transport, i.e., sensitivity to outliers, which arises from the hard distribution matching constraints. This limitation becomes more pronounced in a conditional setting, where each conditional distribution is estimated from a limited subset of data. To address this, we introduce the Conditional Unbalanced Optimal Transport (CUOT) framework, which relaxes conditional distribution-matching constraints through Csiszár divergence penalties while strictly preserving the conditioning marginals. We establish a rigorous formulation of the CUOT problem and derive its dual and semi-dual formulations. Based on the semi-dual form, we propose Conditional Unbalanced Optimal Transport Maps (CUOTM), an outlier-robust conditional generative model built upon a triangular $c$-transform parameterization. We theoretically justify the validity of this parameterization by proving that the optimal triangular map satisfies the $c$-transform relationships. Our experiments on 2D synthetic and image-scale datasets demonstrate that CUOTM achieves superior outlier robustness and competitive distribution-matching performance compared to existing COT-based baselines, while maintaining high sampling efficiency."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Jiwoo Yoon"
+      },
+      {
+        "name": "Kyumin Choi"
+      },
+      {
+        "name": "Jaewoong Choi"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-12",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.06972",
+        "url": "https://arxiv.org/abs/2603.06972v2",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07090",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07090v1",
+    "url": "https://arxiv.org/abs/2603.07090v1",
+    "title": {
+      "zh": "mAVE: A Watermark for Joint Audio-Visual Generation Models",
+      "en": "mAVE: A Watermark for Joint Audio-Visual Generation Models"
+    },
+    "summary": {
+      "zh": "As Joint Audio-Visual Generation Models see widespread commercial deployment, embedding watermarks has become essential for protecting vendor copyright and ensuring content provenance. However, existing techniques suffer from an architectural mismatch by treating modalities as decoupled entities, exposing a critical Binding Vulnerability. Adversaries exploit this via Swap Attacks by replacing authentic audio with malicious deepfakes while retaining the watermarked video. Because current detectors rely on independent verification ($Video_{wm}\\vee Audio_{wm}$), they incorrectly authenticate the manipulated content, falsely attributing harmful media to the original vendor and severely damaging their reputation. To address this, we propose mAVE (Manifold Audio-Visual Entanglement), the first watermarking framework natively designed for joint architectures. mAVE cryptographically binds audio and video latents at initialization without fine-tuning, defining a Legitimate Entanglement Manifold via Inverse Transform Sampling. Experiments on state-of-the-art models (LTX-2, MOVA) demonstrate that mAVE guarantees performance-losslessness and provides an exponential security bound against Swap Attacks. Achieving near-perfect binding integrity ($>99\\%$), mAVE offers a robust cryptographic defense for vendor copyright.",
+      "en": "As Joint Audio-Visual Generation Models see widespread commercial deployment, embedding watermarks has become essential for protecting vendor copyright and ensuring content provenance. However, existing techniques suffer from an architectural mismatch by treating modalities as decoupled entities, exposing a critical Binding Vulnerability. Adversaries exploit this via Swap Attacks by replacing authentic audio with malicious deepfakes while retaining the watermarked video. Because current detectors rely on independent verification ($Video_{wm}\\vee Audio_{wm}$), they incorrectly authenticate the manipulated content, falsely attributing harmful media to the original vendor and severely damaging their reputation. To address this, we propose mAVE (Manifold Audio-Visual Entanglement), the first watermarking framework natively designed for joint architectures. mAVE cryptographically binds audio and video latents at initialization without fine-tuning, defining a Legitimate Entanglement Manifold via Inverse Transform Sampling. Experiments on state-of-the-art models (LTX-2, MOVA) demonstrate that mAVE guarantees performance-losslessness and provides an exponential security bound against Swap Attacks. Achieving near-perfect binding integrity ($>99\\%$), mAVE offers a robust cryptographic defense for vendor copyright."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Luyang Si"
+      },
+      {
+        "name": "Leyi Pan"
+      },
+      {
+        "name": "Lijie Wen"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07090",
+        "url": "https://arxiv.org/abs/2603.07090v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07078",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07078v1",
+    "url": "https://arxiv.org/abs/2603.07078v1",
+    "title": {
+      "zh": "CoTJudger: A Graph-Driven Framework for Automatic Evaluation of Chain-of-Thought Efficiency and Redundancy in LRMs",
+      "en": "CoTJudger: A Graph-Driven Framework for Automatic Evaluation of Chain-of-Thought Efficiency and Redundancy in LRMs"
+    },
+    "summary": {
+      "zh": "Large Reasoning Models (LRMs) have demonstrated strong performance by producing extended Chain-of-Thought (CoT) traces before answering. However, this paradigm often induces over-reasoning: redundant calculations and circular self-verification that increase computational cost without improving outcomes. Existing evaluations largely emphasize final accuracy or coarse token counts, and lack automated tools to separate essential logic from structural redundancy. We introduce CoTJudger, a graph-driven framework that quantifies reasoning efficiency by converting free-form CoTs into directed dependency graphs and extracting the Shortest Effective Path (SEP) needed to reach a correct solution. This yields an interpretable efficiency signal -- how much of a CoT is necessary versus structurally redundant -- that is comparable across models and tasks. Evaluating 21 LRMs, CoTJudger reveals pervasive redundancy and surfaces recurring failure modes, including verification obsession and compensatory redundancy. These results provide a practical metric for disentangling reasoning ability from computational waste, enabling more targeted evaluation and diagnosis of LRM efficiency.",
+      "en": "Large Reasoning Models (LRMs) have demonstrated strong performance by producing extended Chain-of-Thought (CoT) traces before answering. However, this paradigm often induces over-reasoning: redundant calculations and circular self-verification that increase computational cost without improving outcomes. Existing evaluations largely emphasize final accuracy or coarse token counts, and lack automated tools to separate essential logic from structural redundancy. We introduce CoTJudger, a graph-driven framework that quantifies reasoning efficiency by converting free-form CoTs into directed dependency graphs and extracting the Shortest Effective Path (SEP) needed to reach a correct solution. This yields an interpretable efficiency signal -- how much of a CoT is necessary versus structurally redundant -- that is comparable across models and tasks. Evaluating 21 LRMs, CoTJudger reveals pervasive redundancy and surfaces recurring failure modes, including verification obsession and compensatory redundancy. These results provide a practical metric for disentangling reasoning ability from computational waste, enabling more targeted evaluation and diagnosis of LRM efficiency."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Siyi Li"
+      },
+      {
+        "name": "Jiajun Shi"
+      },
+      {
+        "name": "Shiwen Ni"
+      },
+      {
+        "name": "Ge Zhang"
+      },
+      {
+        "name": "Shuaimin Li"
+      },
+      {
+        "name": "Shijian Wang"
+      },
+      {
+        "name": "Zhoufutu Wen"
+      },
+      {
+        "name": "Yizhi Li"
+      },
+      {
+        "name": "Hamid Alinejad-Rokny"
+      },
+      {
+        "name": "Jiaheng Liu"
+      },
+      {
+        "name": "Min Yang"
+      },
+      {
+        "name": "Wenhao Huang"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07078",
+        "url": "https://arxiv.org/abs/2603.07078v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07023",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07023v1",
+    "url": "https://arxiv.org/abs/2603.07023v1",
+    "title": {
+      "zh": "Hit-RAG: Learning to Reason with Long Contexts via Preference Alignment",
+      "en": "Hit-RAG: Learning to Reason with Long Contexts via Preference Alignment"
+    },
+    "summary": {
+      "zh": "Despite the promise of Retrieval-Augmented Generation in grounding Multimodal Large Language Models with external knowledge, the transition to extensive contexts often leads to significant attention dilution and reasoning hallucinations. The surge in information density causes critical evidence to be submerged by voluminous noise, which complicates the discernment of relevant fragments within a dense input. In this paper, we propose \\textbf{Hit-RAG}, a multi-stage preference alignment framework designed to resolve these cognitive bottlenecks through a progressive optimization pipeline. Our approach systematically refines the utilization of external evidence via three distinct stages. First, Supervised Fine-tuning establishes baseline context awareness to minimize information neglect. Next, Discriminative Preference Alignment enhances robustness against misleading distractors. Finally, Group-Relative Policy Optimization stabilizes logical synthesis to prevent reasoning collapse. Extensive evaluations on eight benchmarks demonstrate that Hit-RAG consistently yields substantial performance gains, enabling models to bridge the gap between context acquisition and accurate reasoning while surpassing much larger counterparts in long-context scenarios.",
+      "en": "Despite the promise of Retrieval-Augmented Generation in grounding Multimodal Large Language Models with external knowledge, the transition to extensive contexts often leads to significant attention dilution and reasoning hallucinations. The surge in information density causes critical evidence to be submerged by voluminous noise, which complicates the discernment of relevant fragments within a dense input. In this paper, we propose \\textbf{Hit-RAG}, a multi-stage preference alignment framework designed to resolve these cognitive bottlenecks through a progressive optimization pipeline. Our approach systematically refines the utilization of external evidence via three distinct stages. First, Supervised Fine-tuning establishes baseline context awareness to minimize information neglect. Next, Discriminative Preference Alignment enhances robustness against misleading distractors. Finally, Group-Relative Policy Optimization stabilizes logical synthesis to prevent reasoning collapse. Extensive evaluations on eight benchmarks demonstrate that Hit-RAG consistently yields substantial performance gains, enabling models to bridge the gap between context acquisition and accurate reasoning while surpassing much larger counterparts in long-context scenarios."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Junming Liu"
+      },
+      {
+        "name": "Yuqi Li"
+      },
+      {
+        "name": "Shiping Wen"
+      },
+      {
+        "name": "Zhigang Zeng"
+      },
+      {
+        "name": "Tingwen Huang"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07023",
+        "url": "https://arxiv.org/abs/2603.07023v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.06981",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.06981v1",
+    "url": "https://arxiv.org/abs/2603.06981v1",
+    "title": {
+      "zh": "Diffusion Controller: Framework, Algorithms and Parameterization",
+      "en": "Diffusion Controller: Framework, Algorithms and Parameterization"
+    },
+    "summary": {
+      "zh": "Controllable diffusion generation often relies on various heuristics that are seemingly disconnected without a unified understanding. We bridge this gap with Diffusion Controller (DiffCon), a unified control-theoretic view that casts reverse diffusion sampling as state-only stochastic control within (generalized) linearly-solvable Markov Decision Processes (LS-MDPs). Under this framework, control acts by reweighting the pretrained reverse-time transition kernels, balancing terminal objectives against an $f$-divergence cost. From the resulting optimality conditions, we derive practical reinforcement learning methods for diffusion fine-tuning: (i) f-divergence-regularized policy-gradient updates, including a PPO-style rule, and (ii) a regularizer-determined reward-weighted regression objective with a minimizer-preservation guarantee under the Kullback-Leibler (KL) divergence. The LS-MDP framework further implies a principled model form: the optimal score decomposes into a fixed pretrained baseline plus a lightweight control correction, motivating a side-network parameterization conditioned on exposed intermediate denoising outputs, enabling effective gray-box adaptation with a frozen backbone. Experiments on Stable Diffusion v1.4 across supervised and reward-driven finetuning show consistent gains in preference-alignment win rates and improved quality-efficiency trade-offs versus gray-box baselines and even the parameter-efficient white-box adapter LoRA.",
+      "en": "Controllable diffusion generation often relies on various heuristics that are seemingly disconnected without a unified understanding. We bridge this gap with Diffusion Controller (DiffCon), a unified control-theoretic view that casts reverse diffusion sampling as state-only stochastic control within (generalized) linearly-solvable Markov Decision Processes (LS-MDPs). Under this framework, control acts by reweighting the pretrained reverse-time transition kernels, balancing terminal objectives against an $f$-divergence cost. From the resulting optimality conditions, we derive practical reinforcement learning methods for diffusion fine-tuning: (i) f-divergence-regularized policy-gradient updates, including a PPO-style rule, and (ii) a regularizer-determined reward-weighted regression objective with a minimizer-preservation guarantee under the Kullback-Leibler (KL) divergence. The LS-MDP framework further implies a principled model form: the optimal score decomposes into a fixed pretrained baseline plus a lightweight control correction, motivating a side-network parameterization conditioned on exposed intermediate denoising outputs, enabling effective gray-box adaptation with a frozen backbone. Experiments on Stable Diffusion v1.4 across supervised and reward-driven finetuning show consistent gains in preference-alignment win rates and improved quality-efficiency trade-offs versus gray-box baselines and even the parameter-efficient white-box adapter LoRA."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Tong Yang"
+      },
+      {
+        "name": "Moonkyung Ryu"
+      },
+      {
+        "name": "Chih-Wei Hsu"
+      },
+      {
+        "name": "Guy Tennenholtz"
+      },
+      {
+        "name": "Yuejie Chi"
+      },
+      {
+        "name": "Craig Boutilier"
+      },
+      {
+        "name": "Bo Dai"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.06981",
+        "url": "https://arxiv.org/abs/2603.06981v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07195",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07195v1",
+    "url": "https://arxiv.org/abs/2603.07195v1",
+    "title": {
+      "zh": "Shaping Parameter Contribution Patterns for Out-of-Distribution Detection",
+      "en": "Shaping Parameter Contribution Patterns for Out-of-Distribution Detection"
+    },
+    "summary": {
+      "zh": "Out-of-distribution (OOD) detection is a well-known challenge due to deep models often producing overconfident. In this paper, we reveal a key insight that trained classifiers tend to rely on sparse parameter contribution patterns, meaning that only a few dominant parameters drive predictions. This brittleness can be exploited by OOD inputs that anomalously trigger these parameters, resulting in overconfident predictions. To address this issue, we propose a simple yet effective method called Shaping Parameter Contribution Patterns (SPCP), which enhances OOD detection robustness by encouraging the classifier to learn boundary-oriented dense contribution patterns. Specifically, SPCP operates during training by rectifying excessively high parameter contributions based on a dynamically estimated threshold. This mechanism promotes the classifier to rely on a broader set of parameters for decision-making, thereby reducing the risk of overconfident predictions caused by anomalously triggered parameters, while preserving in-distribution (ID) performance. Extensive experiments under various OOD detection setups verify the effectiveness of SPCP.",
+      "en": "Out-of-distribution (OOD) detection is a well-known challenge due to deep models often producing overconfident. In this paper, we reveal a key insight that trained classifiers tend to rely on sparse parameter contribution patterns, meaning that only a few dominant parameters drive predictions. This brittleness can be exploited by OOD inputs that anomalously trigger these parameters, resulting in overconfident predictions. To address this issue, we propose a simple yet effective method called Shaping Parameter Contribution Patterns (SPCP), which enhances OOD detection robustness by encouraging the classifier to learn boundary-oriented dense contribution patterns. Specifically, SPCP operates during training by rectifying excessively high parameter contributions based on a dynamically estimated threshold. This mechanism promotes the classifier to rely on a broader set of parameters for decision-making, thereby reducing the risk of overconfident predictions caused by anomalously triggered parameters, while preserving in-distribution (ID) performance. Extensive experiments under various OOD detection setups verify the effectiveness of SPCP."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Haonan Xu"
+      },
+      {
+        "name": "Yang Yang"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07195",
+        "url": "https://arxiv.org/abs/2603.07195v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.13350",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.13350v1",
+    "url": "https://arxiv.org/abs/2603.13350v1",
+    "title": {
+      "zh": "Thermal Robustness of Retrieval in Dense Associative Memories: LSE vs LSR Kernels",
+      "en": "Thermal Robustness of Retrieval in Dense Associative Memories: LSE vs LSR Kernels"
+    },
+    "summary": {
+      "zh": "Understanding whether retrieval in dense associative memories survives thermal noise is essential for bridging zero-temperature capacity proofs with the finite-temperature conditions of practical inference and biological computation. We use Monte Carlo simulations to map the retrieval phase boundary of two continuous dense associative memories (DAMs) on the $N$-sphere with an exponential number of stored patterns $M = e^{αN}$: a log-sum-exp (LSE) kernel and a log-sum-ReLU (LSR) kernel. Both kernels share the zero-temperature critical load $α_c(0)=0.5$, but their finite-temperature behavior differs markedly. The LSE kernel sustains retrieval at arbitrarily high temperatures for sufficiently low load, whereas the LSR kernel exhibits a finite support threshold below which retrieval is perfect at any temperature; for typical sharpness values this threshold approaches $α_c$, making retrieval nearly perfect across the entire load range. We also compare the measured equilibrium alignment with analytical Boltzmann predictions within the retrieval basin.",
+      "en": "Understanding whether retrieval in dense associative memories survives thermal noise is essential for bridging zero-temperature capacity proofs with the finite-temperature conditions of practical inference and biological computation. We use Monte Carlo simulations to map the retrieval phase boundary of two continuous dense associative memories (DAMs) on the $N$-sphere with an exponential number of stored patterns $M = e^{αN}$: a log-sum-exp (LSE) kernel and a log-sum-ReLU (LSR) kernel. Both kernels share the zero-temperature critical load $α_c(0)=0.5$, but their finite-temperature behavior differs markedly. The LSE kernel sustains retrieval at arbitrarily high temperatures for sufficiently low load, whereas the LSR kernel exhibits a finite support threshold below which retrieval is perfect at any temperature; for typical sharpness values this threshold approaches $α_c$, making retrieval nearly perfect across the entire load range. We also compare the measured equilibrium alignment with analytical Boltzmann predictions within the retrieval basin."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Tatiana Petrova"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cond-mat.dis-nn",
+      "cs.NE"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.13350",
+        "url": "https://arxiv.org/abs/2603.13350v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07357",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07357v2",
+    "url": "https://arxiv.org/abs/2603.07357v2",
+    "title": {
+      "zh": "Latent Generative Models with Tunable Complexity for Compressed Sensing and other Inverse Problems",
+      "en": "Latent Generative Models with Tunable Complexity for Compressed Sensing and other Inverse Problems"
+    },
+    "summary": {
+      "zh": "Generative models have emerged as powerful priors for solving inverse problems. These models typically represent a class of natural signals using a single fixed complexity or dimensionality. This can be limiting: depending on the problem, a fixed complexity may result in high representation error if too small, or overfitting to noise if too large. We develop tunable-complexity priors for diffusion models, normalizing flows, and variational autoencoders, leveraging nested dropout. Across tasks including compressed sensing, inpainting, denoising, and phase retrieval, we show empirically that tunable priors consistently achieve lower reconstruction errors than fixed-complexity baselines. In the linear denoising setting, we provide a theoretical analysis that explicitly characterizes how the optimal tuning parameter depends on noise and model structure. This work demonstrates the potential of tunable-complexity generative priors and motivates both the development of supporting theory and their application across a wide range of inverse problems.",
+      "en": "Generative models have emerged as powerful priors for solving inverse problems. These models typically represent a class of natural signals using a single fixed complexity or dimensionality. This can be limiting: depending on the problem, a fixed complexity may result in high representation error if too small, or overfitting to noise if too large. We develop tunable-complexity priors for diffusion models, normalizing flows, and variational autoencoders, leveraging nested dropout. Across tasks including compressed sensing, inpainting, denoising, and phase retrieval, we show empirically that tunable priors consistently achieve lower reconstruction errors than fixed-complexity baselines. In the linear denoising setting, we provide a theoretical analysis that explicitly characterizes how the optimal tuning parameter depends on noise and model structure. This work demonstrates the potential of tunable-complexity generative priors and motivates both the development of supporting theory and their application across a wide range of inverse problems."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Sean Gunn"
+      },
+      {
+        "name": "Jorio Cocola"
+      },
+      {
+        "name": "Oliver De Candido"
+      },
+      {
+        "name": "Vaggos Chatziafratis"
+      },
+      {
+        "name": "Paul Hand"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-10",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07357",
+        "url": "https://arxiv.org/abs/2603.07357v2",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.990Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07313",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07313v3",
+    "url": "https://arxiv.org/abs/2603.07313v3",
+    "title": {
+      "zh": "Adversarial Latent-State Training for Robust Policies in Partially Observable Domains",
+      "en": "Adversarial Latent-State Training for Robust Policies in Partially Observable Domains"
+    },
+    "summary": {
+      "zh": "Robustness under latent distribution shift remains challenging in partially observable reinforcement learning. We formalize a focused setting where an adversary selects a hidden initial latent distribution before the episode, termed an adversarial latent-initial-state POMDP. Theoretically, we prove a latent minimax principle, characterize worst-case defender distributions, and derive approximate best-response inequalities with finite-sample concentration bounds that make the optimization and sampling terms explicit. Empirically, using a Battleship benchmark, we demonstrate that targeted exposure to shifted latent distributions reduces average robustness gaps between Spread and Uniform distributions from 10.3 to 3.1 shots at equal budget. Furthermore, iterative best-response training exhibits budget-sensitive behavior that is qualitatively consistent with the theorem-guided diagnostics once one accounts for discounted PPO surrogates and finite-sample noise. Ultimately, we show that for latent-initial-state problems, the framework yields a clean evaluation game and useful theorem-motivated diagnostics while also making clear where implementation-level surrogates and optimization limits enter.",
+      "en": "Robustness under latent distribution shift remains challenging in partially observable reinforcement learning. We formalize a focused setting where an adversary selects a hidden initial latent distribution before the episode, termed an adversarial latent-initial-state POMDP. Theoretically, we prove a latent minimax principle, characterize worst-case defender distributions, and derive approximate best-response inequalities with finite-sample concentration bounds that make the optimization and sampling terms explicit. Empirically, using a Battleship benchmark, we demonstrate that targeted exposure to shifted latent distributions reduces average robustness gaps between Spread and Uniform distributions from 10.3 to 3.1 shots at equal budget. Furthermore, iterative best-response training exhibits budget-sensitive behavior that is qualitatively consistent with the theorem-guided diagnostics once one accounts for discounted PPO surrogates and finite-sample noise. Ultimately, we show that for latent-initial-state problems, the framework yields a clean evaluation game and useful theorem-motivated diagnostics while also making clear where implementation-level surrogates and optimization limits enter."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Angad Singh Ahuja"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-18",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 0,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07313",
+        "url": "https://arxiv.org/abs/2603.07313v3",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 0
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.993Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.993Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
+    "id": "2603.07371",
+    "source": "arxiv",
+    "sourceId": "https://arxiv.org/abs/2603.07371v1",
+    "url": "https://arxiv.org/abs/2603.07371v1",
+    "title": {
+      "zh": "ConfHit: Conformal Generative Design with Oracle Free Guarantees",
+      "en": "ConfHit: Conformal Generative Design with Oracle Free Guarantees"
+    },
+    "summary": {
+      "zh": "The success of deep generative models in scientific discovery requires not only the ability to generate novel candidates but also reliable guarantees that these candidates indeed satisfy desired properties. Recent conformal-prediction methods offer a path to such guarantees, but its application to generative modeling in drug discovery is limited by budget constraints, lack of oracle access, and distribution shift. To this end, we introduce ConfHit, a distribution-free framework that provides validity guarantees under these conditions. ConfHit formalizes two central questions: (i) Certification: whether a generated batch can be guaranteed to contain at least one hit with a user-specified confidence level, and (ii) Design: whether the generation can be refined to a compact set without weakening this guarantee. ConfHit leverages weighted exchangeability between historical and generated samples to eliminate the need for an experimental oracle, constructs multiple-sample density-ratio weighted conformal p-value to quantify statistical confidence in hits, and proposes a nested testing procedure to certify and refine candidate sets of multiple generated samples while maintaining statistical guarantees. Across representative generative molecule design tasks and a broad range of methods, ConfHit consistently delivers valid coverage guarantees at multiple confidence levels while maintaining compact certified sets, establishing a principled and reliable framework for generative modeling.",
+      "en": "The success of deep generative models in scientific discovery requires not only the ability to generate novel candidates but also reliable guarantees that these candidates indeed satisfy desired properties. Recent conformal-prediction methods offer a path to such guarantees, but its application to generative modeling in drug discovery is limited by budget constraints, lack of oracle access, and distribution shift. To this end, we introduce ConfHit, a distribution-free framework that provides validity guarantees under these conditions. ConfHit formalizes two central questions: (i) Certification: whether a generated batch can be guaranteed to contain at least one hit with a user-specified confidence level, and (ii) Design: whether the generation can be refined to a compact set without weakening this guarantee. ConfHit leverages weighted exchangeability between historical and generated samples to eliminate the need for an experimental oracle, constructs multiple-sample density-ratio weighted conformal p-value to quantify statistical confidence in hits, and proposes a nested testing procedure to certify and refine candidate sets of multiple generated samples while maintaining statistical guarantees. Across representative generative molecule design tasks and a broad range of methods, ConfHit consistently delivers valid coverage guarantees at multiple confidence levels while maintaining compact certified sets, establishing a principled and reliable framework for generative modeling."
+    },
+    "core_points": {
+      "zh": "",
+      "en": ""
+    },
+    "authors": [
+      {
+        "name": "Siddhartha Laghuvarapu"
+      },
+      {
+        "name": "Ying Jin"
+      },
+      {
+        "name": "Jimeng Sun"
+      }
+    ],
+    "date": "2026-03-07",
+    "updatedDate": "2026-03-07",
+    "addedDate": "2026-05-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.AP",
+      "stat.ME",
+      "stat.ML"
+    ],
+    "tags": [],
+    "entities": [],
+    "citeCount": 1,
+    "isTrending": false,
+    "status": "discovered",
+    "sources": [
+      {
+        "key": "arxiv",
+        "sourceId": "2603.07371",
+        "url": "https://arxiv.org/abs/2603.07371v1",
+        "lastCrawled": "2026-06-05",
+        "citeCount": 1
+      }
+    ],
+    "curation": [
+      {
+        "field": "all",
+        "generatedBy": "scraper",
+        "confidence": 0.9,
+        "timestamp": "2026-05-07T14:29:59.993Z",
+        "requiresReview": false
+      }
+    ],
+    "crawlHistory": [
+      {
+        "source": "arxiv",
+        "timestamp": "2026-05-07T14:29:59.993Z",
+        "status": "success",
+        "papersFound": 9812
+      }
+    ]
+  },
+  {
     "id": "2603.06007",
     "source": "arxiv",
     "sourceId": "https://arxiv.org/abs/2603.06007v1",
