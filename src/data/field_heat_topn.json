@@ -1,913 +1,8 @@
 {
-  "generated_at": "2026-08-23T06:23:20Z",
+  "generated_at": "2026-08-24T06:34:46Z",
   "window_days": 180,
   "topn_per_field": 20,
   "fields": {
-    "cs.LG": [
-      {
-        "paper_id": "2607.27372",
-        "title": "Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation",
-        "heat_score": 62.9,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2505.17810",
-        "title": "VIBE: Vector Index Benchmark for Embeddings",
-        "heat_score": 61.1,
-        "field_rank": 2,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.13428",
-        "title": "PUe: Biased Positive-Unlabeled Learning Enhancement by Causal Inference",
-        "heat_score": 60.5,
-        "field_rank": 4,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.05464",
-        "title": "Learnable Weighting of Intra-Attribute Distances for Categorical Data Clustering with Nominal and Ordinal Attributes",
-        "heat_score": 60.5,
-        "field_rank": 3,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.02684",
-        "title": "Filter, Then Reweight: Rethinking Optimization Granularity in On-Policy Distillation",
-        "heat_score": 60.5,
-        "field_rank": 5,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2605.28873",
-        "title": "Pre-Registering the Detectable Effect: A Paired-MDE Budget for 4-bit Quantization Benchmarks, with a Pilot Audit",
-        "heat_score": 60.5,
-        "field_rank": 6,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2502.06963",
-        "title": "Intelligent Offloading in Vehicular Edge Computing: A Comprehensive Review of Deep Reinforcement Learning Approaches and Architectures",
-        "heat_score": 60.5,
-        "field_rank": 7,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.14315",
-        "title": "Towards a Unified Multidimensional Explainability Metric: Evaluating Trustworthiness in AI Models",
-        "heat_score": 58.7,
-        "field_rank": 8,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2502.00213",
-        "title": "Gradient Heterogeneity Complements Hessian Heterogeneity in Transformer Optimization",
-        "heat_score": 58.4,
-        "field_rank": 9,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.26294",
-        "title": "The Red Queen G\\\"odel Machine: Co-Evolving Agents and Their Evaluators",
-        "heat_score": 57.8,
-        "field_rank": 10,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2512.03476",
-        "title": "ATHENA: Agentic Team for Hierarchical Evolutionary Numerical Algorithms",
-        "heat_score": 57.8,
-        "field_rank": 11,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.15524",
-        "title": "Recursive Harness Self-Improvement",
-        "heat_score": 56.9,
-        "field_rank": 12,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.00151",
-        "title": "Emergence of Exploration in Policy Gradient Reinforcement Learning via Retrying",
-        "heat_score": 56.9,
-        "field_rank": 13,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.11446",
-        "title": "XGBoost \"is all you need\": the case of forecasting transmitted heat energy in District Heating Systems",
-        "heat_score": 56.6,
-        "field_rank": 14,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2508.00955",
-        "title": "From Generator to Embedder: Harnessing Innate Abilities of Multimodal LLMs via Building Zero-Shot Discriminative Embedding Model",
-        "heat_score": 56.6,
-        "field_rank": 15,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.18367",
-        "title": "Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting",
-        "heat_score": 56.0,
-        "field_rank": 16,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.00198",
-        "title": "BAGEN: Are LLM Agents Budget-Aware?",
-        "heat_score": 56.0,
-        "field_rank": 17,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.11375",
-        "title": "Towards an approach to multivariate outlier detection for District Heating System data",
-        "heat_score": 55.7,
-        "field_rank": 18,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.26246",
-        "title": "Weak-to-Strong On-Policy Distillation",
-        "heat_score": 55.7,
-        "field_rank": 19,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.13124",
-        "title": "ShortOPD: Recovering Pruned LLMs with Short-to-Long On-Policy Distillation",
-        "heat_score": 55.1,
-        "field_rank": 20,
-        "badges": [
-          "Hot"
-        ]
-      }
-    ],
-    "cs.CL": [
-      {
-        "paper_id": "2608.07594",
-        "title": "Scaling Inherently Interpretable Language Models",
-        "heat_score": 62.9,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.22043",
-        "title": "Scaling Native Multimodal Pre-Training From Scratch",
-        "heat_score": 62.9,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.22529",
-        "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
-        "heat_score": 62.9,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2501.14844",
-        "title": "Unmasking Conversational Bias in AI Multiagent Systems",
-        "heat_score": 62.0,
-        "field_rank": 5,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.27671",
-        "title": "ICLE++: Modeling Fine-Grained Traits for Holistic Essay Scoring",
-        "heat_score": 62.0,
-        "field_rank": 4,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.26497",
-        "title": "Which RAG Paradigm Wins at Scale? A Scaling Study of Retrieval-Augmented Generation Paradigms",
-        "heat_score": 62.0,
-        "field_rank": 6,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.15495",
-        "title": "Verbalizable Representations Form a Global Workspace in Language Models",
-        "heat_score": 60.5,
-        "field_rank": 9,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.06818",
-        "title": "Ad Headline Generation using Self-Critical Masked Language Model",
-        "heat_score": 60.5,
-        "field_rank": 10,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.31058",
-        "title": "Exploring the relationship between team institutional composition and novelty in academic papers based on fine-grained knowledge entities",
-        "heat_score": 60.5,
-        "field_rank": 13,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2409.11363",
-        "title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
-        "heat_score": 60.5,
-        "field_rank": 7,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.15007",
-        "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
-        "heat_score": 60.5,
-        "field_rank": 14,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2505.16988",
-        "title": "MASLab: A Unified and Comprehensive Codebase for LLM-based Multi-Agent Systems",
-        "heat_score": 60.5,
-        "field_rank": 11,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2504.20734",
-        "title": "UniversalRAG: Retrieval-Augmented Generation over Corpora of Diverse Modalities and Granularities",
-        "heat_score": 60.5,
-        "field_rank": 12,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2408.15787",
-        "title": "Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions",
-        "heat_score": 60.5,
-        "field_rank": 8,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2506.06331",
-        "title": "How Significant Are the Real Performance Gains? An Unbiased Evaluation Framework for GraphRAG",
-        "heat_score": 60.2,
-        "field_rank": 15,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2511.03217",
-        "title": "Hybrid Fact-Checking that Integrates Knowledge Graphs, Large Language Models, and Search-Based Retrieval Agents Improves Interpretable Claim Verification",
-        "heat_score": 59.6,
-        "field_rank": 16,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.18597",
-        "title": "Low-resource Language Discrimination Towards Chinese Dialects with Transfer learning and Data Augmentation",
-        "heat_score": 58.7,
-        "field_rank": 17,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.23071",
-        "title": "The Efficiency Frontier: A Unified Framework for Cost-Performance Optimization in LLM Context Management",
-        "heat_score": 58.7,
-        "field_rank": 18,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.24775",
-        "title": "Are We Ready For An Agent-Native Memory System?",
-        "heat_score": 57.8,
-        "field_rank": 19,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.05722",
-        "title": "Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding",
-        "heat_score": 56.9,
-        "field_rank": 20,
-        "badges": [
-          "Hot"
-        ]
-      }
-    ],
-    "cs.CV": [
-      {
-        "paper_id": "2606.02800",
-        "title": "Cosmos 3: Omnimodal World Models for Physical AI",
-        "heat_score": 60.5,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.02979",
-        "title": "Towards Compact Autonomous Driving Perception with Balanced Learning and Multi-sensor Fusion",
-        "heat_score": 60.5,
-        "field_rank": 2,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2605.27451",
-        "title": "From Affect to Complex Behavior: Advancing Multimodal Human-Centered AI at the 10th ABAW Workshop &amp; Competition",
-        "heat_score": 60.5,
-        "field_rank": 4,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2605.26441",
-        "title": "Rethinking Weakly-supervised Video Temporal Grounding From a Game Perspective",
-        "heat_score": 60.5,
-        "field_rank": 3,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.19531",
-        "title": "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
-        "heat_score": 59.6,
-        "field_rank": 5,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2607.06603",
-        "title": "Do Counterfactually Fair Image Classifiers Satisfy Group Fairness? -- A Theoretical and Empirical Study",
-        "heat_score": 56.9,
-        "field_rank": 6,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.06701",
-        "title": "SPEAR: A Simulator for Photorealistic Embodied AI Research",
-        "heat_score": 56.0,
-        "field_rank": 7,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.27537",
-        "title": "MemoBench: Benchmarking World Modeling in Dynamically Changing Environments",
-        "heat_score": 56.0,
-        "field_rank": 8,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2306.05239",
-        "title": "Point-Voxel Absorbing Graph Representation Learning for Event Stream based Recognition",
-        "heat_score": 56.0,
-        "field_rank": 9,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.03111",
-        "title": "Inverting the Generation Process of Denoising Diffusion Implicit Models: Empirical Evaluation and a Novel Method",
-        "heat_score": 56.0,
-        "field_rank": 10,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.18558",
-        "title": "MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction",
-        "heat_score": 55.1,
-        "field_rank": 11,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2602.10809",
-        "title": "DeepImageSearch: Benchmarking Multimodal Agents for Context-Aware Image Retrieval in Visual Histories",
-        "heat_score": 55.1,
-        "field_rank": 12,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.06915",
-        "title": "Smart Scissor: Coupling Spatial Redundancy Reduction and CNN Compression for Embedded Hardware",
-        "heat_score": 54.2,
-        "field_rank": 13,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.23743",
-        "title": "Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation",
-        "heat_score": 54.2,
-        "field_rank": 14,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.13870",
-        "title": "Mirage Probes: How Vision Models Fake Visual Understanding",
-        "heat_score": 54.2,
-        "field_rank": 15,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.14048",
-        "title": "WAM4D: Fast 4D World Action Model via Spatial Register Tokens",
-        "heat_score": 54.2,
-        "field_rank": 16,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.13035",
-        "title": "TetherCache: Stabilizing Autoregressive Long-Form Video Generation with Gated Recall and Trusted Alignment",
-        "heat_score": 54.2,
-        "field_rank": 17,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.06601",
-        "title": "Direct 3D-Aware Object Insertion via Decomposed Visual Proxies",
-        "heat_score": 54.2,
-        "field_rank": 18,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.02753",
-        "title": "MetaWorld: Scaling Multi-Agent Video World Model from Single-view Video Data",
-        "heat_score": 54.2,
-        "field_rank": 19,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.02915",
-        "title": "Any2Poster: Any-Source Poster Generation Across Modalities and Domains",
-        "heat_score": 54.2,
-        "field_rank": 20,
-        "badges": [
-          "Hot"
-        ]
-      }
-    ],
-    "cs.NE": [
-      {
-        "paper_id": "2401.02020",
-        "title": "Spikformer V2: Join the High Accuracy Club on ImageNet with an SNN Ticket",
-        "heat_score": 62.0,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2405.03728",
-        "title": "Pretrained Optimization Model for Zero-Shot Black Box Optimization",
-        "heat_score": 62.0,
-        "field_rank": 2,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2509.01739",
-        "title": "Speeding Up the NSGA-II via Dynamic Population Sizes",
-        "heat_score": 56.9,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2406.08534",
-        "title": "Optimizing Container Loading and Unloading through Dual-Cycling and Dockyard Rehandle Reduction Using a Hybrid Genetic Algorithm",
-        "heat_score": 56.6,
-        "field_rank": 4,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.28109",
-        "title": "MMAO: A Metabolic Multi-Agent Optimizer with Endogenous Resource Allocation for Continuous and Discrete Optimization",
-        "heat_score": 55.1,
-        "field_rank": 5,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.03266",
-        "title": "Impacts of Single-objective Landscapes on Multi-objective Optimization",
-        "heat_score": 54.8,
-        "field_rank": 6,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2410.22657",
-        "title": "Automatic programming via large language models with population self-evolution for dynamic fuzzy job shop scheduling problem",
-        "heat_score": 53.0,
-        "field_rank": 7,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2511.08436",
-        "title": "Active Electrosensing and Communication in MARL-trained Weakly Electric Fish Collectives",
-        "heat_score": 51.5,
-        "field_rank": 17,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2408.14917",
-        "title": "PMSN: A Parallel Multi-compartment Spiking Neuron for Multi-scale Temporal Processing",
-        "heat_score": 51.5,
-        "field_rank": 9,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2412.04847",
-        "title": "Enabling Energy-Efficient Simultaneous Multi-Task Reinforcement Learning through Spiking Neural Networks with Active Dendrites for Bio-inspired Generalist Agents",
-        "heat_score": 51.5,
-        "field_rank": 18,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2506.21324",
-        "title": "Stochastic Quantum Spiking Neural Networks with Quantum Memory and Local Learning",
-        "heat_score": 51.5,
-        "field_rank": 13,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2503.08394",
-        "title": "($\\theta_l, \\theta_u$)-Parametric Multi-Task Optimization: Joint Search in Solution and Infinite Task Spaces",
-        "heat_score": 51.5,
-        "field_rank": 15,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2512.05906",
-        "title": "ADSEQ: A delay-aware autograd-compatible framework for spike-event delivery in SNNs",
-        "heat_score": 51.5,
-        "field_rank": 19,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2509.08269",
-        "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
-        "heat_score": 51.5,
-        "field_rank": 10,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2505.06417",
-        "title": "Sigma-Delta Neural Network Conversion on Loihi 2",
-        "heat_score": 51.5,
-        "field_rank": 12,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2410.23619",
-        "title": "Efficiently Training Time-to-First-Spike Spiking Neural Networks from Scratch",
-        "heat_score": 51.5,
-        "field_rank": 16,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2402.00094",
-        "title": "Deep Neural Networks: A Formulation Via Non-Archimedean Analysis",
-        "heat_score": 51.5,
-        "field_rank": 20,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2405.02369",
-        "title": "No One-Size-Fits-All Neurons: Task-based Neurons for Artificial Neural Networks",
-        "heat_score": 51.5,
-        "field_rank": 14,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2503.08703",
-        "title": "SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks",
-        "heat_score": 51.5,
-        "field_rank": 11,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.02236",
-        "title": "Simultaneous Model-Based Evolution of Constants and Expression Structure in GP-GOMEA for Symbolic Regression",
-        "heat_score": 51.5,
-        "field_rank": 21,
-        "badges": [
-          "Hot"
-        ]
-      }
-    ],
-    "cs.SE": [
-      {
-        "paper_id": "2606.06324",
-        "title": "From Failed Trajectories to Reliable LLM Agents: Diagnosing and Repairing Harness Flaws",
-        "heat_score": 59.6,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2606.24177",
-        "title": "Agon: An Autonomous Large-Scale Omnidisciplinary Research System Built on Prompt Economy",
-        "heat_score": 56.0,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.27328",
-        "title": "Governed Evolution of Agent Runtimes through Executable Operational Cognition",
-        "heat_score": 53.3,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.07681",
-        "title": "Systematic LLM Translation of Legacy Scientific Code to Differentiable Frameworks: Application to a Land Surface Model",
-        "heat_score": 51.5,
-        "field_rank": 4,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2603.09290",
-        "title": "ToolRosella: Translating Code Repositories into Standardized Tools for Scientific Agents",
-        "heat_score": 51.5,
-        "field_rank": 5,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.23797",
-        "title": "From Task-Guided Conversational Graphs to Goal-Oriented Dialogue Runtimes",
-        "heat_score": 37.64,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.20761",
-        "title": "Integrating Large Language Model Agents with Digital Twins for Industrial Autonomous Systems",
-        "heat_score": 37.64,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.18347",
-        "title": "A Decision-Centered Reference Architecture for Trustworthy Agentic Commerce",
-        "heat_score": 36.74,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.07738",
-        "title": "REFORGE: A Method for Benchmarking LLMs' Reverse Engineering Capabilities in Decompiled Binary Function Naming",
-        "heat_score": 36.74,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2602.19218",
-        "title": "Gecko: A Simulation Environment with Stateful Feedback for Refining Agent Tool Calls",
-        "heat_score": 36.74,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.04397",
-        "title": "Context-as-a-Service: Surfacing Cross-File Dependency Chains for LLM-Generated Developer Documentation",
-        "heat_score": 36.74,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.10450",
-        "title": "Persistent Recursive Worlds Enable Autonomous Software Evolution",
-        "heat_score": 22.0,
-        "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.19487",
-        "title": "Accelerated Genetic Programming Hyper-Heuristics for Simulation-Based Scheduling via Agentic AI",
-        "heat_score": 13.0,
-        "field_rank": 13,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.19263",
-        "title": "The Evaluation Context Protocol (ECP): A Portable Contract for AI Agent Evaluation",
-        "heat_score": 13.0,
-        "field_rank": 14,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.14838",
-        "title": "The Recall Trap: A Recall-Maximizing Retriever Configuration Reduces Issue Resolution in Fixed-Budget Code Context",
-        "heat_score": 13.0,
-        "field_rank": 15,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.04270",
-        "title": "CURATE: Leveraging LLM Agents to Compose, Catalog, and Deploy Reproducible Workflows",
-        "heat_score": 13.0,
-        "field_rank": 16,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.02677",
-        "title": "When Policies Change Probabilities: Modular Decision-Making for LLM Code Review",
-        "heat_score": 13.0,
-        "field_rank": 17,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.01507",
-        "title": "Deep Agentic Search for Repository-Level Code Question Answering: An Empirical Study",
-        "heat_score": 13.0,
-        "field_rank": 18,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.28242",
-        "title": "Agentic Metaverse Services: A New As-a-Service Paradigm",
-        "heat_score": 13.0,
-        "field_rank": 19,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.25647",
-        "title": "KQFuzz: Knowledge-Guided Fuzzing for Quantum Libraries via Large Language Models",
-        "heat_score": 13.0,
-        "field_rank": 20,
-        "badges": []
-      }
-    ],
     "cs.AI": [
       {
         "paper_id": "2608.17271",
@@ -921,17 +16,27 @@
       {
         "paper_id": "2607.28956",
         "title": "MerchantBench: Benchmarking LLM Agents for Long-Term Coherence in E-Commerce Operations",
-        "heat_score": 62.0,
+        "heat_score": 62.9,
         "field_rank": 2,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2607.06447",
-        "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+        "paper_id": "2606.26561",
+        "title": "Explainable Ensemble-Based Machine Learning Models for Detecting the Presence of Cirrhosis in Hepatitis C Patients",
         "heat_score": 60.5,
-        "field_rank": 8,
+        "field_rank": 5,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.24160",
+        "title": "An Introduction to Causal Reinforcement Learning",
+        "heat_score": 60.5,
+        "field_rank": 6,
         "badges": [
           "Hot",
           "Rising"
@@ -948,10 +53,30 @@
         ]
       },
       {
+        "paper_id": "2606.15497",
+        "title": "Towards End-to-End Automation of AI Research",
+        "heat_score": 60.5,
+        "field_rank": 3,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.14249",
+        "title": "HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry",
+        "heat_score": 60.5,
+        "field_rank": 8,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
         "paper_id": "2307.01472",
         "title": "Improving Generalization and Data Efficiency with Diffusion in Offline Multi-agent RL",
         "heat_score": 60.5,
-        "field_rank": 5,
+        "field_rank": 7,
         "badges": [
           "Hot",
           "Rising"
@@ -961,27 +86,7 @@
         "paper_id": "2605.27760",
         "title": "SkillGrad: Optimizing Agent Skills Like Gradient Descent",
         "heat_score": 60.5,
-        "field_rank": 6,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2605.27366",
-        "title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
-        "heat_score": 60.5,
-        "field_rank": 7,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2510.12787",
-        "title": "Ax-Prover: A Deep Reasoning Agentic Framework for Theorem Proving in Mathematics and Quantum Physics",
-        "heat_score": 60.5,
-        "field_rank": 3,
+        "field_rank": 9,
         "badges": [
           "Hot",
           "Rising"
@@ -991,7 +96,7 @@
         "paper_id": "2406.10593",
         "title": "QDA-SQL: Questions Enhanced Dialogue Augmentation for Multi-Turn Text-to-SQL",
         "heat_score": 59.6,
-        "field_rank": 9,
+        "field_rank": 10,
         "badges": [
           "Hot",
           "Rising"
@@ -1001,45 +106,26 @@
         "paper_id": "2405.01906",
         "title": "Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver",
         "heat_score": 59.6,
-        "field_rank": 10,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2605.23950",
-        "title": "Stop Comparing LLM Agents Without Disclosing the Harness",
-        "heat_score": 58.7,
         "field_rank": 11,
         "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.21778",
-        "title": "What Counts as AI Sycophancy? A Taxonomy and Expert Survey of a Fragmented Construct",
-        "heat_score": 58.1,
-        "field_rank": 12,
-        "badges": [
           "Hot",
           "Rising"
         ]
       },
       {
-        "paper_id": "2607.05804",
-        "title": "TurnOPD: Making On-Policy Distillation Turn-Aware for Efficient Long-Horizon Agent Training",
-        "heat_score": 57.8,
-        "field_rank": 13,
+        "paper_id": "2606.07965",
+        "title": "Zero-Shot Learning in Industrial Scenarios: New Large-Scale Benchmark, Challenges and Baseline",
+        "heat_score": 58.7,
+        "field_rank": 12,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2606.03056",
-        "title": "SkillDAG: Self-Evolving Typed Skill Graphs for LLM Skill Selection at Scale",
+        "paper_id": "2510.21324",
+        "title": "CXRAgent: Director-Orchestrated Multi-Stage Reasoning for Chest X-Ray Interpretation",
         "heat_score": 57.8,
-        "field_rank": 14,
+        "field_rank": 13,
         "badges": [
           "Hot"
         ]
@@ -1048,7 +134,7 @@
         "paper_id": "2607.13285",
         "title": "Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable",
         "heat_score": 56.9,
-        "field_rank": 15,
+        "field_rank": 14,
         "badges": [
           "Hot"
         ]
@@ -1057,14 +143,23 @@
         "paper_id": "2606.31179",
         "title": "HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments for Challenging Frontier AI Agents",
         "heat_score": 56.9,
+        "field_rank": 15,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.25996",
+        "title": "Autodata: An agentic data scientist to create high quality synthetic data",
+        "heat_score": 56.9,
         "field_rank": 16,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2601.21972",
-        "title": "Learning Decentralized LLM Collaboration with Multi-Agent Actor Critic",
+        "paper_id": "2606.14239",
+        "title": "SkillAudit: Ground-Truth-Free Skill Evolution via Paired Trajectory Auditing",
         "heat_score": 56.9,
         "field_rank": 17,
         "badges": [
@@ -1099,20 +194,387 @@
         ]
       }
     ],
-    "cs.MA": [
+    "cs.LG": [
       {
-        "paper_id": "2602.12430",
-        "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
-        "heat_score": 60.5,
+        "paper_id": "2607.27372",
+        "title": "Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation",
+        "heat_score": 62.9,
         "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.20447",
+        "title": "Mutual information and sensitivity analysis for feature selection in customer targeting: a comparative study",
+        "heat_score": 62.0,
+        "field_rank": 2,
         "badges": [
           "Hot",
           "Rising"
         ]
       },
       {
-        "paper_id": "2502.14321",
-        "title": "Beyond Self-Talk: A Communication-Centric Survey of LLM-Based Multi-Agent Systems",
+        "paper_id": "2506.07121",
+        "title": "Quality-Diversity Red-Teaming: Automated Generation of High-Quality and Diverse Attackers for Large Language Models",
+        "heat_score": 62.0,
+        "field_rank": 3,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2607.13428",
+        "title": "PUe: Biased Positive-Unlabeled Learning Enhancement by Causal Inference",
+        "heat_score": 60.5,
+        "field_rank": 7,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2509.24372",
+        "title": "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning",
+        "heat_score": 60.5,
+        "field_rank": 5,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2506.07468",
+        "title": "Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models",
+        "heat_score": 60.5,
+        "field_rank": 4,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2506.09046",
+        "title": "Self-Evolving Multi-Agent Systems via Textual Backpropagation",
+        "heat_score": 60.5,
+        "field_rank": 6,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.26294",
+        "title": "The Red Queen G\\\"odel Machine: Co-Evolving Agents and Their Evaluators",
+        "heat_score": 57.8,
+        "field_rank": 8,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2512.03476",
+        "title": "ATHENA: Agentic Team for Hierarchical Evolutionary Numerical Algorithms",
+        "heat_score": 57.8,
+        "field_rank": 9,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.15127",
+        "title": "Beyond Accuracy: Measuring Bias Acknowledgment in Chain-of-Thought Reasoning for Responsible AI Evaluation",
+        "heat_score": 57.8,
+        "field_rank": 10,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.11446",
+        "title": "XGBoost \"is all you need\": the case of forecasting transmitted heat energy in District Heating Systems",
+        "heat_score": 56.6,
+        "field_rank": 11,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.26169",
+        "title": "Neural Architecture Search for Generative Adversarial Networks: A Comprehensive Review and Critical Analysis",
+        "heat_score": 56.0,
+        "field_rank": 12,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.24978",
+        "title": "Auto-Configured Explainable Graph Neural Networks for Multi-Site Pollution Prediction",
+        "heat_score": 56.0,
+        "field_rank": 13,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.18367",
+        "title": "Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting",
+        "heat_score": 56.0,
+        "field_rank": 14,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.07591",
+        "title": "ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research",
+        "heat_score": 56.0,
+        "field_rank": 15,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2505.05968",
+        "title": "Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition",
+        "heat_score": 56.0,
+        "field_rank": 16,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.11375",
+        "title": "Towards an approach to multivariate outlier detection for District Heating System data",
+        "heat_score": 55.7,
+        "field_rank": 17,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.13124",
+        "title": "ShortOPD: Recovering Pruned LLMs with Short-to-Long On-Policy Distillation",
+        "heat_score": 55.1,
+        "field_rank": 18,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2506.19136",
+        "title": "Local Learning Rules for Out-of-Equilibrium Physical Generative Models",
+        "heat_score": 55.1,
+        "field_rank": 19,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.27510",
+        "title": "The Curse of Multiple Mediators: Hidden Interaction Effects in Activation Patching",
+        "heat_score": 55.1,
+        "field_rank": 20,
+        "badges": [
+          "Hot"
+        ]
+      }
+    ],
+    "cs.CL": [
+      {
+        "paper_id": "2608.07594",
+        "title": "Scaling Inherently Interpretable Language Models",
+        "heat_score": 62.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.26497",
+        "title": "Which RAG Paradigm Wins at Scale? A Scaling Study of Retrieval-Augmented Generation Paradigms",
+        "heat_score": 62.0,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.22043",
+        "title": "Scaling Native Multimodal Pre-Training From Scratch",
+        "heat_score": 62.0,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.22529",
+        "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+        "heat_score": 62.0,
+        "field_rank": 4,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.26485",
+        "title": "Utilizing Cognitive Signals Generated during Human Reading to Enhance Keyphrase Extraction from Microblogs",
+        "heat_score": 60.5,
+        "field_rank": 7,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2409.11363",
+        "title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
+        "heat_score": 60.5,
+        "field_rank": 6,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.19348",
+        "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+        "heat_score": 60.5,
+        "field_rank": 5,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.15007",
+        "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+        "heat_score": 60.5,
+        "field_rank": 10,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2505.16988",
+        "title": "MASLab: A Unified and Comprehensive Codebase for LLM-based Multi-Agent Systems",
+        "heat_score": 60.5,
+        "field_rank": 8,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2504.20734",
+        "title": "UniversalRAG: Retrieval-Augmented Generation over Corpora of Diverse Modalities and Granularities",
+        "heat_score": 60.5,
+        "field_rank": 9,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2511.03217",
+        "title": "Hybrid Fact-Checking that Integrates Knowledge Graphs, Large Language Models, and Search-Based Retrieval Agents Improves Interpretable Claim Verification",
+        "heat_score": 59.6,
+        "field_rank": 11,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.18597",
+        "title": "Low-resource Language Discrimination Towards Chinese Dialects with Transfer learning and Data Augmentation",
+        "heat_score": 58.7,
+        "field_rank": 12,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2501.00745",
+        "title": "Dynamics of Adversarial Attacks on Large Language Model-Based Search Engines",
+        "heat_score": 58.7,
+        "field_rank": 13,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.24775",
+        "title": "Are We Ready For An Agent-Native Memory System?",
+        "heat_score": 57.8,
+        "field_rank": 14,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.05722",
+        "title": "Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding",
+        "heat_score": 56.9,
+        "field_rank": 15,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.18394",
+        "title": "JetFlow: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting",
+        "heat_score": 56.9,
+        "field_rank": 16,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2605.29307",
+        "title": "GrepSeek: Training Search Agents for Direct Corpus Interaction",
+        "heat_score": 56.9,
+        "field_rank": 17,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2607.13399",
+        "title": "Demystifying On-Policy Distillation: Roles, Pathologies, and Regulations",
+        "heat_score": 56.0,
+        "field_rank": 18,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.26481",
+        "title": "Extracting Problem and Method Sentence from Scientific Papers: A Context-enhanced Transformer Using Formulaic Expression Desensitization",
+        "heat_score": 56.0,
+        "field_rank": 19,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.25231",
+        "title": "Towards Structuring an Arabic-English Machine-Readable Dictionary Using Parsing Expression Grammars",
+        "heat_score": 56.0,
+        "field_rank": 20,
+        "badges": [
+          "Hot"
+        ]
+      }
+    ],
+    "cs.CV": [
+      {
+        "paper_id": "2605.27451",
+        "title": "From Affect to Complex Behavior: Advancing Multimodal Human-Centered AI at the 10th ABAW Workshop &amp; Competition",
         "heat_score": 60.5,
         "field_rank": 2,
         "badges": [
@@ -1121,10 +583,619 @@
         ]
       },
       {
-        "paper_id": "2502.01711",
-        "title": "Expected Return Symmetries",
-        "heat_score": 58.7,
+        "paper_id": "2605.27894",
+        "title": "Towards Unified Vision-Language Models with Incomplete Multi-Modal Inputs",
+        "heat_score": 60.5,
+        "field_rank": 1,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.19531",
+        "title": "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
+        "heat_score": 59.6,
         "field_rank": 3,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.14748",
+        "title": "Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2",
+        "heat_score": 59.6,
+        "field_rank": 4,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2607.05737",
+        "title": "Optimized Adaptive Loop Filter in Versatile Video Coding",
+        "heat_score": 56.9,
+        "field_rank": 5,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.27537",
+        "title": "MemoBench: Benchmarking World Modeling in Dynamically Changing Environments",
+        "heat_score": 56.0,
+        "field_rank": 6,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.25041",
+        "title": "Wan-Streamer v0.1: End-to-end Real-time Interactive Foundation Models",
+        "heat_score": 56.0,
+        "field_rank": 7,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.25319",
+        "title": "V-Zero: Answer-Label-Free On-Policy Distillation with Contrastive Evidence Gating for Fine-Grained Visual Reasoning",
+        "heat_score": 56.0,
+        "field_rank": 8,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2306.05239",
+        "title": "Point-Voxel Absorbing Graph Representation Learning for Event Stream based Recognition",
+        "heat_score": 56.0,
+        "field_rank": 9,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.18558",
+        "title": "MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction",
+        "heat_score": 55.1,
+        "field_rank": 10,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.26387",
+        "title": "Staying VIGILant: Mitigating Visual Laziness via Counterfactual Visual Alignment in MLLMs",
+        "heat_score": 54.2,
+        "field_rank": 11,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.23743",
+        "title": "Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation",
+        "heat_score": 54.2,
+        "field_rank": 12,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.14752",
+        "title": "X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining",
+        "heat_score": 54.2,
+        "field_rank": 13,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.13870",
+        "title": "Mirage Probes: How Vision Models Fake Visual Understanding",
+        "heat_score": 54.2,
+        "field_rank": 14,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.14048",
+        "title": "WAM4D: Fast 4D World Action Model via Spatial Register Tokens",
+        "heat_score": 54.2,
+        "field_rank": 15,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2605.27589",
+        "title": "What-If World: A Causal Benchmark for General World Models in Embodied Scenarios",
+        "heat_score": 54.2,
+        "field_rank": 16,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.27509",
+        "title": "Structured-Li-GS: Structured 3D Gaussians Splatting with LiDAR Incorporation and Spatial Constraints",
+        "heat_score": 53.3,
+        "field_rank": 17,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.27596",
+        "title": "Dismantling Pathological Shortcuts: A Causal Framework for Faithful LVLM Decoding",
+        "heat_score": 53.3,
+        "field_rank": 18,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.27637",
+        "title": "AI-Generated Image Recognition via Fusion of CNNs and Vision Transformers",
+        "heat_score": 53.3,
+        "field_rank": 19,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.26122",
+        "title": "DocArena: Turning Raw Documents into Controllable Training Environments for Document Search Agents",
+        "heat_score": 53.3,
+        "field_rank": 20,
+        "badges": [
+          "Hot"
+        ]
+      }
+    ],
+    "cs.NE": [
+      {
+        "paper_id": "2405.03728",
+        "title": "Pretrained Optimization Model for Zero-Shot Black Box Optimization",
+        "heat_score": 62.0,
+        "field_rank": 2,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2410.22657",
+        "title": "Automatic programming via large language models with population self-evolution for dynamic fuzzy job shop scheduling problem",
+        "heat_score": 62.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2509.08269",
+        "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+        "heat_score": 60.5,
+        "field_rank": 3,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2506.21324",
+        "title": "Stochastic Quantum Spiking Neural Networks with Quantum Memory and Local Learning",
+        "heat_score": 55.1,
+        "field_rank": 4,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.28109",
+        "title": "MMAO: A Metabolic Multi-Agent Optimizer with Endogenous Resource Allocation for Continuous and Discrete Optimization",
+        "heat_score": 55.1,
+        "field_rank": 5,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2405.02369",
+        "title": "No One-Size-Fits-All Neurons: Task-based Neurons for Artificial Neural Networks",
+        "heat_score": 55.1,
+        "field_rank": 6,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.03266",
+        "title": "Impacts of Single-objective Landscapes on Multi-objective Optimization",
+        "heat_score": 54.8,
+        "field_rank": 7,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2410.23619",
+        "title": "Efficiently Training Time-to-First-Spike Spiking Neural Networks from Scratch",
+        "heat_score": 54.2,
+        "field_rank": 8,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2412.04847",
+        "title": "Enabling Energy-Efficient Simultaneous Multi-Task Reinforcement Learning through Spiking Neural Networks with Active Dendrites for Bio-inspired Generalist Agents",
+        "heat_score": 53.3,
+        "field_rank": 9,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2512.05906",
+        "title": "ADSEQ: A delay-aware autograd-compatible framework for spike-event delivery in SNNs",
+        "heat_score": 53.3,
+        "field_rank": 10,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2402.00094",
+        "title": "Deep Neural Networks: A Formulation Via Non-Archimedean Analysis",
+        "heat_score": 53.3,
+        "field_rank": 11,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2401.02020",
+        "title": "Spikformer V2: Join the High Accuracy Club on ImageNet with an SNN Ticket",
+        "heat_score": 53.0,
+        "field_rank": 12,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2406.08534",
+        "title": "Optimizing Container Loading and Unloading through Dual-Cycling and Dockyard Rehandle Reduction Using a Hybrid Genetic Algorithm",
+        "heat_score": 53.0,
+        "field_rank": 13,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2511.08436",
+        "title": "Active Electrosensing and Communication in MARL-trained Weakly Electric Fish Collectives",
+        "heat_score": 51.5,
+        "field_rank": 20,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2408.14917",
+        "title": "PMSN: A Parallel Multi-compartment Spiking Neuron for Multi-scale Temporal Processing",
+        "heat_score": 51.5,
+        "field_rank": 15,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2503.08394",
+        "title": "($\\theta_l, \\theta_u$)-Parametric Multi-Task Optimization: Joint Search in Solution and Infinite Task Spaces",
+        "heat_score": 51.5,
+        "field_rank": 19,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2505.06417",
+        "title": "Sigma-Delta Neural Network Conversion on Loihi 2",
+        "heat_score": 51.5,
+        "field_rank": 17,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2503.08703",
+        "title": "SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks",
+        "heat_score": 51.5,
+        "field_rank": 16,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2509.01739",
+        "title": "Speeding Up the NSGA-II via Dynamic Population Sizes",
+        "heat_score": 51.5,
+        "field_rank": 18,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.02236",
+        "title": "Simultaneous Model-Based Evolution of Constants and Expression Structure in GP-GOMEA for Symbolic Regression",
+        "heat_score": 51.5,
+        "field_rank": 21,
+        "badges": [
+          "Hot"
+        ]
+      }
+    ],
+    "stat.ML": [
+      {
+        "paper_id": "2608.20483",
+        "title": "Uncertainty propagation in auto-regressive random neural network models",
+        "heat_score": 13.0,
+        "field_rank": 2,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.05230",
+        "title": "Quality Diversity for Reliable Data Driven Time-Use Optimization",
+        "heat_score": 13.0,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
+        "paper_id": "1706.02795",
+        "title": "A Deep Causal Inference Approach to Measuring the Effects of Forming Group Loans in Online Non-profit Microfinance Platform",
+        "heat_score": 13.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.18520",
+        "title": "Compact Geometric Representations of Hierarchies",
+        "heat_score": 11.5,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2602.03970",
+        "title": "Statistical Guarantees for Reasoning Probes on Looped Boolean Circuits",
+        "heat_score": 11.5,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2605.26973",
+        "title": "Signal-to-Noise Ratio and Sample Size Govern Representational Alignment in Neural Networks",
+        "heat_score": 11.5,
+        "field_rank": 6,
+        "badges": []
+      }
+    ],
+    "cs.AR": [
+      {
+        "paper_id": "2506.15066",
+        "title": "ChatModel: Automating Reference Model Design and Verification with LLMs",
+        "heat_score": 58.7,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2604.28059",
+        "title": "NeuroRing: Scaling Spiking Neural Networks via Multi-FPGA Bidirectional Ring Topologies and Stream-Dataflow Architectures",
+        "heat_score": 51.5,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.21223",
+        "title": "Event-triggered Implicit Perturbation for Zeroth-Order Fine-Tuning of Spiking Transformers",
+        "heat_score": 13.0,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2505.03771",
+        "title": "OneDSE: Metric-Conditioned Inverse Modeling and Active Search for Sample-Efficient DSE",
+        "heat_score": 13.0,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.07625",
+        "title": "HINT: Toward an Executable Hardware-Intent Representation Layer for LLM-Driven RTL Generation",
+        "heat_score": 13.0,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.04032",
+        "title": "EDATracer: An Agentic Framework for Large-Scale EDA Artifact Analysis",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.04443",
+        "title": "MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing",
+        "heat_score": 13.0,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.25058",
+        "title": "Mitigating the Impact of Retention Loss on Inference Accuracy in 65 nm Single-Poly Floating-Gate Analog In-Memory Computing",
+        "heat_score": 13.0,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.17538",
+        "title": "D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation",
+        "heat_score": 11.5,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.14747",
+        "title": "Toward Energy-Efficient and Low-Power Arrhythmia Detection for Wearable Devices",
+        "heat_score": 11.5,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.12901",
+        "title": "A 32-channel event-based bio-signal analog front-end with adaptive delta and pulse frequency encoding",
+        "heat_score": 11.5,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.05453",
+        "title": "Neuromorphic Silicon Neuron Controller for Adaptive Deep Brain Stimulation in Parkinson's Disease",
+        "heat_score": 11.5,
+        "field_rank": 12,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.02608",
+        "title": "Towards transferable lightweight neuromorphic computing through a model-free temporal-switch framework",
+        "heat_score": 11.5,
+        "field_rank": 13,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.27892",
+        "title": "Co-Optimization of Analog Kolmogorov-Arnold Networks for Low-Power Function Approximation in Flexible Electronics",
+        "heat_score": 11.5,
+        "field_rank": 14,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.20727",
+        "title": "FPGA-Accelerated Neuromorphic Vision System for Real-Time Orbital Object Detection",
+        "heat_score": 11.5,
+        "field_rank": 15,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.22621",
+        "title": "Multi-Level Resistive Synapses for On-Chip Neural Networks: A Physics-Based Design of a Memristive Crossbar Fabric with Quasi-Continuous Conductance States",
+        "heat_score": 11.5,
+        "field_rank": 16,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.17249",
+        "title": "From Compression to Deployment: Real-Time and Energy-Efficient FastGRNN on Ultra-Constrained Microcontrollers",
+        "heat_score": 11.5,
+        "field_rank": 17,
+        "badges": []
+      },
+      {
+        "paper_id": "2602.18140",
+        "title": "Flexi-NeurA: A Flexible Neuromorphic Accelerator with Adaptive Bit-Precision Exploration for Edge Devices",
+        "heat_score": 11.5,
+        "field_rank": 18,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.13354",
+        "title": "SupraSNN: Exploiting Synapse-Level Parallelism in Spiking Neural Network Accelerators through Co-Optimized Mapping and Scheduling",
+        "heat_score": 11.5,
+        "field_rank": 19,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.13560",
+        "title": "ReSCom: A Reconfigurable Spiking Neural Network Accelerator Using Stochastic Computing",
+        "heat_score": 11.5,
+        "field_rank": 20,
+        "badges": []
+      }
+    ],
+    "math.NA": [
+      {
+        "paper_id": "2511.07836",
+        "title": "Hyperellipsoid Density Sampling: Exploitative Sequences to Accelerate High-Dimensional Optimization",
+        "heat_score": 52.4,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.21304",
+        "title": "Basin-Preserving Discretizations of Modern Hopfield Retrieval Dynamics: Energy Cells, Dissipation, and the Attention Limit",
+        "heat_score": 13.0,
+        "field_rank": 2,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.22211",
+        "title": "Closed-Loop Generative Selection: Convergence, Memory, and Noisy Oracles",
+        "heat_score": 13.0,
+        "field_rank": 3,
+        "badges": []
+      }
+    ],
+    "cs.MA": [
+      {
+        "paper_id": "2602.02613",
+        "title": "Exploring Silicon-Based Societies: An Early Study of the Moltbook Agent Community",
+        "heat_score": 62.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2606.26156",
+        "title": "Kiko: Programming Agents to Enact Interaction Protocols",
+        "heat_score": 60.5,
+        "field_rank": 2,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2504.20903",
+        "title": "When Should AI Follow? Task Structure and Joint Adaptation by Human and AI Agents",
+        "heat_score": 58.4,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2510.13903",
+        "title": "Benefits and Limitations of Communication in Multi-Agent Reasoning",
+        "heat_score": 56.9,
+        "field_rank": 4,
         "badges": [
           "Hot"
         ]
@@ -1133,7 +1204,7 @@
         "paper_id": "2606.10546",
         "title": "SkillAxe: Sharpening LLM-Authored Agent Skills Through Evaluation-Guided Self-Refinement",
         "heat_score": 56.9,
-        "field_rank": 4,
+        "field_rank": 5,
         "badges": [
           "Hot"
         ]
@@ -1142,34 +1213,52 @@
         "paper_id": "2407.20004",
         "title": "The traffic concentration effects of urban navigation services",
         "heat_score": 56.6,
-        "field_rank": 5,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2407.03956",
-        "title": "Solving Zebra Puzzles Using Constraint-Guided Multi-Agent Systems",
-        "heat_score": 55.1,
         "field_rank": 6,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2607.26722",
-        "title": "DREvo: Distilling Recalibrated Historical Experience for Harness Self-Evolution",
-        "heat_score": 54.8,
+        "paper_id": "2604.07789",
+        "title": "ORACLE-SWE: Quantifying the Contribution of Oracle Information Signals on SWE Agents",
+        "heat_score": 55.1,
         "field_rank": 7,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2504.08430",
-        "title": "A Hybrid ABM-PDE Framework for Real-World Infectious Disease Simulations",
-        "heat_score": 54.2,
+        "paper_id": "2602.10429",
+        "title": "AIvilization v0: Toward Large-Scale Artificial Social Simulation with a Unified Agent Architecture and Adaptive Agent Profiles",
+        "heat_score": 54.8,
         "field_rank": 8,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2603.01221",
+        "title": "Epistemic Gain, Aleatoric Cost: Uncertainty Decomposition in Multi-Agent Debate for Math Reasoning",
+        "heat_score": 54.2,
+        "field_rank": 9,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2605.30314",
+        "title": "SpecBench: Evaluating Specification-Level Reasoning for Software Engineering LLM Agents",
+        "heat_score": 54.2,
+        "field_rank": 10,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2106.06060",
+        "title": "AI-driven Prices for Externalities and Sustainability in Production Markets",
+        "heat_score": 53.0,
+        "field_rank": 12,
         "badges": [
           "Hot"
         ]
@@ -1178,7 +1267,7 @@
         "paper_id": "2502.00023",
         "title": "Musical Agent Systems: MACAT and MACataRT",
         "heat_score": 53.0,
-        "field_rank": 13,
+        "field_rank": 14,
         "badges": [
           "Hot"
         ]
@@ -1187,7 +1276,7 @@
         "paper_id": "2509.21834",
         "title": "RobustFlow: Towards Robust Agentic Workflow Generation",
         "heat_score": 53.0,
-        "field_rank": 10,
+        "field_rank": 11,
         "badges": [
           "Hot"
         ]
@@ -1196,43 +1285,25 @@
         "paper_id": "2305.11962",
         "title": "Spatial community structure impedes language amalgamation in a population-based iterated learning model",
         "heat_score": 53.0,
-        "field_rank": 12,
+        "field_rank": 13,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2602.02613",
-        "title": "Exploring Silicon-Based Societies: An Early Study of the Moltbook Agent Community",
+        "paper_id": "2607.26722",
+        "title": "DREvo: Distilling Recalibrated Historical Experience for Harness Self-Evolution",
         "heat_score": 53.0,
-        "field_rank": 9,
+        "field_rank": 15,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2602.10429",
-        "title": "AIvilization v0: Toward Large-Scale Artificial Social Simulation with a Unified Agent Architecture and Adaptive Agent Profiles",
-        "heat_score": 53.0,
-        "field_rank": 14,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2504.20903",
-        "title": "When Should AI Follow? Task Structure and Joint Adaptation by Human and AI Agents",
-        "heat_score": 53.0,
-        "field_rank": 11,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2510.13903",
-        "title": "Benefits and Limitations of Communication in Multi-Agent Reasoning",
+        "paper_id": "2504.08430",
+        "title": "A Hybrid ABM-PDE Framework for Real-World Infectious Disease Simulations",
         "heat_score": 51.5,
-        "field_rank": 18,
+        "field_rank": 24,
         "badges": [
           "Hot"
         ]
@@ -1241,25 +1312,7 @@
         "paper_id": "2602.16662",
         "title": "Evaluating Collective Behaviour of Hundreds of LLM Agents",
         "heat_score": 51.5,
-        "field_rank": 19,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.26156",
-        "title": "Kiko: Programming Agents to Enact Interaction Protocols",
-        "heat_score": 51.5,
-        "field_rank": 15,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2603.01221",
-        "title": "Epistemic Gain, Aleatoric Cost: Uncertainty Decomposition in Multi-Agent Debate for Math Reasoning",
-        "heat_score": 51.5,
-        "field_rank": 22,
+        "field_rank": 21,
         "badges": [
           "Hot"
         ]
@@ -1268,7 +1321,7 @@
         "paper_id": "2602.09379",
         "title": "LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis",
         "heat_score": 51.5,
-        "field_rank": 20,
+        "field_rank": 22,
         "badges": [
           "Hot"
         ]
@@ -1277,7 +1330,16 @@
         "paper_id": "2507.09788",
         "title": "TinyTroupe: An LLM-powered Multiagent Persona Simulation Toolkit",
         "heat_score": 51.5,
-        "field_rank": 16,
+        "field_rank": 18,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2509.24088",
+        "title": "CORRECT: COndensed eRror RECognition via knowledge Transfer in multi-agent systems",
+        "heat_score": 51.5,
+        "field_rank": 19,
         "badges": [
           "Hot"
         ]
@@ -1296,7 +1358,7 @@
       {
         "paper_id": "2606.15376",
         "title": "CoAgent: Concurrency Control for Multi-Agent Systems",
-        "heat_score": 51.5,
+        "heat_score": 54.2,
         "field_rank": 2,
         "badges": [
           "Hot"
@@ -1324,73 +1386,80 @@
         "badges": []
       },
       {
+        "paper_id": "2608.20370",
+        "title": "Benchmarking LLM Serving Systems for Agentic AI Workloads with XPerf",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
         "paper_id": "2608.19557",
         "title": "When Do LLM Agents Help? Deadline-Aware Mixed-Criticality Task Scheduling at the Autonomous-Vehicle Edge",
         "heat_score": 13.0,
-        "field_rank": 6,
+        "field_rank": 7,
         "badges": []
       },
       {
         "paper_id": "2608.16357",
         "title": "MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories",
         "heat_score": 13.0,
-        "field_rank": 7,
+        "field_rank": 8,
         "badges": []
       },
       {
         "paper_id": "2607.02942",
         "title": "A Workflow-Aware Serving Layer for Agentic Applications",
         "heat_score": 11.5,
-        "field_rank": 8,
+        "field_rank": 9,
         "badges": []
       },
       {
         "paper_id": "2606.12246",
         "title": "Efficient and Robust Online Learning to Rank in Decentralized Systems",
         "heat_score": 11.5,
-        "field_rank": 9,
+        "field_rank": 10,
         "badges": []
       },
       {
         "paper_id": "2606.10493",
         "title": "Achieving Cloud-Grade SLOs for Local Mixture-of-Experts Inference through CPU-GPU Hybrid Design",
         "heat_score": 11.5,
-        "field_rank": 10,
+        "field_rank": 11,
         "badges": []
       },
       {
         "paper_id": "2606.07846",
         "title": "Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method",
         "heat_score": 11.5,
-        "field_rank": 11,
+        "field_rank": 12,
         "badges": []
       },
       {
         "paper_id": "2606.08813",
         "title": "Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors",
         "heat_score": 11.5,
-        "field_rank": 12,
+        "field_rank": 13,
         "badges": []
       },
       {
         "paper_id": "2602.19802",
         "title": "Linear Reservoir: A Diagonalization-Based Optimization",
         "heat_score": 11.5,
-        "field_rank": 13,
+        "field_rank": 14,
         "badges": []
       },
       {
         "paper_id": "2606.01542",
         "title": "Self-Conditioned Positional HNSW for Overlap-Aware Retrieval in Chunked-Document RAG Systems: Method and Industrial Evidence-Quality Audit",
         "heat_score": 11.5,
-        "field_rank": 14,
+        "field_rank": 15,
         "badges": []
       },
       {
         "paper_id": "2605.27106",
         "title": "Autonomic Federated-Market Orchestration for the Edge-Cloud Continuum",
         "heat_score": 11.5,
-        "field_rank": 15,
+        "field_rank": 16,
         "badges": []
       }
     ],
@@ -1398,16 +1467,16 @@
       {
         "paper_id": "2608.10679",
         "title": "ENTLORE: A Graph-Grounded Benchmark for Latent Organizational Reasoning in Enterprise Question Answering",
-        "heat_score": 72.9,
+        "heat_score": 72.0,
         "field_rank": 1,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2305.07609",
-        "title": "Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation",
-        "heat_score": 60.5,
+        "paper_id": "2404.16555",
+        "title": "MMGRec: Multimodal Generative Recommendation with Transformer Model",
+        "heat_score": 62.0,
         "field_rank": 2,
         "badges": [
           "Hot",
@@ -1415,8 +1484,8 @@
         ]
       },
       {
-        "paper_id": "2501.02173",
-        "title": "The Efficiency vs. Accuracy Trade-off: Optimizing RAG-Enhanced LLM Recommender Systems Using Multi-Head Early Exit",
+        "paper_id": "2511.20867",
+        "title": "E-GEO: A Testbed for Generative Engine Optimization in E-Commerce",
         "heat_score": 60.5,
         "field_rank": 4,
         "badges": [
@@ -1425,8 +1494,8 @@
         ]
       },
       {
-        "paper_id": "2502.13713",
-        "title": "TALKPLAY: Multimodal Music Recommendation with Large Language Models",
+        "paper_id": "2305.07609",
+        "title": "Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation",
         "heat_score": 60.5,
         "field_rank": 3,
         "badges": [
@@ -1435,8 +1504,8 @@
         ]
       },
       {
-        "paper_id": "2510.01698",
-        "title": "TalkPlay-Tools: Conversational Music Recommendation with LLM Tool Calling",
+        "paper_id": "2603.23183",
+        "title": "Reasoning over Semantic IDs Enhances Generative Recommendation",
         "heat_score": 60.5,
         "field_rank": 5,
         "badges": [
@@ -1445,9 +1514,9 @@
         ]
       },
       {
-        "paper_id": "2510.21805",
-        "title": "DiffGRM: Diffusion-based Generative Recommendation Model",
-        "heat_score": 60.2,
+        "paper_id": "2607.29402",
+        "title": "Bridging the Question-Answer Gap in Retrieval-Augmented Generation: Hypothetical Prompt Embeddings",
+        "heat_score": 59.3,
         "field_rank": 6,
         "badges": [
           "Hot"
@@ -1463,28 +1532,19 @@
         ]
       },
       {
-        "paper_id": "2511.12518",
-        "title": "DualGR: Generative Retrieval with Long and Short-Term Interests Modeling",
-        "heat_score": 58.4,
+        "paper_id": "2605.30237",
+        "title": "GRASP: Plan-Guided Graph Retrieval with Adaptive Fusion and Reranking on Semi-Structured Knowledge Bases",
+        "heat_score": 56.9,
         "field_rank": 8,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2607.27623",
-        "title": "An Exploration Graph with Continuous Refinement for Efficient Multimedia Retrieval",
-        "heat_score": 57.5,
+        "paper_id": "2606.25237",
+        "title": "Extreme Meta-Classification for Large-Scale Zero-Shot Retrieval",
+        "heat_score": 56.0,
         "field_rank": 9,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2509.14221",
-        "title": "GEM-Bench: A Benchmark for Ad-Injected Response Generation within Generative Engine Marketing",
-        "heat_score": 56.9,
-        "field_rank": 10,
         "badges": [
           "Hot"
         ]
@@ -1493,7 +1553,7 @@
         "paper_id": "2606.20065",
         "title": "Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines",
         "heat_score": 56.0,
-        "field_rank": 11,
+        "field_rank": 10,
         "badges": [
           "Hot"
         ]
@@ -1502,7 +1562,7 @@
         "paper_id": "2508.18166",
         "title": "PCR-CA: Parallel Codebook Representations with Contrastive Alignment for Multiple-Category App Recommendation",
         "heat_score": 56.0,
-        "field_rank": 12,
+        "field_rank": 11,
         "badges": [
           "Hot"
         ]
@@ -1511,15 +1571,24 @@
         "paper_id": "2601.20199",
         "title": "MERGE: Next-Generation Item Indexing Paradigm for Large-Scale Streaming Recommendation",
         "heat_score": 55.7,
+        "field_rank": 12,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2601.18146",
+        "title": "Think When Needed: Model-Aware Reasoning Routing for LLM-based Ranking",
+        "heat_score": 55.1,
         "field_rank": 13,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2607.27640",
-        "title": "Dynamic Exploration Graph: A Novel Approach for Efficient Nearest Neighbor Search in Evolving Multimedia Datasets",
-        "heat_score": 55.7,
+        "paper_id": "2607.05441",
+        "title": "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models",
+        "heat_score": 55.1,
         "field_rank": 14,
         "badges": [
           "Hot"
@@ -1580,10 +1649,110 @@
         ]
       }
     ],
-    "cs.CY": [
+    "physics.soc-ph": [
       {
-        "paper_id": "2606.10907",
-        "title": "From Prompt to Purchase: How AI Brand Recommendations Move Consumers on the Open Web",
+        "paper_id": "2607.27233",
+        "title": "Evolutionary dynamics of collective decision-making with local social influence on static and dynamic networks",
+        "heat_score": 13.9,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.20438",
+        "title": "Peer-Voted LLM-Agent Stress Tests Find Feed-Induced Lexical Convergence but No Reliable Matched-Exposure Advantage for Distributed Sources",
+        "heat_score": 13.0,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.17915",
+        "title": "Computational Prosopography across a Millennium: Mathematically Oriented Lineages Traced from the Fields Medalists",
+        "heat_score": 13.0,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.16897",
+        "title": "CityReal: Human-Aligned Urban Behavior and City Dynamics Simulation with Large-Scale LLM Agents",
+        "heat_score": 13.0,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.02178",
+        "title": "Microscopic dynamics of consensus formation in multi-agent LLM Naming Games",
+        "heat_score": 13.0,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2603.19641",
+        "title": "On the existence of fair zero-determinant strategies in the periodic prisoner's dilemma game",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.13636",
+        "title": "Measuring What the Crawler Sees: Discovery Curves, Core Persistence, and Shell Dynamics in Longitudinal Web Crawls",
+        "heat_score": 11.5,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2008.13078",
+        "title": "Probability-turbulence divergence: A tunable allotaxonometric instrument for comparing heavy-tailed categorical distributions",
+        "heat_score": 11.5,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.14818",
+        "title": "Physics of anticipatory active matter, with application to crowd dynamics",
+        "heat_score": 11.5,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2511.13452",
+        "title": "Collective decision-making with higher-order interactions on $d$-uniform hypergraphs",
+        "heat_score": 11.5,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.02646",
+        "title": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
+        "heat_score": 11.5,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.00235",
+        "title": "Civilizational Metamaterials: Engineering Coordination Under Capability Gradients and Structural Turbulence",
+        "heat_score": 11.5,
+        "field_rank": 12,
+        "badges": []
+      }
+    ],
+    "cs.NI": [
+      {
+        "paper_id": "2505.21550",
+        "title": "Position: Collaborative Agentic AI Needs Interoperability Across Ecosystems",
+        "heat_score": 60.5,
+        "field_rank": 1,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
+        "paper_id": "2504.18902",
+        "title": "Transformer-Empowered Actor-Critic Reinforcement Learning for Sequence-Aware Service Function Chain Partitioning",
         "heat_score": 51.5,
         "field_rank": 2,
         "badges": [
@@ -1591,10 +1760,592 @@
         ]
       },
       {
+        "paper_id": "2605.24992",
+        "title": "Scaling up Energy-Aware Multi-Agent Reinforcement Learning for Mission-Oriented Drone Networks with Individual Reward",
+        "heat_score": 36.74,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.20570",
+        "title": "Infrastructure for the Agentic Web: Gap Analysis and Architecture from the Agentverse Platform",
+        "heat_score": 24.12,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.20494",
+        "title": "Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology",
+        "heat_score": 13.0,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.10714",
+        "title": "Conversational Orchestration for Organic 6G",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.26352",
+        "title": "Pramana: A Composable, Domain-Specific Backend for Empirical Networking Research",
+        "heat_score": 13.0,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.22109",
+        "title": "Predictive Lightweight MARL for Resilient Coverage in Sparse-Signaling Aerial Networks",
+        "heat_score": 13.0,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2512.05207",
+        "title": "Exploiting the Alternatives: Coordinated Learning via Hierarchical RL for Dynamic VNEAP",
+        "heat_score": 11.5,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.05975",
+        "title": "MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation",
+        "heat_score": 11.5,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.28342",
+        "title": "Operating Regimes of Decentralized Learning Under Mobility and Bandwidth Constraints",
+        "heat_score": 11.5,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.20573",
+        "title": "AONA: A Comprehensive Architecture and Workflow Design for Global Agentic Collaboration",
+        "heat_score": 11.5,
+        "field_rank": 12,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.22312",
+        "title": "SHACR: A Graph-Augmented Semi-Autonomous Framework for Multi-Class Conflict Resolution in Smart Home IoT Automation",
+        "heat_score": 11.5,
+        "field_rank": 13,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.06261",
+        "title": "DAST: A VLM-LLM Framework for Cross-Interface Anomaly Detection in O-RAN",
+        "heat_score": 11.5,
+        "field_rank": 14,
+        "badges": []
+      },
+      {
+        "paper_id": "2605.25431",
+        "title": "Mode 0: A New 3GPP V2X Resource Allocation Category for Roadside Computing Unit-Assisted Safety Communication",
+        "heat_score": 11.5,
+        "field_rank": 15,
+        "badges": []
+      }
+    ],
+    "eess.SY": [
+      {
+        "paper_id": "2608.01222",
+        "title": "Resilient Consensus-Based Target Tracking under False Data Injection Attacks in Multi-Agent Networks",
+        "heat_score": 56.6,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2602.19366",
+        "title": "Self-Configurable Mesh-Networks for Scalable Distributed Submodular Bandit Optimization",
+        "heat_score": 53.0,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2511.13770",
+        "title": "Game-theoretic Regulated Decentralized Coordination for Airspace Sector Overload Mitigation",
+        "heat_score": 14.2,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.20906",
+        "title": "A Safety-Driven Architectural Framework for Fail-Operational Drone Swarms in Critical Missions",
+        "heat_score": 13.0,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.18353",
+        "title": "Model Predictive Supervisory Control for Hierarchical and Distributed UAS Traffic Management",
+        "heat_score": 13.0,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.17592",
+        "title": "Communication Reduction via Semantic-Based Encoding in DMPC Using LSTMs",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.13535",
+        "title": "Joint Communication-Control Strategy Optimization with Partially Nested Information Structures: The Linear-Quadratic Case",
+        "heat_score": 13.0,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2604.06430",
+        "title": "Asynchronous Distributed Bandit Submodular Maximization under Heterogeneous Communication Delays",
+        "heat_score": 13.0,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.07403",
+        "title": "Topology Inference for Immune System Networks by Using Cell Amount Data",
+        "heat_score": 13.0,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.09282",
+        "title": "Revisiting mesoscopic traffic flow simulation in SUMO: Limitations, analysis, and an alternative",
+        "heat_score": 13.0,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.18913",
+        "title": "How network perturbations distort agreement trajectories in LTI multi-agent systems",
+        "heat_score": 11.5,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.31635",
+        "title": "A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents",
+        "heat_score": 11.5,
+        "field_rank": 12,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.27039",
+        "title": "Scalability of Morality: A Particle-Based Numerical Study on the Decoupling of Law and Ethics in Large-Scale Populations",
+        "heat_score": 11.5,
+        "field_rank": 13,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.27257",
+        "title": "Resilient Output Containment under Undisclosed Leader Dynamics and Actuator Attacks",
+        "heat_score": 11.5,
+        "field_rank": 14,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.25888",
+        "title": "Robustness and Leadership in Markov-switching Consensus Networks",
+        "heat_score": 11.5,
+        "field_rank": 15,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.23931",
+        "title": "Welfarist Control Design -- How to fulfill the societal mandate in multi-agent control?",
+        "heat_score": 11.5,
+        "field_rank": 16,
+        "badges": []
+      },
+      {
+        "paper_id": "2509.18371",
+        "title": "Policy Gradient with Self-Attention for Model-Free Distributed Nonlinear Multi-Agent Games",
+        "heat_score": 11.5,
+        "field_rank": 17,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.20648",
+        "title": "Platooning Connected, Autonomous, and Human-Driven Vehicles: A Deep Reinforcement Learning-based Approach",
+        "heat_score": 11.5,
+        "field_rank": 18,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.13485",
+        "title": "Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons",
+        "heat_score": 11.5,
+        "field_rank": 19,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.16116",
+        "title": "Distributed Safe Consensus Under Asymmetric Input and Time-Varying Output Constraints",
+        "heat_score": 11.5,
+        "field_rank": 20,
+        "badges": []
+      }
+    ],
+    "cs.SE": [
+      {
+        "paper_id": "2606.24177",
+        "title": "Agon: An Autonomous Large-Scale Omnidisciplinary Research System Built on Prompt Economy",
+        "heat_score": 56.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2603.09290",
+        "title": "ToolRosella: Translating Code Repositories into Standardized Tools for Scientific Agents",
+        "heat_score": 54.2,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.06324",
+        "title": "From Failed Trajectories to Reliable LLM Agents: Diagnosing and Repairing Harness Flaws",
+        "heat_score": 51.5,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.07681",
+        "title": "Systematic LLM Translation of Legacy Scientific Code to Differentiable Frameworks: Application to a Land Surface Model",
+        "heat_score": 43.2,
+        "field_rank": 4,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2605.27328",
+        "title": "Governed Evolution of Agent Runtimes through Executable Operational Cognition",
+        "heat_score": 43.2,
+        "field_rank": 5,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.23797",
+        "title": "From Task-Guided Conversational Graphs to Goal-Oriented Dialogue Runtimes",
+        "heat_score": 32.4,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.04397",
+        "title": "Context-as-a-Service: Surfacing Cross-File Dependency Chains for LLM-Generated Developer Documentation",
+        "heat_score": 32.4,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.18347",
+        "title": "A Decision-Centered Reference Architecture for Trustworthy Agentic Commerce",
+        "heat_score": 31.5,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.07738",
+        "title": "REFORGE: A Method for Benchmarking LLMs' Reverse Engineering Capabilities in Decompiled Binary Function Naming",
+        "heat_score": 31.5,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.20761",
+        "title": "Integrating Large Language Model Agents with Digital Twins for Industrial Autonomous Systems",
+        "heat_score": 31.5,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2602.19218",
+        "title": "Gecko: A Simulation Environment with Stateful Feedback for Refining Agent Tool Calls",
+        "heat_score": 31.5,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.10450",
+        "title": "Persistent Recursive Worlds Enable Autonomous Software Evolution",
+        "heat_score": 22.0,
+        "field_rank": 12,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.21095",
+        "title": "Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems",
+        "heat_score": 13.0,
+        "field_rank": 13,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.19487",
+        "title": "Accelerated Genetic Programming Hyper-Heuristics for Simulation-Based Scheduling via Agentic AI",
+        "heat_score": 13.0,
+        "field_rank": 14,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.19263",
+        "title": "The Evaluation Context Protocol (ECP): A Portable Contract for AI Agent Evaluation",
+        "heat_score": 13.0,
+        "field_rank": 15,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.14838",
+        "title": "The Recall Trap: A Recall-Maximizing Retriever Configuration Reduces Issue Resolution in Fixed-Budget Code Context",
+        "heat_score": 13.0,
+        "field_rank": 16,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.04270",
+        "title": "CURATE: Leveraging LLM Agents to Compose, Catalog, and Deploy Reproducible Workflows",
+        "heat_score": 13.0,
+        "field_rank": 17,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.02677",
+        "title": "When Policies Change Probabilities: Modular Decision-Making for LLM Code Review",
+        "heat_score": 13.0,
+        "field_rank": 18,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.01507",
+        "title": "Deep Agentic Search for Repository-Level Code Question Answering: An Empirical Study",
+        "heat_score": 13.0,
+        "field_rank": 19,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.28242",
+        "title": "Agentic Metaverse Services: A New As-a-Service Paradigm",
+        "heat_score": 13.0,
+        "field_rank": 20,
+        "badges": []
+      }
+    ],
+    "econ.GN": [
+      {
+        "paper_id": "2608.21274",
+        "title": "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix",
+        "heat_score": 13.0,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2608.12363",
+        "title": "EU-ETS under attack? The impact of carbon price suppression on the decarbonization of the power sector",
+        "heat_score": 13.0,
+        "field_rank": 2,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.14713",
+        "title": "Does Multi-Agent Debate Improve AI Feedback on Research Papers?",
+        "heat_score": 11.5,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.17397",
+        "title": "Designing Recommendation Exposure and Favorite Lists: A Field Experiment in a Spot-Work Platform",
+        "heat_score": 11.5,
+        "field_rank": 4,
+        "badges": []
+      }
+    ],
+    "cs.DB": [
+      {
+        "paper_id": "2512.22838",
+        "title": "OrchANN: Hierarchical Orchestration for Skewed Out-of-Core Vector Search",
+        "heat_score": 52.4,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.07843",
+        "title": "RACT: Retrieval Augmented Column-Table Learning and Prediction for Multi-Table Schema Matching",
+        "heat_score": 51.5,
+        "field_rank": 3,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2602.13812",
+        "title": "DTBench: A Synthetic Benchmark for Document-to-Table Extraction",
+        "heat_score": 51.5,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2605.26474",
+        "title": "Generalized Range Filtering Approximate Nearest Neighbor Search: Containment and Overlap [Technical Report]",
+        "heat_score": 51.5,
+        "field_rank": 4,
+        "badges": []
+      },
+      {
+        "paper_id": "2605.23986",
+        "title": "MemForest: An Efficient Agent Memory System with Hierarchical Temporal Indexing",
+        "heat_score": 51.5,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2508.12536",
+        "title": "jXBW: A Compressed Index Enabling Structure-Aware JSONL Retrieval for Structured RAG",
+        "heat_score": 13.0,
+        "field_rank": 6,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.11889",
+        "title": "DexterSQL: Deep Schema Exploration and Rule-based Correction for Text-to-SQL Generation",
+        "heat_score": 13.0,
+        "field_rank": 7,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.05441",
+        "title": "Filtered Vector Search in a Disaggregated Lakehouse: Composing Table-Format Pruning with Per-File ANN",
+        "heat_score": 13.0,
+        "field_rank": 8,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.02376",
+        "title": "Token-Native Storage: Read and Write in your Agent's Language",
+        "heat_score": 13.0,
+        "field_rank": 9,
+        "badges": []
+      },
+      {
+        "paper_id": "2608.03487",
+        "title": "RAG-Stack: Co-Optimizing RAG Serving Performance and Quality",
+        "heat_score": 13.0,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.26520",
+        "title": "A Graph-Native Bitemporal Memory Store for Conversational AI Agents",
+        "heat_score": 13.0,
+        "field_rank": 11,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.15576",
+        "title": "Efficient and Effective In-place Graph-based Vector Index Updates",
+        "heat_score": 11.5,
+        "field_rank": 12,
+        "badges": []
+      },
+      {
+        "paper_id": "2512.11001",
+        "title": "Rethinking Query Optimization for Multi-Agent Systems [Vision]",
+        "heat_score": 11.5,
+        "field_rank": 13,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.03501",
+        "title": "STRATOS: Bridging the Symbolic-to-Numeric Gap in Spatio-Temporal Text-to-SQL for Meteorological Data",
+        "heat_score": 11.5,
+        "field_rank": 14,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.02338",
+        "title": "HNSW with Accuracy Guarantees Using Graph Spanners -- A Technical Report",
+        "heat_score": 11.5,
+        "field_rank": 15,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.00728",
+        "title": "When to Repair a Graph ANN Index: Navigability-Signal-Triggered Local Repair Protects Tail Recall Under Bursty Churn",
+        "heat_score": 11.5,
+        "field_rank": 16,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.00768",
+        "title": "RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search",
+        "heat_score": 11.5,
+        "field_rank": 17,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.29823",
+        "title": "Experience Graphs: The Data Foundation for Self-Improving Agents",
+        "heat_score": 11.5,
+        "field_rank": 18,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.28062",
+        "title": "Single and Multi Truth Data Fusion using Large Language Models",
+        "heat_score": 11.5,
+        "field_rank": 19,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.26465",
+        "title": "3D Spatial Pattern Matching",
+        "heat_score": 11.5,
+        "field_rank": 20,
+        "badges": []
+      }
+    ],
+    "cs.CY": [
+      {
         "paper_id": "2605.30169",
         "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
-        "heat_score": 51.5,
+        "heat_score": 54.2,
         "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.10907",
+        "title": "From Prompt to Purchase: How AI Brand Recommendations Move Consumers on the Open Web",
+        "heat_score": 53.3,
+        "field_rank": 2,
         "badges": [
           "Hot"
         ]
@@ -1602,144 +2353,137 @@
       {
         "paper_id": "2605.24413",
         "title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "heat_score": 37.64,
+        "heat_score": 36.74,
         "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2601.09600",
-        "title": "Information Access of the Oppressed: Freirean Design for Emancipatory Information Access",
-        "heat_score": 37.64,
-        "field_rank": 4,
         "badges": []
       },
       {
         "paper_id": "2608.19545",
         "title": "Two-sided receptivity to conversational AI agents in online dating: Bilingual survey data from Fledge.Love",
         "heat_score": 13.0,
-        "field_rank": 6,
+        "field_rank": 5,
         "badges": []
       },
       {
         "paper_id": "2608.18554",
         "title": "CentaurBench: Benchmarking LLM Capabilities on Augmenting vs. Automating Real-World Work Tasks",
         "heat_score": 13.0,
-        "field_rank": 7,
+        "field_rank": 6,
         "badges": []
       },
       {
         "paper_id": "2608.14602",
         "title": "Recommended Selves: Authenticity and Algorithmic Filtering",
         "heat_score": 13.0,
-        "field_rank": 5,
+        "field_rank": 4,
         "badges": []
       },
       {
         "paper_id": "2608.01868",
         "title": "No One Wins in Nuclear War: A Social Simulation of Military Decision-making",
         "heat_score": 13.0,
-        "field_rank": 8,
+        "field_rank": 7,
         "badges": []
       },
       {
         "paper_id": "2603.20248",
         "title": "Stability of AI Governance Systems: A Coupled Dynamics Model of Public Trust and Social Disruptions",
         "heat_score": 13.0,
-        "field_rank": 9,
+        "field_rank": 8,
         "badges": []
       },
       {
         "paper_id": "2607.11895",
         "title": "AgentSociety 2: An Integrated Research Environment for Executable Social Science",
         "heat_score": 11.5,
-        "field_rank": 10,
+        "field_rank": 9,
         "badges": []
       },
       {
         "paper_id": "2607.11859",
         "title": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers?",
         "heat_score": 11.5,
-        "field_rank": 11,
+        "field_rank": 10,
         "badges": []
       },
       {
         "paper_id": "2607.05217",
         "title": "Curated retrieval versus open web search in public AI information services: a coverage-trust trade-off",
         "heat_score": 11.5,
-        "field_rank": 12,
+        "field_rank": 11,
         "badges": []
       },
       {
         "paper_id": "2606.30986",
         "title": "The Organizational Behavior of Agentic AI: Collective Intelligence in Human-Agent Workflows",
         "heat_score": 11.5,
-        "field_rank": 13,
+        "field_rank": 12,
         "badges": []
       },
       {
         "paper_id": "2606.26109",
         "title": "Simulating Eating Disorder Patients with LLMs: Evaluating Psychological Persona Stability in Multi-Turn Conversations",
         "heat_score": 11.5,
-        "field_rank": 14,
+        "field_rank": 13,
         "badges": []
       },
       {
         "paper_id": "2606.13696",
         "title": "AGORA: Can Deliberation and Governance Gates Absorb Participation Bias in Transit Planning?",
         "heat_score": 11.5,
-        "field_rank": 15,
+        "field_rank": 14,
         "badges": []
       },
       {
         "paper_id": "2606.11692",
         "title": "Evaluation of Alternative-Based Information Systems for Deliberative Polling using an Agentic Simulator",
         "heat_score": 11.5,
-        "field_rank": 16,
+        "field_rank": 15,
         "badges": []
       },
       {
         "paper_id": "2606.00043",
         "title": "Fake Plastic Voters: When Political Parties Can Use AI-Simulated Focus Groups",
         "heat_score": 11.5,
-        "field_rank": 17,
+        "field_rank": 16,
         "badges": []
       },
       {
         "paper_id": "2605.27394",
         "title": "Human-AI Collaboration for Estimating Scientific Replicability",
         "heat_score": 11.5,
-        "field_rank": 18,
+        "field_rank": 17,
         "badges": []
       },
       {
         "paper_id": "2605.27400",
         "title": "Mathematical Modelling of Ethical AI Use in Higher Education: A Coordination Game Framework for Future-Facing Learning",
         "heat_score": 11.5,
-        "field_rank": 19,
+        "field_rank": 18,
         "badges": []
       },
       {
         "paper_id": "2605.24538",
         "title": "Is Decentralized AI Governable? From Regulative Policy to Constitutive Protocol",
         "heat_score": 11.5,
-        "field_rank": 20,
+        "field_rank": 19,
         "badges": []
       }
     ],
     "cs.HC": [
       {
-        "paper_id": "2501.00867",
-        "title": "Interactionalism: Re-Designing Higher Learning for the Large Language Agent Era",
-        "heat_score": 55.7,
+        "paper_id": "2602.07442",
+        "title": "EchoTrace: Diagnosing Recursive Risks in LLM-Powered Recommender Systems",
+        "heat_score": 53.9,
         "field_rank": 1,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2602.07442",
-        "title": "EchoTrace: Diagnosing Recursive Risks in LLM-Powered Recommender Systems",
-        "heat_score": 53.9,
+        "paper_id": "2501.00867",
+        "title": "Interactionalism: Re-Designing Higher Learning for the Large Language Agent Era",
+        "heat_score": 53.0,
         "field_rank": 2,
         "badges": [
           "Hot"
@@ -1755,15 +2499,15 @@
         ]
       },
       {
-        "paper_id": "2606.04308",
-        "title": "Creative Reading: Scaffolding Reading for Transformation",
-        "heat_score": 52.4,
+        "paper_id": "2512.23128",
+        "title": "It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents",
+        "heat_score": 51.5,
         "field_rank": 4,
         "badges": []
       },
       {
-        "paper_id": "2512.23128",
-        "title": "It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents",
+        "paper_id": "2606.04308",
+        "title": "Creative Reading: Scaffolding Reading for Transformation",
         "heat_score": 51.5,
         "field_rank": 5,
         "badges": []
@@ -1813,7 +2557,7 @@
       {
         "paper_id": "2607.21513",
         "title": "Transparent by Design, Usable in Practice? A Formative Usability Study of a Conversational Product Advisor",
-        "heat_score": 13.0,
+        "heat_score": 11.5,
         "field_rank": 12,
         "badges": []
       },
@@ -1903,16 +2647,16 @@
         ]
       },
       {
-        "paper_id": "2604.06531",
-        "title": "A Generalized Sinkhorn Algorithm for Mean-Field Schr\\\"odinger Bridge",
+        "paper_id": "2606.26591",
+        "title": "Three-Objective Integral R2 Subset Selection: NP-Hardness and Submodular Approximation",
         "heat_score": 52.4,
         "field_rank": 3,
         "badges": []
       },
       {
-        "paper_id": "2606.26591",
-        "title": "Three-Objective Integral R2 Subset Selection: NP-Hardness and Submodular Approximation",
-        "heat_score": 51.5,
+        "paper_id": "2604.06531",
+        "title": "A Generalized Sinkhorn Algorithm for Mean-Field Schr\\\"odinger Bridge",
+        "heat_score": 52.4,
         "field_rank": 4,
         "badges": []
       },
@@ -2008,154 +2752,6 @@
         "badges": []
       }
     ],
-    "eess.SY": [
-      {
-        "paper_id": "2602.19366",
-        "title": "Self-Configurable Mesh-Networks for Scalable Distributed Submodular Bandit Optimization",
-        "heat_score": 55.7,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.01222",
-        "title": "Resilient Consensus-Based Target Tracking under False Data Injection Attacks in Multi-Agent Networks",
-        "heat_score": 53.0,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.18353",
-        "title": "Model Predictive Supervisory Control for Hierarchical and Distributed UAS Traffic Management",
-        "heat_score": 13.0,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.17592",
-        "title": "Communication Reduction via Semantic-Based Encoding in DMPC Using LSTMs",
-        "heat_score": 13.0,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.13535",
-        "title": "Joint Communication-Control Strategy Optimization with Partially Nested Information Structures: The Linear-Quadratic Case",
-        "heat_score": 13.0,
-        "field_rank": 5,
-        "badges": []
-      },
-      {
-        "paper_id": "2604.06430",
-        "title": "Asynchronous Distributed Bandit Submodular Maximization under Heterogeneous Communication Delays",
-        "heat_score": 13.0,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.07403",
-        "title": "Topology Inference for Immune System Networks by Using Cell Amount Data",
-        "heat_score": 13.0,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.09282",
-        "title": "Revisiting mesoscopic traffic flow simulation in SUMO: Limitations, analysis, and an alternative",
-        "heat_score": 13.0,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.18913",
-        "title": "How network perturbations distort agreement trajectories in LTI multi-agent systems",
-        "heat_score": 11.5,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2511.13770",
-        "title": "Game-theoretic Regulated Decentralized Coordination for Airspace Sector Overload Mitigation",
-        "heat_score": 11.5,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.31635",
-        "title": "A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents",
-        "heat_score": 11.5,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.27039",
-        "title": "Scalability of Morality: A Particle-Based Numerical Study on the Decoupling of Law and Ethics in Large-Scale Populations",
-        "heat_score": 11.5,
-        "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.27257",
-        "title": "Resilient Output Containment under Undisclosed Leader Dynamics and Actuator Attacks",
-        "heat_score": 11.5,
-        "field_rank": 13,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.25888",
-        "title": "Robustness and Leadership in Markov-switching Consensus Networks",
-        "heat_score": 11.5,
-        "field_rank": 14,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.23931",
-        "title": "Welfarist Control Design -- How to fulfill the societal mandate in multi-agent control?",
-        "heat_score": 11.5,
-        "field_rank": 15,
-        "badges": []
-      },
-      {
-        "paper_id": "2509.18371",
-        "title": "Policy Gradient with Self-Attention for Model-Free Distributed Nonlinear Multi-Agent Games",
-        "heat_score": 11.5,
-        "field_rank": 16,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.20648",
-        "title": "Platooning Connected, Autonomous, and Human-Driven Vehicles: A Deep Reinforcement Learning-based Approach",
-        "heat_score": 11.5,
-        "field_rank": 17,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.13485",
-        "title": "Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons",
-        "heat_score": 11.5,
-        "field_rank": 18,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.16116",
-        "title": "Distributed Safe Consensus Under Asymmetric Input and Time-Varying Output Constraints",
-        "heat_score": 11.5,
-        "field_rank": 19,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.04361",
-        "title": "When Freshness Is Not Enough: Distribution-Aware Age of Information for Networked LQR Control",
-        "heat_score": 11.5,
-        "field_rank": 20,
-        "badges": []
-      }
-    ],
     "cs.CR": [
       {
         "paper_id": "2606.11632",
@@ -2167,28 +2763,10 @@
         ]
       },
       {
-        "paper_id": "2510.19420",
-        "title": "Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation",
-        "heat_score": 54.2,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.02995",
-        "title": "Patcher: Post-Hoc Patching of Backdoored Large Language Models",
-        "heat_score": 53.3,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
         "paper_id": "2607.14611",
         "title": "Bad Memory: Evaluating Prompt Injection Risks from Memory in Agentic Systems",
-        "heat_score": 51.5,
-        "field_rank": 4,
+        "heat_score": 53.3,
+        "field_rank": 2,
         "badges": [
           "Hot"
         ]
@@ -2196,8 +2774,8 @@
       {
         "paper_id": "2606.15712",
         "title": "Odds Law: The Decomposition Algebra On How Intelligence Organizes Itself to Solve Difficult Problems Reliably",
-        "heat_score": 51.5,
-        "field_rank": 5,
+        "heat_score": 53.3,
+        "field_rank": 3,
         "badges": [
           "Hot"
         ]
@@ -2205,8 +2783,26 @@
       {
         "paper_id": "2605.28214",
         "title": "Out of Sight, Not Out of Mind: Unveiling Latent Attack in Latent-based Multi-Agent Systems",
+        "heat_score": 53.3,
+        "field_rank": 4,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.02995",
+        "title": "Patcher: Post-Hoc Patching of Backdoored Large Language Models",
         "heat_score": 51.5,
         "field_rank": 6,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2510.19420",
+        "title": "Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation",
+        "heat_score": 51.5,
+        "field_rank": 5,
         "badges": [
           "Hot"
         ]
@@ -2228,22 +2824,22 @@
         "badges": []
       },
       {
-        "paper_id": "2606.22263",
-        "title": "Revelio: Cost-Efficient Agentic Memory Safety Vulnerability Detection For Repository-Scale Codebases",
-        "heat_score": 36.74,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
         "paper_id": "2606.15899",
         "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
-        "heat_score": 36.74,
-        "field_rank": 10,
+        "heat_score": 37.64,
+        "field_rank": 9,
         "badges": []
       },
       {
         "paper_id": "2606.16358",
         "title": "The Proxy Knows Too Much: Sealing LLM API Routers with Attested TEEs",
+        "heat_score": 37.64,
+        "field_rank": 10,
+        "badges": []
+      },
+      {
+        "paper_id": "2606.22263",
+        "title": "Revelio: Cost-Efficient Agentic Memory Safety Vulnerability Detection For Repository-Scale Codebases",
         "heat_score": 36.74,
         "field_rank": 11,
         "badges": []
@@ -2350,22 +2946,22 @@
         ]
       },
       {
-        "paper_id": "2605.31295",
-        "title": "Latent Space Disentanglement via Activation Steering for Interpretable Attribute Control in Symbolic Music Generation",
-        "heat_score": 52.4,
-        "field_rank": 2,
-        "badges": []
-      },
-      {
         "paper_id": "2509.04682",
         "title": "GetNetUPAM: Ecologically Informed Nested Cross-Validation and Noise-Robust Attention for Marine Bioacoustic Monitoring",
         "heat_score": 51.5,
-        "field_rank": 3,
+        "field_rank": 2,
         "badges": []
       },
       {
         "paper_id": "2606.09780",
         "title": "Quality-Diversity Search in Sound Generation: Investigating Innovation Engines for Audio Exploration",
+        "heat_score": 51.5,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
+        "paper_id": "2605.31295",
+        "title": "Latent Space Disentanglement via Activation Steering for Interpretable Attribute Control in Symbolic Music Generation",
         "heat_score": 51.5,
         "field_rank": 4,
         "badges": []
@@ -2422,96 +3018,6 @@
         "badges": []
       }
     ],
-    "physics.soc-ph": [
-      {
-        "paper_id": "2607.27233",
-        "title": "Evolutionary dynamics of collective decision-making with local social influence on static and dynamic networks",
-        "heat_score": 13.9,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.17915",
-        "title": "Computational Prosopography across a Millennium: Mathematically Oriented Lineages Traced from the Fields Medalists",
-        "heat_score": 13.0,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2608.16897",
-        "title": "CityReal: Human-Aligned Urban Behavior and City Dynamics Simulation with Large-Scale LLM Agents",
-        "heat_score": 13.0,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.02178",
-        "title": "Microscopic dynamics of consensus formation in multi-agent LLM Naming Games",
-        "heat_score": 13.0,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2603.19641",
-        "title": "On the existence of fair zero-determinant strategies in the periodic prisoner's dilemma game",
-        "heat_score": 13.0,
-        "field_rank": 5,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.13636",
-        "title": "Measuring What the Crawler Sees: Discovery Curves, Core Persistence, and Shell Dynamics in Longitudinal Web Crawls",
-        "heat_score": 11.5,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2008.13078",
-        "title": "Probability-turbulence divergence: A tunable allotaxonometric instrument for comparing heavy-tailed categorical distributions",
-        "heat_score": 11.5,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.14818",
-        "title": "Physics of anticipatory active matter, with application to crowd dynamics",
-        "heat_score": 11.5,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2511.13452",
-        "title": "Collective decision-making with higher-order interactions on $d$-uniform hypergraphs",
-        "heat_score": 11.5,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.02646",
-        "title": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
-        "heat_score": 11.5,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.00235",
-        "title": "Civilizational Metamaterials: Engineering Coordination Under Capability Gradients and Structural Turbulence",
-        "heat_score": 11.5,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2605.22841",
-        "title": "Strategic Coercion Within Alliances: The Greenland Sovereignty Game as an AI Stress Test",
-        "heat_score": 11.5,
-        "field_rank": 12,
-        "badges": []
-      }
-    ],
     "q-bio.QM": [
       {
         "paper_id": "2608.16951",
@@ -2550,20 +3056,10 @@
     ],
     "cs.GT": [
       {
-        "paper_id": "2012.05213",
-        "title": "Participatory Budgeting with Project Groups",
-        "heat_score": 62.0,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "1503.00694",
-        "title": "Consistent Probabilistic Social Choice",
+        "paper_id": "2508.03253",
+        "title": "Approximate Proportionality in Online Fair Division",
         "heat_score": 60.5,
-        "field_rank": 2,
+        "field_rank": 1,
         "badges": [
           "Hot",
           "Rising"
@@ -2579,6 +3075,24 @@
         ]
       },
       {
+        "paper_id": "2012.05213",
+        "title": "Participatory Budgeting with Project Groups",
+        "heat_score": 53.0,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "1503.00694",
+        "title": "Consistent Probabilistic Social Choice",
+        "heat_score": 51.5,
+        "field_rank": 4,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
         "paper_id": "2509.25618",
         "title": "Quadratic Programming Approach for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games",
         "heat_score": 51.5,
@@ -2588,32 +3102,23 @@
         ]
       },
       {
-        "paper_id": "2508.03253",
-        "title": "Approximate Proportionality in Online Fair Division",
-        "heat_score": 51.5,
-        "field_rank": 4,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
         "paper_id": "2502.03616",
         "title": "Noncooperative Coordination via a Trading-based Auction",
-        "heat_score": 42.1,
+        "heat_score": 40.3,
         "field_rank": 6,
         "badges": []
       },
       {
         "paper_id": "2607.28520",
         "title": "Agents That Certify Their Own Exploits: Confidence-Scheduled Restricted Responses for Safe Opponent Exploitation",
-        "heat_score": 42.1,
+        "heat_score": 40.3,
         "field_rank": 7,
         "badges": []
       },
       {
         "paper_id": "2607.28575",
         "title": "Algorithms for Structured Elections under Thiele Voting Rules",
-        "heat_score": 42.1,
+        "heat_score": 40.3,
         "field_rank": 8,
         "badges": []
       },
@@ -2634,14 +3139,14 @@
       {
         "paper_id": "2606.25997",
         "title": "Variable Bound Tightening for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games",
-        "heat_score": 28.73,
+        "heat_score": 29.63,
         "field_rank": 11,
         "badges": []
       },
       {
         "paper_id": "2512.10279",
         "title": "Computing Evolutionarily Stable Strategies in Imperfect-Information Games",
-        "heat_score": 28.73,
+        "heat_score": 29.63,
         "field_rank": 12,
         "badges": []
       },
@@ -2702,157 +3207,11 @@
         "badges": []
       }
     ],
-    "cs.AR": [
-      {
-        "paper_id": "2604.28059",
-        "title": "NeuroRing: Scaling Spiking Neural Networks via Multi-FPGA Bidirectional Ring Topologies and Stream-Dataflow Architectures",
-        "heat_score": 52.4,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2506.15066",
-        "title": "ChatModel: Automating Reference Model Design and Verification with LLMs",
-        "heat_score": 51.5,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2505.03771",
-        "title": "OneDSE: Metric-Conditioned Inverse Modeling and Active Search for Sample-Efficient DSE",
-        "heat_score": 13.9,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.07625",
-        "title": "HINT: Toward an Executable Hardware-Intent Representation Layer for LLM-Driven RTL Generation",
-        "heat_score": 13.0,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.04032",
-        "title": "EDATracer: An Agentic Framework for Large-Scale EDA Artifact Analysis",
-        "heat_score": 13.0,
-        "field_rank": 5,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.04443",
-        "title": "MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing",
-        "heat_score": 13.0,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.25058",
-        "title": "Mitigating the Impact of Retention Loss on Inference Accuracy in 65 nm Single-Poly Floating-Gate Analog In-Memory Computing",
-        "heat_score": 13.0,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.17538",
-        "title": "D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation",
-        "heat_score": 11.5,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.14747",
-        "title": "Toward Energy-Efficient and Low-Power Arrhythmia Detection for Wearable Devices",
-        "heat_score": 11.5,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.12901",
-        "title": "A 32-channel event-based bio-signal analog front-end with adaptive delta and pulse frequency encoding",
-        "heat_score": 11.5,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.05453",
-        "title": "Neuromorphic Silicon Neuron Controller for Adaptive Deep Brain Stimulation in Parkinson's Disease",
-        "heat_score": 11.5,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.02608",
-        "title": "Towards transferable lightweight neuromorphic computing through a model-free temporal-switch framework",
-        "heat_score": 11.5,
-        "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.27892",
-        "title": "Co-Optimization of Analog Kolmogorov-Arnold Networks for Low-Power Function Approximation in Flexible Electronics",
-        "heat_score": 11.5,
-        "field_rank": 13,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.20727",
-        "title": "FPGA-Accelerated Neuromorphic Vision System for Real-Time Orbital Object Detection",
-        "heat_score": 11.5,
-        "field_rank": 14,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.22621",
-        "title": "Multi-Level Resistive Synapses for On-Chip Neural Networks: A Physics-Based Design of a Memristive Crossbar Fabric with Quasi-Continuous Conductance States",
-        "heat_score": 11.5,
-        "field_rank": 15,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.17249",
-        "title": "From Compression to Deployment: Real-Time and Energy-Efficient FastGRNN on Ultra-Constrained Microcontrollers",
-        "heat_score": 11.5,
-        "field_rank": 16,
-        "badges": []
-      },
-      {
-        "paper_id": "2602.18140",
-        "title": "Flexi-NeurA: A Flexible Neuromorphic Accelerator with Adaptive Bit-Precision Exploration for Edge Devices",
-        "heat_score": 11.5,
-        "field_rank": 17,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.13354",
-        "title": "SupraSNN: Exploiting Synapse-Level Parallelism in Spiking Neural Network Accelerators through Co-Optimized Mapping and Scheduling",
-        "heat_score": 11.5,
-        "field_rank": 18,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.13560",
-        "title": "ReSCom: A Reconfigurable Spiking Neural Network Accelerator Using Stochastic Computing",
-        "heat_score": 11.5,
-        "field_rank": 19,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.06159",
-        "title": "ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training",
-        "heat_score": 11.5,
-        "field_rank": 20,
-        "badges": []
-      }
-    ],
     "cs.RO": [
       {
-        "paper_id": "2606.20962",
-        "title": "Heterogeneous Policy Networks for Composite Robot Team Communication and Coordination",
-        "heat_score": 60.5,
+        "paper_id": "2505.18334",
+        "title": "CoopReflect: Towards Natural Language Communication for Cooperative Autonomous Driving via Multi-Agent Learning",
+        "heat_score": 62.0,
         "field_rank": 1,
         "badges": [
           "Hot",
@@ -2860,17 +3219,17 @@
         ]
       },
       {
-        "paper_id": "2508.17464",
-        "title": "Evolutionary Brain-Body Co-Optimization Consistently Fails to Select for Morphological Potential",
-        "heat_score": 56.6,
+        "paper_id": "2510.18085",
+        "title": "R2BC: Multi-Agent Imitation Learning from Single-Agent Demonstrations",
+        "heat_score": 53.3,
         "field_rank": 2,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2505.18334",
-        "title": "CoopReflect: Towards Natural Language Communication for Cooperative Autonomous Driving via Multi-Agent Learning",
+        "paper_id": "2508.17464",
+        "title": "Evolutionary Brain-Body Co-Optimization Consistently Fails to Select for Morphological Potential",
         "heat_score": 53.0,
         "field_rank": 3,
         "badges": [
@@ -2881,7 +3240,7 @@
         "paper_id": "2410.18777",
         "title": "Online path planning for kinematic-constrained UAVs in a dynamic environment based on a Differential Evolution algorithm",
         "heat_score": 51.5,
-        "field_rank": 5,
+        "field_rank": 6,
         "badges": [
           "Hot"
         ]
@@ -2890,16 +3249,16 @@
         "paper_id": "2607.00272",
         "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
         "heat_score": 51.5,
-        "field_rank": 4,
+        "field_rank": 5,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2510.18085",
-        "title": "R2BC: Multi-Agent Imitation Learning from Single-Agent Demonstrations",
+        "paper_id": "2606.20962",
+        "title": "Heterogeneous Policy Networks for Composite Robot Team Communication and Coordination",
         "heat_score": 51.5,
-        "field_rank": 6,
+        "field_rank": 4,
         "badges": [
           "Hot"
         ]
@@ -2928,22 +3287,22 @@
         "badges": []
       },
       {
-        "paper_id": "2606.03047",
-        "title": "ModuLoop : Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control",
+        "paper_id": "2606.06041",
+        "title": "Sample-efficient Low-level Motion Planning for Robotic Manipulation Tasks via Zero-shot Transfer Learning",
         "heat_score": 37.64,
         "field_rank": 10,
         "badges": []
       },
       {
-        "paper_id": "2606.06041",
-        "title": "Sample-efficient Low-level Motion Planning for Robotic Manipulation Tasks via Zero-shot Transfer Learning",
-        "heat_score": 36.74,
+        "paper_id": "2511.04758",
+        "title": "ScheduleStream: Temporal Planning with Samplers for GPU-Accelerated Multi-Arm Task and Motion Planning &amp; Scheduling",
+        "heat_score": 37.64,
         "field_rank": 11,
         "badges": []
       },
       {
-        "paper_id": "2511.04758",
-        "title": "ScheduleStream: Temporal Planning with Samplers for GPU-Accelerated Multi-Arm Task and Motion Planning &amp; Scheduling",
+        "paper_id": "2606.03047",
+        "title": "ModuLoop : Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control",
         "heat_score": 36.74,
         "field_rank": 12,
         "badges": []
@@ -2951,7 +3310,7 @@
       {
         "paper_id": "2608.00747",
         "title": "When Prompts Control Robots: Prompt Injection Attacks in Multi-Agent Robotic Systems",
-        "heat_score": 31.13,
+        "heat_score": 30.23,
         "field_rank": 13,
         "badges": []
       },
@@ -3104,19 +3463,28 @@
     ],
     "q-bio.NC": [
       {
+        "paper_id": "2510.21742",
+        "title": "Statistics of correlations in nonlinear recurrent neural networks",
+        "heat_score": 51.5,
+        "field_rank": 2,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
         "paper_id": "2506.23546",
         "title": "Neural Langevin Machine: a local asymmetric learning rule can be creative",
-        "heat_score": 54.2,
+        "heat_score": 51.5,
         "field_rank": 1,
         "badges": [
           "Hot"
         ]
       },
       {
-        "paper_id": "2510.21742",
-        "title": "Statistics of correlations in nonlinear recurrent neural networks",
-        "heat_score": 51.5,
-        "field_rank": 2,
+        "paper_id": "2508.11646",
+        "title": "What should we forget? A computational model of memory consolidation",
+        "heat_score": 13.9,
+        "field_rank": 3,
         "badges": [
           "Hot"
         ]
@@ -3155,15 +3523,6 @@
         "heat_score": 13.0,
         "field_rank": 8,
         "badges": []
-      },
-      {
-        "paper_id": "2508.11646",
-        "title": "What should we forget? A computational model of memory consolidation",
-        "heat_score": 13.0,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
       },
       {
         "paper_id": "2309.02332",
@@ -3305,7 +3664,7 @@
       {
         "paper_id": "2409.01147",
         "title": "Memoryless Algorithmic Collusion: Sure to Fail, Slow to Fall",
-        "heat_score": 13.0,
+        "heat_score": 20.2,
         "field_rank": 1,
         "badges": [
           "Hot"
@@ -3340,31 +3699,6 @@
         "badges": []
       }
     ],
-    "econ.GN": [
-      {
-        "paper_id": "2608.12363",
-        "title": "EU-ETS under attack? The impact of carbon price suppression on the decarbonization of the power sector",
-        "heat_score": 13.0,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.14713",
-        "title": "Does Multi-Agent Debate Improve AI Feedback on Research Papers?",
-        "heat_score": 11.5,
-        "field_rank": 2,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.17397",
-        "title": "Designing Recommendation Exposure and Favorite Lists: A Field Experiment in a Spot-Work Platform",
-        "heat_score": 11.5,
-        "field_rank": 3,
-        "badges": []
-      }
-    ],
     "eess.SP": [
       {
         "paper_id": "2608.13394",
@@ -3395,13 +3729,6 @@
         "heat_score": 11.5,
         "field_rank": 4,
         "badges": []
-      },
-      {
-        "paper_id": "2605.23481",
-        "title": "Optimal Design Framework for Distributed Array Using Magnetically-Actuated Satellite Swarm",
-        "heat_score": 11.5,
-        "field_rank": 5,
-        "badges": []
       }
     ],
     "cs.MM": [
@@ -3426,259 +3753,6 @@
         "title": "What Would You Click? Personalized Video Thumbnail Generation with Preference-aware Highlight Retrieval",
         "heat_score": 11.5,
         "field_rank": 3,
-        "badges": []
-      }
-    ],
-    "cs.DB": [
-      {
-        "paper_id": "2602.13812",
-        "title": "DTBench: A Synthetic Benchmark for Document-to-Table Extraction",
-        "heat_score": 53.3,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.26474",
-        "title": "Generalized Range Filtering Approximate Nearest Neighbor Search: Containment and Overlap [Technical Report]",
-        "heat_score": 52.4,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.23986",
-        "title": "MemForest: An Efficient Agent Memory System with Hierarchical Temporal Indexing",
-        "heat_score": 52.4,
-        "field_rank": 3,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2512.22838",
-        "title": "OrchANN: Hierarchical Orchestration for Skewed Out-of-Core Vector Search",
-        "heat_score": 51.5,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.07843",
-        "title": "RACT: Retrieval Augmented Column-Table Learning and Prediction for Multi-Table Schema Matching",
-        "heat_score": 51.5,
-        "field_rank": 5,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.11889",
-        "title": "DexterSQL: Deep Schema Exploration and Rule-based Correction for Text-to-SQL Generation",
-        "heat_score": 13.0,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.05441",
-        "title": "Filtered Vector Search in a Disaggregated Lakehouse: Composing Table-Format Pruning with Per-File ANN",
-        "heat_score": 13.0,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.02376",
-        "title": "Token-Native Storage: Read and Write in your Agent's Language",
-        "heat_score": 13.0,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.03487",
-        "title": "RAG-Stack: Co-Optimizing RAG Serving Performance and Quality",
-        "heat_score": 13.0,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.26520",
-        "title": "A Graph-Native Bitemporal Memory Store for Conversational AI Agents",
-        "heat_score": 13.0,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.15576",
-        "title": "Efficient and Effective In-place Graph-based Vector Index Updates",
-        "heat_score": 11.5,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2512.11001",
-        "title": "Rethinking Query Optimization for Multi-Agent Systems [Vision]",
-        "heat_score": 11.5,
-        "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.03501",
-        "title": "STRATOS: Bridging the Symbolic-to-Numeric Gap in Spatio-Temporal Text-to-SQL for Meteorological Data",
-        "heat_score": 11.5,
-        "field_rank": 13,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.02338",
-        "title": "HNSW with Accuracy Guarantees Using Graph Spanners -- A Technical Report",
-        "heat_score": 11.5,
-        "field_rank": 14,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.00728",
-        "title": "When to Repair a Graph ANN Index: Navigability-Signal-Triggered Local Repair Protects Tail Recall Under Bursty Churn",
-        "heat_score": 11.5,
-        "field_rank": 15,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.00768",
-        "title": "RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search",
-        "heat_score": 11.5,
-        "field_rank": 16,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.29823",
-        "title": "Experience Graphs: The Data Foundation for Self-Improving Agents",
-        "heat_score": 11.5,
-        "field_rank": 17,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.28062",
-        "title": "Single and Multi Truth Data Fusion using Large Language Models",
-        "heat_score": 11.5,
-        "field_rank": 18,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.26465",
-        "title": "3D Spatial Pattern Matching",
-        "heat_score": 11.5,
-        "field_rank": 19,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.24204",
-        "title": "Unified Dominance Graph for Interval-Predicate Approximate Nearest Neighbor Search",
-        "heat_score": 11.5,
-        "field_rank": 20,
-        "badges": []
-      }
-    ],
-    "cs.NI": [
-      {
-        "paper_id": "2505.21550",
-        "title": "Position: Collaborative Agentic AI Needs Interoperability Across Ecosystems",
-        "heat_score": 60.5,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
-        "paper_id": "2504.18902",
-        "title": "Transformer-Empowered Actor-Critic Reinforcement Learning for Sequence-Aware Service Function Chain Partitioning",
-        "heat_score": 51.5,
-        "field_rank": 2,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2605.24992",
-        "title": "Scaling up Energy-Aware Multi-Agent Reinforcement Learning for Mission-Oriented Drone Networks with Individual Reward",
-        "heat_score": 36.74,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.20570",
-        "title": "Infrastructure for the Agentic Web: Gap Analysis and Architecture from the Agentverse Platform",
-        "heat_score": 25.02,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2608.10714",
-        "title": "Conversational Orchestration for Organic 6G",
-        "heat_score": 13.0,
-        "field_rank": 5,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.26352",
-        "title": "Pramana: A Composable, Domain-Specific Backend for Empirical Networking Research",
-        "heat_score": 13.0,
-        "field_rank": 6,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.22109",
-        "title": "Predictive Lightweight MARL for Resilient Coverage in Sparse-Signaling Aerial Networks",
-        "heat_score": 13.0,
-        "field_rank": 7,
-        "badges": []
-      },
-      {
-        "paper_id": "2512.05207",
-        "title": "Exploiting the Alternatives: Coordinated Learning via Hierarchical RL for Dynamic VNEAP",
-        "heat_score": 13.0,
-        "field_rank": 8,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.05975",
-        "title": "MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation",
-        "heat_score": 11.5,
-        "field_rank": 9,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.28342",
-        "title": "Operating Regimes of Decentralized Learning Under Mobility and Bandwidth Constraints",
-        "heat_score": 11.5,
-        "field_rank": 10,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.20573",
-        "title": "AONA: A Comprehensive Architecture and Workflow Design for Global Agentic Collaboration",
-        "heat_score": 11.5,
-        "field_rank": 11,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.22312",
-        "title": "SHACR: A Graph-Augmented Semi-Autonomous Framework for Multi-Class Conflict Resolution in Smart Home IoT Automation",
-        "heat_score": 11.5,
-        "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.06261",
-        "title": "DAST: A VLM-LLM Framework for Cross-Interface Anomaly Detection in O-RAN",
-        "heat_score": 11.5,
-        "field_rank": 13,
-        "badges": []
-      },
-      {
-        "paper_id": "2605.25431",
-        "title": "Mode 0: A New 3GPP V2X Resource Allocation Category for Roadside Computing Unit-Assisted Safety Communication",
-        "heat_score": 11.5,
-        "field_rank": 14,
         "badges": []
       }
     ],
@@ -3713,45 +3787,6 @@
         "title": "Self-Regulation through Communication in Evolved Neural Agents",
         "heat_score": 11.5,
         "field_rank": 3,
-        "badges": []
-      }
-    ],
-    "stat.ML": [
-      {
-        "paper_id": "2608.05230",
-        "title": "Quality Diversity for Reliable Data Driven Time-Use Optimization",
-        "heat_score": 13.0,
-        "field_rank": 2,
-        "badges": []
-      },
-      {
-        "paper_id": "1706.02795",
-        "title": "A Deep Causal Inference Approach to Measuring the Effects of Forming Group Loans in Online Non-profit Microfinance Platform",
-        "heat_score": 13.0,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2606.18520",
-        "title": "Compact Geometric Representations of Hierarchies",
-        "heat_score": 11.5,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2602.03970",
-        "title": "Statistical Guarantees for Reasoning Probes on Looped Boolean Circuits",
-        "heat_score": 11.5,
-        "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2605.26973",
-        "title": "Signal-to-Noise Ratio and Sample Size Govern Representational Alignment in Neural Networks",
-        "heat_score": 11.5,
-        "field_rank": 5,
         "badges": []
       }
     ],
@@ -3825,13 +3860,6 @@
         ]
       },
       {
-        "paper_id": "2403.18591",
-        "title": "Safety Verification of Wait-Only Non-Blocking Broadcast Protocols",
-        "heat_score": 13.9,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
         "paper_id": "2608.01499",
         "title": "Alternating-Time Temporal Logic with Mean-Payoff Guarantees",
         "heat_score": 13.0,
@@ -3839,9 +3867,16 @@
         "badges": []
       },
       {
+        "paper_id": "2403.18591",
+        "title": "Safety Verification of Wait-Only Non-Blocking Broadcast Protocols",
+        "heat_score": 13.0,
+        "field_rank": 3,
+        "badges": []
+      },
+      {
         "paper_id": "2607.21210",
         "title": "Explainable Belief Harmonization under Dynamic Epistemic Partitions",
-        "heat_score": 13.0,
+        "heat_score": 11.5,
         "field_rank": 5,
         "badges": []
       },
@@ -3892,13 +3927,6 @@
         "title": "Provably Auditable and Safe LLM Agents from Human-Authored Ontologies",
         "heat_score": 11.5,
         "field_rank": 12,
-        "badges": []
-      },
-      {
-        "paper_id": "2605.23321",
-        "title": "Arrow-Type Impossibility for Genuinely Modal Judgments",
-        "heat_score": 11.5,
-        "field_rank": 13,
         "badges": []
       }
     ],
@@ -3989,19 +4017,18 @@
     ],
     "cs.DL": [
       {
-        "paper_id": "2606.31081",
-        "title": "Usage frequency and application variety of research methods in library and information science: Continuous investigation from 1991 to 2021",
-        "heat_score": 60.5,
-        "field_rank": 1,
-        "badges": [
-          "Hot",
-          "Rising"
-        ]
-      },
-      {
         "paper_id": "2606.24098",
         "title": "Is Higher Team Gender Diversity Correlated with Better Scientific Impact?",
         "heat_score": 58.7,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
+        "paper_id": "2606.31081",
+        "title": "Usage frequency and application variety of research methods in library and information science: Continuous investigation from 1991 to 2021",
+        "heat_score": 51.5,
         "field_rank": 2,
         "badges": [
           "Hot"
@@ -4010,14 +4037,14 @@
       {
         "paper_id": "2606.25320",
         "title": "Data-Driven Evolution of Library and Information Science Research Methods (1990-2022): A Perspective Based on Fine-grained Method Entities",
-        "heat_score": 44.12,
+        "heat_score": 48.62,
         "field_rank": 3,
         "badges": []
       },
       {
         "paper_id": "2606.24897",
         "title": "Invisible to humans, visible to machines: a preregistered audit of Unicode fidelity across four biomedical bibliographic APIs",
-        "heat_score": 31.5,
+        "heat_score": 33.3,
         "field_rank": 4,
         "badges": []
       },
@@ -4031,7 +4058,7 @@
       {
         "paper_id": "2606.25307",
         "title": "Measuring Research Difficulty of Academic Papers: A Case Study in Natural Language Processing",
-        "heat_score": 24.12,
+        "heat_score": 25.02,
         "field_rank": 6,
         "badges": []
       },
@@ -4111,30 +4138,31 @@
         "heat_score": 11.5,
         "field_rank": 17,
         "badges": []
-      },
-      {
-        "paper_id": "2605.23586",
-        "title": "Tracking a Decade of Research at the University of Nigeria, Nsukka: A Scientometric Analysis (2014-2023)",
-        "heat_score": 11.5,
-        "field_rank": 18,
-        "badges": []
       }
     ],
     "cs.DS": [
       {
+        "paper_id": "2405.19504",
+        "title": "MUVERA: Multi-Vector Retrieval via Fixed Dimensional Encodings",
+        "heat_score": 20.5,
+        "field_rank": 1,
+        "badges": [
+          "Hot",
+          "Rising"
+        ]
+      },
+      {
         "paper_id": "2607.28136",
         "title": "Extended Depth-First Representations of $k^2$-trees",
         "heat_score": 13.0,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
+        "field_rank": 2,
+        "badges": []
       },
       {
         "paper_id": "2604.02395",
         "title": "Complexity of Eliminating (Majority) Illusion in Directed Networks",
-        "heat_score": 13.0,
-        "field_rank": 2,
+        "heat_score": 11.5,
+        "field_rank": 3,
         "badges": []
       },
       {
@@ -4150,56 +4178,49 @@
         "heat_score": 11.5,
         "field_rank": 5,
         "badges": []
-      },
-      {
-        "paper_id": "2405.19504",
-        "title": "MUVERA: Multi-Vector Retrieval via Fixed Dimensional Encodings",
-        "heat_score": 11.5,
-        "field_rank": 3,
-        "badges": []
       }
     ],
     "quant-ph": [
       {
-        "paper_id": "2607.25865",
-        "title": "OmniQEC: discovering practical quantum error-correcting codes by an AI scientist",
-        "heat_score": 53.0,
+        "paper_id": "2606.24933",
+        "title": "Self-Modulating Quantum Fast-Weight Programmers for Efficient Adaptive Sequential Learning",
+        "heat_score": 53.3,
         "field_rank": 1,
         "badges": [
           "Hot"
         ]
       },
       {
+        "paper_id": "2607.25865",
+        "title": "OmniQEC: discovering practical quantum error-correcting codes by an AI scientist",
+        "heat_score": 53.0,
+        "field_rank": 2,
+        "badges": []
+      },
+      {
         "paper_id": "2512.09586",
         "title": "Graph-Based Bayesian Optimization for Quantum Circuit Architecture Search with Uncertainty Calibrated Surrogates",
         "heat_score": 51.5,
-        "field_rank": 2,
+        "field_rank": 3,
         "badges": []
       },
       {
         "paper_id": "2601.10034",
         "title": "Minimal Decision Dynamics and Contextual Probability: A Quantum Tug-of-War Model",
         "heat_score": 51.5,
-        "field_rank": 3,
-        "badges": []
-      },
-      {
-        "paper_id": "2606.24933",
-        "title": "Self-Modulating Quantum Fast-Weight Programmers for Efficient Adaptive Sequential Learning",
-        "heat_score": 51.5,
         "field_rank": 4,
-        "badges": []
-      },
-      {
-        "paper_id": "2607.02363",
-        "title": "Stable Self-Modulating Quantum Fast-Weight Programmers with Bounded Memory Gates",
-        "heat_score": 36.74,
-        "field_rank": 5,
         "badges": []
       },
       {
         "paper_id": "2606.24932",
         "title": "Recursive QLSTM with Dynamic Variational Quantum Circuit Adaptation",
+        "heat_score": 37.64,
+        "field_rank": 5,
+        "badges": []
+      },
+      {
+        "paper_id": "2607.02363",
+        "title": "Stable Self-Modulating Quantum Fast-Weight Programmers with Bounded Memory Gates",
         "heat_score": 36.74,
         "field_rank": 6,
         "badges": []
@@ -4249,7 +4270,7 @@
       {
         "paper_id": "2510.15747",
         "title": "GLP: A Grassroots, Multiagent, Concurrent, Logic Programming Language for AI (Full Version)",
-        "heat_score": 51.5,
+        "heat_score": 56.9,
         "field_rank": 2,
         "badges": []
       },
@@ -4263,7 +4284,7 @@
       {
         "paper_id": "2607.21189",
         "title": "GLP: A Grassroots, Multiagent, Concurrent, Logic Programming Language for AI",
-        "heat_score": 13.0,
+        "heat_score": 11.5,
         "field_rank": 4,
         "badges": []
       },
@@ -4286,24 +4307,6 @@
         "title": "Mostly Automatic Translation of Language Interpreters from C to Safe Rust",
         "heat_score": 11.5,
         "field_rank": 7,
-        "badges": []
-      }
-    ],
-    "math.NA": [
-      {
-        "paper_id": "2511.07836",
-        "title": "Hyperellipsoid Density Sampling: Exploitative Sequences to Accelerate High-Dimensional Optimization",
-        "heat_score": 52.4,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
-        "paper_id": "2607.22211",
-        "title": "Closed-Loop Generative Selection: Convergence, Memory, and Noisy Oracles",
-        "heat_score": 13.0,
-        "field_rank": 2,
         "badges": []
       }
     ],
@@ -4343,20 +4346,20 @@
     ],
     "math.AG": [
       {
-        "paper_id": "2605.29151",
-        "title": "Real-rootedness of the Poincar\\'e polynomials of $\\overline{\\mathcal M}_{0,n}$: an AI-assisted proof",
-        "heat_score": 12.4,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
-      {
         "paper_id": "2607.17090",
         "title": "Expressivity of Shallow Neural Networks Over Finite Fields",
         "heat_score": 11.5,
         "field_rank": 2,
         "badges": []
+      },
+      {
+        "paper_id": "2605.29151",
+        "title": "Real-rootedness of the Poincar\\'e polynomials of $\\overline{\\mathcal M}_{0,n}$: an AI-assisted proof",
+        "heat_score": 11.5,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
       },
       {
         "paper_id": "2605.25271",
@@ -4367,15 +4370,6 @@
       }
     ],
     "cs.IT": [
-      {
-        "paper_id": "2512.00711",
-        "title": "Cross-Domain Federated Semantic Communication with Global Representation Alignment and Domain-Aware Aggregation",
-        "heat_score": 12.4,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
-      },
       {
         "paper_id": "2607.17762",
         "title": "Autonomous Discovery of Wireless Communications Algorithms",
@@ -4396,6 +4390,15 @@
         "heat_score": 11.5,
         "field_rank": 4,
         "badges": []
+      },
+      {
+        "paper_id": "2512.00711",
+        "title": "Cross-Domain Federated Semantic Communication with Global Representation Alignment and Domain-Aware Aggregation",
+        "heat_score": 11.5,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
       }
     ],
     "physics.plasm-ph": [
@@ -4479,20 +4482,20 @@
     ],
     "cs.CG": [
       {
+        "paper_id": "2305.06315",
+        "title": "NervePool: A Simplicial Pooling Layer",
+        "heat_score": 12.4,
+        "field_rank": 1,
+        "badges": [
+          "Hot"
+        ]
+      },
+      {
         "paper_id": "2606.30530",
         "title": "Computing the Integral R2 Indicator by Perspective Mapping and Box Decomposition",
         "heat_score": 11.5,
         "field_rank": 2,
         "badges": []
-      },
-      {
-        "paper_id": "2305.06315",
-        "title": "NervePool: A Simplicial Pooling Layer",
-        "heat_score": 11.5,
-        "field_rank": 1,
-        "badges": [
-          "Hot"
-        ]
       }
     ],
     "q-bio.BM": [
@@ -4544,9 +4547,11 @@
       {
         "paper_id": "2410.04907",
         "title": "Decomposition Polyhedra of Piecewise Linear Functions",
-        "heat_score": 51.5,
+        "heat_score": 60.5,
         "field_rank": 1,
-        "badges": []
+        "badges": [
+          "Rising"
+        ]
       }
     ],
     "nlin.CD": [
@@ -4571,16 +4576,7 @@
       {
         "paper_id": "2605.30708",
         "title": "Agnosiophobia in a virtual agent: behavioral and dynamical architecture in Lenia",
-        "heat_score": 52.4,
-        "field_rank": 1,
-        "badges": []
-      }
-    ],
-    "physics.app-ph": [
-      {
-        "paper_id": "2605.22827",
-        "title": "Computable Fairness: Boltzmann-Softmax Control for AI Resource Allocation",
-        "heat_score": 11.5,
+        "heat_score": 51.5,
         "field_rank": 1,
         "badges": []
       }
