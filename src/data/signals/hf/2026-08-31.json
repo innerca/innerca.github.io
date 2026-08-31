@@ -1,31 +1,31 @@
 {
   "snapshot_date": "2026-08-31",
-  "fetched_at": "2026-08-31T11:59:30Z",
-  "paper_count": 25,
+  "fetched_at": "2026-08-31T14:57:14Z",
+  "paper_count": 27,
   "papers": [
     {
       "arxiv_id": "2608.28281",
       "title": "LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering",
-      "upvotes": 75,
+      "upvotes": 78,
       "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2608.18524",
       "title": "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents",
-      "upvotes": 58,
+      "upvotes": 59,
       "published_at": "2026-08-19T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2608.28122",
-      "title": "Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities",
-      "upvotes": 44,
-      "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2608.27550",
       "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
-      "upvotes": 41,
+      "upvotes": 51,
       "published_at": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2608.28122",
+      "title": "Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities",
+      "upvotes": 48,
+      "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2608.27549",
@@ -36,7 +36,7 @@
     {
       "arxiv_id": "2608.26582",
       "title": "J-Zero: Unified Challenger--Solver--Judge Co-Evolution from Zero Data",
-      "upvotes": 33,
+      "upvotes": 34,
       "published_at": "2026-08-27T00:00:00.000Z"
     },
     {
@@ -46,27 +46,39 @@
       "published_at": "2026-08-27T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2608.28460",
+      "title": "LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation",
+      "upvotes": 24,
+      "published_at": "2026-08-28T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2608.28476",
       "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
       "upvotes": 23,
       "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2608.28460",
-      "title": "LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation",
-      "upvotes": 21,
-      "published_at": "2026-08-28T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2608.27370",
       "title": "Puro-2B: Poor Lab's Qwen2-1.5B Trained on RTX 5090 within $5090",
-      "upvotes": 16,
+      "upvotes": 23,
       "published_at": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2608.23478",
+      "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+      "upvotes": 21,
+      "published_at": "2026-08-24T00:00:00.000Z"
     },
     {
       "arxiv_id": "2608.28478",
       "title": "Blind Men and the Elephant: Probing the Epistemic Myopia of LLMs under Long-Tail Divergent Knowledge",
       "upvotes": 15,
+      "published_at": "2026-08-28T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2608.28192",
+      "title": "Locate Anything in Videos: Rethinking Efficient Generative Spatio-Temporal Video Grounding",
+      "upvotes": 14,
       "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
@@ -76,16 +88,22 @@
       "published_at": "2026-08-25T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2608.27763",
+      "title": "Fast Weight Attention for Continual Learning",
+      "upvotes": 13,
+      "published_at": "2026-08-27T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2608.25417",
       "title": "Paint What You See: Benchmarking Dexterous Visual Tool Use in Multimodal Agents",
       "upvotes": 13,
       "published_at": "2026-08-26T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2608.28192",
-      "title": "Locate Anything in Videos: Rethinking Efficient Generative Spatio-Temporal Video Grounding",
-      "upvotes": 12,
-      "published_at": "2026-08-28T00:00:00.000Z"
+      "arxiv_id": "2608.26794",
+      "title": "Ring Forcing: Towards Precise Long-Term Memory for Autoregressive Video Diffusion",
+      "upvotes": 10,
+      "published_at": "2026-08-27T00:00:00.000Z"
     },
     {
       "arxiv_id": "2608.24115",
@@ -94,27 +112,15 @@
       "published_at": "2026-08-25T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2608.27763",
-      "title": "Fast Weight Attention for Continual Learning",
-      "upvotes": 9,
-      "published_at": "2026-08-27T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2608.26794",
-      "title": "Ring Forcing: Towards Precise Long-Term Memory for Autoregressive Video Diffusion",
-      "upvotes": 9,
-      "published_at": "2026-08-27T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2608.23478",
-      "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
-      "upvotes": 7,
-      "published_at": "2026-08-24T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2608.28549",
       "title": "Video Generative Models as Geometry Learner",
-      "upvotes": 5,
+      "upvotes": 6,
+      "published_at": "2026-08-28T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2608.28444",
+      "title": "Sliding-window beats linear attention",
+      "upvotes": 4,
       "published_at": "2026-08-28T00:00:00.000Z"
     },
     {
@@ -136,6 +142,12 @@
       "published_at": "2026-08-26T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2608.23149",
+      "title": "Language Chain in Alignment: Cross-lingual Ranking Preference Optimization",
+      "upvotes": 3,
+      "published_at": "2026-08-24T11:54:36.000Z"
+    },
+    {
       "arxiv_id": "2608.20965",
       "title": "Training, learning and inference: unified dynamics of neural systems",
       "upvotes": 3,
@@ -148,10 +160,10 @@
       "published_at": "2026-08-26T04:58:40.000Z"
     },
     {
-      "arxiv_id": "2608.23149",
-      "title": "Language Chain in Alignment: Cross-lingual Ranking Preference Optimization",
-      "upvotes": 2,
-      "published_at": "2026-08-24T11:54:36.000Z"
+      "arxiv_id": "2608.26175",
+      "title": "Lost in Compression: A Controlled Cross-Lingual Audit of Extractive Prompt Compressors",
+      "upvotes": 1,
+      "published_at": "2026-07-27T00:00:00.000Z"
     }
   ]
 }
