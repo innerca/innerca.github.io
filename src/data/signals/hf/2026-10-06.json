@@ -1,36 +1,54 @@
 {
   "snapshot_date": "2026-10-06",
-  "fetched_at": "2026-10-06T12:21:26Z",
-  "paper_count": 48,
+  "fetched_at": "2026-10-06T14:02:14Z",
+  "paper_count": 50,
   "papers": [
     {
       "arxiv_id": "2610.05608",
       "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
-      "upvotes": 99,
+      "upvotes": 103,
       "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04198",
       "title": "ALoDLM: Adaptively Looped Diffusion Language Models",
-      "upvotes": 37,
+      "upvotes": 41,
       "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05162",
       "title": "Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy",
-      "upvotes": 18,
+      "upvotes": 23,
       "published_at": "2026-10-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.03120",
+      "title": "In-Distribution Forcing for Long Video Generation at Test Time",
+      "upvotes": 18,
+      "published_at": "2026-10-02T00:00:00.000Z"
     },
     {
       "arxiv_id": "2609.37267",
       "title": "Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym",
-      "upvotes": 14,
+      "upvotes": 17,
       "published_at": "2026-09-29T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06577",
+      "title": "Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation",
+      "upvotes": 15,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05076",
+      "title": "Self-Generated Feedback Destabilizes Test-Time Training: A Causal Decomposition of Long-Horizon Adaptation",
+      "upvotes": 15,
+      "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.00923",
       "title": "CANOPY: Adaptive-Granularity Evidence Compression for Multimodal RAG",
-      "upvotes": 13,
+      "upvotes": 14,
       "published_at": "2026-10-01T00:00:00.000Z"
     },
     {
@@ -46,16 +64,28 @@
       "published_at": "2026-09-21T16:55:24.000Z"
     },
     {
-      "arxiv_id": "2610.03120",
-      "title": "In-Distribution Forcing for Long Video Generation at Test Time",
+      "arxiv_id": "2609.36099",
+      "title": "Data Unlearning via Inverse Distillation",
       "upvotes": 11,
-      "published_at": "2026-10-02T00:00:00.000Z"
+      "published_at": "2026-09-28T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.06577",
-      "title": "Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation",
-      "upvotes": 10,
+      "arxiv_id": "2610.06833",
+      "title": "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points",
+      "upvotes": 11,
       "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2609.39490",
+      "title": "OmniReasoning: Pushing the Limits of Audio-Visual Joint Reasoning",
+      "upvotes": 10,
+      "published_at": "2026-09-30T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05107",
+      "title": "SearchJev: A Fast and Calibrated System-1 Model for Search Agents",
+      "upvotes": 10,
+      "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04929",
@@ -64,56 +94,32 @@
       "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.05107",
-      "title": "SearchJev: A Fast and Calibrated System-1 Model for Search Agents",
-      "upvotes": 9,
-      "published_at": "2026-10-04T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.06833",
-      "title": "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points",
-      "upvotes": 9,
+      "arxiv_id": "2610.05870",
+      "title": "Certification of Real Images through Calibrated Content Authentication",
+      "upvotes": 10,
       "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.39490",
-      "title": "OmniReasoning: Pushing the Limits of Audio-Visual Joint Reasoning",
-      "upvotes": 8,
-      "published_at": "2026-09-30T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.36099",
-      "title": "Data Unlearning via Inverse Distillation",
-      "upvotes": 8,
-      "published_at": "2026-09-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05894",
       "title": "Noise Out, Bias In: Targeted Bias Injection in Diffusion Language Models via Closed-Loop Activation Steering",
-      "upvotes": 8,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.05870",
-      "title": "Certification of Real Images through Calibrated Content Authentication",
-      "upvotes": 8,
+      "upvotes": 9,
       "published_at": "2026-10-05T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05719",
       "title": "When to Switch: Reliable Action-Chunk Extension for Vision-Language-Action Models",
-      "upvotes": 8,
+      "upvotes": 9,
       "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.05076",
-      "title": "Self-Generated Feedback Destabilizes Test-Time Training: A Causal Decomposition of Long-Horizon Adaptation",
-      "upvotes": 7,
-      "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.06617",
       "title": "RealtimeWAM: One-Step Asynchronous World Action Models",
+      "upvotes": 7,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06851",
+      "title": "Base Models Can Reason By Taking a Cue From Training Data",
       "upvotes": 7,
       "published_at": "2026-10-05T00:00:00.000Z"
     },
@@ -124,26 +130,56 @@
       "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.06851",
-      "title": "Base Models Can Reason By Taking a Cue From Training Data",
+      "arxiv_id": "2610.04616",
+      "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
       "upvotes": 6,
-      "published_at": "2026-10-05T00:00:00.000Z"
+      "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
       "arxiv_id": "2609.39420",
       "title": "QuantCode Model: Specializing Language Models for Executable Algorithmic Trading Code",
-      "upvotes": 5,
+      "upvotes": 6,
       "published_at": "2026-09-30T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.05622",
-      "title": "UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents",
-      "upvotes": 4,
-      "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04137",
       "title": "Dynamic Harness Search: Building Multi-Agent Systems Per-Query via Prediction",
+      "upvotes": 6,
+      "published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05622",
+      "title": "UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents",
+      "upvotes": 5,
+      "published_at": "2026-10-04T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06666",
+      "title": "What Matters for Latent Reasoning with Flow Matching",
+      "upvotes": 4,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.04128",
+      "title": "What Gradients Add to Text Leakage in Split Language Models, Counted per Token and per Document",
+      "upvotes": 4,
+      "published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06648",
+      "title": "Representation-Space MMD for Diffusion Language Models",
+      "upvotes": 4,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.02150",
+      "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+      "upvotes": 4,
+      "published_at": "2026-10-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.03872",
+      "title": "Training Numerical Intelligence via Auto-Diagnosis and Skill Discovery",
       "upvotes": 4,
       "published_at": "2026-10-02T00:00:00.000Z"
     },
@@ -154,28 +190,16 @@
       "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.04128",
-      "title": "What Gradients Add to Text Leakage in Split Language Models, Counted per Token and per Document",
+      "arxiv_id": "2610.05538",
+      "title": "LiFT: Loop Flow Transformers",
       "upvotes": 3,
-      "published_at": "2026-10-02T00:00:00.000Z"
+      "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.06648",
-      "title": "Representation-Space MMD for Diffusion Language Models",
+      "arxiv_id": "2609.35751",
+      "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
       "upvotes": 3,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.04616",
-      "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
-      "upvotes": 3,
-      "published_at": "2026-10-03T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.02150",
-      "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
-      "upvotes": 3,
-      "published_at": "2026-10-01T00:00:00.000Z"
+      "published_at": "2026-09-28T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05033",
@@ -184,10 +208,10 @@
       "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.03872",
-      "title": "Training Numerical Intelligence via Auto-Diagnosis and Skill Discovery",
+      "arxiv_id": "2610.02191",
+      "title": "The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models",
       "upvotes": 3,
-      "published_at": "2026-10-02T00:00:00.000Z"
+      "published_at": "2026-10-01T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04226",
@@ -202,10 +226,34 @@
       "published_at": "2026-09-26T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.06666",
-      "title": "What Matters for Latent Reasoning with Flow Matching",
+      "arxiv_id": "2609.37496",
+      "title": "GeoSET: Generalist Foundation Model for SAR-to-EO Image Translation",
+      "upvotes": 2,
+      "published_at": "2026-09-26T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05739",
+      "title": "HLA-WM: Hybrid Linear Attention for Long-Horizon Video World Models",
       "upvotes": 2,
       "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05879",
+      "title": "Learning to Learn a Language",
+      "upvotes": 2,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.02459",
+      "title": "OpenRUA: Robot-Use Agents Are Zero-Shot Visuomotor Policies",
+      "upvotes": 2,
+      "published_at": "2026-10-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.04047",
+      "title": "Periscope: Extending Frozen Language Models Beyond Their Context Window",
+      "upvotes": 2,
+      "published_at": "2026-10-02T00:00:00.000Z"
     },
     {
       "arxiv_id": "2605.21318",
@@ -214,16 +262,34 @@
       "published_at": "2026-10-05T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.02191",
-      "title": "The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models",
+      "arxiv_id": "2610.02999",
+      "title": "OmniConfess: Eliciting Token Confessions to Mitigate Omni-Modal Hallucination",
       "upvotes": 2,
-      "published_at": "2026-10-01T00:00:00.000Z"
+      "published_at": "2026-10-05T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2609.35751",
-      "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
+      "arxiv_id": "2609.32510",
+      "title": "GeoCR: Learning a Generalist Cloud Removal Prior from Heterogeneous Observations",
       "upvotes": 1,
-      "published_at": "2026-09-28T00:00:00.000Z"
+      "published_at": "2026-09-26T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06425",
+      "title": "SoK: Semantic Decision Engines in Network Control Loops",
+      "upvotes": 1,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2609.23136",
+      "title": "Intent Interpretation at RIC Timescales: Jev Decision Models versus Large Language Models in 6G Open RAN",
+      "upvotes": 1,
+      "published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2609.31662",
+      "title": "Learning Steadily: Accumulating Relative Point Margin Scores for Face Image Quality Assessment",
+      "upvotes": 1,
+      "published_at": "2026-09-15T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04211",
@@ -232,63 +298,9 @@
       "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.02459",
-      "title": "OpenRUA: Robot-Use Agents Are Zero-Shot Visuomotor Policies",
-      "upvotes": 1,
-      "published_at": "2026-10-01T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.04047",
-      "title": "Periscope: Extending Frozen Language Models Beyond Their Context Window",
-      "upvotes": 1,
-      "published_at": "2026-10-02T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2610.06184",
       "title": "Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models",
       "upvotes": 1,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.02999",
-      "title": "OmniConfess: Eliciting Token Confessions to Mitigate Omni-Modal Hallucination",
-      "upvotes": 1,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.06425",
-      "title": "SoK: Semantic Decision Engines in Network Control Loops",
-      "upvotes": 0,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.23136",
-      "title": "Intent Interpretation at RIC Timescales: Jev Decision Models versus Large Language Models in 6G Open RAN",
-      "upvotes": 0,
-      "published_at": "2026-10-02T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.03617",
-      "title": "DEPICT: Scoring Text-to-Image Alignment by Answer Agreement",
-      "upvotes": 0,
-      "published_at": "2026-10-02T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.31662",
-      "title": "Learning Steadily: Accumulating Relative Point Margin Scores for Face Image Quality Assessment",
-      "upvotes": 0,
-      "published_at": "2026-09-15T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.05879",
-      "title": "Learning to Learn a Language",
-      "upvotes": 0,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.06850",
-      "title": "InterMimicGen: Scaling Humanoid Loco-Manipulation through Self-Evolving Motion Imitation",
-      "upvotes": 0,
       "published_at": "2026-10-05T00:00:00.000Z"
     }
   ]
