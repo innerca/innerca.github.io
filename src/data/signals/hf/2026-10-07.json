@@ -1,18 +1,18 @@
 {
   "snapshot_date": "2026-10-07",
-  "fetched_at": "2026-10-07T12:12:16Z",
+  "fetched_at": "2026-10-07T14:19:22Z",
   "paper_count": 50,
   "papers": [
     {
       "arxiv_id": "2610.08448",
       "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
-      "upvotes": 146,
+      "upvotes": 147,
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.03543",
       "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
-      "upvotes": 55,
+      "upvotes": 59,
       "published_at": "2026-10-02T00:00:00.000Z"
     },
     {
@@ -24,26 +24,26 @@
     {
       "arxiv_id": "2610.05030",
       "title": "EVISKILL: Grounding Skill Evolution in Replayable Evidence",
-      "upvotes": 32,
+      "upvotes": 34,
       "published_at": "2026-10-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.07753",
       "title": "From Evidence to Action: How Tool-Using Agents Fail",
-      "upvotes": 29,
+      "upvotes": 30,
       "published_at": "2026-10-06T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2609.37334",
+      "title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
+      "upvotes": 23,
+      "published_at": "2026-09-29T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05140",
       "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
       "upvotes": 23,
       "published_at": "2026-10-04T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.37334",
-      "title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
-      "upvotes": 22,
-      "published_at": "2026-09-29T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05966",
@@ -70,8 +70,20 @@
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2610.05912",
+      "title": "MiniCorp: The Last Mile of the AI Agent Firm",
+      "upvotes": 11,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2610.01218",
       "title": "AGO AI Quality Gate: Evidence-First Release Decisions for Retrieval-Augmented Generation",
+      "upvotes": 10,
+      "published_at": "2026-10-01T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.00948",
+      "title": "GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution",
       "upvotes": 10,
       "published_at": "2026-10-01T00:00:00.000Z"
     },
@@ -88,16 +100,10 @@
       "published_at": "2026-09-30T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.05912",
-      "title": "MiniCorp: The Last Mile of the AI Agent Firm",
+      "arxiv_id": "2609.32921",
+      "title": "Adaptive Latent Capacity for World Models",
       "upvotes": 9,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.00948",
-      "title": "GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution",
-      "upvotes": 9,
-      "published_at": "2026-10-01T00:00:00.000Z"
+      "published_at": "2026-09-26T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.08430",
@@ -106,16 +112,16 @@
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2610.04596",
+      "title": "DiffGate: Difficulty-Gated Teacher Guidance for On-Policy Distillation",
+      "upvotes": 7,
+      "published_at": "2026-10-03T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2609.34117",
       "title": "SlimWise: Decoupling Expert Pruning Across Prefill and Decode for Efficient MoE Serving",
       "upvotes": 7,
       "published_at": "2026-09-28T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.32921",
-      "title": "Adaptive Latent Capacity for World Models",
-      "upvotes": 7,
-      "published_at": "2026-09-26T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.04933",
@@ -148,16 +154,28 @@
       "published_at": "2026-10-02T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2610.08773",
+      "title": "AdvSim2Real : Training Web Agents Against Adaptive Prompt Injection in a Web World Model",
+      "upvotes": 4,
+      "published_at": "2026-10-06T17:56:43.000Z"
+    },
+    {
       "arxiv_id": "2610.06960",
       "title": "DistScene: Object-to-Scene Distillation for 3D Scene Generation",
       "upvotes": 4,
       "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.08773",
-      "title": "AdvSim2Real : Training Web Agents Against Adaptive Prompt Injection in a Web World Model",
+      "arxiv_id": "2610.06844",
+      "title": "Learning to Read the Contextual Tokens in Diffusion Transformers",
       "upvotes": 3,
-      "published_at": "2026-10-06T17:56:43.000Z"
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.05842",
+      "title": "HLA: Expressive Hybrid Linear Attention via Chunk-Wise Dynamic Mixing",
+      "upvotes": 3,
+      "published_at": "2026-10-05T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.07588",
@@ -178,20 +196,14 @@
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.04596",
-      "title": "DiffGate: Difficulty-Gated Teacher Guidance for On-Policy Distillation",
-      "upvotes": 2,
-      "published_at": "2026-10-03T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2610.04703",
       "title": "Learning Discriminative Geometry for Drifting Models",
       "upvotes": 2,
       "published_at": "2026-10-03T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.05842",
-      "title": "HLA: Expressive Hybrid Linear Attention via Chunk-Wise Dynamic Mixing",
+      "arxiv_id": "2610.05967",
+      "title": "JLD: Perceptual Distance Through A Jacobian Lens",
       "upvotes": 2,
       "published_at": "2026-10-05T00:00:00.000Z"
     },
@@ -226,16 +238,22 @@
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.06844",
-      "title": "Learning to Read the Contextual Tokens in Diffusion Transformers",
+      "arxiv_id": "2609.35378",
+      "title": "Multilinguality in Hybrid Attention LLMs",
       "upvotes": 1,
-      "published_at": "2026-10-05T00:00:00.000Z"
+      "published_at": "2026-09-28T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2610.05967",
-      "title": "JLD: Perceptual Distance Through A Jacobian Lens",
+      "arxiv_id": "2610.05166",
+      "title": "A Safe Action Is Not Enough: Feasible-Future Decoding for Vision-Language-Action Policies",
       "upvotes": 1,
-      "published_at": "2026-10-05T00:00:00.000Z"
+      "published_at": "2026-10-06T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.08048",
+      "title": "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks",
+      "upvotes": 1,
+      "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.05954",
@@ -256,52 +274,34 @@
       "published_at": "2026-10-06T00:00:00.000Z"
     },
     {
+      "arxiv_id": "2610.07342",
+      "title": "Rationale-Guided Policy Optimization: Learning to Reason with Adaptive Rationale Scaffolding",
+      "upvotes": 0,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.01921",
+      "title": "Cross-Lingual Alignment for Decoder-Only Models using MoE Routers",
+      "upvotes": 0,
+      "published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.06847",
+      "title": "S2PD: Serial-to-Parallel Diffusion for Physically and Logically Consistent Video Generation",
+      "upvotes": 0,
+      "published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.04002",
+      "title": "Do Language Models Need a Trainable Input Embedding Table? Fixed Minimal Token Codes at 1.7B-Class Scale",
+      "upvotes": 0,
+      "published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
       "arxiv_id": "2610.06104",
       "title": "Conditional Trajectory Peaks: Single-Pass Multimodal Policies over Action Chunks",
       "upvotes": 0,
       "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.06090",
-      "title": "Execution-Aligned Progressive Noise for Consistent Asynchronous Replanning in Generative Robot Policies",
-      "upvotes": 0,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.39822",
-      "title": "Toward Real-Time VLAs: Stage-Aware Two-Step Flow Denoising and System-Level Evaluation",
-      "upvotes": 0,
-      "published_at": "2026-10-03T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2609.39870",
-      "title": "Magic-W0: A Structured World-Action Foundation Model for Physical Intelligence",
-      "upvotes": 0,
-      "published_at": "2026-10-03T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.07384",
-      "title": "WildMatch: Weakly Supervised Image Matcher Adaptation for Wildlife Re-Identification",
-      "upvotes": 0,
-      "published_at": "2026-10-05T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.08048",
-      "title": "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks",
-      "upvotes": 0,
-      "published_at": "2026-10-06T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.00417",
-      "title": "Source Identification Is Not Fitness Testing: Measuring the Limits of Synthetic-Data Attribution",
-      "upvotes": 0,
-      "published_at": "2026-09-30T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2610.08777",
-      "title": "CtrlCache: Accelerating Interactive Video World Models with Control-Aware Caching",
-      "upvotes": 0,
-      "published_at": "2026-10-06T00:00:00.000Z"
     }
   ]
 }
