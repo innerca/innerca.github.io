@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-09",
-  "fetched_at": "2026-11-09T14:31:17Z",
-  "paper_count": 27,
+  "fetched_at": "2026-11-09T17:16:52Z",
+  "paper_count": 31,
   "papers": [
     {
       "arxiv_id": "2611.08264",
@@ -12,7 +12,7 @@
     {
       "arxiv_id": "2611.03953",
       "title": "P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors",
-      "upvotes": 35,
+      "upvotes": 39,
       "published_at": "2026-11-02T20:53:15.000Z"
     },
     {
@@ -36,32 +36,50 @@
     {
       "arxiv_id": "2611.01182",
       "title": "Fast and Exact Relative-Position Attention via Structure-Aware Kernels",
-      "upvotes": 14,
+      "upvotes": 17,
       "published_at": "2026-10-31T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2611.06808",
+      "title": "LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting",
+      "upvotes": 14,
+      "published_at": "2026-11-04T00:00:00.000Z"
     },
     {
       "arxiv_id": "2611.06043",
       "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
-      "upvotes": 11,
+      "upvotes": 12,
       "published_at": "2026-11-04T06:46:50.000Z"
     },
     {
       "arxiv_id": "2611.09894",
       "title": "Video-Coder: Reinforcing Agentic Coding for Video Generation",
-      "upvotes": 10,
+      "upvotes": 11,
       "published_at": "2026-11-06T00:00:00.000Z"
     },
     {
       "arxiv_id": "2610.35959",
       "title": "AgentBaton: Efficient Model Collaboration in Agentic Tasks",
-      "upvotes": 9,
+      "upvotes": 10,
       "published_at": "2026-10-25T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2611.07025",
+      "title": "LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time",
+      "upvotes": 8,
+      "published_at": "2026-11-04T19:00:06.000Z"
     },
     {
       "arxiv_id": "2611.08290",
       "title": "AutoCompress: Automated Hardware-Guided Model Compression",
-      "upvotes": 7,
+      "upvotes": 8,
       "published_at": "2026-11-05T16:53:48.000Z"
+    },
+    {
+      "arxiv_id": "2611.09017",
+      "title": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds",
+      "upvotes": 7,
+      "published_at": "2026-11-06T00:00:00.000Z"
     },
     {
       "arxiv_id": "2611.09382",
@@ -70,10 +88,34 @@
       "published_at": "2026-11-06T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2611.09017",
-      "title": "Frontier3DBench: Benchmarking Coding Agents for 3D Creation across Objects, Scenes, and Interactive Open Worlds",
+      "arxiv_id": "2611.08175",
+      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
       "upvotes": 6,
+      "published_at": "2026-11-05T15:31:15.000Z"
+    },
+    {
+      "arxiv_id": "2611.09113",
+      "title": "Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use",
+      "upvotes": 5,
+      "published_at": "2026-11-06T07:47:25.000Z"
+    },
+    {
+      "arxiv_id": "2611.09634",
+      "title": "Steerable Multi-Objective Group-Relative Preference Optimization with Jointly Trained Low-Rank Adapters",
+      "upvotes": 4,
       "published_at": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2610.41711",
+      "title": "Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width",
+      "upvotes": 4,
+      "published_at": "2026-10-30T13:18:22.000Z"
+    },
+    {
+      "arxiv_id": "2611.01362",
+      "title": "\"PRISM\" Is Not All You Need: Cross-Topic Name Collisions and Scientific Paper Retrieval",
+      "upvotes": 4,
+      "published_at": "2026-11-01T00:00:08.000Z"
     },
     {
       "arxiv_id": "2610.36896",
@@ -82,40 +124,28 @@
       "published_at": "2026-10-27T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2611.07025",
-      "title": "LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time",
-      "upvotes": 3,
-      "published_at": "2026-11-04T19:00:06.000Z"
-    },
-    {
-      "arxiv_id": "2610.41711",
-      "title": "Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width",
-      "upvotes": 3,
-      "published_at": "2026-10-30T13:18:22.000Z"
-    },
-    {
-      "arxiv_id": "2611.09113",
-      "title": "Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use",
-      "upvotes": 3,
-      "published_at": "2026-11-06T07:47:25.000Z"
-    },
-    {
-      "arxiv_id": "2611.01362",
-      "title": "\"PRISM\" Is Not All You Need: Cross-Topic Name Collisions and Scientific Paper Retrieval",
-      "upvotes": 3,
-      "published_at": "2026-11-01T00:00:08.000Z"
-    },
-    {
-      "arxiv_id": "2611.06808",
-      "title": "LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting",
-      "upvotes": 3,
-      "published_at": "2026-11-04T00:00:00.000Z"
-    },
-    {
       "arxiv_id": "2611.09055",
       "title": "OmniLatent: Unified Latent for 3D Part Modeling",
       "upvotes": 3,
       "published_at": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2611.07461",
+      "title": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
+      "upvotes": 3,
+      "published_at": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "arxiv_id": "2611.02775",
+      "title": "Human-Centred, Risk-Constrained Evaluation of Financial Document Recognition: Evidence, Critical Errors, and Selective Automation",
+      "upvotes": 2,
+      "published_at": "2026-11-02T08:51:01.000Z"
+    },
+    {
+      "arxiv_id": "2611.08179",
+      "title": "Knowing When to Teach: Learning from Teachable Prefixes in Multilingual Reasoning Distillation",
+      "upvotes": 2,
+      "published_at": "2026-11-05T15:34:23.000Z"
     },
     {
       "arxiv_id": "2611.00448",
@@ -130,10 +160,10 @@
       "published_at": "2026-11-04T00:00:00.000Z"
     },
     {
-      "arxiv_id": "2611.07461",
-      "title": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
+      "arxiv_id": "2611.04720",
+      "title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
       "upvotes": 2,
-      "published_at": "2026-11-05T00:00:00.000Z"
+      "published_at": "2026-11-03T00:00:00.000Z"
     },
     {
       "arxiv_id": "2611.04434",
@@ -142,16 +172,10 @@
       "published_at": "2026-11-03T07:25:42.000Z"
     },
     {
-      "arxiv_id": "2611.09634",
-      "title": "Steerable Multi-Objective Group-Relative Preference Optimization with Jointly Trained Low-Rank Adapters",
+      "arxiv_id": "2611.08647",
+      "title": "IWIBench: Evaluating Gradient-Free Model Driven Intra-weight Injection",
       "upvotes": 1,
-      "published_at": "2026-11-06T00:00:00.000Z"
-    },
-    {
-      "arxiv_id": "2611.08179",
-      "title": "Knowing When to Teach: Learning from Teachable Prefixes in Multilingual Reasoning Distillation",
-      "upvotes": 1,
-      "published_at": "2026-11-05T15:34:23.000Z"
+      "published_at": "2026-11-05T00:00:00.000Z"
     },
     {
       "arxiv_id": "2611.07723",
@@ -160,10 +184,10 @@
       "published_at": "2026-11-05T09:38:23.000Z"
     },
     {
-      "arxiv_id": "2611.04720",
-      "title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
-      "upvotes": 1,
-      "published_at": "2026-11-03T00:00:00.000Z"
+      "arxiv_id": "2611.09891",
+      "title": "CPU-ARC: Agentic Reasoning Caching for on-CPU Reasoning Reuse",
+      "upvotes": 0,
+      "published_at": "2026-11-06T00:00:00.000Z"
     }
   ]
 }
